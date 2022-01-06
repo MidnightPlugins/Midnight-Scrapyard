@@ -1,0 +1,39 @@
+# Copyright (c) 2022 by Michael Arsollon
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+
+
+outfit "Blight Rifle"
+	category "Special"
+	licenses
+		Remnant
+	cost 422000
+	thumbnail "outfit/blight rifle"
+	"capture attack" 3.6
+	"capture defense" 5.4
+	"unplunderable" 1
+	description "A prototype the Remnant created using Blight Shadow eggs. This weapon drains energy from whatever it is used on. This can disrupt electronic door locks and reduces living creatures into withered husks. This effect also replenishes its own energy, making it an ideal weapon for long sieges. Death from this weapon appears to be cruel and painful. If the governments back home knew of its existence, it would probably be banned."
+
+outfit "Blight Shadow Eggs"
+	category "Special"
+	cost 0
+	thumbnail "outfit/blight egg"
+	description "Alien eggs found in a derelict space station. Might be worth something to the right person."
+	"unplunderable" 1
+
+outfit "Slicer Torch"
+	category "Special"
+	cost 1000000
+	thumbnail "outfit/slicer torch"
+	"capture attack" 9.6
+	"capture defense" 6.4
+	"energy consumption" 0.034
+	"unplunderable" 1
+	description "An improvised weapon made by a Scrapyard hermit. It easily and quickly cuts through ship bulkheads, making it an ideal tool for raiding ships. It can also be used to make emergency escape routes when one is seemingly trapped in a dead end."
