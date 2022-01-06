@@ -1,6 +1,6 @@
 # Midnight-Scrapyard
 
-A plugin presenting an epilogue for the Kor Sestor region of Endless Sky.
+A plugin suggesting an epilogue for the Kor Sestor region of Endless Sky.
 
 This region of space has abandoned derelicts waiting to be scavenged. But something lurks amongst the wreckage...
 
