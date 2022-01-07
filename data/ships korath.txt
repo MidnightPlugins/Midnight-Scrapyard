@@ -47,6 +47,7 @@ ship "Korath Scrapper"
 
 ship "Korath Scrapper" "Korath Scrapper (shields)"
 	sprite "ship/kor scrapper s"
+	thumbnail "thumbnail/kor scrapper s-thumb"
 	add attributes
 		"shields" 2700
 		"hull" 900
@@ -84,6 +85,7 @@ ship "Korath Scrapper" "Korath Scrapper (shields)"
 
 ship "Korath Scrapper" "Korath Scrapper (weapons)"
 	sprite "ship/kor scrapper w"
+	thumbnail "thumbnail/kor scrapper w-thumb"
 	add attributes
 		"weapon capacity" 32
 	outfits
@@ -121,6 +123,7 @@ ship "Korath Scrapper" "Korath Scrapper (weapons)"
 
 ship "Korath Scrapper" "Korath Scrapper (engines)"
 	sprite "ship/kor scrapper e"
+	thumbnail "thumbnail/kor scrapper e-thumb"
 	add attributes
 		"engine capacity" 16
 	outfits
@@ -161,6 +164,7 @@ ship "Korath Scrapper" "Korath Scrapper (engines)"
 	
 ship "Korath Scrapper" "Korath Scrapper (carrier)"
 	sprite "ship/kor scrapper c"
+	thumbnail "thumbnail/kor scrapper c-thumb"
 	outfits
 		"Korath Slicer Turret" 2
 		"Korath Disruptor" 2
