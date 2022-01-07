@@ -782,3 +782,167 @@ ship "Model 512" "Model 512 (scrap) C"
 		"Thruster (Planetary Class)"
 		"Steering (Stellar Class)"
 		Hyperdrive
+	
+
+ship "Grakerat 572"
+	sprite "ship/grakerat 572"
+	thumbnail "thumbnail/grakerat 572-thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 21480000
+		"shields" 52700
+		"hull" 54600
+		"automaton" 1
+		"mass" 1300
+		"drag" 15.8
+		"heat dissipation" .5
+		"fuel capacity" 1000
+		"cargo space" 264
+		"outfit space" 854
+		"weapon capacity" 138
+		"engine capacity" 165
+		"ramscoop" 1
+		weapon
+			"blast radius" 400
+			"shield damage" 8000
+			"hull damage" 4000
+			"hit force" 12000
+	outfits
+		"Korath Banisher" 2
+		"Korath Warder" 2
+		
+		"Triple Plasma Core"
+		"Systems Core (Large)"
+		"Systems Core (Medium)" 2
+		"Systems Core (Small)" 4
+		"Obsolete Transceiver"
+
+		"Large Heat Shunt" 2
+		"Small Heat Shunt" 2
+		"Fuel Processor"
+		
+		"Thruster (Planetary Class)"
+		"Steering (Planetary Class)"
+		Hyperdrive
+	
+	engine -38 208
+	engine 38 208
+	engine 0 208
+	turret -16 -75 "Korath Banisher"
+	turret 16 -75 "Korath Warder"
+	turret -18 -52.5 "Korath Warder"
+	turret 18 -52.5 "Korath Banisher"
+	explode "tiny explosion" 120
+	explode "small explosion" 60
+	explode "medium explosion" 70
+	explode "large explosion" 50
+	explode "huge explosion" 15
+	"final explode" "final explosion large"
+	description "The Sestor deployed these expeditionary vessels centuries ago to extend their reach beyond Korath space. If one were to find a suitable planet to establish a base of operations on, the Sestor could rise again."
+
+
+
+ship "Skoretak 13"
+	sprite "ship/skoretak 13"
+	thumbnail "thumbnail/skoretak 13-thumb"
+	attributes
+		category "Interceptor"
+		"cost" 7532000
+		"shields" 3350
+		"hull" 5420
+		"automaton" 1
+		"mass" 125
+		"drag" 3.7
+		"heat dissipation" 1.5
+		"fuel capacity" 200
+		"cargo space" 20
+		"outfit space" 225
+		"weapon capacity" 49
+		"engine capacity" 60
+		"self destruct" .15
+		"ramscoop" 1
+		weapon
+			"blast radius" 100
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Korath Grappler"
+		"Korath Repeater" 2
+		
+		"Generator (Furnace Class)"
+		"Generator (Candle Class)"
+		"Systems Core (Small)"
+		"Small Heat Shunt"
+		"Obsolete Transceiver"
+		
+		"Thruster (Comet Class)"
+		"Steering (Lunar Class)"
+		Hyperdrive
+	
+
+	engine -5.5 41.5
+	engine 6 40.5
+	gun -12 -33.5 "Korath Repeater"
+	gun 12.5 -33.5 "Korath Repeater"
+	gun 1.5 -33 "Korath Grappler"
+	explode "tiny explosion" 30
+	explode "small explosion" 10
+	"final explode" "final explosion small"
+	description "The Sestor stopped production of these interceptors a century ago. Their primary function was as escorts for freighters."
+
+
+
+ship "Tercheldar 150"
+	sprite "ship/tercheldar 150"
+	thumbnail "thumbnail/tercheldar 150-thumb"
+	attributes
+		category "Medium Warship"
+		"cost" 18290000
+		"shields" 25400
+		"hull" 34100
+		"automaton" 1
+		"mass" 610
+		"drag" 10.2
+		"heat dissipation" .55
+		"fuel capacity" 400
+		"cargo space" 36
+		"outfit space" 573
+		"weapon capacity" 252
+		"engine capacity" 173
+		"self destruct" .25
+		"ramscoop" 3
+		weapon
+			"blast radius" 320
+			"shield damage" 4000
+			"hull damage" 2000
+			"hit force" 6000
+	outfits
+		"Korath Detainer"
+		"Korath Grappler" 2
+		"Korath Warder" 2
+		
+		"Double Plasma Core"
+		"Generator (Furnace Class)"
+		"Systems Core (Medium)"
+		"Large Heat Shunt"
+		"Obsolete Transceiver"
+		
+		"Thruster (Planetary Class)"
+		"Steering (Stellar Class)"
+		"Hyperdrive"
+	
+	engine -24 130
+	engine 25.5 130
+	gun 1.5 -141.5 "Korath Detainer"
+	gun -64.5 -48 "Korath Grappler"
+	gun 66 -48 "Korath Grappler"
+	turret -100.5 82
+	turret 103.5 82
+	explode "tiny explosion" 80
+	explode "small explosion" 45
+	explode "medium explosion" 50
+	explode "large explosion" 40
+	explode "huge explosion" 10
+	"final explode" "final explosion large"
+	description "The Tercheldar 150 was a warship designed to fight in Mereti mine fields. It was eventually replaced by the more powerful Kar Ik Vot 349."

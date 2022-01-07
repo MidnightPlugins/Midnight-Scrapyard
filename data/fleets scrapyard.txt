@@ -257,87 +257,87 @@ fleet "Error Scrap"
 	fighters "error scrap"
 	cargo 0
 	personality derelict
-	variant
+	variant 1
 		"Model 8 (scrap) A"
-	variant
+	variant 1
 		"Model 8 (scrap) B"
-	variant
+	variant 1
 		"Model 8 (scrap) C"
-	variant
+	variant 1
 		"Model 16 (scrap) A"
-	variant
+	variant 1
 		"Model 16 (scrap) B"
-	variant
+	variant 1
 		"Model 16 (scrap) C"
-	variant
+	variant 1
 		"Model 32 (scrap) A"
-	variant
+	variant 1
 		"Model 32 (scrap) B"
-	variant
+	variant 1
 		"Model 32 (scrap) C"
-	variant
+	variant 1
 		"Model 64 (scrap) A"
-	variant
+	variant 1
 		"Model 64 (scrap) B"
-	variant
+	variant 1
 		"Model 64 (scrap) C"
-	variant
+	variant 1
 		"Model 128 (scrap) A"
-	variant
+	variant 1
 		"Model 128 (scrap) B"
-	variant
+	variant 1
 		"Model 128 (scrap) C"
-	variant
+	variant 1
 		"Model 256 (scrap) A"
-	variant
+	variant 1
 		"Model 256 (scrap) B"
-	variant
+	variant 1
 		"Model 256 (scrap) C"
-	variant
+	variant 1
 		"Model 512 (scrap) A"
-	variant
+	variant 1
 		"Model 512 (scrap) B"
-	variant
+	variant 1
 		"Model 512 (scrap) C"
-	variant
+	variant 2
 		"Met Par Tek 53 (scrap) A"
-	variant
+	variant 2
 		"Met Par Tek 53 (scrap) B"
-	variant
+	variant 2
 		"Met Par Tek 53 (scrap) C"
-	variant
+	variant 2
 		"Tek Far 109 (scrap) A"
 		"Far Lek 14 (scrap)" 3
 		"Far Osk 27 (scrap)" 2
 		"Far Lek 14"
 		"Far Osk 27"
-	variant
+	variant 2
 		"Tek Far 109 (scrap) B"
 		"Far Lek 14 (scrap)" 3
 		"Far Osk 27 (scrap)" 2
 		"Far Lek 14"
 		"Far Osk 27"
-	variant
+	variant 2
 		"Tek Far 71 - Lek (scrap) A"
 		"Far Lek 14 (scrap)" 3
 		"Far Lek 14"
-	variant
+	variant 2
 		"Tek Far 71 - Lek (scrap) B"
 		"Far Lek 14 (scrap)" 3
 		"Far Lek 14"
-	variant
+	variant 2
 		"Tek Far 78 - Osk (scrap) A"
 		"Far Osk 27 (scrap)" 2
 		"Far Osk 27"
-	variant
+	variant 2
 		"Tek Far 78 - Osk (scrap) B"
 		"Far Osk 27 (scrap)" 2
 		"Far Osk 27"
-	variant
+	variant 2
 		"Kar Ik Vot 349 (scrap) A"
-	variant
+	variant 2
 		"Kar Ik Vot 349 (scrap) B"
-	variant
+	variant 2
 		"Kar Ik Vot 349 (scrap) C"
 
 phrase "error scrap"
@@ -349,3 +349,13 @@ phrase "error scrap"
 		"digit"
 	phrase
 		"digit"
+
+fleet "Kor Sestor Expedition"
+	government "Kor Sestor"
+	names "kor sestor"
+	personality timid uninterested
+	commodities Equipment Electronics Construction
+	variant
+		"Grakerat 572"
+		"Tercheldar 150" 2
+		"Skoretak 13" 8

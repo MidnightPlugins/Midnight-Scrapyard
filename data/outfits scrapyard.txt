@@ -21,12 +21,61 @@ outfit "Blight Rifle"
 	"unplunderable" 1
 	description "A prototype the Remnant created using Blight Shadow eggs. This weapon drains energy from whatever it is used on. This can disrupt electronic door locks and reduces living creatures into withered husks. This effect also replenishes its own energy, making it an ideal weapon for long sieges. Death from this weapon appears to be cruel and painful. If the governments back home knew of its existence, it would probably be banned."
 
+
+
 outfit "Blight Shadow Eggs"
 	category "Special"
 	cost 0
 	thumbnail "outfit/blight egg"
 	description "Alien eggs found in a derelict space station. Might be worth something to the right person."
 	"unplunderable" 1
+
+
+
+outfit "Korath Grappler"
+	category "Guns"
+	cost 410000
+	thumbnail "outfit/kor grappler"
+	"mass" 26
+	"outfit space" -26
+	"weapon capacity" -26
+	"energy capacity" 50
+	"gun ports" -1
+	weapon
+		sprite "projectile/grab-strike"
+			"frame rate" 25
+			"random start frame"
+		sound "grab-strike"
+		"hit effect" "grab-strike impact"
+		"die effect" "grab-strike impact"
+		"inaccuracy" 1
+		"velocity" 10
+		"lifetime" 100
+		"reload" 20
+		"firing energy" 60
+		"firing heat" 150
+		"acceleration" 1
+		"drag" .1
+		"turn" .2
+		"homing" 4
+		"tracking" .7
+		"shield damage" 54
+		"hull damage" 16
+		"hit force" -160
+	description "Korath Grappler projectiles are designed to pull a target closer to the Korath ship, to keep it from escaping."
+
+
+
+outfit "Obsolete Transceiver"
+	category "Systems"
+	cost "7000"
+	thumbnail "outfit/obsolete transceiver"
+	"mass" 1
+	"outfit space" -1
+	description "This is a miniaturized communication device, which can be connected to all the major systems of a Kor Sestor automaton, apparently as a way of controlling them remotely."
+	description "This appears to be an older model transceiver incompatible with the encryption and authentication methods utilized by modern Kor Sestor."
+
+
 
 outfit "Slicer Torch"
 	category "Special"
