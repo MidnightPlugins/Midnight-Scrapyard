@@ -44,6 +44,9 @@ government "Blight Shadows"
 		"Kor Efret" -.01
 		"Kor Mereti" -.01
 		"Kor Sestor" -.01
+		"Kor Scrappers" -.01
+		"Kor Scrappers (Hostile)" -.01
+		
 	"bribe" 0
 	"fine" 0
 	"penalty for"
