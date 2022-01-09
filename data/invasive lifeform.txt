@@ -85,7 +85,6 @@ outfit "Energy Absorber?"
 			"frame rate" 1
 		sound "electron beam"
 		"hit effect" "beam laser impact"
-		"hit effect" "energy drain"
 		"inaccuracy" .5
 		"velocity" 300
 		"lifetime" 1
@@ -97,16 +96,6 @@ outfit "Energy Absorber?"
 		"hull damage" 1
 		"disruption damage" 1
 		
-effect "energy drain"
-	sprite "effect/energy drain"
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 13
-	"random angle" 360
-	"random spin" 10
-	"random velocity" 5
-	"velocity scale" -.004
-
 
 
 ship "Blight Shadow"

@@ -913,7 +913,7 @@ ship "Osk Lek Chaser"
 
 
 
-mission "Sestor Expedtionary Fleet"
+mission "Scrapyard Sestor Expedtionary Fleet"
 	landing
 	invisible
 	source "Avalon"
@@ -959,7 +959,7 @@ event "Sestor Expeditionary Fleets"
 
 
 
-mission "Derelict World Ship"
+mission "Scrapyard Derelict World Ship"
 	landing
 	invisible
 	destination "Laki Nemparu"
