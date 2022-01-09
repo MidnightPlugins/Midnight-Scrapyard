@@ -194,12 +194,11 @@ event "Blight Shadow Infestation"
 mission "Scrapyard Boarding A"
 	landing
 	invisible
-	repeat
+	repeat 5
 	destination "Desi Seledrak"
 	to offer
 		has "event: Scrapyard Develops"
 		random < 25
-		not "Scrapyard Threat Level" >= 20
 	npc board
 		government "Scrapyard Derelict"
 		system
@@ -214,12 +213,15 @@ mission "Scrapyard Boarding A"
 			attributes "Scrapyard"
 		personality waiting derelict mute
 		fleet "Error Scrap"
-	
+	on fail
+		"Scrapyard Boarding A: offered" --
+	on complete
+		"Scrapyard Boarding A: offered" --	
 
 mission "Scrapyard Boarding B"
 	landing
 	invisible
-	repeat
+	repeat 30
 	destination "Desi Seledrak"
 	to offer
 		has "event: Blight Shadow Infestation"
