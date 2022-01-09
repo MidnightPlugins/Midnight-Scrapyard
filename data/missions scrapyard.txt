@@ -199,13 +199,14 @@ mission "Scrapyard Boarding A"
 	to offer
 		has "event: Scrapyard Develops"
 		random < 25
+		not "Scrapyard Threat Level" >= 20
 	npc board
 		government "Scrapyard Derelict"
 		system
 			attributes "Scrapyard"
 		personality waiting derelict mute
 		fleet "Error Scrap"
-	npc board
+	npc
 		to spawn
 			random < 50
 		government "Scrapyard Derelict"
@@ -231,7 +232,7 @@ mission "Scrapyard Boarding B"
 			attributes "Scrapyard"
 		personality waiting derelict mute
 		fleet "Error Scrap"
-	npc board
+	npc
 		to spawn
 			random < 50
 		government "Scrapyard Derelict"
@@ -250,7 +251,7 @@ mission "Scrapyard Eggs Pirate 1"
 	source "Sebra Skira"
 	destination "Greenrock"
 	to offer
-		"Scrapyard Threat Level" > 5
+		"Scrapyard Threat Level" >= 5
 	on offer
 		conversation
 			scene "outfit/blight egg"
@@ -378,7 +379,7 @@ mission "Scrapyard Eggs Remnant 1"
 	destination "Aventine"
 	to offer
 		has "event: remnant: return the samples timer"
-		"Scrapyard Threat Level" > 15
+		"Scrapyard Threat Level" >= 15
 		or
 			has "Scrapyard Eggs Pirate 3: offered"
 			has "Scrapyard Pirate Eggs Hatch: offered"
@@ -774,7 +775,7 @@ mission "Scrapyard Hermit"
 	invisible
 	source "Sebra Skira"
 	to offer
-		"Scrapyard Threat Level" > 19
+		"Scrapyard Threat Level" >= 20
 	on offer
 		conversation
 			`You notice a derelict scrapper ship docked at the station. Explore the ship?`
@@ -935,7 +936,7 @@ mission "Sestor Expedtionary Fleet"
 	npc board
 		system "Host"
 		government "Kor Sestor"
-		personality waiting timid uninterested
+		personality waiting timid uninterested target
 		cargo 3
 		commodities Equipment Electronics Construction
 		ship "Grakerat 572" "01-234.5"
@@ -955,3 +956,113 @@ event "Sestor Expeditionary Fleets"
 		add fleet "Kor Sestor Expedition" 100000
 	system "Chy'chra"
 		add fleet "Kor Sestor Expedition" 100000
+
+
+
+mission "Derelict World Ship"
+	landing
+	invisible
+	destination "Laki Nemparu"
+	to offer
+		"Scrapyard Threat Level" >= 25
+	on enter "Celeborim"
+		conversation
+			scene "scene/scene-derelictworldship"
+			`You stumble upon tragic scene. A derelict Kor Efret world ship is surrounded by blight shadows. The ship hails you, and though you don't speak their language, it's obviously a distress call. The ship is heavily damaged and it will be a miracle if you can escort it back to Laki Nemparu in the Kashikt system.`
+				accept
+
+	npc
+		government "Blight Shadows"
+		system "Celeborim"
+		personality waiting heroic disables unconstrained mute
+		fleet "Large Blight Shadow"
+		
+	npc
+		government "Blight Shadows"
+		system "Asikafarnut"
+		personality waiting heroic disables unconstrained mute staying
+		fleet "Large Blight Shadow" 2
+	
+	npc
+		government "Blight Shadows"
+		system "Silikatakfar"
+		personality waiting heroic disables unconstrained mute staying
+		fleet "Large Blight Shadow" 3
+	
+	npc
+		government "Blight Shadows"
+		system "Mesuket"
+		personality waiting heroic disables unconstrained mute staying
+		fleet "Large Blight Shadow" 4
+	
+	npc
+		government "Blight Shadows"
+		system "Eshkoshtar"
+		personality waiting heroic disables unconstrained mute staying
+		fleet "Large Blight Shadow" 5
+	
+	npc
+		government "Blight Shadows"
+		system "Salipastart"
+		personality waiting heroic disables unconstrained mute staying
+		fleet "Large Blight Shadow" 5
+
+	npc
+		government "Blight Shadows"
+		system "Mekislepti"
+		personality waiting heroic disables unconstrained mute staying
+		fleet "Large Blight Shadow" 6
+
+	npc
+		government "Blight Shadows"
+		system "Similisti"
+		personality waiting heroic disables unconstrained mute staying
+		fleet "Large Blight Shadow" 6
+
+	npc
+		government "Blight Shadows"
+		system "Sevrelect"
+		personality entering heroic disables unconstrained mute
+		fleet "Large Blight Shadow"
+	
+	npc assist accompany save
+		government "Kor Efret"
+		system "Celeborim"
+		personality escort target waiting derelict pacifist
+		ship "Korath World-Ship D (Crippled)" "Lekfarosk"
+
+	on enter "Kaliptari"
+		dialogue "Take the crippled world ship to the outfitter on Laki Nemparu in the Kashikt system."
+
+	on enter "Kashikt"
+		dialogue "You've finally reached Kashikt. Escort the world ship to Laki Nemparu." 
+
+	on complete
+		give ship "Korath World-Ship D (Crippled)" "Lekfarosk"
+		conversation
+			scene "thumbnail/world-ship d"
+			`The Kor Efret are grateful to you for saving them from certain death. They seem to want to give you a tour of their ship, but as the tour progresses, it becomes apparent that they are offering the ship to you as a gesture of thanks. While you appreciate the reward, you can't help but notice that damage to the ship's key systems hasn't been repaired...`
+			
+ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
+	sprite "ship/world-ship d"
+	thumbnail "thumbnail/world-ship d"
+	add attributes
+		"fused circuits" -5
+	outfits		
+		"Triple Plasma Core (Damaged)"
+		"Systems Core (Damaged)"
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
+		
+		"Thruster (Planetary Class)(Damaged)"
+		"Steering (Planetary Class)(Damaged)"
+		"Hyperdrive (Damaged)"
+
+	turret -74 -156
+	turret 74 -155.5
+	turret -42 -50.5
+	turret 44 -50.5
+	turret -27.5 134.5
+	turret 27 134.5
+	turret -89 293
+	turret 87.5 292.5

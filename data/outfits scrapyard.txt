@@ -86,3 +86,79 @@ outfit "Slicer Torch"
 	"energy consumption" 0.034
 	"unplunderable" 1
 	description "An improvised weapon made by a Scrapyard hermit. It easily and quickly cuts through ship bulkheads, making it an ideal tool for raiding ships. It can also be used to make emergency escape routes when one is seemingly trapped in a dead end."
+
+
+
+outfit "Systems Core (Damaged)"
+	category "Systems"
+	cost 4575000
+	thumbnail "outfit/damaged systems core"
+	"mass" 91
+	"outfit space" -91
+	"energy capacity" 2600
+	"shield generation" 3.1
+	"shield energy" 4.6
+	"hull repair rate" .1
+	"hull energy" .4
+	"hull heat" .6
+	"energy consumption" 0.8
+	"heat generation" 1.2
+	"fused circuits" 1
+	description `While unable to repair damage to complex systems such as itself, the machines controlled by this systems core can patch holes in the hull.`
+
+outfit "Triple Plasma Core (Damaged)"
+	category "Power"
+	cost 10230000
+	thumbnail "outfit/damaged triple plasma core"
+	"mass" 169
+	"outfit space" -169
+	"energy generation" 22.0
+	"heat generation" 154.0
+	"fused circuits" 1
+	description "While there is no visible damage, you are certain this unit is malfunctioning. The power output is no better than a Double Plasma Core."
+
+outfit "Hyperdrive (Damaged)"
+	category "Systems"
+	cost 25000
+	thumbnail "outfit/damaged hyperdrive"
+	"mass" 20
+	"outfit space" -20
+	"jump speed" .2
+	"jump fuel" 300
+	"hyperdrive" 1
+	"fused circuits" 1
+	description "A malfunction is causing this hyperdrive to consume triple the amount of fuel that a normal hyperdrive would."
+	
+outfit "Thruster (Planetary Class)(Damaged)"
+	plural "Thrusters (Planetary Class)(Damaged)"
+	category "Engines"
+	"cost" 608000
+	thumbnail "outfit/damaged large korath thruster"
+	"mass" 69
+	"outfit space" -69
+	"engine capacity" -69
+	"fused circuits" 1
+	"thrust" 41.2
+	"thrusting energy" 4.9
+	"thrusting heat" 11.9
+	"flare sprite" "effect/korath flare/medium"
+		"frame rate" 7
+	"flare sound" "plasma medium"
+	description "Damage to the thrusters has reduced output by half."
+
+outfit "Steering (Planetary Class)(Damaged)"
+	plural "Steerings (Planetary Class)(Damaged)"
+	category "Engines"
+	"cost" 540000
+	thumbnail "outfit/damaged large korath steering"
+	"mass" 52
+	"outfit space" -52
+	"engine capacity" -52
+	"fused circuits" 1
+	"turn" 1056.0
+	"turning energy" 2.5
+	"turning heat" 7.4
+	"steering flare sprite" "effect/korath flare/medium"
+		"frame rate" 7
+	"steering flare sound" "plasma medium"
+	description "A malfunction in the steering system has reduced its effectiveness significantly."
