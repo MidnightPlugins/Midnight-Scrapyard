@@ -65,6 +65,22 @@ outfit "Korath Grappler"
 	description "Korath Grappler projectiles are designed to pull a target closer to the Korath ship, to keep it from escaping."
 
 
+outfit "Korath Scanner"
+	category "Systems"
+	cost 194500
+	thumbnail "outfit/korath scanner"
+	"mass" 14
+	"outfit space" -14
+	"outfit scan power" 16
+	"outfit scan speed" 2
+	"cargo scan power" 4
+	"cargo scan speed" 2
+	"atmosphere scan" 100
+	"tactical scan power" 9
+	"radar jamming" 5
+	description "Korath ships rarely rely on scanning technologies, preferring to shoot first and plunder later. The rare ship that does need it likely has one of these bulky systems installed. While not particularly powerful or sophisticated, the Korath's unorthodox approach to scanning does have the unintended side effect of jamming radar based missile guidance systems."
+
+
 
 outfit "Obsolete Transceiver"
 	category "Systems"

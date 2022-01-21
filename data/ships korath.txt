@@ -798,10 +798,11 @@ ship "Grakerat 572"
 		"heat dissipation" .5
 		"fuel capacity" 1000
 		"cargo space" 264
-		"outfit space" 702
+		"outfit space" 710
 		"weapon capacity" 0
 		"engine capacity" 165
 		"ramscoop" 1
+		"atmosphere scan" 100
 		weapon
 			"blast radius" 400
 			"shield damage" 8000
@@ -813,7 +814,7 @@ ship "Grakerat 572"
 		"Systems Core (Medium)" 2
 		"Systems Core (Small)" 4
 		"Obsolete Transceiver"
-
+		"Korath Scanner"
 		"Large Heat Shunt" 2
 		"Fuel Processor"
 		

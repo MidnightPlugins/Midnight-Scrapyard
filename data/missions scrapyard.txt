@@ -263,7 +263,7 @@ mission "Scrapyard Subsidurial"
 		"Scrapyard Threat Level" >= 1
 	on enter "Mesuket"
 		conversation
-			scene "thumbnail/subsidurial"
+			scene "scene/scene-blightshadowssubsidurial"
 			`A subsidurial is surrounded by blight shadows. You could intervene if you want to.`
 				accept
 	npc
@@ -688,7 +688,7 @@ mission "Scrapyard Shadowblight Coalition"
 		fleet "Small Blight Shadow"
 
 
- 
+		
 mission "Scrapyard Shadowblight Remnant"
 	landing
 	invisible
@@ -1029,20 +1029,24 @@ mission "Scrapyard Sestor Expedtionary Fleet"
 			cargo 3
 			commodities Equipment Electronics Construction
 		conversation
-			`Without a jump drive, it must have taken centuries for this ship to get here from Sestor space. The ship is loaded with materials for construction. A colony ship? If this ship had established a base of operations on the planet below, the Sestor could rise again. The question is, how many other ships like this are out there?`
+			`Without a jump drive, it must have taken centuries for this ship to get here from Sestor space. The ship is loaded with equipment for construction. A colony ship? If this ship had established a base of operations on the planet below, the Sestor could rise again. The question is, how many other ships like this are out there?`
 	on complete
 		event "Sestor Expeditionary Fleets"
 		
 event "Sestor Expeditionary Fleets"
 	system Host
 		add fleet "Kor Sestor Expedition" 80000
-	system "Hi Yahr"
-		add fleet "Kor Sestor Expedition" 80000
 	system "Bore Fah"
 		add fleet "Kor Sestor Expedition" 80000
 	system "Uwa Fahn"
 		add fleet "Kor Sestor Expedition" 80000
 	system "Chy'chra"
+		add fleet "Kor Sestor Expedition" 80000
+	system "Hi Yahr"
+		add fleet "Kor Sestor Expedition" 80000
+	system "Wah Yoot"
+		add fleet "Kor Sestor Expedition" 80000
+	system "Ehma Ti"
 		add fleet "Kor Sestor Expedition" 80000
 
 
