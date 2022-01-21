@@ -30,13 +30,13 @@ person "Harbinger"
 	ship "Grakerat 572" "Harbinger"
 
 
-person "The Incinerator"
+person "Predator"
 	government "Author"
-	frequency 512
+	frequency 128
 	system
 		attributes "Scrapyard"
 	personality mining plunders harvests uninterested unconstrained
-	ship "Korath Devourer" "The Incinerator"
+	ship "Korath Devourer" "Predator"
 	ship "Far Osk 27 (Incinerator)" "Char 1"
 	ship "Far Osk 27 (Incinerator)" "Char 2"
 	ship "Far Osk 27 (Incinerator)" "Char 3"
@@ -56,22 +56,21 @@ person "The Incinerator"
 outfit "Korath Incinerator"
 	category "Guns"
 	cost 190000
-	thumbnail "outfit/devourer"
+	thumbnail "outfit/korath incinerator"
 	"mass" 9
 	"outfit space" -9
 	"weapon capacity" -9
 	"gun ports" -1
+	"energy consumption" 3.1
+	"heat generation" 13.0
 	"integrated systems" 1
 	weapon
 		sound "flamethrower"
 		"hit effect" "flamethrower hit"
 		"inaccuracy" 180
 		"velocity" 10
-		"lifetime" 2
+		"lifetime" 1
 		"reload" 1
-		"firing energy" .1
-		"firing fuel" .25
-		"firing heat" 2
 		"burst reload" 35
 		"burst count" 3
 		"cluster"
@@ -81,7 +80,7 @@ outfit "Korath Incinerator"
 	description "A giant furnace. Ships go in. Melted metal comes out."
 
 ship "Korath Devourer"
-	sprite "ship/devourer/devourer"
+	sprite "ship/korath devourer/korath devourer"
 	attributes
 		category "Heavy Freighter"
 		"cost" 36370000
@@ -95,8 +94,8 @@ ship "Korath Devourer"
 		"fuel capacity" 900
 		"cargo space" 605
 		"outfit space" 835
-		"weapon capacity" 299
-		"engine capacity" 121
+		"weapon capacity" 297
+		"engine capacity" 181
 		"integrated systems" -3
 		weapon
 			"blast radius" 300

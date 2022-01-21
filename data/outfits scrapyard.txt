@@ -32,6 +32,21 @@ outfit "Blight Shadow Eggs"
 
 
 
+outfit "Korath Afterburner"
+	category "Engines"
+	"cost" 140000
+	thumbnail "outfit/korath afterburner"
+	"mass" 22
+	"outfit space" -22
+	"engine capacity" -22
+	"afterburner thrust" 37.5
+	"afterburner fuel" .5
+	"afterburner heat" 20.0
+	"afterburner effect" "afterburner"
+	description "The Korath afterburner consumes hyperspace fuel to produce a large amount of thrust. Like all Korath engines, it generates an alarming amount of heat."
+
+
+
 outfit "Korath Grappler"
 	category "Guns"
 	cost 410000

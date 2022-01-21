@@ -784,6 +784,13 @@ ship "Model 512" "Model 512 (scrap) C"
 		Hyperdrive
 	
 
+
+################################
+# Expeditionary ship and escorts
+################################
+
+
+
 ship "Grakerat 572"
 	sprite "ship/grakerat 572"
 	thumbnail "thumbnail/grakerat 572-thumb"
@@ -939,3 +946,181 @@ ship "Tercheldar 150"
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
 	description "The Tercheldar 150 was a warship designed to fight in Mereti mine fields. It was eventually replaced by the more powerful Kar Ik Vot 349."
+
+
+
+#####################
+# Kor Efret Shipyards
+#####################
+
+
+
+ship "Korath Transport"
+	sprite "ship/korath transport a"
+	thumbnail "thumbnail/korath transport a-thumb"
+	attributes
+		category "Transport"
+		cost 6922500
+		shields 11750
+		hull 8500
+		"required crew" 199
+		"bunks" 223
+		"mass" 434
+		"drag" 6
+		"heat dissipation" .4
+		"fuel capacity" 400
+		"cargo space" 88
+		"outfit space" 426
+		"weapon capacity" 149
+		"engine capacity" 81
+		weapon
+			"blast radius" 300
+			"shield damage" 4000
+			"hull damage" 2000
+			"hit force" 6000
+	outfits
+		"Korath Banisher" 2
+		"Korath Warder" 2
+		
+		"Double Plasma Core"
+		"Systems Core (Medium)"
+		"Large Heat Shunt" 1
+		"Fuel Processor"
+		"Korath Repeater Rifle" 50
+		
+		"Thruster (Lunar Class)"
+		"Steering (Lunar Class)"
+		"Hyperdrive"
+
+	engine -40 187
+	engine -2 187
+	engine 35 187
+	turret -26 -34 "Korath Banisher"
+	turret 25 -34 "Korath Warder"
+	turret -35 98 "Korath Warder"
+	turret 29.5 98 "Korath Banisher"
+	explode "tiny explosion" 30
+	explode "small explosion" 45
+	explode "medium explosion" 50
+	explode "large explosion" 40
+	"final explode" "final explosion large"
+	description "The precursor to the Korath World-Ship. As more of their people resettle onto their former worlds, the Wold-Ships will eventually become obsolete. In anticpation of this, the Kor Efret have begun reproducing these smaller transport ships."
+
+ship "Korath Transport" "Korath Transport B"
+	sprite "ship/korath transport b"
+	thumbnail "thumbnail/korath transport b-thumb"
+	add attributes
+		shields 200
+		hull 200
+		"bunks" 50
+		"mass" -10
+		"cargo space" -22
+		"outfit space" 11
+		"weapon capacity" 11
+	outfits
+		"Korath Banisher"
+		"Korath Grab-Strike"
+		"Korath Warder" 2
+		
+		"Double Plasma Core"
+		"Systems Core (Medium)"
+		"Large Heat Shunt" 1
+		"Fuel Processor"
+		"Korath Repeater Rifle" 75
+		
+		"Thruster (Lunar Class)"
+		"Steering (Lunar Class)"
+		"Hyperdrive"
+	engine -37.5 190
+	engine 0.5 191
+	engine 38 192
+	turret 0 -52.5 "Korath Banisher"
+	turret 0 35 "Korath Grab-Strike"
+	turret -26.5 120 "Korath Warder"
+	turret 26 120 "Korath Warder"
+
+
+ship "Korath Transport" "Korath Transport C"
+	sprite "ship/korath transport c"
+	thumbnail "thumbnail/korath transport c-thumb"
+	add attributes
+		"bunks" 150
+		"mass" -20
+		"cargo space" -22
+	outfits
+		"Korath Warder" 2
+		
+		"Double Plasma Core"
+		"Systems Core (Large)"
+		"Large Heat Shunt" 1
+		"Fuel Processor"
+		"Korath Repeater Rifle" 50
+		
+		"Thruster (Lunar Class)"
+		"Steering (Lunar Class)"
+		"Hyperdrive"
+	engine -39 183
+	engine -2 183
+	engine 35.5 183
+	turret -16.5 -25
+	turret 15.5 -25
+	bay "Fighter" -43 20.5 over
+	bay "Fighter" 43 20.5 over
+
+ship "Korath Warmonger"
+	sprite "ship/korath warmonger"
+	thumbnail "thumbnail/korath warmonger-thumb"
+	attributes
+		category "Medium Warship"
+		"cost" 8285000
+		"shields" 13500
+		"hull" 4500
+		"required crew" 73
+		"bunks" 125
+		"mass" 360
+		"drag" 6
+		"heat dissipation" .6
+		"fuel capacity" 500
+		"cargo space" 90
+		"outfit space" 524
+		"weapon capacity" 172
+		"engine capacity" 93
+		weapon
+			"blast radius" 250
+			"shield damage" 3600
+			"hull damage" 1800
+			"hit force" 5400
+	outfits
+		"Korath Repeater Turret" 4
+		"Korath Piercer Launcher" 2
+		"Korath Piercer" 94		
+		"Korath Piercer Rack" 2
+		
+		"Double Plasma Core"
+		"Systems Core (Medium)"
+		"Large Heat Shunt" 2
+		"Fuel Processor"
+		"Korath Repeater Rifle" 70
+		
+		"Korath Afterburner"
+		"Thruster (Lunar Class)"
+		"Steering (Lunar Class)"
+		"Hyperdrive"
+	
+	engine -33.5 77.5
+	engine 29.5 77.5
+	engine -2 89.5
+	gun -9 -89
+	gun 10 -89
+	turret -39 -77
+	turret 34.5 -77
+	turret -43.5 24
+	turret 40.5 24
+	bay "Fighter" -90 32
+	bay "Fighter" 86 32
+	explode "tiny explosion" 20
+	explode "small explosion" 45
+	explode "medium explosion" 50
+	explode "large explosion" 40
+	"final explode" "final explosion large"
+	description "The Korath Warmoger was the first warship deployed at the start of the Korath civil war that eventually brought the downfall of their civilization. With the recent Blight Shadow attack on one of their World-ships, the Kor Efret are starting to reproduce these warships as escorts."

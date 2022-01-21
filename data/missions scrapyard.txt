@@ -10,6 +10,46 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details
 
 
+
+mission "Scrapyard: Laki Nemparu Shipyard"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "Wanderers: Sestor: Final: done"
+	on offer
+		event "Laki Nemparu opens Shipyard" 30
+		conversation
+			scene "scene/scene-korathtransports"
+			`	You notice the Kor Efret have set up a shipyard. While no ships appear to be ready for sale, you see several under construction.`
+				accept
+	to complete
+		has "event: Laki Nemparu opens Shipyard"
+	on complete
+		dialog `The shipyard appears to be open. A fleet of new ships is on display.`
+		
+shipyard "Kor Efret Scrapyard"
+	"Korath Transport"
+	"Korath Transport B"
+	"Korath Transport C"
+	"Korath Chaser"
+		
+event "Laki Nemparu opens Shipyard"
+	planet "Laki Nemparu"
+		add	shipyard "Kor Efret Scrapyard"
+	outfitter "Korath Basics"
+		add "Korath Scanner"
+	fleet "Kor Efret Home"
+		add variant
+			"Korath Transport"
+		add variant
+			"Korath Transport B"
+		add variant
+			"Korath Transport C"
+			"Korath Chaser" 2
+		
+		
+
 mission "Scrapyard: Scrapyard Develops"
 	landing
 	invisible
@@ -1158,3 +1198,47 @@ ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
 	turret 27 134.5
 	turret -89 293
 	turret 87.5 292.5
+
+
+
+mission "Scrapyard: Warmonger Construction"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "Scrapyard Derelict World Ship: done"
+	on offer
+		event "Warmonger Construction Completed" 30
+		conversation
+			scene "thumbnail/korath warmonger-thumb"
+			`	You notice a new type of ship under construction in the shipyard. While none are available for sale yet, the ship looks somewhat familiar...`
+				accept
+	to complete
+		has "event: Warmonger Construction Completed"
+	on complete
+		dialog `The new warship is available for sale in the shipyard. A fleet of the new ships is on display.`
+
+event "Warmonger Construction Completed"
+	shipyard "Kor Efret Scrapyard"
+		add "Korath Warmonger"
+	outfitter "Korath Basics"
+		add "Korath Afterburner"
+	fleet "Kor Efret Home"
+		add variant 15
+			"Korath Warmonger"
+		add variant 10
+			"Korath World-Ship"
+			"Korath Warmonger" 2
+		add variant 10
+			"Korath World-Ship B"
+			"Korath Warmonger" 2
+		add variant 10
+			"Korath World-Ship C"
+			"Korath Warmonger" 2
+		add variant 15
+			"Korath Transport"
+		add variant 15
+			"Korath Transport B"
+		add variant 15
+			"Korath Transport C"
+			"Korath Chaser" 2
