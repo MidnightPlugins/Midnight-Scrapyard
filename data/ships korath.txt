@@ -1134,6 +1134,7 @@ ship "Korath Warmonger"
 
 ship "Korath Devourer"
 	sprite "ship/korath devourer/korath devourer"
+	thumbnail "thumbnail/korath devourer-thumb"
 	attributes
 		category "Heavy Freighter"
 		"cost" 36370000
