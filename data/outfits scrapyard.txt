@@ -80,6 +80,35 @@ outfit "Korath Grappler"
 	description "Korath Grappler projectiles are designed to pull a target closer to the Korath ship, to keep it from escaping."
 
 
+
+outfit "Korath Incinerator"
+	category "Guns"
+	cost 190000
+	thumbnail "outfit/korath incinerator"
+	"mass" 9
+	"outfit space" -9
+	"weapon capacity" -9
+	"gun ports" -1
+	"energy consumption" 3.1
+	"heat generation" 13.0
+	"integrated systems" 1
+	weapon
+		sound "flamethrower"
+		"hit effect" "flamethrower hit"
+		"inaccuracy" 180
+		"velocity" 10
+		"lifetime" 1
+		"reload" 1
+		"burst reload" 35
+		"burst count" 3
+		"cluster"
+		"shield damage" 300
+		"hull damage" 300
+		"heat damage" 200
+	description "A giant furnace. Ships go in. Melted metal comes out."
+
+
+
 outfit "Korath Scanner"
 	category "Systems"
 	cost 194500

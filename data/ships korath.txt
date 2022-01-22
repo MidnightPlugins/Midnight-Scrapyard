@@ -1124,3 +1124,78 @@ ship "Korath Warmonger"
 	explode "large explosion" 40
 	"final explode" "final explosion large"
 	description "The Korath Warmoger was the first warship deployed at the start of the Korath civil war that eventually brought the downfall of their civilization. With the recent Blight Shadow attack on one of their World-ships, the Kor Efret are starting to reproduce these warships as escorts."
+
+
+
+
+################################
+# Korath Devourer
+################################
+
+ship "Korath Devourer"
+	sprite "ship/korath devourer/korath devourer"
+	attributes
+		category "Heavy Freighter"
+		"cost" 36370000
+		"shields" 46000
+		"hull" 20000
+		"required crew" 251
+		"bunks" 485
+		"mass" 1603
+		"drag" 24
+		"heat dissipation" .4
+		"fuel capacity" 900
+		"cargo space" 605
+		"outfit space" 835
+		"weapon capacity" 297
+		"engine capacity" 181
+		"integrated systems" -3
+		weapon
+			"blast radius" 300
+			"shield damage" 4600
+			"hull damage" 2300
+			"hit force" 5900
+	outfits
+		"Korath Incinerator" 3
+		"Korath Grab-Strike" 3
+		"Korath Warder" 2
+		
+		"Systems Core (Large)" 2
+		"Triple Plasma Core"
+		"Korath Scanner"
+		"Large Heat Shunt" 3
+		"Fuel Processor"
+		"Korath Repeater Rifle" 235
+		
+		"Steering (Planetary Class)"
+		"Thruster (Planetary Class)"
+		"Jump Drive"
+		
+	gun -5 -192.5 "Korath Incinerator"
+	gun -2 -192.5 "Korath Incinerator"
+	gun 1 -192.5 "Korath Incinerator"
+	turret -1.5 -175 "Korath Grab-Strike"
+	turret -40.5 -175.5 "Korath Grab-Strike"
+	turret 39 -175.5 "Korath Grab-Strike"
+	turret -63.5 -172
+	turret 59 -170
+	turret -43 -48 "Korath Warder"
+	turret 40.5 -49
+	turret -44 102.5
+	turret 41.5 103 "Korath Warder"
+	engine -35 296.5
+	engine 27.5 297
+	engine -2.5 309
+	bay "Fighter" -91 -34
+	bay "Fighter" 83 -30.5
+	bay "Fighter" -87 89.5
+	bay "Fighter" 81.5 94
+	bay "Fighter" -80.5 264
+	bay "Fighter" 72.5 264.5
+	explode "tiny explosion" 120
+	explode "small explosion" 60
+	explode "medium explosion" 70
+	explode "large explosion" 50
+	explode "huge explosion" 15
+	"final explode" "final explosion large"
+	description "Some Korath scrappers are more intested in harvesting raw materials rather than technology. The Devourer is their attempt to streamline the collection process. The Korath Incinerators are integrated into the ship and cannot be removed."

@@ -18,6 +18,7 @@ fleet "Small Korath Scrappers"
 	personality mining harvests plunders uninterested
 	names "korath"
 	fighters "korath"
+	outfitters "Korath Basics"
 	variant 6
 		"Korath Scrapper (shields)"
 		"Korath Chaser" 2
@@ -125,6 +126,7 @@ fleet "Large Korath Scrappers"
 	personality mining harvests plunders
 	names "korath"
 	fighters "korath"
+	outfitters "Korath Basics"
 	variant 5
 		"Korath Scrapper (shields)"
 		"Far Osk 27" 2
@@ -234,6 +236,28 @@ fleet "Large Korath Scrappers"
 		"Kar Ik Vot 349 (scrap) C"
 
 
+fleet "Korath Devourer (Neutral)"
+	government "Kor Scrappers"
+	personality mining harvests plunders uninterested
+	names "korath"
+	fighters "korath"
+	cargo 2
+	commodities "Metal" "Heavy Metals"
+	variant
+		"Korath Devourer"
+		"Korath Chaser" 6
+		
+fleet "Korath Devourer (Hostile)"
+	government "Kor Scrappers (Hostile)"
+	personality mining harvests plunders uninterested
+	names "korath"
+	fighters "korath"
+	cargo 3
+	commodities "Metal" "Heavy Metals"
+	outfitters "Korath Basics"
+	variant
+		"Korath Devourer"
+		"Korath Chaser" 6
 
 		
 fleet "Shadow Hunters"
@@ -241,6 +265,7 @@ fleet "Shadow Hunters"
 	personality heroic vindictive unconstrained
 	names "korath"
 	fighters "korath"
+	cargo 0
 	variant
 		"Korath Scrapper (shields)"
 		"Korath Scrapper (weapons)"
@@ -359,3 +384,176 @@ fleet "Kor Sestor Expedition"
 		"Grakerat 572"
 		"Tercheldar 150" 2
 		"Skoretak 13" 8
+		
+
+
+
+
+
+fleet "Hostile Kor Mereti Miners"
+	government "Kor Mereti (Hostile)"
+	names "kor mereti"
+	cargo 0
+	personality
+		mining harvests
+	variant 10
+		"Model 8"
+	variant 3
+		"Model 8" 2
+	variant 1
+		"Model 8" 3
+
+fleet "Aggressive Kor Mereti"
+	government "Kor Mereti (Hostile)"
+	names "kor mereti"
+	fighters "kor mereti"
+	commodities Plastic Equipment Industrial Electronics "Heavy Metals"
+	personality
+		opportunistic
+	variant 1
+		"Model 64"
+		"Model 32"
+		"Model 16" 2
+	variant 2
+		"Model 64"
+		"Model 32" 2
+	variant 3
+		"Model 128"
+	variant 3
+		"Model 64"
+		"Model 32" 2
+		"Model 16" 1
+	variant 1
+		"Model 32"
+		"Model 16" 5
+	variant 3
+		"Model 32" 2
+		"Model 16" 3
+	variant 6
+		"Model 64"
+		"Model 32"
+		"Model 16"
+	variant 4
+		"Model 64"
+		"Model 32"
+	variant 3
+		"Model 32"
+		"Model 16" 4
+	variant 4
+		"Model 32"
+		"Model 16" 3
+	variant 5
+		"Model 32"
+		"Model 16" 2
+	variant 6
+		"Model 16" 3
+	variant 4
+		"Model 16" 2
+	variant 3
+		"Model 32"
+	variant 5
+		"Model 64"
+
+
+fleet "Hostile Kor Mereti"
+	government "Kor Mereti (Hostile)"
+	names "kor mereti"
+	fighters "kor mereti"
+	commodities Plastic Equipment Industrial Electronics "Heavy Metals"
+	personality
+		opportunistic
+	variant 5
+		"Model 512"
+		"Model 32"
+		"Model 16" 2
+	variant 4
+		"Model 512"
+	variant 2
+		"Model 512"
+		"Model 256"
+		"Model 128"
+		"Model 64"
+		"Model 32"
+		"Model 16"
+	variant 3
+		"Model 512"
+		"Model 256" 2
+	variant 1
+		"Model 512"
+		"Model 128" 2
+		"Model 64"
+		"Model 32" 2
+	variant 1
+		"Model 512"
+		"Model 32" 5
+		"Model 16" 8
+	variant 2
+		"Model 256"
+		"Model 128" 2
+		"Model 64" 3
+		"Model 32" 5
+		"Model 16" 8
+	variant 3
+		"Model 256" 2
+		"Model 64"
+		"Model 32" 3
+		"Model 16" 2
+	variant 6
+		"Model 256"
+		"Model 64" 4
+	variant 3
+		"Model 256" 3
+	variant 8
+		"Model 256"
+		"Model 128"
+		"Model 64"
+		"Model 32"
+		"Model 16"
+	variant 7
+		"Model 256" 2
+		"Model 128"
+	variant 14
+		"Model 256"
+		"Model 64" 2
+	variant 5
+		"Model 128" 3
+	variant 2
+		"Model 256"
+		"Model 128"
+		"Model 64"
+		"Model 32"
+		"Model 16"
+	variant 4
+		"Model 256" 2
+	variant 3
+		"Model 128" 2
+		"Model 64"
+		"Model 32" 2
+	variant 4
+		"Model 128" 2
+		"Model 64" 3
+		"Model 32" 5
+		"Model 16" 8
+	variant 5
+		"Model 256"
+		"Model 64"
+		"Model 32" 3
+		"Model 16" 2
+	variant 9
+		"Model 256"
+		"Model 64" 2
+	variant 3
+		"Model 256" 2
+	variant 8
+		"Model 128"
+		"Model 64"
+		"Model 32"
+		"Model 16"
+	variant 7
+		"Model 256"
+		"Model 128"
+	variant 14
+		"Model 256"
+		"Model 64"
+	variant 5
+		"Model 128" 2

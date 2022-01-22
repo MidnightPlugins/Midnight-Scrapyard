@@ -22,12 +22,39 @@ person "Midnight Spectator"
 
 person "Harbinger"
 	government "Kor Sestor"
-	frequency 100
+	frequency 128
 	system
-		not attributes "Scrapyard"
+		government "Hai (Unfettered)" "Hai"
 	personality
-		surveillance unconstrained marked
+		surveillance unconstrained marked mute
 	ship "Grakerat 572" "Harbinger"
+
+
+
+person "Scar"
+	government "Scar's Legion"
+	frequency 128
+	system "Hatysa" "Unagi" "Mintaka" "Gorvi" "Tortor" "Rigel" "Hassaleh" "Rajak" "Ultima Thule" "Sumar" "Danoa" "Cardex" "Volax" "Sospi" "Moktar" "Oblate" "Durax"
+	personality
+		plunders harvests unconstrained coward
+	ship "Grakerat 572 (Scar)" "Scar"
+	ship "Leviathan (Hai Weapons)" "Scar's Guard"
+	ship "Osprey (Alien Weapons)" "Scar's Guard"
+	ship "Firebird (Hai Weapons)" "Scar's Guard"
+	ship "Headhunter (Hai)" "Scar's Guard"
+	ship "Headhunter (Hai)" "Scar's Guard"
+	ship "Headhunter (Hai)" "Scar's Guard"
+	ship "Headhunter (Hai)" "Scar's Guard"
+	phrase
+		word
+			"The solar wind at yer back and fresh plunder ahead!"
+			"After a few centuries, you learn to adapt."
+			"The scar is proof my enemies failed to destroy me."
+			"Being a pirate warlord isn't so bad. I get to sift through so much plunder..."
+			"I've met PK. If you ask me, it's a bit unhinged..."
+
+ship "Grakerat 572" "Grakerat 572 (Scar)"
+	sprite "ship/scarred grakerat"
 
 
 person "Predator"
@@ -37,12 +64,12 @@ person "Predator"
 		attributes "Scrapyard"
 	personality mining plunders harvests uninterested unconstrained
 	ship "Korath Devourer" "Predator"
-	ship "Far Osk 27 (Incinerator)" "Char 1"
-	ship "Far Osk 27 (Incinerator)" "Char 2"
-	ship "Far Osk 27 (Incinerator)" "Char 3"
-	ship "Far Osk 27 (Incinerator)" "Char 4"
-	ship "Far Osk 27 (Incinerator)" "Char 5"
-	ship "Far Osk 27 (Incinerator)" "Char 6"
+	ship "Far Osk 27 (Flamethrower)" "Char 1"
+	ship "Far Osk 27 (Flamethrower)" "Char 2"
+	ship "Far Osk 27 (Flamethrower)" "Char 3"
+	ship "Far Osk 27 (Flamethrower)" "Char 4"
+	ship "Far Osk 27 (Flamethrower)" "Char 5"
+	ship "Far Osk 27 (Flamethrower)" "Char 6"
 	phrase
 		word
 			"Everything burns."
@@ -53,101 +80,8 @@ person "Predator"
 			"Come, join me by the fire."
 			"It's cold out there."
 
-outfit "Korath Incinerator"
-	category "Guns"
-	cost 190000
-	thumbnail "outfit/korath incinerator"
-	"mass" 9
-	"outfit space" -9
-	"weapon capacity" -9
-	"gun ports" -1
-	"energy consumption" 3.1
-	"heat generation" 13.0
-	"integrated systems" 1
-	weapon
-		sound "flamethrower"
-		"hit effect" "flamethrower hit"
-		"inaccuracy" 180
-		"velocity" 10
-		"lifetime" 1
-		"reload" 1
-		"burst reload" 35
-		"burst count" 3
-		"cluster"
-		"shield damage" 300
-		"hull damage" 300
-		"heat damage" 200
-	description "A giant furnace. Ships go in. Melted metal comes out."
 
-ship "Korath Devourer"
-	sprite "ship/korath devourer/korath devourer"
-	attributes
-		category "Heavy Freighter"
-		"cost" 36370000
-		"shields" 46000
-		"hull" 20000
-		"required crew" 251
-		"bunks" 485
-		"mass" 1603
-		"drag" 24
-		"heat dissipation" .4
-		"fuel capacity" 900
-		"cargo space" 605
-		"outfit space" 835
-		"weapon capacity" 297
-		"engine capacity" 181
-		"integrated systems" -3
-		weapon
-			"blast radius" 300
-			"shield damage" 4600
-			"hull damage" 2300
-			"hit force" 5900
-	outfits
-		"Korath Incinerator" 3
-		"Korath Grab-Strike" 3
-		"Korath Warder" 2
-		
-		"Systems Core (Large)" 2
-		"Triple Plasma Core"
-		"Korath Scanner"
-		"Large Heat Shunt" 3
-		"Fuel Processor"
-		"Korath Repeater Rifle" 235
-		
-		"Steering (Planetary Class)"
-		"Thruster (Planetary Class)"
-		"Jump Drive"
-		
-	gun -5 -192.5 "Korath Incinerator"
-	gun -2 -192.5 "Korath Incinerator"
-	gun 1 -192.5 "Korath Incinerator"
-	turret -1.5 -175 "Korath Grab-Strike"
-	turret -40.5 -175.5 "Korath Grab-Strike"
-	turret 39 -175.5 "Korath Grab-Strike"
-	turret -63.5 -172
-	turret 59 -170
-	turret -43 -48 "Korath Warder"
-	turret 40.5 -49
-	turret -44 102.5
-	turret 41.5 103 "Korath Warder"
-	engine -35 296.5
-	engine 27.5 297
-	engine -2.5 309
-	bay "Fighter" -91 -34
-	bay "Fighter" 83 -30.5
-	bay "Fighter" -87 89.5
-	bay "Fighter" 81.5 94
-	bay "Fighter" -80.5 264
-	bay "Fighter" 72.5 264.5
-	explode "tiny explosion" 120
-	explode "small explosion" 60
-	explode "medium explosion" 70
-	explode "large explosion" 50
-	explode "huge explosion" 15
-	"final explode" "final explosion large"
-	description "Some Korath scrappers are more intested in harvesting raw materials rather than technology. The Devourer is their attempt to streamline the collection process."
-
-ship "Far Osk 27 (Incinerator)"
+ship "Far Osk 27" "Far Osk 27 (Flamethrower)"
 	outfits
 		"Flamethrower"
 		"Generator (Furnace Class)"
@@ -161,7 +95,7 @@ ship "Far Osk 27 (Incinerator)"
 
 person "Scrapyard Scavenger"
 	government "Author"
-	frequency 512
+	frequency 128
 	system
 		attributes "Scrapyard"
 	personality mining plunders harvests uninterested unconstrained

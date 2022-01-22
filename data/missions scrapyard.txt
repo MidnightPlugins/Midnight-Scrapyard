@@ -11,44 +11,19 @@
 
 
 
-mission "Scrapyard: Laki Nemparu Shipyard"
-	landing
-	invisible
-	source "Laki Nemparu"
-	to offer
-		has "Wanderers: Sestor: Final: done"
-	on offer
-		event "Laki Nemparu opens Shipyard" 30
-		conversation
-			scene "scene/scene-korathtransports"
-			`	You notice the Kor Efret have set up a shipyard. While no ships appear to be ready for sale, you see several under construction.`
-				accept
-	to complete
-		has "event: Laki Nemparu opens Shipyard"
-	on complete
-		dialog `The shipyard appears to be open. A fleet of new ships is on display.`
-		
-shipyard "Kor Efret Scrapyard"
-	"Korath Transport"
-	"Korath Transport B"
-	"Korath Transport C"
-	"Korath Chaser"
-		
-event "Laki Nemparu opens Shipyard"
-	planet "Laki Nemparu"
-		add	shipyard "Kor Efret Scrapyard"
-	outfitter "Korath Basics"
-		add "Korath Scanner"
-	fleet "Kor Efret Home"
-		add variant
-			"Korath Transport"
-		add variant
-			"Korath Transport B"
-		add variant
-			"Korath Transport C"
-			"Korath Chaser" 2
-		
-		
+# Contents:
+# - Setting the Stage
+# - Misc. Missions
+# - Blight Shadow Missions
+# - Expeditionary Fleet Missions
+# - Kor Efret Missions
+# - Kor Scrapper Missions
+
+
+######################
+# Setting the Stage
+######################
+
 
 mission "Scrapyard: Scrapyard Develops"
 	landing
@@ -248,14 +223,6 @@ mission "Scrapyard Boarding A"
 			attributes "Scrapyard"
 		personality waiting derelict mute
 		fleet "Error Scrap"
-	npc
-		to spawn
-			random < 50
-		government "Scrapyard Derelict"
-		system
-			attributes "Scrapyard"
-		personality waiting derelict mute
-		fleet "Error Scrap"
 	on fail
 		"Scrapyard Boarding A: offered" --
 	on complete
@@ -277,22 +244,16 @@ mission "Scrapyard Boarding B"
 			attributes "Scrapyard"
 		personality waiting derelict mute
 		fleet "Error Scrap"
-	npc
-		to spawn
-			random < 50
-		government "Scrapyard Derelict"
-		system
-			attributes "Scrapyard"
-		personality waiting derelict mute
-		fleet "Error Scrap"
 	on fail
 		"Scrapyard Boarding B: offered" --
 	on complete
 		"Scrapyard Boarding B: offered" --	
 
 
-event "Infected with Shadowblight"
 
+######################
+# Misc. Missions
+######################
 
 
 mission "Scrapyard Subsidurial"
@@ -322,6 +283,167 @@ mission "Scrapyard Subsidurial"
 			`The subsidurial comes to a rest on the adjacent landing pad. It seems to have fallen asleep. Several Wanderers gawk at it in exasperation. As you disembark your ship, some look to you for an explanation. You tell them that it came here on its own. Hopefully you won't get blamed for any damage it does to the spaceport while you're here...`
 
 		
+
+
+mission "Scrapyard Sebra Skira TL20"
+	landing
+	invisible
+	to offer
+		"Scrapyard Threat Level" >= 20
+	on enter "Silikatakfar"
+		dialog `There's an old space station here. It might be worth checking out.`
+	on accept
+		fail
+
+mission "Scrapyard Hermit"
+	landing
+	invisible
+	source "Sebra Skira"
+	to offer
+		"Scrapyard Threat Level" >= 20
+	on offer
+		conversation
+			`You notice a derelict scrapper ship docked at the station. Explore the ship?`
+			choice
+				`	(Explore the ship.)`
+				`	(Maybe some other time.)`
+					defer
+			`The ship has a breathable atmosphere. Life support appears to be the only system still working. Everything else seems to have already been looted for spare parts. `
+			label layout
+			scene "scene/scene-sivael6dark"
+			choice
+				`	(Explore the bridge.)`
+					goto bridge
+				`	(Explore the cargo bay.)`
+					goto cargo
+				`	(Explore the power generator.)`
+					goto power
+				`	(Explore the engine room.)`
+					goto engine
+				`	(You've seen enough.)`
+					goto noise
+			
+			label bridge
+			`	Several control panels have been ripped out of their consoles, leaving exposed wires everywhere. You might be able to get the internal sensors working if you're willing to roll up your sleeves and get your hands dirty.`
+			choice
+				`	(Try to repair internal sensors?)`
+				`	(Search a different part of the ship.)`
+					goto layout
+			`	While trying to get the internal sensors working, an exposed power cable falls out of the ceiling and electrocutes you!`
+				die
+			
+			label cargo
+			`	You find yourself in the cargo bay surrounded by several pieces of equipment in various states of deconstruction. The only intact items are a few crates of control transceivers and reasoning nodes. As you close a crate, you hear a noise in the distance. It sounds like something scampering away.`
+			choice
+				`	(Investigate the noise.)`
+					goto armory
+
+			label power
+			`	The main power systems are offline. Try to fix them?`
+			choice
+				`	(Fix the power system)`
+				`	(Search a different part of the ship.)`
+					goto layout
+			`	When you restore the power systems, a nearby plasma conduit bursts open, smothering you in molten plasma!`
+				die
+			
+			label engine
+			`	The engine room door seems to be stuck. Force it open?`
+			choice
+				`	(Force the engine room doors open)`
+				`	(Search a different part of the ship.)`
+					goto layout
+			`	You force the engine room doors open only to find that the room has been depressurized. Parts of the hull have been melted away, leaving the room exposed to the vaccuum outside. The sudden change in pressure shoots you out of the ship into the vast empty void.`
+				die
+			
+			label noise
+			`	You are about to leave when you hear a noise in the distance. It sounds like something scampering away.`
+			choice
+				`	(Investigate the noise.)`
+					goto cargo
+
+			label armory
+			`	You find the armory. Most of the weapon racks are empty while a few repeater rifles are scattered about the floor. But what really draws your attention is the freshly cut hole in the wall. The edges of the hole are still glowing red hot. A repeater rifle couldn't have made this.`
+			choice
+				`	(Go through the hole.)`
+				`	(Abandon the chase.)`
+					goto slicerquit
+					
+			`	You carefully crawl through the hole. This seems to be some sort of maintenance tunnel. Suddenly a beam of energy punches through the tunnel ahead of you! It vanishes and another one appears behind you. Someone is shooting through the walls at you, but at least they're shooting blind! After several twists and turns, you manage to find another hole melted through the wall without having any holes melted through yourself. Going through it, you emerge at one of the ship's fighter bays. A heavily modified Korath Chaser is powering up its engines for take off!`
+			choice
+				`	(Rush back to your ship.)`
+				`	(Abandon the chase.)`
+					goto chaserquit
+			
+			scene "scene/scene-osklekchaser"
+			`	You've decided not to let whoever that is escape. After a frenzied rush through unfamiliar hallways, you make it back to your ship in time to see the fighter bay doors on the other ship open. Release the docking clamps!`
+				launch
+			
+			label slicerquit
+			`	Whatever melted that hole through the wall isn't something you want to mess with. You gather up the rifles from the floor and the crate of equipment from the cargo bay. It's a small haul, but it's better than nothing.`
+				decline
+			
+			label chaserquit
+			`	That was an odd looking ship. Too bad you won't be able to get a closer look at it. You head back to the armory and gather up the rifles from the floor. You also remember to hit up the cargo bay for the crates of equipment you found earlier. It's a small haul, but it's better than nothing.`
+				decline
+
+	on decline
+		outfit "Control Transceiver" 10
+		outfit "Reasoning Node" 10
+		outfit "Korath Repeater Rifle" 30
+			
+	npc board
+		government "Kor Scrappers (Hostile)"
+		personality waiting fleeing unconstrained uninterested
+		ship "Osk Lek Chaser" "Scrapyard Hermit"
+		dialog `This modified chaser was occupied by a single Korath warrior armed with a strange rifle. You should probably look it over once you get to an outfitter.`
+
+ship "Osk Lek Chaser"
+	sprite "ship/osk lek chaser"
+	thumbnail "thumbnail/osk lek chaser-thumb"
+	attributes
+		category "Fighter"
+		"cost" 671000
+		"shields" 3050
+		"hull" 2100
+		"required crew" 1
+		"bunks" 1
+		"mass" 70
+		"drag" 1.1
+		"heat dissipation" 1.1
+		"outfit space" 110
+		"weapon capacity" 36
+		"engine capacity" 30
+		weapon
+			"blast radius" 48
+			"shield damage" 320
+			"hull damage" 160
+			"hit force" 480
+		
+	outfits
+		"Korath Fire-Lance"
+		"Korath Repeater"
+		"Generator (Furnace Class)"
+		"Small Heat Shunt" 2
+		"Slicer Torch"
+		"Thruster (Asteroid Class)"
+		"Steering (Asteroid Class)"
+
+	engine -13 40.5
+	engine 13 40.5
+	gun 7.5 -26.5 "Korath Repeater"
+	gun 0 -10 "Korath Fire-Lance"
+	explode "tiny explosion" 20
+	description "A heavily modified Korath Chaser used as an escape vehicle by the Scrapyard Hermit."
+
+
+
+######################
+# Blight Shadow Missions
+######################
+
+event "Infected with Shadowblight"
+
 
 
 mission "Scrapyard Sebra Skira TL5"
@@ -713,6 +835,22 @@ event "Shadowblight Wanderer"
 		add fleet "Large Blight Shadow" 50000
 
 
+mission "Scrapyard Adjust Shadowblight Wanderer"
+	landing
+	invisible
+	to offer
+		has "event: Shadowblight Wanderer"
+	on offer
+		event "Adjust Shadowblight Wanderer"
+		fail
+		
+event "Adjust Shadowblight Wanderer"
+	system Eshkoshtar
+		remove fleet "Large Blight Shadow" 50000
+	system Salipastart
+		remove fleet "Large Blight Shadow" 50000
+
+
 mission "Scrapyard Shadowblight Coalition"
 	landing
 	invisible
@@ -873,157 +1011,10 @@ event "Shadowblight Human"
 
 
 
-mission "Scrapyard Sebra Skira TL20"
-	landing
-	invisible
-	to offer
-		"Scrapyard Threat Level" >= 20
-	on enter "Silikatakfar"
-		dialog `There's an old space station here. It might be worth checking out.`
-	on accept
-		fail
 
-mission "Scrapyard Hermit"
-	landing
-	invisible
-	source "Sebra Skira"
-	to offer
-		"Scrapyard Threat Level" >= 20
-	on offer
-		conversation
-			`You notice a derelict scrapper ship docked at the station. Explore the ship?`
-			choice
-				`	(Explore the ship.)`
-				`	(Maybe some other time.)`
-					defer
-			`The ship has a breathable atmosphere. Life support appears to be the only system still working. Everything else seems to have already been looted for spare parts. `
-			label layout
-			scene "scene/scene-sivael6dark"
-			choice
-				`	(Explore the bridge.)`
-					goto bridge
-				`	(Explore the cargo bay.)`
-					goto cargo
-				`	(Explore the power generator.)`
-					goto power
-				`	(Explore the engine room.)`
-					goto engine
-				`	(You've seen enough.)`
-					goto noise
-			
-			label bridge
-			`	Several control panels have been ripped out of their consoles, leaving exposed wires everywhere. You might be able to get the internal sensors working if you're willing to roll up your sleeves and get your hands dirty.`
-			choice
-				`	(Try to repair internal sensors?)`
-				`	(Search a different part of the ship.)`
-					goto layout
-			`	While trying to get the internal sensors working, an exposed power cable falls out of the ceiling and electrocutes you!`
-				die
-			
-			label cargo
-			`	You find yourself in the cargo bay surrounded by several pieces of equipment in various states of deconstruction. The only intact items are a few crates of control transceivers and reasoning nodes. As you close a crate, you hear a noise in the distance. It sounds like something scampering away.`
-			choice
-				`	(Investigate the noise.)`
-					goto armory
-
-			label power
-			`	The main power systems are offline. Try to fix them?`
-			choice
-				`	(Fix the power system)`
-				`	(Search a different part of the ship.)`
-					goto layout
-			`	When you restore the power systems, a nearby plasma conduit bursts open, smothering you in molten plasma!`
-				die
-			
-			label engine
-			`	The engine room door seems to be stuck. Force it open?`
-			choice
-				`	(Force the engine room doors open)`
-				`	(Search a different part of the ship.)`
-					goto layout
-			`	You force the engine room doors open only to find that the room has been depressurized. Parts of the hull have been melted away, leaving the room exposed to the vaccuum outside. The sudden change in pressure shoots you out of the ship into the vast empty void.`
-				die
-			
-			label noise
-			`	You are about to leave when you hear a noise in the distance. It sounds like something scampering away.`
-			choice
-				`	(Investigate the noise.)`
-					goto cargo
-
-			label armory
-			`	You find the armory. Most of the weapon racks are empty while a few repeater rifles are scattered about the floor. But what really draws your attention is the freshly cut hole in the wall. The edges of the hole are still glowing red hot. A repeater rifle couldn't have made this.`
-			choice
-				`	(Go through the hole.)`
-				`	(Abandon the chase.)`
-					goto slicerquit
-					
-			`	You carefully crawl through the hole. This seems to be some sort of maintenance tunnel. Suddenly a beam of energy punches through the tunnel ahead of you! It vanishes and another one appears behind you. Someone is shooting through the walls at you, but at least they're shooting blind! After several twists and turns, you manage to find another hole melted through the wall without having any holes melted through yourself. Going through it, you emerge at one of the ship's fighter bays. A heavily modified Korath Chaser is powering up its engines for take off!`
-			choice
-				`	(Rush back to your ship.)`
-				`	(Abandon the chase.)`
-					goto chaserquit
-			
-			scene "scene/scene-osklekchaser"
-			`	You've decided not to let whoever that is escape. After a frenzied rush through unfamiliar hallways, you make it back to your ship in time to see the fighter bay doors on the other ship open. Release the docking clamps!`
-				launch
-			
-			label slicerquit
-			`	Whatever melted that hole through the wall isn't something you want to mess with. You gather up the rifles from the floor and the crate of equipment from the cargo bay. It's a small haul, but it's better than nothing.`
-				decline
-			
-			label chaserquit
-			`	That was an odd looking ship. Too bad you won't be able to get a closer look at it. You head back to the armory and gather up the rifles from the floor. You also remember to hit up the cargo bay for the crates of equipment you found earlier. It's a small haul, but it's better than nothing.`
-				decline
-
-	on decline
-		outfit "Control Transceiver" 10
-		outfit "Reasoning Node" 10
-		outfit "Korath Repeater Rifle" 30
-			
-	npc board
-		government "Kor Scrappers (Hostile)"
-		personality waiting fleeing unconstrained uninterested
-		ship "Osk Lek Chaser" "Scrapyard Hermit"
-		dialog `This modified chaser was occupied by a single Korath warrior armed with a strange rifle. You should probably look it over once you get to an outfitter.`
-
-ship "Osk Lek Chaser"
-	sprite "ship/osk lek chaser"
-	thumbnail "thumbnail/osk lek chaser-thumb"
-	attributes
-		category "Fighter"
-		"cost" 671000
-		"shields" 3050
-		"hull" 2100
-		"required crew" 1
-		"bunks" 1
-		"mass" 70
-		"drag" 1.1
-		"heat dissipation" 1.1
-		"outfit space" 110
-		"weapon capacity" 36
-		"engine capacity" 30
-		weapon
-			"blast radius" 48
-			"shield damage" 320
-			"hull damage" 160
-			"hit force" 480
-		
-	outfits
-		"Korath Fire-Lance"
-		"Korath Repeater"
-		"Generator (Furnace Class)"
-		"Small Heat Shunt" 2
-		"Slicer Torch"
-		"Thruster (Asteroid Class)"
-		"Steering (Asteroid Class)"
-
-	engine -13 40.5
-	engine 13 40.5
-	gun 7.5 -26.5 "Korath Repeater"
-	gun 0 -10 "Korath Fire-Lance"
-	explode "tiny explosion" 20
-	description "A heavily modified Korath Chaser used as an escape vehicle by the Scrapyard Hermit."
-
+######################
+# Expeditionary Fleet Missions
+######################
 
 
 mission "Scrapyard Avalon TL 0"
@@ -1043,6 +1034,7 @@ mission "Scrapyard Sestor Expedtionary Fleet"
 	to offer
 		has "Wanderers: Sestor: Final: done"
 	on offer
+		event "Sestor Expeditionary Fleets"
 		conversation
 			scene "scene/scene-brontosaurus"
 			`You spend a few hours scanning the planet for signs of Alpha activity. To your relief, there is none. It would be a shame if some outside force threatened this primordial paradse. You take a moment to enjoy the scenery of exotic wildlife before returning to orbit.`
@@ -1050,7 +1042,7 @@ mission "Scrapyard Sestor Expedtionary Fleet"
 	on enter
 		conversation
 			scene "scene/scene-sestorexpedition"
-			`You notice another fleet in the system. Apparently not all of the Kor Sestor were deactivated. But these look different from the models you are familiar with. Perhaps it would be worth your while to board the big one and have a closer look.`
+			`You notice another fleet in the system. Apparently not all of the Kor Sestor were deactivated. But these look different from the models you are usually see. Perhaps it would be worth your while to board the big one and have a closer look.`
 				accept
 	npc
 		system "Host"
@@ -1070,8 +1062,6 @@ mission "Scrapyard Sestor Expedtionary Fleet"
 			commodities Equipment Electronics Construction
 		conversation
 			`Without a jump drive, it must have taken centuries for this ship to get here from Sestor space. The ship is loaded with equipment for construction. A colony ship? If this ship had established a base of operations on the planet below, the Sestor could rise again. The question is, how many other ships like this are out there?`
-	on complete
-		event "Sestor Expeditionary Fleets"
 		
 event "Sestor Expeditionary Fleets"
 	system Host
@@ -1088,6 +1078,125 @@ event "Sestor Expeditionary Fleets"
 		add fleet "Kor Sestor Expedition" 80000
 	system "Ehma Ti"
 		add fleet "Kor Sestor Expedition" 80000
+
+mission "Scrapyard Update Expeditionary Fleets"
+	landing
+	invisible
+	to offer
+		or
+			and
+				has "Scrapyard Exploring the Persitar Wreck: offered"
+				not "event: Sestor Expeditionary Fleets"
+			and
+				has "Scrapyard Sestor Expedtionary Fleet: offered"
+				not "event: Sestor Expeditionary Fleets"
+			
+	on offer
+		event "Sestor Expeditionary Fleets"
+		fail
+
+mission "Scrapyard Persitar Fleet Wreck"
+	landing
+	invisible
+	to offer
+		has "event: Sestor Expeditionary Fleets"
+		"Scrapyard Threat Level" >= 1
+	on offer
+		event "Scrapyard Persitar Fleet Wreck"
+		fail
+
+planet "Persitar Wreck"
+	attributes uninhabited midnight
+	land "scene/scene-silvael6dark"
+	description "These ruined derelicts appear to be part of a Kor Sestor expeditionary fleet. With no jump drives, it must have taken this fleet centuries to arrive here. The largest ship is loaded with construction equipment. If these ships had managed to find a suitable planet to set up a base of operations, it could have lead to the return of the Kor Sestor. You wonder how many more of these fleets are out there."
+
+event "Scrapyard Persitar Fleet Wreck"
+	system Persitar
+		add object "Persitar Wreck"
+			sprite "planet/wrecked sestor fleet"
+			distance 240
+			period 95
+
+mission "Scrapyard Persitar Wreck Hint"
+	landing
+	invisible
+	to offer
+		has "event: Scrapyard Persitar Fleet Wreck"
+	on enter Persitar
+		dialog `You notice the wreckage of what appears to be a Kor Sestor fleet. But they aren't the Kor Sestor ships you normally see. It might be worth checking out.`
+
+mission "Scrapyard Exploring the Persitar Wreck"
+	landing
+	invisible
+	source "Persitar Wreck"
+	on offer
+		event "Blight Shadows Nest In Persitar"
+		outfit "Obsolete Transceiver" 10000
+		conversation
+			`While exploring the derelict, you find several crates of Obsolete Transceivers. While there's no practical use for them, they can be sold for scrap. You also find black slime splattered all over one of the damaged areas of the ship. As you are loading the transceivers onto your ship, something bangs on the hull of the derelict...`
+				accept
+	npc kill
+		government "Blight Shadows"
+		personality waiting staying disables unconstrained mute
+		fleet "Large Blight Shadow" 3
+
+event "Blight Shadows Nest In Persitar"
+	system Persitar
+		add fleet "Small Blight Shadow" 800
+		add fleet "Large Blight Shadow" 1000
+		add fleet "Kor Sestor Expedition" 80000
+	system Salipastart
+		add fleet "Small Blight Shadow" 2500
+		add fleet "Large Blight Shadow" 10000
+	system Similisti
+		add fleet "Small Blight Shadow" 2500
+	system Faronektu
+		add fleet "Small Blight Shadow" 2500
+
+
+
+
+######################
+# Kor Efret Missions
+######################
+
+
+mission "Scrapyard: Laki Nemparu Shipyard"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "Wanderers: Sestor: Final: done"
+	on offer
+		event "Laki Nemparu opens Shipyard" 30
+		conversation
+			scene "scene/scene-korathtransports"
+			`	You notice the Kor Efret have set up a shipyard. While no ships appear to be ready for sale, you see several under construction.`
+				accept
+	to complete
+		has "event: Laki Nemparu opens Shipyard"
+	on complete
+		dialog `The shipyard appears to be open. A fleet of new ships is on display.`
+		
+shipyard "Kor Efret Scrapyard"
+	"Korath Transport"
+	"Korath Transport B"
+	"Korath Transport C"
+	"Korath Chaser"
+		
+event "Laki Nemparu opens Shipyard"
+	planet "Laki Nemparu"
+		add	shipyard "Kor Efret Scrapyard"
+	outfitter "Korath Basics"
+		add "Korath Scanner"
+	fleet "Kor Efret Home"
+		add variant
+			"Korath Transport"
+		add variant
+			"Korath Transport B"
+		add variant
+			"Korath Transport C"
+			"Korath Chaser" 2
 
 
 
@@ -1242,3 +1351,580 @@ event "Warmonger Construction Completed"
 		add variant 15
 			"Korath Transport C"
 			"Korath Chaser" 2
+
+
+
+
+######################
+# Kor Scrapper Missions
+######################
+
+
+mission "Scrapyard Devourer (Neutral)"
+	landing
+	invisible
+	to offer
+		( "Scrapyard Boarding A: active" + "Scrapyard Boarding B: active" ) >= 8
+	npc kill
+		to despawn
+			"Scrapyard Threat Level" >= 20
+		government "Kor Scrappers"
+		system "Silikatakfar"
+		personality mining harvests plunders uninterested
+		fleet "Korath Devourer (Neutral)"
+		
+mission "Scrapyard Devourer (Faronektu)"
+	landing
+	name "Faronektu Scrapper Siege"
+	description "Help defend the Kor Mereti from Scrappers who have abandoned the hunt for Blight Shadows."
+	source
+		government "Wanderer"
+	waypoint "Faronektu"
+	to offer
+		"Scrapyard Threat Level" >= 20
+		or
+			not "Randomize Scrapyard Devourer (Faronektu)"
+			and
+				has "Randomize Scrapyard Devourer (Faronektu)"
+				Random < 25
+	on offer
+		conversation
+			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Fara Skaeruti in the Faronektu system. Can you assist in [defending, protecting] the Mereti?`
+			choice
+				`	"I'm on my way."`
+					accept
+				`	"I'm doing something else."`
+					defer
+	on defer
+		set "Randomize Scrapyard Devourer (Faronektu)"
+
+	npc kill
+		government "Kor Scrappers (Hostile)"
+		system "Faronektu"
+		personality mining harvests plunders
+		fleet "Large Korath Scrappers" 6
+		dialog `You've defeated the Kor Scrapper fleet. Return to <origin> and report the results to Meto Pa'aret.`
+	on complete
+		payment 500000
+		dialog `You update Meto Pa'aret on the result of the battle. The Wanderers offer you <payment> for your efforts.`
+
+
+mission "Scrapyard Scrapper Siege (Mekislepti)"
+	landing
+	name "Melislepti Scrapper Siege"
+	description "Help defend the Kor Mereti from Scrappers who have abandoned the hunt for Blight Shadows."
+	source
+		government "Wanderer"
+	waypoint "Mekislepti"
+	to offer
+		"Scrapyard Threat Level" >= 25
+		or
+			not "Randomize Scrapyard Scrapper Siege (Mekislepti)"
+			and
+				has "Randomize Scrapyard Scrapper Siege (Mekislepti)"
+				Random < 25
+	on offer
+		conversation
+			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Aresepru Nat in the Mekislepti system. Can you assist in [defending, protecting] the Mereti?`
+			choice
+				`	"I'm on my way."`
+					accept
+				`	"I'm doing something else."`
+					defer
+	on defer
+		set "Randomize Scrapyard Scrapper Siege (Mekislepti)"
+
+	npc kill
+		government "Kor Scrappers (Hostile)"
+		system "Mekislepti"
+		personality mining harvests plunders
+		fleet "Large Korath Scrappers" 6
+		dialog `You've defeated the Kor Scrapper fleet. Return to <origin> and report the results to Meto Pa'aret.`
+
+	on complete
+		payment 500000
+		dialog `You update Meto Pa'aret on the result of the battle. The Wanderers offer you <payment> for your efforts.`
+		
+
+mission "Scrapyard Scrapper Siege (Similisti)"
+	landing
+	name "Similisti Scrapper Siege"
+	description "Help defend the Kor Mereti from Scrappers who have abandoned the hunt for Blight Shadows."
+	source
+		government "Wanderer"
+	waypoint "Similisti"
+	to offer
+		"Scrapyard Threat Level" >= 30
+		or
+			not "Randomize Scrapyard Scrapper Siege (Similisti)"
+			and
+				has "Randomize Scrapyard Scrapper Siege (Similisti)"
+				Random < 25
+	on offer
+		conversation
+			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Mereti Station in the Similisti system. Can you assist in [defending, protecting] the Mereti?`
+			choice
+				`	"I'm on my way."`
+					accept
+				`	"I'm doing something else."`
+					defer
+	on defer
+		set "Randomize Scrapyard Scrapper Siege (Similisti)"
+
+	npc kill
+		government "Kor Scrappers (Hostile)"
+		system "Similisti"
+		personality mining harvests plunders
+		fleet "Korath Devourer (Hostile)"
+		fleet "Large Korath Scrappers" 6
+		dialog `You've defeated the Kor Scrapper fleet. Return to <origin> and report the results to Meto Pa'aret.`
+
+	on complete
+		payment 500000
+		dialog `You update Meto Pa'aret on the result of the battle. The Wanderers offer you <payment> for your efforts.`
+
+
+
+mission "Scrapyard Damnation 1"
+	landing
+	name "Similisti Scrapper Siege"
+	description "Help defend the Kor Mereti from Scrappers who have abandoned the hunt for Blight Shadows."
+	source
+		government "Wanderer"
+	waypoint "Similisti"	
+	to offer
+		"Scrapyard Threat Level" >= 35
+		or
+			not "Randomize Scrapyard Damnation 1"
+			and
+				has "Randomize Scrapyard Damnation 1"
+				Random < 25
+	on offer
+		conversation
+			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Mereti Station in the Similisti system. Can you assist in [defending, protecting] the Mereti?`
+			choice
+				`	"I'm on my way."`
+					accept
+				`	"I'm doing something else."`
+					defer
+	on defer
+		set "Randomize Scrapyard Damnation 1"
+
+	on accept
+		event "Mereti Fall Silent"
+	on enter Similisti
+		event "node 8 processor Activated"
+		conversation
+			`You notice something wrong when you enter Similisti: There isn't any fighting. The Mereti are standing by, as if waiting for orders. Suddenly, the Korath Devourer hails you! You raise an eyebrow when you learn the ship's name: Damnation. You're fairly certain that isn't a Korath name.`
+			`	"Greetings <ship>. Captain <last>, was it? I've heard about you. While the Scrappers are content to collect scraps, I've taken posession of a far greater prize. Welcome to hell.`
+			choice
+				`	"What have you done?"`
+				`	"What prize?"`
+
+			scene "scene/scene-mereti fleet"
+			`	Without bothering to answer, the Damnation jumps out of the system as the Mereti activate and surround you..."
+				accept
+
+	npc disable
+		government "Kor Mereti (Hostile)"
+		personality waiting staying heroic
+		fleet
+			names "kor mereti"
+			variant
+				"Model 512" 6
+				"Model 256" 5
+				"Model 128" 4
+				"Model 64" 3
+				"Model 32" 8
+				"Model 16" 12
+				"Model 8" 16
+
+
+event "Mereti Fall Silent"
+	system "Asikafarnut"
+		remove fleet "Large Kor Mereti" 3600
+	system "Celeborim"
+		remove fleet "Small Kor Mereti" 10000
+	system Chimitarp
+		remove fleet "Small Kor Mereti" 1000
+		remove fleet "Large Kor Mereti" 3600
+		remove fleet "Kor Mereti Miners" 2000
+		remove fleet "Small Kor Mereti" 250
+		remove fleet "Large Kor Mereti" 450
+	system "Eneremprukt"
+		remove fleet "Large Kor Mereti" 2000
+	system Eshkoshtar
+		remove fleet "Small Kor Mereti" 800
+		remove fleet "Large Kor Mereti" 1600
+		remove fleet "Kor Mereti Miners" 3000
+	system Farbutero
+		remove fleet "Small Kor Mereti" 9400
+		remove fleet "Large Kor Mereti" 5000
+	system Faronektu
+		remove fleet "Small Kor Mereti" 1200
+		remove fleet "Large Kor Mereti" 2000
+		remove fleet "Kor Mereti Miners" 2000
+	system Feroteri
+		remove fleet "Small Kor Mereti" 12000
+		remove fleet "Large Kor Mereti" 6400
+	system "Ferukistek"
+		remove fleet "Large Kor Mereti" 2400
+	system Fornarep
+		remove fleet "Small Kor Mereti" 9000
+		remove fleet "Large Kor Mereti" 5800
+	system Kaliptari
+		remove fleet "Small Kor Mereti" 10000
+		remove fleet "Large Kor Mereti" 4800
+		remove fleet "Small Kor Mereti" 8000
+		remove fleet "Large Kor Mereti" 3600
+	system Korsmanath
+		remove fleet "Small Kor Mereti" 8000
+	system "Makferuti"
+		remove fleet "Small Kor Mereti" 10000
+	system Mekislepti
+		remove fleet "Small Kor Mereti" 1000
+		remove fleet "Large Kor Mereti" 3000
+		remove fleet "Kor Mereti Miners" 2000
+	system "Mesuket"
+		remove fleet "Large Kor Mereti" 900
+	system Salipastart
+		remove fleet "Small Kor Mereti" 800
+		remove fleet "Large Kor Mereti" 1600
+		remove fleet "Kor Mereti Miners" 3000
+	system Sepetrosk
+		remove fleet "Small Kor Mereti" 1200
+		remove fleet "Large Kor Mereti" 4800
+		remove fleet "Kor Mereti Miners" 2000
+	system "Silikatakfar"
+		remove fleet "Large Kor Mereti" 1600
+	system Similisti
+		remove fleet "Large Kor Mereti" 1600
+		remove fleet "Small Kor Mereti" 600
+		remove fleet "Kor Mereti Miners" 1600
+	system "Sobarati"
+		remove fleet "Small Kor Mereti" 10000
+
+
+event "node 8 processor Activated"
+	system Chimitarp
+		add fleet "Aggressive Kor Mereti" 600
+		add fleet "Hostile Kor Mereti" 900
+	system Sepetrosk
+		add fleet "Aggressive Kor Mereti" 600
+		add fleet "Hostile Kor Mereti" 900
+	system Farbutero
+		add fleet "Aggressive Kor Mereti" 600
+		add fleet "Hostile Kor Mereti" 900
+	system Korsmanath
+		add fleet "Aggressive Kor Mereti" 600
+		add fleet "Hostile Kor Mereti" 900
+	system Feroteri
+		add fleet "Aggressive Kor Mereti" 250
+		add fleet "Hostile Kor Mereti" 450
+		add fleet "Hostile Kor Mereti Miners" 1600
+
+
+mission "Scrapyard Damnation 2"
+	landing
+	name "Damnation"
+	description "Hunt down the Korath Devourer ship 'Damnation' and discover how thay're controlling the Mereti automatons."
+	source
+		government "Wanderer"
+	destination "Esperaktu Station"
+	to offer
+		has "event: node 8 processor Activated"
+	on offer
+		conversation
+			`You receive a message from Meto Pa'aret: "The Mereti have [abandoned, deserted] us. Based on their [behavior, personality] prior to leaving, they are being [controlled, manipulated] by some outside influence. If only we had some [clue, hint] about what caused this change..."`
+			`	You tell Meto Pa'aret about the Damnation.`
+			`	"They have access to Jump Drive technology? Maybe they have a [base, hideout] somewhere that they can use to [install, equip] Jump Drives on the automatons. Find the Mereti, Captain <last>, and you'll probably find the Damnation.`
+				accept
+	on enter Feroteri
+		dialog `The system is overrun by the Mereti. That space station orbiting the fourth planet looks like it could be used as a base of operations...`
+
+		npc
+		government "Kor Mereti (Hostile)"
+		personality waiting staying heroic
+		fleet
+			names "kor mereti"
+			variant
+				"Model 512" 1
+				"Model 256" 2
+				"Model 128" 3
+				"Model 64" 4
+				"Model 32" 5
+				"Model 16" 6
+				"Model 8" 8
+
+	on complete
+		event "Blight Shadows vs Mereti"
+		dialog `Unfortunately, the battle outside did not go unnoticed. The Damnation flees the station just as you finish landing! You need to board that ship and learn how they're controlling the Mereti.`
+		
+event "Blight Shadows vs Mereti"
+	system Chimitarp
+		add fleet "Small Blight Shadow" 2500
+		add fleet "Large Blight Shadow" 10000
+	system Sepetrosk
+		add fleet "Small Blight Shadow" 2500
+		add fleet "Large Blight Shadow" 10000
+	system Farbutero
+		add fleet "Small Blight Shadow" 2500
+		add fleet "Large Blight Shadow" 10000
+	system Korsmanath
+		add fleet "Small Blight Shadow" 2500
+		add fleet "Large Blight Shadow" 10000
+	system Eshkoshtar
+		add fleet "Small Blight Shadow" 2500
+		add fleet "Large Blight Shadow" 10000
+	system Mekislepti
+		add fleet "Small Blight Shadow" 2500
+	system Fornarep
+		add fleet "Small Blight Shadow" 800
+		add fleet "Large Blight Shadow" 1000
+	system Meftarkata
+		add fleet "Small Blight Shadow" 800
+		add fleet "Large Blight Shadow" 1000
+	system Feroteri
+		remove fleet "Aggressive Kor Mereti" 250
+		remove fleet "Hostile Kor Mereti" 450
+		remove  fleet "Hostile Kor Mereti Miners" 1600
+		add fleet "Aggressive Kor Mereti" 600
+		add fleet "Hostile Kor Mereti" 900
+
+
+mission "Scrapyard Damnation 3"
+	landing
+	name "Damnation"
+	description "Take what you found aboard the Damnation back to <destination> for analysis."
+	source "Esperaktu Station"
+	destination "Desi Seledrak"	
+	to offer
+		has "Scrapyard Damnation 2: done"
+
+	on enter Kaliptari
+		dialog `The Blight Shadows have made it this far without the Kor Mereti to hold them back. The sooner you bring the Mereti back to normal, the better.`
+	
+	npc
+		government "Blight Shadows"
+		system Kaliptari
+		personality waiting staying heroic disables unconstrained mute
+		fleet "Large Blight Shadow" 3
+
+	on enter Feroteri
+		dialog `Looks like the Damnation ran into a little trouble. Board the ship and learn how they're controlling the Mereti!`
+	
+	npc
+		government "Blight Shadows"
+		system Feroteri
+		personality waiting staying heroic disables unconstrained mute
+		fleet "Large Blight Shadow" 3
+		fleet "Small Blight Shadow" 3
+		
+	npc board
+		government Alpha
+		system Feroteri
+		personality target waiting staying vindictive marked
+		ship "Korath Devourer" "Damnation"
+		conversation
+			scene "outfit/node 8 processor"
+			`This is an Alpha ship. Amid the chaos of the boarding battle, you find one too preoccupied with a device that resembles a clump of Reasoning Nodes to notice you.`
+			choice
+				`	(Shoot him in the back.)`
+					goto "shot in back"
+				`	(Ask him what he's doing.)`
+			`	He sighs in resignation. "They're too difficult to control. At most, I can handle ten thousand. Maybe twenty. Do you have any idea what it's like performing high level brain surgery on twenty thousand Kor Mereti at once?" He turns towards you. "No, of course not. How could you? A normal human couldn't manage it."
+			`	The Alpha springs into action! You fire off several shots, but he's fast! He manages to dodge them all and is rapidly closing the distance between you...`
+			
+			branch "Midnight's Lost Orphan"
+				has "captain of atrocity"
+				
+			branch "T.H.O.R."
+				or
+					has "Midnight Market: Project THOR 2: accepted"
+					has "Midnight Market: Project THOR 2: done"
+			
+			branch "Quantum Key Blade"
+				has "Bearer of The Blade"
+			
+			`	He grabs you by the neck and slams you onto the floor like a ragdoll. As you lose consciousness, you regret not shooting him in the back...`
+				die
+				
+			label "Midnight's Lost Orphan"
+			`	But you are the demon captain of atrocity. The power of Midnight's Lost Orphan flows through you and the Alpha finds himself writhing on the floor in agony as you psychopathically rearrange his internal organs.`
+				goto end
+				
+			label "T.H.O.R."
+			`	But T.H.O.R. swoops in and nails him with the arm mounted pile driver! Even a genetically enhanced human is no match for the Tactical Heavy Offensive Robot.`
+				goto end
+			
+			label "Quantum Key Blade"
+			`	Normally, you'd be no match for an Alpha in this situation. Fortunately, you've got something to even the odds. You draw the Quantum Key Blade and Quantum Shift just as the Alpha tries to disarm you. His hands pass through the blade, unable to grab it. As he looks at you in shock, you plunge the blade into his chest and deactivate Quantum Shifting. The Alpha slumps to the floor, defeated.'
+				goto end
+			
+			label "shot in back"
+			`	You shoot the Alpha in the back and he dies without a word. Underhanded, but this is an Alpha. Trying to take him head on would be suicide without something extraordinary to even the odds.`
+				goto end
+				
+			label end
+			scene "outfit/node 8 processor"
+			`	You can figure out what to do with this strange assembly of Reasoning Nodes later. There's still a battle to fight!`
+				accept
+	
+	on fail
+		dialog `[MISSION FAILED] You were unable to board the Damnation and learn how they were controlling the Mereti. If life were a game, you could load a save file and try again.`
+	
+	on complete
+		outfit "Node 8 Processor" 1
+		dialog `Head to the spaceport to have Meto Pa'aret analyze the assembly of Reasoning Nodes found aboard the Damnation.`
+		
+
+
+mission "Scrapyard Damnation 4"
+	name "Damnation"
+	description "Take the Node 8 Processor back to <destination> to restore the Mereti to normal."
+	source "Desi Seledrak"
+	destination "Mereti Station"
+	clearance "There is no response. There is nothing to stop you from landing here."
+	to offer
+		has "Scrapyard Damnation 3: done"
+	on offer
+		conversation
+			scene "outfit/node 8 processor"
+			`Meto Pa'aret studies the Node 8 Processor. "I believe this acts as a [hub, router] for the Mereti communications network. If you return it to Mereti Station and reinstall it, The Mind should be [restored, fixed]."`
+				accept
+
+	npc
+		government "Blight Shadows"
+		system Kaliptari
+		personality waiting staying heroic disables unconstrained mute
+		fleet "Large Blight Shadow"
+
+	npc
+		government "Blight Shadows"
+		system Mekislepti
+		personality waiting staying heroic disables unconstrained mute
+		fleet "Large Blight Shadow"
+	npc
+		government "Kor Scrappers"
+		system "Mekislepti"
+		personality mining harvests plunders uninterested
+		ship "Korath Scrapper (carrier)" "Sesk Markipta"
+
+	on enter Similisti
+		dialog `The Blight Shadows are running amok. Hopefully the Mereti will keep them in check once you deliver the Node 8 Processor to <planet>.`	
+	npc
+		government "Blight Shadows"
+		system Similisti
+		personality waiting staying heroic disables unconstrained mute
+		fleet "Large Blight Shadow" 3
+		fleet "Small Blight Shadow" 3
+
+	on complete
+		outfit "Node 8 Processor" -1
+		event "Node 8 Processor Returned"
+		conversation
+			scene "outfit/node 8 processor"
+			`None of the Mereti here are moving. The attendant robots which service the station lay silent. The Mind's chamber, which the Mereti sealed off when you first installed it, lays exposed. Searching the chamber, you find an array of these nodes. But there's no empty slot to plug in the Node 8 Processor! Studying the array, you note a clump of nodes is different from the rest.`
+			choice
+				`	(Take a closer look.)`
+			scene "scene/node 8 jammer"
+			`	You yank out the offending clump of nodes and plug in the Node 8 Processor. The station comes back to life...`
+		
+event "Node 8 Processor Returned"
+	system "Asikafarnut"
+		add fleet "Large Kor Mereti" 3600
+	system "Celeborim"
+		add fleet "Small Kor Mereti" 10000
+	system Chimitarp
+		remove fleet "Large Blight Shadow" 10000
+		remove fleet "Aggressive Kor Mereti" 600
+		remove fleet "Hostile Kor Mereti" 900
+		add fleet "Small Kor Mereti" 1000
+		add fleet "Large Kor Mereti" 3600
+		add fleet "Kor Mereti Miners" 2000
+		add fleet "Small Kor Mereti" 250
+		add fleet "Large Kor Mereti" 450
+	system "Eneremprukt"
+		add fleet "Large Kor Mereti" 2000
+	system Eshkoshtar
+		remove fleet "Large Blight Shadow" 10000
+		add fleet "Small Kor Mereti" 800
+		add fleet "Large Kor Mereti" 1600
+		add fleet "Kor Mereti Miners" 3000
+	system Farbutero
+		remove fleet "Large Blight Shadow" 10000
+		remove fleet "Aggressive Kor Mereti" 600
+		remove fleet "Hostile Kor Mereti" 900
+		add fleet "Small Kor Mereti" 9400
+		add fleet "Large Kor Mereti" 5000
+	system Faronektu
+		add fleet "Small Kor Mereti" 1200
+		add fleet "Large Kor Mereti" 2000
+		add fleet "Kor Mereti Miners" 2000
+	system Feroteri
+		add fleet "Small Blight Shadow" 2500
+		remove fleet "Aggressive Kor Mereti" 600
+		remove fleet "Hostile Kor Mereti" 900
+		remove  fleet "Hostile Kor Mereti Miners" 1600	
+		add fleet "Small Kor Mereti" 12000
+		add fleet "Large Kor Mereti" 6400
+	system "Ferukistek"
+		add fleet "Large Kor Mereti" 2400
+	system Fornarep
+		remove fleet "Small Blight Shadow" 800
+		remove fleet "Large Blight Shadow" 1000
+		add fleet "Small Blight Shadow" 2500
+		add fleet "Small Kor Mereti" 9000
+		add fleet "Large Kor Mereti" 5800
+	system Kaliptari
+		add fleet "Small Kor Mereti" 10000
+		add fleet "Large Kor Mereti" 4800
+		add fleet "Small Kor Mereti" 8000
+		add fleet "Large Kor Mereti" 3600
+	system Korsmanath
+		remove fleet "Large Blight Shadow" 10000
+		remove fleet "Aggressive Kor Mereti" 600
+		remove fleet "Hostile Kor Mereti" 900
+		add fleet "Small Kor Mereti" 8000
+	system "Makferuti"
+		add fleet "Small Kor Mereti" 10000
+	system Meftarkata
+		remove fleet "Small Blight Shadow" 800
+		remove fleet "Large Blight Shadow" 1000
+		add fleet "Small Blight Shadow" 2500
+		add fleet "Large Blight Shadow" 10000
+	system Mekislepti
+		add fleet "Small Kor Mereti" 1000
+		add fleet "Large Kor Mereti" 3000
+		add fleet "Kor Mereti Miners" 2000
+	system "Mesuket"
+		add fleet "Large Kor Mereti" 900
+	system Salipastart
+		add fleet "Small Kor Mereti" 800
+		add fleet "Large Kor Mereti" 1600
+		add fleet "Kor Mereti Miners" 3000
+	system Sepetrosk
+		remove fleet "Large Blight Shadow" 10000
+		remove fleet "Aggressive Kor Mereti" 600
+		remove fleet "Hostile Kor Mereti" 900
+		add fleet "Small Kor Mereti" 1200
+		add fleet "Large Kor Mereti" 4800
+		add fleet "Kor Mereti Miners" 2000
+	system "Silikatakfar"
+		add fleet "Large Kor Mereti" 1600
+	system Similisti
+		add fleet "Large Kor Mereti" 1600
+		add fleet "Small Kor Mereti" 600
+		add fleet "Kor Mereti Miners" 1600
+	system "Sobarati"
+		add add fleet "Small Kor Mereti" 10000
+
+mission "Scrapyard Damnation Epilogue"
+	landing
+	invisible
+	source "Mereti Station"
+	to offer
+		has "Scrapyard Damnation 3: done"
+	on enter
+		dialog `The Mereti send a message of gratitude for [restoring, fixing] The Mind.`
+		fail
