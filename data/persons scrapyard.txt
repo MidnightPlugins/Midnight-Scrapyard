@@ -54,7 +54,7 @@ person "Scar"
 			"I've met PK. If you ask me, it's a bit unhinged..."
 
 ship "Grakerat 572" "Grakerat 572 (Scar)"
-	sprite "ship/scarred grakerat"
+	sprite "ship/grakerat scar"
 
 
 person "Predator"

@@ -264,7 +264,7 @@ mission "Scrapyard Subsidurial"
 		"Scrapyard Threat Level" >= 1
 	on enter "Mesuket"
 		conversation
-			scene "scene/scene-blightshadowssubsidurial"
+			scene "scene/scene-blightshadowsubsidurial"
 			`A subsidurial is surrounded by blight shadows. You could intervene if you want to.`
 				accept
 	npc
@@ -1107,7 +1107,7 @@ mission "Scrapyard Persitar Fleet Wreck"
 
 planet "Persitar Wreck"
 	attributes uninhabited midnight
-	land "scene/scene-silvael6dark"
+	landscape "scene/scene-sivael6dark"
 	description "These ruined derelicts appear to be part of a Kor Sestor expeditionary fleet. With no jump drives, it must have taken this fleet centuries to arrive here. The largest ship is loaded with construction equipment. If these ships had managed to find a suitable planet to set up a base of operations, it could have lead to the return of the Kor Sestor. You wonder how many more of these fleets are out there."
 
 event "Scrapyard Persitar Fleet Wreck"
@@ -1515,6 +1515,7 @@ mission "Scrapyard Damnation 1"
 	on enter Similisti
 		event "node 8 processor Activated"
 		conversation
+			scene "scene/scene-damnation1"
 			`You notice something wrong when you enter Similisti: There isn't any fighting. The Mereti are standing by, as if waiting for orders. Suddenly, the Korath Devourer hails you! You raise an eyebrow when you learn the ship's name: Damnation. You're fairly certain that isn't a Korath name.`
 			`	"Greetings <ship>. Captain <last>, was it? I've heard about you. While the Scrappers are content to collect scraps, I've taken posession of a far greater prize. Welcome to hell.`
 			choice
@@ -1522,7 +1523,7 @@ mission "Scrapyard Damnation 1"
 				`	"What prize?"`
 
 			scene "scene/scene-mereti fleet"
-			`	Without bothering to answer, the Damnation jumps out of the system as the Mereti activate and surround you..."
+			`	Without bothering to answer, the Damnation jumps out of the system as the Mereti activate and surround you..."`
 				accept
 
 	npc disable
@@ -1642,7 +1643,7 @@ mission "Scrapyard Damnation 2"
 	on enter Feroteri
 		dialog `The system is overrun by the Mereti. That space station orbiting the fourth planet looks like it could be used as a base of operations...`
 
-		npc
+	npc
 		government "Kor Mereti (Hostile)"
 		personality waiting staying heroic
 		fleet
@@ -1658,7 +1659,9 @@ mission "Scrapyard Damnation 2"
 
 	on complete
 		event "Blight Shadows vs Mereti"
-		dialog `Unfortunately, the battle outside did not go unnoticed. The Damnation flees the station just as you finish landing! You need to board that ship and learn how they're controlling the Mereti.`
+		conversation
+			scene "scene/scene-damnation2"
+			`Unfortunately, the battle outside did not go unnoticed. The Damnation flees the station just as you finish landing! You need to board that ship and learn how they're controlling the Mereti.`
 		
 event "Blight Shadows vs Mereti"
 	system Chimitarp
@@ -1720,6 +1723,17 @@ mission "Scrapyard Damnation 3"
 		fleet "Large Blight Shadow" 3
 		fleet "Small Blight Shadow" 3
 		
+	npc
+		government Alpha
+		system Feroteri
+		personality target waiting staying vindictive
+		ship "Far Osk 27" "Gehenna"
+		ship "Far Osk 27" "Purgatory "
+		ship "Far Osk 27" "Hades"
+		ship "Far Osk 27" "Limbo"
+		ship "Far Osk 27" "Stygia"
+		ship "Far Osk 27" "Malebolge"
+
 	npc board
 		government Alpha
 		system Feroteri
@@ -1732,7 +1746,7 @@ mission "Scrapyard Damnation 3"
 				`	(Shoot him in the back.)`
 					goto "shot in back"
 				`	(Ask him what he's doing.)`
-			`	He sighs in resignation. "They're too difficult to control. At most, I can handle ten thousand. Maybe twenty. Do you have any idea what it's like performing high level brain surgery on twenty thousand Kor Mereti at once?" He turns towards you. "No, of course not. How could you? A normal human couldn't manage it."
+			`	He sighs in resignation. "They're too difficult to control. At most, I can handle ten thousand. Maybe twenty. Do you have any idea what it's like performing high level brain surgery on twenty thousand Kor Mereti at once?" He turns towards you. "No, of course not. How could you? A normal human couldn't manage it."`
 			`	The Alpha springs into action! You fire off several shots, but he's fast! He manages to dodge them all and is rapidly closing the distance between you...`
 			
 			branch "Midnight's Lost Orphan"
@@ -1758,7 +1772,7 @@ mission "Scrapyard Damnation 3"
 				goto end
 			
 			label "Quantum Key Blade"
-			`	Normally, you'd be no match for an Alpha in this situation. Fortunately, you've got something to even the odds. You draw the Quantum Key Blade and Quantum Shift just as the Alpha tries to disarm you. His hands pass through the blade, unable to grab it. As he looks at you in shock, you plunge the blade into his chest and deactivate Quantum Shifting. The Alpha slumps to the floor, defeated.'
+			`	Normally, you'd be no match for an Alpha in this situation. Fortunately, you've got something to even the odds. You draw the Quantum Key Blade and Quantum Shift just as the Alpha tries to disarm you. His hands pass through the blade, unable to grab it. As he looks at you in shock, you plunge the blade into his chest and deactivate Quantum Shifting. The Alpha slumps to the floor, defeated.`
 				goto end
 			
 			label "shot in back"
@@ -1821,13 +1835,14 @@ mission "Scrapyard Damnation 4"
 
 	on complete
 		outfit "Node 8 Processor" -1
+		outfit "Node 8 Jammer" 1
 		event "Node 8 Processor Returned"
 		conversation
 			scene "outfit/node 8 processor"
 			`None of the Mereti here are moving. The attendant robots which service the station lay silent. The Mind's chamber, which the Mereti sealed off when you first installed it, lays exposed. Searching the chamber, you find an array of these nodes. But there's no empty slot to plug in the Node 8 Processor! Studying the array, you note a clump of nodes is different from the rest.`
 			choice
 				`	(Take a closer look.)`
-			scene "scene/node 8 jammer"
+			scene "outfit/node 8 jammer"
 			`	You yank out the offending clump of nodes and plug in the Node 8 Processor. The station comes back to life...`
 		
 event "Node 8 Processor Returned"
@@ -1923,8 +1938,58 @@ mission "Scrapyard Damnation Epilogue"
 	landing
 	invisible
 	source "Mereti Station"
+	destination "Desi Seledrak"
 	to offer
 		has "Scrapyard Damnation 3: done"
 	on enter
 		dialog `The Mereti send a message of gratitude for [restoring, fixing] The Mind.`
+	on complete
+		conversation
+			scene "outfit/node 8 jammer"
+			`You give Meto Pa'aret an update on the Mereti and show him the Node 8 Jammer. "I believe this will [disrupt, block] communications on the network it is [plugged, installed] into. [Impressive, Amazing]." He hands the device back to you. "That is a very [complex, sophisticated] piece of technology. I hope you take great [responsibility, care] not to [abuse, exploit] it."`
+
+
+
+####################
+# Bonus Missions
+####################
+
+
+mission "Scrapyard Node 8 Hacking"
+	invisible
+	source
+		government "Republic" "Syndicate" "Free Worlds"
+	to offer
+		has "Scrapyard Damnation Epilogue: done"
+		random < 5
+	on offer
+		require "Node 8 Jammer"
+		conversation
+			scene "outfit/node 8 jammer"
+			`When you visit the ATM, you notice an exposed data port that you can plug the Node 8 Jammer into. The last technician who worked on the machine must have failed to close it properly. Should you...`
+			choice
+				`	(Plug the Node 8 Jammer into the port.)`
+				`	(Do not plug the Node 8 Jammer into the port.)`
+					defer
+			`	The device blocks all communications from the ATM to the rest of the network. You attempt to withdraw 1000000000 credits, but the machine warns that it only contains 497635128 credits. You pocket the money and prepare to leave.`
+			choice
+				`	(Remove the Node 8 Jammer and take it with you.)`
+					goto end
+				`	(Leave the Node 8 Jammer in the ATM.)`
+			`	You abandon the Node 8 Jammer and escape before anyone catches you. The jammer blocks all communications data, including security camera footage, from reaching the network. Hopefully by the time the authorities look into it, the local recording data will have looped.`
+				decline
+			
+			label end
+			`	You unplug the Node 8 Jammer. Immediately, warning sirens go off. The ATM has reconnected to the network and the security cameras have identified you as a criminal hacker! Better run..."`
+				accept
+	on decline
+		outfit "Node 8 Jammer" -1
+		payment 497635128
+	
+	on accept
+		"Scrapyard Node 8 Hacking: offered" --
+		payment 497635128
+		"reputation: Republic" <?= -1000
+		"reputation: Syndicate" <?= -1000
+		"reputation: Free Worlds" <?= -1000
 		fail

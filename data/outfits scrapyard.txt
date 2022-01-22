@@ -126,6 +126,23 @@ outfit "Korath Scanner"
 
 
 
+outfit "Node 8 Jammer"
+	category "Special"
+	thumbnail "outfit/node 8 jammer"
+	"mass" 9
+	"illegal" 1000000 
+	description "This resembles a clump of Kor Mereti Reasoning Nodes, but is an obvious fake when compared to the real thing. Despite this, it's a sophisticated piece of technology with the ability to disrupt communications on a network it's installed on."
+
+
+
+outfit "Node 8 Processor"
+	category "Special"
+	thumbnail "outfit/node 8 processor"
+	"mass" 9
+	description "This resembles a clump of Kor Mereti Reasoning Nodes. It must be related to the Mereti communications network somehow."
+
+
+
 outfit "Obsolete Transceiver"
 	category "Systems"
 	cost "7000"
