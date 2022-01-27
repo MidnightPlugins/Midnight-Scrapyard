@@ -92,6 +92,7 @@ outfit "Korath Incinerator"
 	"energy consumption" 3.1
 	"heat generation" 13.0
 	"integrated systems" 1
+	"unplunderable" 1
 	weapon
 		sound "flamethrower"
 		"hit effect" "flamethrower hit"
