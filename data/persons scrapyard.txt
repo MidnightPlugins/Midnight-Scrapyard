@@ -17,7 +17,7 @@ person "Midnight Spectator"
 	personality
 		disables unconstrained mute
 	ship "Blight Shadow" "Midnight Spectator"
-
+		"never disabled"
 
 
 person "Harbinger"
@@ -37,6 +37,13 @@ person "Scar"
 	system "Hatysa" "Unagi" "Mintaka" "Gorvi" "Tortor" "Rigel" "Hassaleh" "Rajak" "Ultima Thule" "Sumar" "Danoa" "Cardex" "Volax" "Sospi" "Moktar" "Oblate" "Durax"
 	personality
 		plunders harvests unconstrained coward
+	phrase
+		word
+			"The solar wind at yer back and fresh plunder ahead!"
+			"After a few centuries, you learn to adapt."
+			"The scar is proof my enemies failed to destroy me."
+			"Being a pirate warlord isn't so bad. I get to sift through so much plunder..."
+			"I've met PK. If you ask me, it's a bit unhinged..."
 	ship "Grakerat 572 (Scar)" "Scar"
 	ship "Leviathan (Hai Weapons)" "Scar's Guard"
 	ship "Osprey (Alien Weapons)" "Scar's Guard"
@@ -45,13 +52,6 @@ person "Scar"
 	ship "Headhunter (Hai)" "Scar's Guard"
 	ship "Headhunter (Hai)" "Scar's Guard"
 	ship "Headhunter (Hai)" "Scar's Guard"
-	phrase
-		word
-			"The solar wind at yer back and fresh plunder ahead!"
-			"After a few centuries, you learn to adapt."
-			"The scar is proof my enemies failed to destroy me."
-			"Being a pirate warlord isn't so bad. I get to sift through so much plunder..."
-			"I've met PK. If you ask me, it's a bit unhinged..."
 
 ship "Grakerat 572" "Grakerat 572 (Scar)"
 	sprite "ship/grakerat scar"
@@ -63,13 +63,6 @@ person "Predator"
 	system
 		attributes "Scrapyard"
 	personality mining plunders harvests uninterested unconstrained
-	ship "Korath Devourer" "Predator"
-	ship "Far Osk 27 (Flamethrower)" "Char 1"
-	ship "Far Osk 27 (Flamethrower)" "Char 2"
-	ship "Far Osk 27 (Flamethrower)" "Char 3"
-	ship "Far Osk 27 (Flamethrower)" "Char 4"
-	ship "Far Osk 27 (Flamethrower)" "Char 5"
-	ship "Far Osk 27 (Flamethrower)" "Char 6"
 	phrase
 		word
 			"Everything burns."
@@ -79,6 +72,13 @@ person "Predator"
 			"I'm just getting warmed up."
 			"Come, join me by the fire."
 			"It's cold out there."
+	ship "Korath Devourer" "Predator"
+	ship "Far Osk 27 (Flamethrower)" "Char 1"
+	ship "Far Osk 27 (Flamethrower)" "Char 2"
+	ship "Far Osk 27 (Flamethrower)" "Char 3"
+	ship "Far Osk 27 (Flamethrower)" "Char 4"
+	ship "Far Osk 27 (Flamethrower)" "Char 5"
+	ship "Far Osk 27 (Flamethrower)" "Char 6"
 
 
 ship "Far Osk 27" "Far Osk 27 (Flamethrower)"
