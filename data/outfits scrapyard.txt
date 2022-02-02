@@ -91,7 +91,7 @@ outfit "Korath Incinerator"
 	"gun ports" -1
 	"energy consumption" 3.1
 	"heat generation" 13.0
-	"integrated systems" 1
+	"reinstall" -1
 	"unplunderable" 1
 	weapon
 		sound "flamethrower"
@@ -106,7 +106,8 @@ outfit "Korath Incinerator"
 		"shield damage" 300
 		"hull damage" 300
 		"heat damage" 200
-	description "A giant furnace. Ships go in. Melted metal comes out."
+	description "A giant smelter. Ships go in. Melted metal comes out."
+	description `WARNING: This is integrated into the hull of the Korath Devourer and cannot be removed without damaging it. If uninstalled it cannot be reinstalled.`
 
 
 

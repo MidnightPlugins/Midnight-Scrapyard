@@ -1150,7 +1150,6 @@ ship "Korath Devourer"
 		"outfit space" 835
 		"weapon capacity" 297
 		"engine capacity" 181
-		"integrated systems" -3
 		weapon
 			"blast radius" 300
 			"shield damage" 4600
