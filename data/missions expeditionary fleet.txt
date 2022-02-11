@@ -119,7 +119,7 @@ event "Kor Sestor Hostile to Hai"
 mission "Scrapyard Uwa Fahn Attack"
 	name "Defend Icelake"
 	description "An alien fleet has attacked <destination>. Defend <planet> from this interstellar threat."
-	source 
+	source
 		near "Uwa Fahn" 1 3
 	destination "Icelake"
 	to offer
@@ -127,7 +127,8 @@ mission "Scrapyard Uwa Fahn Attack"
 		has "event: Kor Sestor Hostile to Hai"
 	on offer
 		conversation
-			`Suddenly you hear raised voices and shouting outside as pilots run for their ships: "<destination> is being attacked by an alien fleet! They are requesting help from any combat-worthy ship in the region to join the defenses!" The authorities of <planet> will probably pay you quite well if you assist them, but this could also be an easy way to get yourself killed.`
+			scene "scene/scene-sestorexpedition"
+			`Suddenly you hear raised voices and shouting outside as pilots run for their ships: "<destination> is being attacked by an alien fleet! They are requesting help from any combat-worthy ship in the region to join the defenses!" One of the Hai manages to get a photo of the invading fleet from the hyperspace network. It's a Kor Sestor fleet!`
 			choice
 				`	(Don't join the fight.)`
 					decline
@@ -167,7 +168,8 @@ mission "Scrapyard Bore Fah Attack"
 		has "Scrapyard Uwa Fahn Attack: done"
 	on offer
 		conversation
-			`Suddenly you hear raised voices and shouting outside as pilots run for their ships: "<destination> is being attacked by an alien fleet! They are requesting help from any combat-worthy ship in the region to join the defenses!" The authorities of <planet> will probably pay you quite well if you assist them, but this could also be an easy way to get yourself killed.`
+			scene "scene/scene-sestorexpedition"
+			`Suddenly you hear raised voices and shouting outside as pilots run for their ships: "<destination> is being attacked by an alien fleet! They are requesting help from any combat-worthy ship in the region to join the defenses!" One of the Hai manages to get a photo of the invading fleet from the hyperspace network. It's a Kor Sestor fleet!`
 			choice
 				`	(Don't join the fight.)`
 					decline
