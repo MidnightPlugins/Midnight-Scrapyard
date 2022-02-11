@@ -15,6 +15,7 @@ minable "jump drive"
 	sprite "asteroid/jump drive/spin"
 	hull 20000
 	payload "Jump Drive (Broken)" 4
+	payload "Scrap Metal" 20
 	explode "smoke" 40
 	explode "bolide" 40
 	explode "asteroid crunch small"
@@ -29,16 +30,18 @@ minable "scrap metal"
 
 minable "reasoning node"
 	sprite "asteroid/reasoning node/spin"
-	hull 15000
+	hull 5000
 	payload "Reasoning Node" 8
+	payload "Scrap Metal" 20
 	explode "smoke" 40
 	explode "bolide" 40
 	explode "asteroid crunch small"
 
 minable "control transceiver"
 	sprite "asteroid/control transceiver/spin"
-	hull 4000
+	hull 5000
 	payload "Control Transceiver" 16
+	payload "Scrap Metal" 40
 	explode "smoke" 40
 	explode "bolide" 40
 	explode "asteroid crunch small"

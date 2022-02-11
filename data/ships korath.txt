@@ -1132,6 +1132,9 @@ ship "Korath Warmonger"
 # Korath Devourer
 ################################
 
+# Previously, the Devourer had 3000 less weapon and outfit space. The new stats are to accomodate the switch from the Korath Incinerator to the Korath Smelter.
+# See the outfits scrapyard file for details. TLDR: This is to stop players from selling the Devourer and installing the Incinerators on other ships.
+
 ship "Korath Devourer"
 	sprite "ship/korath devourer/korath devourer"
 	thumbnail "thumbnail/korath devourer-thumb"
@@ -1147,8 +1150,8 @@ ship "Korath Devourer"
 		"heat dissipation" .4
 		"fuel capacity" 900
 		"cargo space" 605
-		"outfit space" 835
-		"weapon capacity" 297
+		"outfit space" 3835
+		"weapon capacity" 3297
 		"engine capacity" 181
 		"integrated systems" -3
 		weapon
@@ -1157,7 +1160,7 @@ ship "Korath Devourer"
 			"hull damage" 2300
 			"hit force" 5900
 	outfits
-		"Korath Incinerator" 3
+		"Korath Smelter" 3
 		"Korath Grab-Strike" 3
 		"Korath Warder" 2
 		
@@ -1172,9 +1175,9 @@ ship "Korath Devourer"
 		"Thruster (Planetary Class)"
 		"Jump Drive"
 		
-	gun -5 -192.5 "Korath Incinerator"
-	gun -2 -192.5 "Korath Incinerator"
-	gun 1 -192.5 "Korath Incinerator"
+	gun -5 -192.5 "Korath Smelter"
+	gun -2 -192.5 "Korath Smelter"
+	gun 1 -192.5 "Korath Smelter"
 	turret -1.5 -175 "Korath Grab-Strike"
 	turret -40.5 -175.5 "Korath Grab-Strike"
 	turret 39 -175.5 "Korath Grab-Strike"
@@ -1199,4 +1202,4 @@ ship "Korath Devourer"
 	explode "large explosion" 50
 	explode "huge explosion" 15
 	"final explode" "final explosion large"
-	description "Some Korath scrappers are more intested in harvesting raw materials rather than technology. The Devourer is their attempt to streamline the collection process. The Korath Incinerators are integrated into the ship and cannot be removed."
+	description "Some Korath scrappers are more intested in harvesting raw materials rather than technology. The Devourer is their attempt to streamline the collection process. The Korath Smelters are integrated into the ship and cannot be removed."

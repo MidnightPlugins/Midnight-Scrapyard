@@ -179,7 +179,7 @@ ship "Blight Shadow"
 fleet "Small Blight Shadow"
 	government "Blight Shadows"
 	cargo 0
-	personality heroic disables unconstrained mute
+	personality disables unconstrained mute
 	variant 6
 		"Blight Shadow" 5
 	variant 3
@@ -191,7 +191,7 @@ fleet "Small Blight Shadow"
 fleet "Large Blight Shadow"
 	government "Blight Shadows"
 	cargo 0
-	personality entering heroic disables unconstrained mute
+	personality entering disables unconstrained mute
 	variant 20
 		"Blight Shadow" 8
 	variant 15
@@ -204,19 +204,19 @@ fleet "Large Blight Shadow"
 fleet "Infested Scrap"
 	government "Blight Shadows"
 	outfitters "Korath Basics"
-	personality heroic disables unconstrained mute
+	personality disables unconstrained mute
 	variant
 		"Scrapper Shields (Infested)"
-		"Blight Shadow" 8
+		"Blight Shadow" 7
 	variant
 		"Scrapper Weapons (Infested)"
-		"Blight Shadow" 8
+		"Blight Shadow" 7
 	variant
 		"Scrapper Engines (Infested)"
-		"Blight Shadow" 8
+		"Blight Shadow" 7
 	variant
 		"Scrapper Carrier (Infested)"
-		"Blight Shadow" 8
+		"Blight Shadow" 7
 	variant
 		"Model 512 (Infested)"
 		"Blight Shadow" 8
@@ -225,13 +225,21 @@ fleet "Infested Scrap"
 		"Blight Shadow" 8
 	variant
 		"Kar Ik Vot 349 (Infested)"
-		"Blight Shadow" 8
+		"Blight Shadow" 7
 	variant
 		"Tek Far 71 - Lek (Infested)"
-		"Blight Shadow" 8
+		"Blight Shadow" 7
 	variant
 		"Tek Far 78 - Osk (Infested)"
 		"Blight Shadow" 8
+
+fleet "Infested Sestor Expedition"
+	government "Blight Shadows"
+	personality disables unconstrained mute
+	variant
+		"Grakerat 572 (Infested)"
+		"Blight Shadow" 24
+		
 
 outfit "Festering Boil"
 	category "Turrets"
@@ -269,6 +277,67 @@ outfit "Blight Leak"
 		"lifetime" 1
 		"reload" 2
 		"stream"
+
+
+
+ship "Grakerat 572" "Grakerat 572 (Infested)"
+	sprite "ship/grakerat 572"
+	"never disabled"
+	attributes
+		category "Heavy Freighter"
+		"hull" 10
+		"automaton" 1
+		"mass" 1300
+		"drag" 15.8
+		"heat dissipation" .5
+		"fuel capacity" 1000
+		"cargo space" 264
+		"outfit space" 710
+		"weapon capacity" 0
+		"engine capacity" 165
+		"ramscoop" 1
+		"atmosphere scan" 100
+		weapon
+			"blast radius" 400
+			"shield damage" 8000
+			"hull damage" 4000
+			"hit force" 12000
+	outfits
+		"Festering Boil"
+		"Blight Leak" 3
+	turret -15 -100 "Blight Leak"
+	turret 0 -50 "Blight Leak"
+	turret 0 50 "Festering Boil"
+	turret 15 100 "Blight Leak"
+	bay "Fighter" -10 -100
+	bay "Fighter" 10 -100
+	bay "Fighter" -10 -100
+	bay "Fighter" 10 -100
+	bay "Fighter" -20 -50
+	bay "Fighter" 20 -50
+	bay "Fighter" -20 -50
+	bay "Fighter" 20 -50
+	bay "Fighter" -20 -20
+	bay "Fighter" 20 -20
+	bay "Fighter" -20 -20
+	bay "Fighter" 20 -20
+	bay "Fighter" -20 20
+	bay "Fighter" 20 20
+	bay "Fighter" -20 20
+	bay "Fighter" 20 20
+	bay "Fighter" -20 50
+	bay "Fighter" 20 50
+	bay "Fighter" -20 50
+	bay "Fighter" 20 50
+	bay "Fighter" -10 100
+	bay "Fighter" 10 100
+	bay "Fighter" -10 100
+	bay "Fighter" 10 100
+	explode "black blood" 160
+	explode "black blood" 140
+	explode "black blood" 120
+	explode "black blood" 100
+	
 
 
 
