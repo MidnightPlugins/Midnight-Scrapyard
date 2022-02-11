@@ -334,11 +334,11 @@ event "Scrapyard Mesuket Stations"
 	planet "Metwar Skaretar"
 		attributes korath station
 		landscape land/station0
-		description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huhe gaping holes in the hull have released whatever atmosphere it once contained.`
+		description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
 	planet "Makwar Pratarati"
 		attributes korath station
 		landscape land/loc3
-		description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huhe gaping holes in the hull have released whatever atmosphere it once contained.`
+		description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
 
 ######################
 # Misc. Missions

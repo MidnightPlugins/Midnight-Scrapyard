@@ -601,19 +601,7 @@ mission "Scrapyard Random Station Eggs"
 	npc kill
 		government "Blight Shadows"
 		personality entering disables unconstrained mute
-		fleet "Small Blight Shadow"
-	npc kill
-		to spawn
-			random < 30
-		government "Blight Shadows"
-		personality entering disables unconstrained mute
-		fleet "Small Blight Shadow"
-	npc kill
-		to spawn
-			random < 20
-		government "Blight Shadows"
-		personality entering disables unconstrained mute
-		fleet "Small Blight Shadow"
+		fleet "Large Blight Shadow"
 
 mission "Scrapyard Random Station Eggs cleanup"
 	landing
