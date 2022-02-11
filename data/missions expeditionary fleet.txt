@@ -114,7 +114,9 @@ event "Kor Sestor Hostile to Hai"
 			"Navy (Oathkeeper)" -.01
 			"Syndicate" -.01
 			"Hai" -.01
-			"Hai (Unfettered) -.01
+			"Hai (Unfettered)" -.01
+
+
 
 mission "Scrapyard Uwa Fahn Attack"
 	name "Defend Icelake"
@@ -187,8 +189,8 @@ mission "Scrapyard Bore Fah Attack"
 		fleet "Hai Surveillance"
 	
 	npc kill
-		system "Blight Shadows"
-		government "Kor Sestor"
+		system "Bore Fah"
+		government "Blight Shadows"
 		personality target waiting disables unconstrained mute
 		fleet "Infested Sestor Expedition"
 		dialog `The alien threat has been defeated. Check if the authorities on <planet> will reward you for your efforts.`
