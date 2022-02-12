@@ -1132,8 +1132,7 @@ ship "Korath Warmonger"
 # Korath Devourer
 ################################
 
-# Previously, the Devourer had 3000 less weapon and outfit space. The new stats are to accomodate the switch from the Korath Incinerator to the Korath Smelter.
-# See the outfits scrapyard file for details. TLDR: This is to stop players from selling the Devourer and installing the Incinerators on other ships.
+
 
 ship "Korath Devourer"
 	sprite "ship/korath devourer/korath devourer"
@@ -1150,17 +1149,17 @@ ship "Korath Devourer"
 		"heat dissipation" .4
 		"fuel capacity" 900
 		"cargo space" 605
-		"outfit space" 3835
-		"weapon capacity" 3297
+		"outfit space" 835
+		"weapon capacity" 297
 		"engine capacity" 181
-		"integrated systems" -3
+		"integrated systems" -1
 		weapon
 			"blast radius" 300
 			"shield damage" 4600
 			"hull damage" 2300
 			"hit force" 5900
 	outfits
-		"Korath Smelter" 3
+		"Korath Incinerator"
 		"Korath Grab-Strike" 3
 		"Korath Warder" 2
 		
@@ -1175,9 +1174,7 @@ ship "Korath Devourer"
 		"Thruster (Planetary Class)"
 		"Jump Drive"
 		
-	gun -5 -192.5 "Korath Smelter"
-	gun -2 -192.5 "Korath Smelter"
-	gun 1 -192.5 "Korath Smelter"
+	gun 1 -192.5 "Korath Incinerator"
 	turret -1.5 -175 "Korath Grab-Strike"
 	turret -40.5 -175.5 "Korath Grab-Strike"
 	turret 39 -175.5 "Korath Grab-Strike"

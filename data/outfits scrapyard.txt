@@ -80,48 +80,50 @@ outfit "Korath Grappler"
 	description "Korath Grappler projectiles are designed to pull a target closer to the Korath ship, to keep it from escaping."
 
 
-# The Korath Incinerator has been replaced by the Korath Smelter. Keeping this here for legacy pilots.
+# The Korath Incinerator is back!
 outfit "Korath Incinerator"
 	category "Guns"
 	cost 190000
 	thumbnail "outfit/korath incinerator"
-	"mass" 9
-	"outfit space" -9
-	"weapon capacity" -9
+	"mass" 27
+	"outfit space" -27
+	"weapon capacity" -27
 	"gun ports" -1
-	"energy consumption" 3.1
-	"heat generation" 13.0
+	"energy consumption" 9.3
+	"heat generation" 39.0
 	"integrated systems" 1
+	"reinstall" -1
 	"unplunderable" 1
 	weapon
 		sound "flamethrower"
 		"hit effect" "flamethrower hit"
 		"inaccuracy" 180
-		"velocity" 10
+		"velocity" 15
 		"lifetime" 1
 		"reload" 1
 		"burst reload" 35
 		"burst count" 3
 		"cluster"
-		"shield damage" 300
-		"hull damage" 300
-		"heat damage" 200
+		"shield damage" 900
+		"hull damage" 900
+		"heat damage" 600
 	description "A giant smelter. Ships go in. Melted metal comes out."
 	description "This is integrated into the hull of the Korath Devourer and cannot be removed."
 
 
-
+# Replaced with Korath Incinerator. Keeping this here for legacy pilots.
 outfit "Korath Smelter"
 	category "Guns"
 	cost 190000
 	thumbnail "outfit/korath incinerator"
-	"mass" 9
+	"mass" 1009
 	"outfit space" -1009
 	"weapon capacity" -1009
 	"gun ports" -1
 	"energy consumption" 3.1
 	"heat generation" 13.0
 	"integrated systems" 1
+	"reinstall" -1
 	"unplunderable" 1
 	weapon
 		sound "flamethrower"
