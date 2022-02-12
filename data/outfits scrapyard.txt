@@ -108,7 +108,6 @@ outfit "Korath Incinerator"
 		"hull damage" 900
 		"heat damage" 600
 	description "A giant smelter. Ships go in. Melted metal comes out."
-	description "This is integrated into the hull of the Korath Devourer and cannot be removed."
 
 
 # Replaced with Korath Incinerator. Keeping this here for legacy pilots.
@@ -139,7 +138,6 @@ outfit "Korath Smelter"
 		"hull damage" 300
 		"heat damage" 200
 	description "A giant smelter. Ships go in. Melted metal comes out."
-	description "This is integrated into the hull of the Korath Devourer and cannot be removed."
 
 
 
