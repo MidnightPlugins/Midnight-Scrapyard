@@ -214,7 +214,7 @@ mission "Scrapyard Persitar Fleet Wreck"
 
 planet "Persitar Wreck"
 	attributes uninhabited midnight
-	landscape "land/sivael6"
+	landscape "land/nasa-ksc20170322"
 	description "These ruined derelicts appear to be part of a Kor Sestor expeditionary fleet. With no jump drives, it must have taken this fleet centuries to arrive here. The largest ship is loaded with construction equipment. If these ships had managed to find a suitable planet to set up a base of operations, it could have lead to the return of the Kor Sestor. You wonder how many more of these fleets are out there."
 
 event "Scrapyard Persitar Fleet Wreck"

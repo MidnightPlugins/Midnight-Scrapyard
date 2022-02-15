@@ -96,6 +96,9 @@ outfit "Korath Incinerator"
 	"unplunderable" 1
 	weapon
 		sound "flamethrower"
+		sprite "projectile/flamethrower"
+			"frame rate" 17
+			"random start frame"
 		"hit effect" "flamethrower hit"
 		"inaccuracy" 180
 		"velocity" 15
@@ -126,6 +129,9 @@ outfit "Korath Smelter"
 	"unplunderable" 1
 	weapon
 		sound "flamethrower"
+		sprite "projectile/flamethrower"
+			"frame rate" 17
+			"random start frame"
 		"hit effect" "flamethrower hit"
 		"inaccuracy" 180
 		"velocity" 10
