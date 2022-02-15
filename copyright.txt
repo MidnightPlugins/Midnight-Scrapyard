@@ -9,7 +9,7 @@ Comment: Derived from works by Michael Zahniser (from under the same license).
 Files: images/*
 Copyright: Michael Arsollon <marsollo@yahoo.com>
 License: CC-BY-SA-4.0
-Comment: All images derived from "Endless Sky" by Michael Zahniser and possibly others listed below under "Endless Sky Artwork" and "Endless Sky Photographs"  
+Comment: All images derived from "Endless Sky" by Michael Zahniser and possibly others listed below under "Endless Sky Artwork" and "Endless Sky Photographs"  except as noted below under "Additional Image Sources".
 
 https://creativecommons.org/licenses/by-sa/4.0/
 
@@ -52,4 +52,17 @@ Endless Sky Photographs:
 
 
 
+Additional Image Sources:
+
+	images/scene/scene-dinosaur.jpg
+		Illustration of Brontosaurus in the water, and Diplodocus on land. (1897)
+		Author: Charles R. Knight  (1874–1953)
+		This work is in the public domain in the United States because it was 
+		published (or registered with the U.S. Copyright Office) before January 1, 1927.
+
+	images/land/nasa-ksc20170322
+		Copyright: NASA
+		License: public-domain
+		 From NASA, and therefore in the public domain because they were created by
+		 government employees while doing work for the government.
 
