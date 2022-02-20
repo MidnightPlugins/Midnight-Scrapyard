@@ -101,7 +101,7 @@ outfit "Korath Incinerator"
 			"random start frame"
 		"hit effect" "flamethrower hit"
 		"inaccuracy" 180
-		"velocity" 15
+		"velocity" 1
 		"lifetime" 1
 		"reload" 1
 		"burst reload" 35

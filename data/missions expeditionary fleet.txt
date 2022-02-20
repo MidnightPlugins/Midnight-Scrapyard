@@ -139,7 +139,7 @@ mission "Scrapyard Uwa Fahn Attack"
 				accept
 
 	on enter "Uwa Fahn"
-		dialog `It's a Kor Sestor expedtionary fleet. They mustn't be allowed to land!`
+		dialog `It's a Kor Sestor expedtionary fleet. They can not be allowed to land!`
 
 	npc
 		government "Hai"
@@ -167,7 +167,10 @@ mission "Scrapyard Bore Fah Attack"
 		near "Bore Fah" 1 3
 	destination "Snowfeather"
 	to offer
-		has "Scrapyard Uwa Fahn Attack: done"
+		or
+			has "Scrapyard Uwa Fahn Attack: done"
+			has "Scrapyard Uwa Fahn Attack: declined"
+			
 	on offer
 		conversation
 			scene "scene/scene-sestorexpedition"

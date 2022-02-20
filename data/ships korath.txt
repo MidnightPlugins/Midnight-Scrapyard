@@ -1199,4 +1199,4 @@ ship "Korath Devourer"
 	explode "large explosion" 50
 	explode "huge explosion" 15
 	"final explode" "final explosion large"
-	description "Some Korath scrappers are more intested in harvesting raw materials rather than technology. The Devourer is their attempt to streamline the collection process. The Korath Smelters are integrated into the ship and cannot be removed."
+	description "Some Korath scrappers are more intested in harvesting raw materials rather than technology. The Devourer is their attempt to streamline the collection process. The Korath Incinerator is integrated into the ship and cannot be removed."

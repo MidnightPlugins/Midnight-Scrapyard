@@ -11,7 +11,9 @@
 
 
 
-# Blight Shadow creatures from beyond the galaxy.
+###############################
+# Blight Shadow predators from beyond the galaxy.
+###############################
 
 government "Blight Shadows"
 	"display name" "Invasive Lifeform"
@@ -201,46 +203,13 @@ fleet "Large Blight Shadow"
 	variant 5
 		"Blight Shadow" 20
 
-fleet "Infested Scrap"
-	government "Blight Shadows"
-	outfitters "Korath Basics"
-	personality disables unconstrained mute
-	variant
-		"Scrapper Shields (Infested)"
-		"Blight Shadow" 7
-	variant
-		"Scrapper Weapons (Infested)"
-		"Blight Shadow" 7
-	variant
-		"Scrapper Engines (Infested)"
-		"Blight Shadow" 7
-	variant
-		"Scrapper Carrier (Infested)"
-		"Blight Shadow" 7
-	variant
-		"Model 512 (Infested)"
-		"Blight Shadow" 8
-	variant
-		"Model 256 (Infested)"
-		"Blight Shadow" 8
-	variant
-		"Kar Ik Vot 349 (Infested)"
-		"Blight Shadow" 7
-	variant
-		"Tek Far 71 - Lek (Infested)"
-		"Blight Shadow" 7
-	variant
-		"Tek Far 78 - Osk (Infested)"
-		"Blight Shadow" 8
 
-fleet "Infested Sestor Expedition"
-	government "Blight Shadows"
-	personality disables unconstrained mute
-	variant
-		"Grakerat 572 (Infested)"
-		"Blight Shadow" 24
-		
 
+#############################
+# Infested Ships carry recently hatched Blight Shadows
+#############################
+
+# This causes the ship to destroy itself if the player approaches it.
 outfit "Festering Boil"
 	category "Turrets"
 	thumbnail "outfit/unknown"
@@ -264,6 +233,7 @@ outfit "Timer Submunition"
 		"hull damage" .15
 		"no damage scaling"
 
+# This creates the visual effect of black blood leaking from the ship.
 outfit "Blight Leak"
 	category "Turrets"
 	thumbnail "outfit/unknown"
@@ -285,18 +255,12 @@ ship "Grakerat 572" "Grakerat 572 (Infested)"
 	"never disabled"
 	attributes
 		category "Heavy Freighter"
-		"hull" 10
+		"hull" 6
 		"automaton" 1
 		"mass" 1300
 		"drag" 15.8
 		"heat dissipation" .5
-		"fuel capacity" 1000
 		"cargo space" 264
-		"outfit space" 710
-		"weapon capacity" 0
-		"engine capacity" 165
-		"ramscoop" 1
-		"atmosphere scan" 100
 		weapon
 			"blast radius" 400
 			"shield damage" 8000
@@ -338,6 +302,12 @@ ship "Grakerat 572" "Grakerat 572 (Infested)"
 	explode "black blood" 120
 	explode "black blood" 100
 	
+fleet "Infested Sestor Expedition"
+	government "Blight Shadows"
+	personality disables unconstrained mute
+	variant
+		"Grakerat 572 (Infested)"
+		"Blight Shadow" 24
 
 
 
@@ -481,8 +451,6 @@ ship "Korath Scrapper" "Scrapper Carrier (Infested)"
 	explode "black blood" 120
 	explode "black blood" 100
 
-
-
 ship "Model 512" "Model 512 (Infested)"
 	"never disabled"
 	attributes
@@ -590,7 +558,6 @@ ship "Kar Ik Vot 349" "Kar Ik Vot 349 (Infested)"
 	explode "black blood" 120
 	explode "black blood" 100
 
-
 ship "Tek Far 71 - Lek" "Tek Far 71 - Lek (Infested)"
 	"never disabled"
 	attributes
@@ -623,8 +590,6 @@ ship "Tek Far 71 - Lek" "Tek Far 71 - Lek (Infested)"
 	explode "black blood" 140
 	explode "black blood" 120
 	explode "black blood" 100
-
-
 
 ship "Tek Far 78 - Osk" "Tek Far 78 - Osk (Infested)"
 	"never disabled"
@@ -659,3 +624,39 @@ ship "Tek Far 78 - Osk" "Tek Far 78 - Osk (Infested)"
 	explode "black blood" 140
 	explode "black blood" 120
 	explode "black blood" 100
+
+fleet "Infested Scrap"
+	government "Blight Shadows"
+	outfitters "Korath Basics"
+	personality disables unconstrained mute
+	variant
+		"Scrapper Shields (Infested)"
+		"Blight Shadow" 7
+	variant
+		"Scrapper Weapons (Infested)"
+		"Blight Shadow" 7
+	variant
+		"Scrapper Engines (Infested)"
+		"Blight Shadow" 7
+	variant
+		"Scrapper Carrier (Infested)"
+		"Blight Shadow" 7
+	variant
+		"Model 512 (Infested)"
+		"Blight Shadow" 8
+	variant
+		"Model 256 (Infested)"
+		"Blight Shadow" 8
+	variant
+		"Kar Ik Vot 349 (Infested)"
+		"Blight Shadow" 7
+	variant
+		"Tek Far 71 - Lek (Infested)"
+		"Blight Shadow" 7
+	variant
+		"Tek Far 78 - Osk (Infested)"
+		"Blight Shadow" 8
+
+
+
+
