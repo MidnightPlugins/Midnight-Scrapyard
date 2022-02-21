@@ -102,11 +102,10 @@ outfit "Korath Incinerator"
 		"hit effect" "flamethrower hit"
 		"inaccuracy" 180
 		"velocity" 1
-		"lifetime" 1
+		"lifetime" 9
 		"reload" 1
 		"burst reload" 35
 		"burst count" 3
-		"cluster"
 		"shield damage" 900
 		"hull damage" 900
 		"heat damage" 600
