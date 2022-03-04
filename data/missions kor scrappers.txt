@@ -392,7 +392,7 @@ mission "Scrapyard Damnation 3"
 		dialog `The Blight Shadows have made it this far without the Kor Mereti to hold them back. The sooner you bring the Mereti back to normal, the better.`
 	
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system Kaliptari
 		personality waiting staying heroic disables unconstrained mute
 		fleet "Large Blight Shadow" 3
@@ -401,7 +401,7 @@ mission "Scrapyard Damnation 3"
 		dialog `Looks like the Damnation ran into a little trouble. Board the ship and learn how they're controlling the Mereti!`
 	
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system Feroteri
 		personality waiting staying heroic disables unconstrained mute
 		fleet "Large Blight Shadow" 3
@@ -506,7 +506,7 @@ mission "Scrapyard Damnation 4"
 				accept
 
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system Kaliptari
 		personality waiting staying heroic disables unconstrained mute
 		fleet "Large Blight Shadow"
@@ -514,7 +514,7 @@ mission "Scrapyard Damnation 4"
 	on enter Chimitarp
 		dialog `The Blight Shadows are running amok. Hopefully the Mereti will keep them in check once you deliver the Node 8 Processor to <planet>.`	
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system Chimitarp
 		personality waiting staying heroic disables unconstrained mute
 		fleet "Large Blight Shadow" 3
@@ -618,7 +618,7 @@ mission "Scrapyard Damnation Epilogue"
 	on enter
 		dialog `The Mereti send a message of gratitude for [restoring, fixing] The Mind.`
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system Chimitarp
 		personality waiting staying heroic disables unconstrained mute
 		fleet "Small Blight Shadow"

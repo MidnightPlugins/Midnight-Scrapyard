@@ -68,55 +68,55 @@ mission "Scrapyard Derelict World Ship"
 				accept
 
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Celeborim"
 		personality waiting heroic disables unconstrained mute
 		fleet "Large Blight Shadow"
 		
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Asikafarnut"
 		personality waiting heroic disables unconstrained mute staying
 		fleet "Large Blight Shadow" 2
 	
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Silikatakfar"
 		personality waiting heroic disables unconstrained mute staying
 		fleet "Large Blight Shadow" 3
 	
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Mesuket"
 		personality waiting heroic disables unconstrained mute staying
 		fleet "Large Blight Shadow" 4
 	
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Eshkoshtar"
 		personality waiting heroic disables unconstrained mute staying
 		fleet "Large Blight Shadow" 5
 	
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Salipastart"
 		personality waiting heroic disables unconstrained mute staying
 		fleet "Large Blight Shadow" 5
 
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Mekislepti"
 		personality waiting heroic disables unconstrained mute staying
 		fleet "Large Blight Shadow" 6
 
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Similisti"
 		personality waiting heroic disables unconstrained mute staying
 		fleet "Large Blight Shadow" 6
 
 	npc
-		government "Blight Shadows"
+		government "Invasive Predator"
 		system "Sevrelect"
 		personality entering heroic disables unconstrained mute
 		fleet "Large Blight Shadow"

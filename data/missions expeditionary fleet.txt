@@ -193,7 +193,7 @@ mission "Scrapyard Bore Fah Attack"
 	
 	npc kill
 		system "Bore Fah"
-		government "Blight Shadows"
+		government "Invasive Predator"
 		personality target waiting disables unconstrained mute
 		fleet "Infested Sestor Expedition"
 		dialog `The alien threat has been defeated. Check if the authorities on <planet> will reward you for your efforts.`
@@ -247,7 +247,7 @@ mission "Scrapyard Exploring the Persitar Wreck"
 			`While exploring the derelict, you find several crates of Obsolete Transceivers. While there's no practical use for them, they can be sold for scrap. You also find black slime splattered all over one of the damaged areas of the ship. As you are loading the transceivers onto your ship, something bangs on the hull of the derelict...`
 				accept
 	npc kill
-		government "Blight Shadows"
+		government "Invasive Predator"
 		personality waiting staying disables unconstrained mute
 		fleet "Large Blight Shadow" 3
 

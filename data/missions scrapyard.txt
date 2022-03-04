@@ -149,7 +149,7 @@ mission "First Contact: Blight Shadows"
 		event "Blight Shadow Infestation"
 	npc kill
 		system Asikafarnut
-		government "Blight Shadows"
+		government "Invasive Predator"
 		personality waiting staying disables unconstrained mute
 		fleet "Large Blight Shadow" 2
 	npc kill
@@ -214,7 +214,7 @@ mission "Scrapyard Boarding A"
 		has "event: Scrapyard Develops"
 		random < 25
 	npc board
-		government "Scrapyard Derelict"
+		government "Derelict (Killable)"
 		system
 			attributes "Scrapyard"
 		personality waiting derelict mute
@@ -235,7 +235,7 @@ mission "Scrapyard Boarding B"
 	on offer
 		"Scrapyard Threat Level" ++	
 	npc board
-		government "Scrapyard Derelict"
+		government "Derelict (Killable)"
 		system
 			attributes "Scrapyard"
 		personality waiting derelict mute
@@ -358,7 +358,7 @@ mission "Scrapyard Subsidurial"
 				accept
 	npc
 		system Mesuket
-		government "Blight Shadows"
+		government "Invasive Predator"
 		personality waiting disables unconstrained mute
 		fleet "Small Blight Shadow"
 	npc accompany save
