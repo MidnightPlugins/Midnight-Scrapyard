@@ -16,8 +16,8 @@ outfit "Blight Rifle"
 		Remnant
 	cost 422000
 	thumbnail "outfit/blight rifle"
-	"capture attack" 3.6
-	"capture defense" 5.4
+	"capture attack" 7.2
+	"capture defense" 10.8
 	"unplunderable" 1
 	description "A prototype the Remnant created using Blight Shadow eggs. This weapon drains energy from whatever it is used on. This can disrupt electronic door locks and reduces living creatures into withered husks. This effect also replenishes its own energy, making it an ideal weapon for long sieges. Death from this weapon appears to be cruel and painful. If the governments back home knew of its existence, it would probably be banned."
 
