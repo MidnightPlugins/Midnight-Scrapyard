@@ -277,7 +277,7 @@ fleet "Shadow Hunters"
 
 
 fleet "Error Scrap"
-	government "Scrapyard Derelict"
+	government "Derelict (Killable)"
 	names "error scrap"
 	fighters "error scrap"
 	cargo 0

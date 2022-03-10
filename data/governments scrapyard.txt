@@ -82,7 +82,7 @@ government "Kor Scrappers"
 	language "Korath"
 	"player reputation" 0
 	"attitude toward"
-		"Blight Shadows" -.04
+		"Invasive Predator" -.04
 	"penalty for"
 		assist 0
 		disable 0
@@ -102,7 +102,7 @@ government "Kor Scrappers (Hostile)"
 	"player reputation" -1000
 	"attitude toward"
 		"Kor Mereti" -.04
-		"Blight Shadows" -.01
+		"Invasive Predator" -.01
 	"penalty for"
 		assist 1000
 		disable 1
