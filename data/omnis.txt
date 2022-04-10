@@ -1,0 +1,177 @@
+#	Systems followed by planets held within
+
+system "Midnight Scrapyard"
+	pos -100 -10100
+	government "cheat"
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 20
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 40
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 60
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 80
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 100
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 120
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 140
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 160
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 180
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 200
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 220
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 240
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 260
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 280
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 300
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 320
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 340
+	object "Midnight Scrapyard"
+		sprite planet/ringworld
+		distance 812
+		offset 360
+
+planet "Midnight Scrapyard"
+	description ``
+	landscape landscape/station6
+	spaceport ``
+	outfitter "Midnight Scrapyard"
+	shipyard "Midnight Scrapyard"
+	bribe 0
+
+planet "Plugins"
+	add outfitter "Midnight Scrapyard"
+	add shipyard "Midnight Scrapyard"
+
+#	Reveal missions
+
+mission "reveal omnis-scrapyard"
+	invisible
+	landing
+	repeat
+	source
+		government "cheat"
+	on accept
+		event "reveal omnis-scrapyard"
+
+event "reveal omnis-scrapyard"
+	visit "Midnight Scrapyard"
+
+#	Sales
+
+outfitter "Midnight Scrapyard"
+	"Blight Rifle"
+	"Blight Shadow Eggs"
+	"Energy Absorber?"
+	"Korath Afterburner"
+	"Korath Grappler"
+	"Korath Incinerator"
+	"Korath Scanner"
+	"Node 8 Jammer"
+	"Node 8 Processor"
+	"Obsolete Transceiver"
+	"Slicer Torch"
+	"Systems Core (Damaged)"
+	"Triple Plasma Core (Damaged)"
+	"Hyperdrive (Damaged)"
+	"Thruster (Planetary Class)(Damaged)"
+	"Steering (Planetary Class)(Damaged)"
+
+outfitter "korath plugins"
+	"Korath Afterburner"
+	"Korath Grappler"
+	"Korath Incinerator"
+	"Korath Scanner"
+	"Node 8 Jammer"
+	"Node 8 Processor"
+	"Obsolete Transceiver"
+	"Slicer Torch"
+	"Systems Core (Damaged)"
+	"Triple Plasma Core (Damaged)"
+	"Hyperdrive (Damaged)"
+	"Thruster (Planetary Class)(Damaged)"
+	"Steering (Planetary Class)(Damaged)"
+
+outfitter "remnant plugins"
+	"Blight Rifle"
+
+outfitter "unknown plugins"
+	"Blight Shadow Eggs"
+	"Energy Absorber?"
+
+shipyard "Midnight Scrapyard"
+	"Blight Shadow"
+	"Grakerat 572"
+	"Korath Devourer"
+	"Korath Scavenger"
+	"Korath Scrapper"
+	"Korath Transport B"
+	"Korath Transport C"
+	"Korath Transport"
+	"Korath Warmonger"
+	"Korath World-Ship D (Crippled)"
+	"Osk Lek Chaser"
+	"Skoretak 13"
+	"Tercheldar 150"
+
+shipyard "korath plugins"
+	"Grakerat 572"
+	"Korath Devourer"
+	"Korath Scavenger"
+	"Korath Scrapper"
+	"Korath Transport B"
+	"Korath Transport C"
+	"Korath Transport"
+	"Korath Warmonger"
+	"Korath World-Ship D (Crippled)"
+	"Osk Lek Chaser"
+	"Skoretak 13"
+	"Tercheldar 150"
+
+shipyard "unknown plugins"
+	"Blight Shadow"
