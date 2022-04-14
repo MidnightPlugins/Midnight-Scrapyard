@@ -150,7 +150,7 @@ mission "Scrapyard Uwa Fahn Attack"
 	npc kill
 		system "Uwa Fahn"
 		government "Kor Sestor"
-		personality target waiting
+		personality target waiting staying
 		fleet "Kor Sestor Expedition"
 		dialog `The alien fleet has been defeated. Check if the authorities on <planet> will reward you for your efforts.`
 	
@@ -194,7 +194,7 @@ mission "Scrapyard Bore Fah Attack"
 	npc kill
 		system "Bore Fah"
 		government "Invasive Predator"
-		personality target waiting disables unconstrained mute
+		personality target waiting disables unconstrained mute staying
 		fleet "Infested Sestor Expedition"
 		dialog `The alien threat has been defeated. Check if the authorities on <planet> will reward you for your efforts.`
 	
@@ -277,3 +277,107 @@ event "Patch: Blight Shadows Nest In Persitar"
 		remove fleet "Large Blight Shadow" 1000
 
 
+
+mission "Scrapyard Eliminator 1"
+	landing
+	invisible
+	to offer
+		has "event: Sestor Expeditionary Fleets"
+		"Scrapyard Threat Level" >= 35
+	on offer
+		event "eliminator in sich'ka'ara"
+	on enter "Prakacha'a"
+		dialog "The planet closest to the center of this system is exhibiting unusual volcanic activity. It's as if some unnatural force carved up the crust, allowing the underlying magma to reach the surface."
+	on enter "Sich'ka'ara"
+		conversation
+			scene "scene/scene-scene-sestorexpedition"
+			`There is a Kor Sestor expeditionary fleet here. And it seems to be under the control of the Unfettered! They also have another unusual ship with them. The gun on it is enormous.`
+				accept
+	npc
+		government "Hai (Unfettered)"
+		personality waiting staying
+		system "Sich'ka'ara"
+		fleet "Large Unfettered" 4
+	npc
+		government "Kor Sestor"
+		system "Sich'ka'ara"
+		personality derelict waiting timid uninterested
+		ship "Grakerat 572" "65-432.1"
+			cargo 3
+			commodities Equipment Electronics Construction
+	
+	npc kill
+		government "Hai (Unfettered)"
+		system "Sich'ka'ara"
+		names "kor sestor"
+		personality target waiting staying
+		commodities Equipment Electronics Construction
+		variant
+			"Tercheldar 150" 2
+			"Skoretak 13" 4
+			"Stakoshtar 187"
+		conversation
+			scene "ship/stakoshtar 187/stackoshtar"
+			apply
+				set "defeateddstakoshtar 187 in sich'ka'ara"
+			`You've stopped the Stakoshtar 187 from damaging any more worlds. A telepathic presence congratulates you. During their civil war, the Korath used this weapon against planetary targets. Scars from such battles still cover the surface of many of their worlds.`
+				accept
+
+mission "Scrapyard Eliminator 1 cleanup"
+	landing
+	invisible
+	to offer
+		has "Scrapyard Eliminator 1" active
+		has "defeateddstakoshtar 187 in sich'ka'ara"
+	on offer
+		fail "Scrapyard Eliminator 1"
+		set "Scrapyard Eliminator 1: done"
+		fail
+
+event "eliminator in sich'ka'ara"
+	system "Prakacha'a"
+		object
+			sprite star/g0
+			distance 32.5255
+			period 12.7118
+			offset 180
+		object
+			sprite star/k5-old
+			distance 82.4745
+			period 12.7118
+		object
+			sprite planet/lava4-b
+			distance 247.965
+			period 40.2479
+		object
+			sprite planet/desert5-b
+			distance 458.205
+			period 101.099
+		object
+			sprite planet/rock19-b
+			distance 692.455
+			period 187.822
+		object
+			sprite planet/tethys
+			distance 846.065
+			period 253.667
+		object
+			sprite planet/gas6-b
+			distance 4036.31
+			period 2643.24
+			object
+				sprite planet/callisto-b
+				distance 294
+				period 12.8761
+			object
+				sprite planet/rock3-b
+				distance 437
+				period 23.3339
+			object
+				sprite planet/io-b
+				distance 540
+				period 32.052
+			object
+				sprite planet/dust3-b
+				distance 723
+				period 49.6561

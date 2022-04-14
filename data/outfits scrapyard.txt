@@ -47,6 +47,39 @@ outfit "Korath Afterburner"
 
 
 
+outfit "Korath Eliminator"
+	category "Secondary Weapons"
+	cost 150000000
+	thumbnail "outfit/korath eliminator"
+	"mass" 165
+	"outfit space" -165
+	"weapon capacity" -165
+	"gun ports" -1
+	"spinal mount" -1
+	weapon
+		sprite "projectile/korath eliminator"
+			"frame rate" 1
+		sound "nuke" 
+		icon "icon/dragonflame"
+		"hit effect" "bright hit"
+		"hit effect" "dragonflame plasma" 15
+		"hit effect" "dragonflame debris" 25
+		"velocity" 2000
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 1600
+		"firing fuel" 20
+		"firing heat" 4000
+		"firing force" 100
+		"hit force" 200
+		"shield damage" 2500
+		"hull damage" 1500
+		"heat damage" 5000
+		"piercing" 0.04
+		"blast radius" 5
+
+
+
 outfit "Korath Grappler"
 	category "Guns"
 	cost 410000

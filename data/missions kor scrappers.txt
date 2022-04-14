@@ -17,17 +17,15 @@
 ######################
 
 
-mission "Scrapyard Devourer (Neutral)"
+mission "Scrapyard Devourer (Neutral) 1"
 	landing
 	invisible
 	to offer
 		( "Scrapyard Boarding A: active" + "Scrapyard Boarding B: active" ) >= 2
 	npc kill
-		to despawn
-			"Scrapyard Threat Level" >= 20
 		government "Kor Scrappers"
 		system "Silikatakfar"
-		personality mining harvests plunders uninterested
+		personality waiting staying mining harvests plunders uninterested
 		fleet "Korath Devourer (Neutral)"
 		
 mission "Scrapyard Scrapper Siege (Faronektu)"
@@ -650,6 +648,18 @@ mission "Scrapyard Scrapper Siege Reset"
 		clear "Scrapyard Scrapper Siege (Mekislepti): offered"
 		clear "Scrapyard Scrapper Siege (Similisti): offered"
 		fail
+
+mission "Scrapyard Devourer (Neutral) 2"
+	landing
+	invisible
+	to offer
+		has "Scrapyard Damnation Epilogue: done"
+	npc kill
+		government "Kor Scrappers"
+		system " Eneremprukt"
+		personality waiting staying mining harvests plunders uninterested
+		fleet "Korath Devourer (Neutral)"
+
 
 ####################
 # Bonus Missions

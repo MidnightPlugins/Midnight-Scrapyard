@@ -371,7 +371,17 @@ mission "Scrapyard Subsidurial"
 			scene "thumbnail/subsidurial"
 			`The subsidurial comes to a rest on the adjacent landing pad. It seems to have fallen asleep. Several Wanderers gawk at it in exasperation. As you disembark your ship, some look to you for an explanation. You tell them that it came here on its own. Hopefully you won't get blamed for any damage it does to the spaceport while you're here...`
 
-		
+mission "Scrapyard Subsidurial 2"
+	landing
+	invisible
+	to offer 
+		has "Scrapyard Subsidurial: done"
+	npc kill
+		system Kaliptari
+		government "Indigenous Lifeform"
+		personality timid mining harvests mute unconstrained marked
+		ship "Subsidurial"
+
 
 
 mission "Scrapyard Sebra Skira TL20"
@@ -571,7 +581,7 @@ mission "Scrapyard Random Station Scrap Mereti"
 	invisible
 	repeat
 	source
-		planet "Metwar Skaretar" "Makwar Pratarati"
+		planet "Metwar Skaretar" "MakwaroPratarati"
 	to offer
 		has "event: Scrapyard Develops"
 		random < 40
@@ -584,3 +594,80 @@ mission "Scrapyard Random Station Scrap Mereti"
 		outfit "Reasoning Node" 1
 		fail
 
+
+
+mission "Scrapyard Model Zero Desert"
+	landing
+	name "Model 0"
+	description "Bring eight Reasoning Nodes to <origin> and reactivate the derelict Model 0."
+	source "Esayaku Fen"
+	to offer
+		has "event: Scrapyard Develops"
+	on offer
+		conversation
+			scene "scene/scene-model0"
+			`The shifting sands have revealed a derelect Mereti automaton unlike the ones in the modern Mereti fleets. Perhaps it's an obsolete model no longer being produced. It appears to be in good condition, but it's Reasoning Nodes have gone bad. What do you want to do?`
+			choice
+				`	(Try to salvage it.)`
+				`	(Strip it for parts.)`
+					goto parts
+			scene "outfit/reasoning node"
+			`If you return with eight Reasoning Nodes, you can probably salvage it.
+				accept
+			
+			label parts
+			`You scavenge the derelect automaton for spare parts.`
+				decline
+	
+	on decline
+		outfit "Korath Disruptor"
+		outfit "Korath Slicer Turret
+		outfit "Triple Plasma Core"
+		outfit "Systems Core (Large)"
+		outfit "Large Heat Shunt"
+		outfit "Thruster (Planetary Class)"
+		outfit "Steering (Planetary Class)"
+	on complete
+		outfit "Reasoning Node" -8
+		give ship "Model 0" "00:00:00:0"
+		conversation
+			scene "outfit/reasoning node"
+			`You install the Reasoning Nodes into the derelict automaton. It seems willing to follow your orders. It seems there is no place in the modern Mereti network for this obsolete model.`
+
+mission "Scrapyard Model Zero Snow"
+	landing
+	name "Model 0"
+	description "Bring eight Reasoning Nodes to <origin> and reactivate the derelict Model 0."
+	source "Eskar Kortuka"
+	to offer
+		has "event: Scrapyard Develops"
+	on offer
+		conversation
+			scene "scene/scene-model0"
+			`The shifting snow drifts have revealed a derelect Mereti automaton unlike the ones in the modern Mereti fleets. Perhaps it's an obsolete model no longer being produced. It appears to be in good condition, but it's Reasoning Nodes have gone bad. What do you want to do?`
+			choice
+				`	(Try to salvage it.)`
+				`	(Strip it for parts.)`
+					goto parts
+			scene "outfit/reasoning node"
+			`If you return with eight Reasoning Nodes, you can probably salvage it.
+				accept
+			
+			label parts
+			`You scavenge the derelect automaton for spare parts.`
+				decline
+	
+	on decline
+		outfit "Korath Disruptor"
+		outfit "Korath Slicer Turret
+		outfit "Triple Plasma Core"
+		outfit "Systems Core (Large)"
+		outfit "Large Heat Shunt"
+		outfit "Thruster (Planetary Class)"
+		outfit "Steering (Planetary Class)"
+	on complete
+		outfit "Reasoning Node" -8
+		give ship "Model 0" "00:00:00:0"
+		conversation
+			scene "outfit/reasoning node"
+			`You install the Reasoning Nodes into the derelict automaton. It seems willing to follow your orders. It seems there is no place in the modern Mereti network for this obsolete model.`

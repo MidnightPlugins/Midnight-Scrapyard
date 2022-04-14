@@ -88,7 +88,7 @@ ship "Blight Shadow"
 		"hull protection" 1
 		"piercing protection" 1
 		"heat protection" 1
-		"energy protection" 1
+		"energy protection" 2
 		"energy capacity" 1000
 		"fuel capacity" 600
 		"cloak" .01
@@ -599,4 +599,75 @@ fleet "Infested Scrap"
 
 
 
+********************************
+* Blight Mutations
+********************************
 
+ship "Blight Mutation"
+	noun "creature"
+	sprite "ship/blight mutation/blight mutation"
+	"never disabled"
+	attributes
+		"automaton" 1
+		category "Light Warship"
+		"hull" 7200
+		"mass" 460
+		"drag" 8.6
+		"heat dissipation" 2.6
+		"cargo space" 0
+		"thrust" 24
+		"reverse thrust" 36
+		"turn" 800
+		"hull repair rate" 3
+		"hull protection" 1
+		"piercing protection" 1
+		"heat protection" 1
+		"energy protection" 2
+		"energy capacity" 1400
+		"fuel capacity" 800
+		"cloak" .01
+		"cloaking energy" .2
+		"cloaking fuel" .1
+		"inscrutable" 1
+		"gaslining" 1
+		"jump drive" 1
+		"jump speed" 1
+		"jump effect" "jump drive black"
+		"jump in sound" "jump in red"
+		"jump out sound" "jump out red"
+		"ramscoop" 2
+		"solar collection" 4
+		weapon
+			"blast radius" 15
+			"shield damage" 150
+			"hull damage" 150
+			"hit force" -100
+	outfits
+		"Energy Absorber?" 3
+	gun -1 -22 "Energy Absorber?"
+	gun 0 -22 "Energy Absorber?"
+	gun 1 -22 "Energy Absorber?"
+	leak "green blood" 25 35
+	explode "green blood" 45
+	"final explode" "green blood"
+	description "An invasive species from beyond our galaxy. They primarily survive by absorbing various forms of energy."
+	description "These Blight Shadows have mutated into a stronger form."
+
+fleet "Small Blight Mutation"
+	government "Invasive Predator"
+	cargo 0
+	personality disables unconstrained mute
+	variant 6
+		"Blight Mutation"
+		"Blight Shadow" 5
+	variant 3
+		"Blight Mutation"
+		"Blight Shadow" 4
+	variant 1
+		"Blight Mutation"
+		"Blight Shadow" 3
+	variant 1
+		"Blight Mutation"
+		"Blight Shadow" 2
+	variant 1
+		"Blight Mutation" 2

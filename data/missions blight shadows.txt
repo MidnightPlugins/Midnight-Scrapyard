@@ -614,3 +614,28 @@ mission "Scrapyard Random Station Eggs cleanup"
 	on offer
 		fail "Scrapyard Random Station Eggs"
 		fail
+
+
+
+mission "Scrapyard Blight Mutation"
+	landing
+	invisible
+	to offer
+		has "event: Infected with Shadowblight"
+		"Scrapyard Threat Level" >= 25
+	on offer
+		event "scrapyard blight mutation"
+		fail
+		
+event "scrapyard blight mutation"
+	system Celeborim
+		remove fleet "Small Blight Shadow" 800
+		add fleet "Small Blight Mutation" 800
+	system Makferuti
+		remove fleet "Small Blight Shadow" 800
+		add fleet "Small Blight Mutation" 800
+	system Asikafarnut
+		add fleet "Small Blight Mutation" 800
+	system Sobarati
+		remove fleet "Small Blight Shadow" 800
+		add fleet "Small Blight Mutation" 800
