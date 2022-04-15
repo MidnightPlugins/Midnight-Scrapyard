@@ -59,7 +59,7 @@ outfit "Korath Eliminator"
 	weapon
 		sprite "projectile/korath eliminator"
 			"frame rate" 1
-		sound "nuke" 
+		sound "skylance" 
 		icon "icon/dragonflame"
 		"hit effect" "bright hit"
 		"hit effect" "dragonflame plasma" 15
@@ -71,13 +71,13 @@ outfit "Korath Eliminator"
 		"firing fuel" 20
 		"firing heat" 4000
 		"firing force" 100
-		"hit force" 200
-		"shield damage" 2500
-		"hull damage" 1500
+		"hit force" 100
+		"shield damage" 3000
+		"hull damage" 5000
 		"heat damage" 5000
-		"piercing" 0.04
+		"piercing" 0.08
 		"blast radius" 5
-
+	description "The Korath Eliminator is an orbital strike weapon that can carve deep into a planet's crust. Many worlds were destroyed in the Korath civil war by these tools of destruction."
 
 
 outfit "Korath Grappler"

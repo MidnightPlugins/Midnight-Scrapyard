@@ -977,7 +977,7 @@ ship "Stakoshtar 187"
 		"outfit space" 1222
 		"weapon capacity" 544
 		"engine capacity" 234
-		"self destruct" .80
+		"self destruct" .35
 		"ramscoop" 3
 		"spinal mount" 1
 		weapon

@@ -278,63 +278,53 @@ event "Patch: Blight Shadows Nest In Persitar"
 
 
 
-mission "Scrapyard Eliminator 1"
-	landing
-	invisible
+mission "Scrapyard Stakoshstar 1"
+	name "Sestor Expeditionary Fleet"
+	description "Scout <waypoints> for a Kor Sestor expeditionary fleet and eliminate it."
+	source
+		government "Wanderer"
+	destination "Desi Seledrak"
+	waypoint "Prakacha'a"
 	to offer
 		has "event: Sestor Expeditionary Fleets"
-		"Scrapyard Threat Level" >= 35
+		"Scrapyard Threat Level" >= 30
 	on offer
-		event "eliminator in sich'ka'ara"
+		event "stakoshtar in prakacha'a"
+		conversation
+			scene "planet/lava4-b"
+			`Some of the Wanderer pilots are talking about a fleet of strange ships in the <waypoints> system. From the description of the ships, it sounds like they are a Kor Sestor expeditionary fleet. According to the pilots, one of these ships is outfitted with a really big gun. It supposedly turned one of the Prakacha'a planets into a fiery hellscape.`
+				accept
 	on enter "Prakacha'a"
-		dialog "The planet closest to the center of this system is exhibiting unusual volcanic activity. It's as if some unnatural force carved up the crust, allowing the underlying magma to reach the surface."
-	on enter "Sich'ka'ara"
 		conversation
-			scene "scene/scene-scene-sestorexpedition"
-			`There is a Kor Sestor expeditionary fleet here. And it seems to be under the control of the Unfettered! They also have another unusual ship with them. The gun on it is enormous.`
+			scene "scene/scene-sestorexpedition"
+			`There is a Kor Sestor expeditionary fleet here. It has an unusual ship with it.`
+			choice
+				`	(Look closer.)`
+			scene "ship/stakoshtar 187/stakoshtar"
+			`	The gun on this ship is enormous. It would be bad if the Unfettered got their hands on it.`
 				accept
-	npc
-		government "Hai (Unfettered)"
-		personality waiting staying
-		system "Sich'ka'ara"
-		fleet "Large Unfettered" 4
-	npc
-		government "Kor Sestor"
-		system "Sich'ka'ara"
-		personality derelict waiting timid uninterested
-		ship "Grakerat 572" "65-432.1"
-			cargo 3
-			commodities Equipment Electronics Construction
-	
 	npc kill
-		government "Hai (Unfettered)"
-		system "Sich'ka'ara"
-		names "kor sestor"
-		personality target waiting staying
-		commodities Equipment Electronics Construction
-		variant
-			"Tercheldar 150" 2
-			"Skoretak 13" 4
-			"Stakoshtar 187"
+		government "Kor Sestor"
+		system "Prakacha'a"
+		personality target waiting staying marked
+		fleet
+			names "kor sestor"
+			commodities Equipment Electronics Construction
+			variant
+				"Grakerat 572"
+				"Tercheldar 150" 2
+				"Skoretak 13" 4
+				"Stakoshtar 187"
 		conversation
-			scene "ship/stakoshtar 187/stackoshtar"
+			scene "ship/stakoshtar 187/stakoshtar"
 			apply
-				set "defeateddstakoshtar 187 in sich'ka'ara"
-			`You've stopped the Stakoshtar 187 from damaging any more worlds. A telepathic presence congratulates you. During their civil war, the Korath used this weapon against planetary targets. Scars from such battles still cover the surface of many of their worlds.`
+				set "defeatedd stakoshtar 187 in prakacha'a"
+			`You've stopped the Stakoshtar 187 from damaging any more worlds. A telepathic presence addresses you. It says, "During their civil war, the Korath used this weapon against planetary targets. Scars from such battles still cover the surface of many of their worlds. You've done well to stop this one."`
 				accept
 
-mission "Scrapyard Eliminator 1 cleanup"
-	landing
-	invisible
-	to offer
-		has "Scrapyard Eliminator 1" active
-		has "defeateddstakoshtar 187 in sich'ka'ara"
-	on offer
-		fail "Scrapyard Eliminator 1"
-		set "Scrapyard Eliminator 1: done"
-		fail
 
-event "eliminator in sich'ka'ara"
+
+event "stakoshtar in prakacha'a"
 	system "Prakacha'a"
 		object
 			sprite star/g0

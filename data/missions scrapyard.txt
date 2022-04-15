@@ -208,7 +208,7 @@ event "Blight Shadow Infestation"
 mission "Scrapyard Boarding A"
 	landing
 	invisible
-	repeat 5
+	repeat 6
 	destination "Desi Seledrak"
 	to offer
 		has "event: Scrapyard Develops"
@@ -227,13 +227,13 @@ mission "Scrapyard Boarding A"
 mission "Scrapyard Boarding B"
 	landing
 	invisible
-	repeat 10
+	repeat 4
+	source
+		attributes "korath"
 	destination "Desi Seledrak"
 	to offer
 		has "event: Blight Shadow Infestation"
 		random < 25
-	on offer
-		"Scrapyard Threat Level" ++	
 	npc board
 		government "Derelict (Killable)"
 		system
@@ -241,8 +241,10 @@ mission "Scrapyard Boarding B"
 		personality waiting derelict mute
 		fleet "Error Scrap"
 	on fail
+		"Scrapyard Threat Level" ++	
 		"Scrapyard Boarding B: offered" --
 	on complete
+		"Scrapyard Threat Level" ++	
 		"Scrapyard Boarding B: offered" --	
 
 
@@ -605,14 +607,14 @@ mission "Scrapyard Model Zero Desert"
 		has "event: Scrapyard Develops"
 	on offer
 		conversation
-			scene "scene/scene-model0"
+			scene "ship/model 0"
 			`The shifting sands have revealed a derelect Mereti automaton unlike the ones in the modern Mereti fleets. Perhaps it's an obsolete model no longer being produced. It appears to be in good condition, but it's Reasoning Nodes have gone bad. What do you want to do?`
 			choice
 				`	(Try to salvage it.)`
 				`	(Strip it for parts.)`
 					goto parts
 			scene "outfit/reasoning node"
-			`If you return with eight Reasoning Nodes, you can probably salvage it.
+			`If you return with eight Reasoning Nodes, you can probably salvage it.`
 				accept
 			
 			label parts
@@ -621,7 +623,7 @@ mission "Scrapyard Model Zero Desert"
 	
 	on decline
 		outfit "Korath Disruptor"
-		outfit "Korath Slicer Turret
+		outfit "Korath Slicer Turret"
 		outfit "Triple Plasma Core"
 		outfit "Systems Core (Large)"
 		outfit "Large Heat Shunt"
@@ -631,7 +633,7 @@ mission "Scrapyard Model Zero Desert"
 		outfit "Reasoning Node" -8
 		give ship "Model 0" "00:00:00:0"
 		conversation
-			scene "outfit/reasoning node"
+			scene "ship/model 0"
 			`You install the Reasoning Nodes into the derelict automaton. It seems willing to follow your orders. It seems there is no place in the modern Mereti network for this obsolete model.`
 
 mission "Scrapyard Model Zero Snow"
@@ -643,14 +645,14 @@ mission "Scrapyard Model Zero Snow"
 		has "event: Scrapyard Develops"
 	on offer
 		conversation
-			scene "scene/scene-model0"
+			scene "ship/model 0"
 			`The shifting snow drifts have revealed a derelect Mereti automaton unlike the ones in the modern Mereti fleets. Perhaps it's an obsolete model no longer being produced. It appears to be in good condition, but it's Reasoning Nodes have gone bad. What do you want to do?`
 			choice
 				`	(Try to salvage it.)`
 				`	(Strip it for parts.)`
 					goto parts
 			scene "outfit/reasoning node"
-			`If you return with eight Reasoning Nodes, you can probably salvage it.
+			`If you return with eight Reasoning Nodes, you can probably salvage it.`
 				accept
 			
 			label parts
@@ -659,7 +661,7 @@ mission "Scrapyard Model Zero Snow"
 	
 	on decline
 		outfit "Korath Disruptor"
-		outfit "Korath Slicer Turret
+		outfit "Korath Slicer Turret"
 		outfit "Triple Plasma Core"
 		outfit "Systems Core (Large)"
 		outfit "Large Heat Shunt"
@@ -669,5 +671,5 @@ mission "Scrapyard Model Zero Snow"
 		outfit "Reasoning Node" -8
 		give ship "Model 0" "00:00:00:0"
 		conversation
-			scene "outfit/reasoning node"
+			scene "ship/model 0"
 			`You install the Reasoning Nodes into the derelict automaton. It seems willing to follow your orders. It seems there is no place in the modern Mereti network for this obsolete model.`

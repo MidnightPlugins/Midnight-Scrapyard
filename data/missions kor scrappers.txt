@@ -44,7 +44,7 @@ mission "Scrapyard Scrapper Siege (Faronektu)"
 			not "Randomize Scrapyard Scrapper Siege (Faronektu)"
 			and
 				has "Randomize Scrapyard Scrapper Siege (Faronektu)"
-				Random < 25
+				Random < 15
 	on offer
 		conversation
 			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Fara Skaeruti in the Faronektu system. Can you assist in [defending, protecting] the Mereti?`
@@ -83,7 +83,7 @@ mission "Scrapyard Scrapper Siege (Mekislepti)"
 			not "Randomize Scrapyard Scrapper Siege (Mekislepti)"
 			and
 				has "Randomize Scrapyard Scrapper Siege (Mekislepti)"
-				Random < 25
+				Random < 15
 	on offer
 		conversation
 			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Aresepru Nat in the Mekislepti system. Can you assist in [defending, protecting] the Mereti?`
@@ -123,7 +123,7 @@ mission "Scrapyard Scrapper Siege (Similisti)"
 			not "Randomize Scrapyard Scrapper Siege (Similisti)"
 			and
 				has "Randomize Scrapyard Scrapper Siege (Similisti)"
-				Random < 25
+				Random < 15
 	on offer
 		conversation
 			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Mereti Station in the Similisti system. Can you assist in [defending, protecting] the Mereti?`
