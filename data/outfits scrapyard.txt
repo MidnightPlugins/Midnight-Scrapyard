@@ -310,3 +310,10 @@ outfit "Steering (Planetary Class)(Damaged)"
 		"frame rate" 7
 	"steering flare sound" "plasma medium"
 	description "A malfunction in the steering system has reduced its effectiveness significantly."
+
+
+
+outfit "Efret Salvage License"
+	category "Special"
+	thumbnail "outfit/efret salvage license"
+	description "Gives you access to salvaged outfits from the Kor Efret. You're not sure if this is a formal license or simply a means to communicate to the outfitter that you're looking for used parts..."

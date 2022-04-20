@@ -25,7 +25,7 @@ mission "Scrapyard: Scrapyard Develops"
 	landing
 	invisible
 	to offer
-		has "Wanderers: Sestor: Final: done"
+		has "event: wanderers: sestor eliminated"
 	on offer
 		event "Scrapyard Develops" 3
 
@@ -598,78 +598,3 @@ mission "Scrapyard Random Station Scrap Mereti"
 
 
 
-mission "Scrapyard Model Zero Desert"
-	landing
-	name "Model 0"
-	description "Bring eight Reasoning Nodes to <origin> and reactivate the derelict Model 0."
-	source "Esayaku Fen"
-	to offer
-		has "event: Scrapyard Develops"
-	on offer
-		conversation
-			scene "ship/model 0"
-			`The shifting sands have revealed a derelect Mereti automaton unlike the ones in the modern Mereti fleets. Perhaps it's an obsolete model no longer being produced. It appears to be in good condition, but it's Reasoning Nodes have gone bad. What do you want to do?`
-			choice
-				`	(Try to salvage it.)`
-				`	(Strip it for parts.)`
-					goto parts
-			scene "outfit/reasoning node"
-			`If you return with eight Reasoning Nodes, you can probably salvage it.`
-				accept
-			
-			label parts
-			`You scavenge the derelect automaton for spare parts.`
-				decline
-	
-	on decline
-		outfit "Korath Disruptor"
-		outfit "Korath Slicer Turret"
-		outfit "Triple Plasma Core"
-		outfit "Systems Core (Large)"
-		outfit "Large Heat Shunt"
-		outfit "Thruster (Planetary Class)"
-		outfit "Steering (Planetary Class)"
-	on complete
-		outfit "Reasoning Node" -8
-		give ship "Model 0" "00:00:00:0"
-		conversation
-			scene "ship/model 0"
-			`You install the Reasoning Nodes into the derelict automaton. It seems willing to follow your orders. It seems there is no place in the modern Mereti network for this obsolete model.`
-
-mission "Scrapyard Model Zero Snow"
-	landing
-	name "Model 0"
-	description "Bring eight Reasoning Nodes to <origin> and reactivate the derelict Model 0."
-	source "Eskar Kortuka"
-	to offer
-		has "event: Scrapyard Develops"
-	on offer
-		conversation
-			scene "ship/model 0"
-			`The shifting snow drifts have revealed a derelect Mereti automaton unlike the ones in the modern Mereti fleets. Perhaps it's an obsolete model no longer being produced. It appears to be in good condition, but it's Reasoning Nodes have gone bad. What do you want to do?`
-			choice
-				`	(Try to salvage it.)`
-				`	(Strip it for parts.)`
-					goto parts
-			scene "outfit/reasoning node"
-			`If you return with eight Reasoning Nodes, you can probably salvage it.`
-				accept
-			
-			label parts
-			`You scavenge the derelect automaton for spare parts.`
-				decline
-	
-	on decline
-		outfit "Korath Disruptor"
-		outfit "Korath Slicer Turret"
-		outfit "Triple Plasma Core"
-		outfit "Systems Core (Large)"
-		outfit "Large Heat Shunt"
-		outfit "Thruster (Planetary Class)"
-		outfit "Steering (Planetary Class)"
-	on complete
-		outfit "Reasoning Node" -8
-		give ship "Model 0" "00:00:00:0"
-		conversation
-			scene "ship/model 0"
-			`You install the Reasoning Nodes into the derelict automaton. It seems willing to follow your orders. It seems there is no place in the modern Mereti network for this obsolete model.`
