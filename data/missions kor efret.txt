@@ -54,7 +54,7 @@ shipyard "Kor Efret Scrapyard"
 		
 event "Laki Nemparu opens Shipyard"
 	planet "Laki Nemparu"
-		add	shipyard "Kor Efret Scrapyard"
+		add shipyard "Kor Efret Scrapyard"
 	outfitter "Korath Basics"
 		add "Korath Afterburner"
 		add "Korath Scanner"
