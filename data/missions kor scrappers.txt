@@ -656,7 +656,7 @@ mission "Scrapyard Devourer (Neutral) 2"
 		has "Scrapyard Damnation Epilogue: done"
 	npc kill
 		government "Kor Scrappers"
-		system " Eneremprukt"
+		system "Eneremprukt"
 		personality waiting staying mining harvests plunders uninterested
 		fleet "Korath Devourer (Neutral)"
 
