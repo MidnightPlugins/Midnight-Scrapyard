@@ -302,11 +302,11 @@ mission "Scrapyard: Efret Salvage License 2"
 		set "license: Efret Salvage"
 		event "access efret salvage"
 		conversation
-			`	You find Rek giving a presentation at a meeting of some sort. It appears to be about the colony at Sabira Eseskrai, though you can't figure out the details. After waiting for her to finish, you approach her. "These shadow creature attacks have caused some colonists to have second thoughts about settling on planets farther than the Quarg ring. I can't blame them. The ship I was on was also attacked. It was an unnerving experience. The worst part wasn't the attack itself. It was being stranded in space on a derelict with no power without knowing how long it would take for someone to rescue us... or if we'd even be rescued."
+			`	You find Rek giving a presentation at a meeting of some sort. It appears to be about the colony at Sabira Eseskrai, though you can't figure out the details. After waiting for her to finish, you approach her. "These shadow creature attacks have caused some colonists to have second thoughts about settling on planets farther than the Quarg ring. I can't blame them. The ship I was on was also attacked. It was an unnerving experience. The worst part wasn't the attack itself. It was being stranded in space on a derelict with no power without knowing how long it would take for someone to rescue us... or if we'd even be rescued."`
 			choice
-				`	"It would help me fight the shadows if I were able to buy weapons from the Kor Efret."
+				`	"It would help me fight the shadows if I were able to buy weapons from the Kor Efret."`
 			scene "outfit/efret salvage license"
-			"Let's visit the outfitter and see if we can arrange something." After exchanging the customary greeting, Rek talks with the outfitter for a bit. The outfitter grabs something from the back of the shop and hands it to you. Rek translates, "Simply present this to any Kor Efret outfitter and they'll give you access to their stock of salvaged outfits."
+			`"Let's visit the outfitter and see if we can arrange something." After exchanging the customary greeting, Rek talks with the outfitter for a bit. The outfitter grabs something from the back of the shop and hands it to you. Rek translates, "Simply present this to any Kor Efret outfitter and they'll give you access to their stock of salvaged outfits."`
 
 
 outfitter "Efret Salvage"
@@ -362,6 +362,102 @@ event "access efret salvage"
 
 
 
+mission "Scrapyard Mereti Efret Test Flight"
+	name "Mereti Efret Escort"
+	description "Escort the Mereti Efret to <waypoints>. Then return to <destination>."
+	source "Laki Nemparu"
+	waypoint Sumprast
+	waypoint Sevrelect
+	waypoint Dokdobaru
+	waypoint Skeruto
+	waypoint Kaliptari
+	waypoint Solifar
+	waypoint Chimitarp
+	to offer
+		has "event: Warmonger Construction Completed"
+		has "event: access efret salvage"
+		or
+			not "Scrapyard Scrapper Siege (Faronektu): done"
+			not "Scrapyard Scrapper Siege (Mekislepti): done"
+			not "Scrapyard Scrapper Siege (Similisti): done"
+			has "event: Node 8 Processor Returned"
+		or
+			not "Randomize Scrapyard Mereti Efret Test Flight"
+			and
+				has "Randomize Scrapyard Mereti Efret Test Flight"
+				random < 20
+	on offer
+		conversation
+			scene "scene/scene-derelictworldship"
+			`A Kor Efret freighter captain approaches you. You soon realize it's the same captain who piloted the World-Ship you rescued a while back. He seems eager to tell you something, but the language barrier is making it difficult to understand.`
+			choice
+				`	(Try to figure out what he is saying.)`
+				`	(Not interested.)`
+					decline
+			`He makes several gestures while talking, particularly one involving pushing out to the sky then pulling back towards himself. Perhaps...`
+			choice
+				`	(He wants his old World-Ship back.)'
+				`	(He wants you to fetch him something from space.)`
+				`	(He wants you to take him somewhere then bring him back.)`
+					goto correct
+				`	(He wants you to deliver a message then return with the reply.)`
+			`	It seems you've failed to understand him. Perhaps you can try again the next time you meet.`
+				defer
+			label correct
+			scene "ship/mereti efret"
+			`	You were close. He shows you that he has his own ship, one made from salvaged Mereti parts. It seems he wants you to escort him as he pilots this ship to several systems marked on the map. Do you want to accept this job?`
+			choice
+				`	(Accept.)`
+					accept
+				`	(Decline.)`
+					decline
+	on enter Sumprast
+		dialog `You receive several hails from Kor Efret ships. You don't understand the words, but they sound happy.`
+	on enter Sevrelect
+		dialog `You receive several hails from Kor Efret ships. You don't understand the words, but they sound happy.`
+	on enter Dokdobaru
+		dialog `The Quarg scan the Mereti Efret, but take no other action.`
+	on enter Skeruto
+		dialog `You receive several hails from Kor Efret ships. You don't understand the words, but they sound happy.`
+	on enter Kaliptari
+		dialog `The Wanderers scan the Mereti Efret, but take no other action.`
+	on enter Chimitarp
+		dialog `There's a moment of tension when the automatons swarm around the Mereti Efret, but after making some coded transmissions they leave the ship alone.`
+	on waypoint
+		dialog `You've visited all of the systems marked on the map. Escort the Mereti Efret back to destination.`
+
+	npc accompany save
+		government "Kor Efret"
+		personality target escort launching timid
+		ship "Mereti Efret" "Mereti Efret"
+
+	on fail
+		dialog `[MISSION FAILED] You have failed the Mereti Efret Escort Mission. If life were a game, you could load a save file and try again.`
+	on complete
+		event "mereti efret added to efret scrapyards" 60
+		payment 1000000
+		conversation
+			scene "ship/mereti efret"
+			`The captain of the Mereti Efret thanks you for escorting his ship and rewards you with <payment>. It seems this was a test flight and the Mereti Efret should be added to the shipyard inventory in the near future.`
+
+event "mereti efret added to efret scrapyards"
+	shipyard "Kor Efret Scrapyard"
+		add "Mereti Efret"
+
+
+
+mission "Scrapyard Mereti Efret Sales"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "event: mereti efret added to efret scrapyards"
+	on offer
+		conversation
+			scene "ship/mereti efret"
+			`You can see that the Mereti Efret has been added to the inventory at the shipyard. But no one is lining up to buy. The reason why isn't difficult to figure out once you see the price. There is a huge disparity between the cost of a Mereti Efret and those of the other ships available for sale.`
+				decline
+
 ######################
 # Jobs
 ######################
@@ -377,7 +473,7 @@ mission "Scrapyard: Escort to Wanderer Colony (Big)"
 		government "Kor Efret"
 	destination 
 		government "Wanderer"
-		attributes "korath
+		attributes "korath"
 	to offer
 		has "event: wanderers taking jobs from kor efreti"
 		random < 15
@@ -392,6 +488,10 @@ mission "Scrapyard: Escort to Wanderer Colony (Big)"
 				"Korath World-Ship B"
 			variant
 				"Korath World-Ship C"
+	on complete
+		payment 300000
+		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.
+
 
 mission "Scrapyard: Escort to Wanderer Colony (Small)"
 	job
@@ -402,7 +502,7 @@ mission "Scrapyard: Escort to Wanderer Colony (Small)"
 		government "Kor Efret"
 	destination 
 		government "Wanderer"
-		attributes "korath
+		attributes "korath"
 		not attributes "uninhabited"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
@@ -418,6 +518,10 @@ mission "Scrapyard: Escort to Wanderer Colony (Small)"
 				"Korath Transport B"
 			variant
 				"Korath Transport C"
+	on complete
+		payment 200000
+		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.
+
 
 mission "Scrapyard: Escort to Wanderer Worlds A"
 	job
@@ -428,7 +532,7 @@ mission "Scrapyard: Escort to Wanderer Worlds A"
 		government "Kor Efret"
 	destination 
 		government "Wanderer"
-		not attributes "korath
+		not attributes "korath"
 		not attributes "uninhabited"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
@@ -440,6 +544,10 @@ mission "Scrapyard: Escort to Wanderer Worlds A"
 			names "korath"
 			variant
 				"Korath Explorer"
+	on complete
+		payment 400000
+		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.
+
 				
 mission "Scrapyard: Escort to Wanderer Worlds B"
 	job
@@ -450,7 +558,7 @@ mission "Scrapyard: Escort to Wanderer Worlds B"
 		government "Kor Efret"
 	destination
 		government "Wanderer"
-		not attributes "korath
+		not attributes "korath"
 		not attributes "uninhabited"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
@@ -462,6 +570,10 @@ mission "Scrapyard: Escort to Wanderer Worlds B"
 			names "korath"
 			variant
 				"Korath Explorer"
+	on complete
+		payment 200000
+		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.
+
 
 mission "Scrapyard: Kor Efret Salvage"
 	job
@@ -485,6 +597,10 @@ mission "Scrapyard: Kor Efret Salvage"
 			names "korath"
 			variant
 				"Korath Explorer"
+	on complete
+		payment 400000
+		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.
+
 
 mission "Scrapyard: Wanderer Planetary Survey"
 	job
@@ -510,6 +626,9 @@ mission "Scrapyard: Wanderer Planetary Survey"
 			names "wanderer"
 			variant
 				"Strong Wind"
+	on complete
+		payment 300000
+		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.
 
 
 

@@ -79,6 +79,7 @@ outfit "Korath Eliminator"
 	description "The Korath Eliminator is an orbital strike weapon that can carve deep into a planet's crust. Many worlds were destroyed in the Korath civil war by these tools of destruction."
 
 
+
 outfit "Korath Grappler"
 	category "Guns"
 	cost 410000

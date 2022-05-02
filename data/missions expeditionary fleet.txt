@@ -249,7 +249,7 @@ mission "Scrapyard Exploring the Persitar Wreck"
 	npc kill
 		government "Invasive Predator"
 		personality waiting staying disables unconstrained mute
-		fleet "Large Blight Shadow" 3
+		fleet "Large Blight Hatchling" 3
 
 event "Blight Shadows Nest In Persitar"
 	system Persitar

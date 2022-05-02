@@ -52,11 +52,11 @@ outfit "Energy Absorber?"
 	"gun ports" -1
 	"unplunderable" 1
 	weapon
-		sprite "projectile/laser"
+		sprite "projectile/2x laser"
 			"frame rate" 1
 		sound "electron beam"
 		"hit effect" "beam laser impact"
-		"inaccuracy" .5
+		"inaccuracy" .4
 		"velocity" 300
 		"lifetime" 1
 		"reload" 1
@@ -66,16 +66,23 @@ outfit "Energy Absorber?"
 		"shield damage" 12
 		"hull damage" 1
 		"disruption damage" 1
-		
+
+
+
+
+
+
 
 
 ship "Blight Shadow"
 	noun "creature"
 	sprite "ship/blight shadow/blight shadow"
+		"rewind"
 	"never disabled"
 	attributes
 		"automaton" 1
 		category "Fighter"
+		"shields" 1800
 		"hull" 3600
 		"mass" 230
 		"drag" 4.3
@@ -84,6 +91,9 @@ ship "Blight Shadow"
 		"thrust" 24
 		"reverse thrust" 36
 		"turn" 800
+		"shield generation" 1
+		"shield energy" 1
+		"depleted shield delay" 200
 		"hull repair rate" 2
 		"hull protection" 1
 		"piercing protection" 1
@@ -116,7 +126,16 @@ ship "Blight Shadow"
 	"final explode" "green blood"
 	description "An invasive species from beyond our galaxy. They primarily survive by absorbing various forms of energy."
 	
-	
+
+
+ship "Blight Shadow" "Blight Hatchling"
+	"never disabled"
+	add attributes
+		"shields" -1800
+		"shield generation" -1
+		"shield energy" -1
+		"depleted shield delay" -200
+
 	
 fleet "Small Blight Shadow"
 	government "Invasive Predator"
@@ -136,12 +155,51 @@ fleet "Large Blight Shadow"
 	personality entering disables unconstrained mute
 	variant 20
 		"Blight Shadow" 8
+	variant 18
+		"Blight Shadow" 10
 	variant 15
 		"Blight Shadow" 12
+	variant 13
+		"Blight Shadow" 14
 	variant 10
 		"Blight Shadow" 16
+	variant 8
+		"Blight Shadow" 18
 	variant 5
 		"Blight Shadow" 20
+
+
+
+fleet "Small Blight Hatchling"
+	government "Invasive Predator"
+	cargo 0
+	personality disables unconstrained mute
+	variant 6
+		"Blight Hatchling" 5
+	variant 3
+		"Blight Hatchling" 4
+	variant 1
+		"Blight Hatchling" 3
+
+
+fleet "Large Blight Hatchling"
+	government "Invasive Predator"
+	cargo 0
+	personality entering disables unconstrained mute
+	variant 20
+		"Blight Hatchling" 8
+	variant 18
+		"Blight Hatchling" 10
+	variant 15
+		"Blight Hatchling" 12
+	variant 13
+		"Blight Hatchling" 14
+	variant 10
+		"Blight Hatchling" 16
+	variant 8
+		"Blight Hatchling" 18
+	variant 5
+		"Blight Hatchling" 20
 
 
 
@@ -247,7 +305,7 @@ fleet "Infested Sestor Expedition"
 	personality disables unconstrained mute
 	variant
 		"Grakerat 572 (Infested)"
-		"Blight Shadow" 24
+		"Blight Hatchling" 24
 
 
 
@@ -571,45 +629,47 @@ fleet "Infested Scrap"
 	personality disables unconstrained mute
 	variant
 		"Scrapper Shields (Infested)"
-		"Blight Shadow" 7
+		"Blight Hatchling" 7
 	variant
 		"Scrapper Weapons (Infested)"
-		"Blight Shadow" 7
+		"Blight Hatchling" 7
 	variant
 		"Scrapper Engines (Infested)"
-		"Blight Shadow" 7
+		"Blight Hatchling" 7
 	variant
 		"Scrapper Carrier (Infested)"
-		"Blight Shadow" 7
+		"Blight Hatchling" 7
 	variant
 		"Model 512 (Infested)"
-		"Blight Shadow" 8
+		"Blight Hatchling" 8
 	variant
 		"Model 256 (Infested)"
-		"Blight Shadow" 8
+		"Blight Hatchling" 8
 	variant
 		"Kar Ik Vot 349 (Infested)"
-		"Blight Shadow" 7
+		"Blight Hatchling" 7
 	variant
 		"Tek Far 71 - Lek (Infested)"
-		"Blight Shadow" 7
+		"Blight Hatchling" 7
 	variant
 		"Tek Far 78 - Osk (Infested)"
-		"Blight Shadow" 8
+		"Blight Hatchling" 8
 
 
 
-********************************
-* Blight Mutations
-********************************
+################################
+# Blight Mutations
+################################
 
 ship "Blight Mutation"
 	noun "creature"
 	sprite "ship/blight mutation/blight mutation"
+		"rewind"
 	"never disabled"
 	attributes
 		"automaton" 1
 		category "Light Warship"
+		"shields" 3600
 		"hull" 7200
 		"mass" 460
 		"drag" 8.6
@@ -618,6 +678,9 @@ ship "Blight Mutation"
 		"thrust" 24
 		"reverse thrust" 36
 		"turn" 800
+		"shield generation" 2
+		"shield energy" 2
+		"depleted shield delay" 200
 		"hull repair rate" 3
 		"hull protection" 1
 		"piercing protection" 1
@@ -643,15 +706,71 @@ ship "Blight Mutation"
 			"hull damage" 150
 			"hit force" -100
 	outfits
-		"Energy Absorber?" 3
-	gun -1 -22 "Energy Absorber?"
-	gun 0 -22 "Energy Absorber?"
-	gun 1 -22 "Energy Absorber?"
+		"Energy Drainer?"
+		"Blight Defense?"
+	gun 0 -42 "Energy Drainer?"
+	turret 0 39 "Blight Defense?"
 	leak "green blood" 25 35
 	explode "green blood" 45
 	"final explode" "green blood"
 	description "An invasive species from beyond our galaxy. They primarily survive by absorbing various forms of energy."
 	description "These Blight Shadows have mutated into a stronger form."
+
+outfit "Energy Drainer?"
+	category "Guns"
+	thumbnail "outfit/unknown"
+	"gun ports" -1
+	"unplunderable" 1
+	weapon
+		sprite "projectile/banisher"
+			"frame rate" 60
+		sound "electron beam"
+		"hit effect" "energy drainer impact"
+		"inaccuracy" .4
+		"velocity" 590
+		"lifetime" 1
+		"reload" 1
+		"energy damage" 36
+		"heat damage" -36
+		"fuel damage" 36
+		"shield damage" 36
+		"hull damage" 6
+		"disruption damage" 6
+
+
+effect "energy drainer impact"
+	sprite "effect/gridfire fire"
+		"no repeat"
+		"frame rate" 10
+	"lifetime" 5
+	"random angle" 2
+	"random spin" 1
+	"velocity scale" -.005
+
+
+outfit "Blight Defense?"
+	category "Turrets"
+	thumbnail "outfit/unknown"
+	"turret mounts" -1
+	"unplunderable" 1
+	weapon
+		"hit effect" "blight defense"
+		"anti-missile" 10
+		"velocity" 350
+		"lifetime" 1
+		"reload" 5
+		"firing energy" 24
+
+effect "blight defense"
+	sprite "effect/warder"
+		"no repeat"
+		"frame rate" 6
+	sound "proton"
+	"lifetime" 11
+	"velocity scale" 1
+
+
+
 
 fleet "Small Blight Mutation"
 	government "Invasive Predator"
@@ -671,3 +790,136 @@ fleet "Small Blight Mutation"
 		"Blight Shadow" 2
 	variant 1
 		"Blight Mutation" 2
+
+
+
+################################
+# Blight Horror
+################################
+
+ship "Blight Horror"
+	noun "creature"
+	sprite "ship/blight horror/blight horror"
+		"rewind"
+	"never disabled"
+	attributes
+		"automaton" 1
+		category "Heavy Warship"
+		"shields" 7200
+		"hull" 14400
+		"mass" 920
+		"drag" 12.9
+		"heat dissipation" 3.9
+		"cargo space" 0
+		"thrust" 24
+		"reverse thrust" 36
+		"turn" 800
+		"shield generation" 4
+		"shield energy" 4
+		"depleted shield delay" 200
+		"hull repair rate" 4
+		"hull protection" 1
+		"piercing protection" 1
+		"heat protection" 1
+		"energy protection" 2
+		"energy capacity" 1800
+		"fuel capacity" 1000
+		"cloak" .01
+		"cloaking energy" .2
+		"cloaking fuel" .1
+		"inscrutable" 1
+		"gaslining" 1
+		"jump drive" 1
+		"jump speed" 1
+		"jump effect" "jump drive black"
+		"jump in sound" "jump in red"
+		"jump out sound" "jump out red"
+		"ramscoop" 3
+		"solar collection" 6
+		weapon
+			"blast radius" 15
+			"shield damage" 150
+			"hull damage" 150
+			"hit force" -100
+	outfits
+		"Energy Absorber?" 2
+		"Energy Drainer?"
+		"Blight Defense?" 2
+		"Blood Lightning?"
+	gun -10 -97 "Energy Absorber?"
+	gun 0 -97 "Energy Drainer?"
+	gun 10 -97 "Energy Absorber?"
+	turret 0 9.5 "Blight Defense?"
+	turret -0.5 82 "Blight Defense?"
+	turret 0 193 "Blood Lightning?"
+	leak "green blood" 35 45
+	explode "green blood" 55
+	"final explode" "green blood"
+	description "An invasive species from beyond our galaxy. They primarily survive by absorbing various forms of energy."
+	description "The Blight Horror has developed a special organ which allows the creature to generate bolts of red lightning."
+
+
+
+outfit "Blood Lightning?"
+	category "Turrets"
+	thumbnail "outfit/unknown"
+	"turret mounts" -1
+	"unplunderable" 1
+	weapon
+		sprite "projectile/blood lightning"
+			"frame rate" 60
+			"random start frame"
+			"delay" 6
+		sound "zapper"
+		"hit effect" "blood lightning impact"
+		"fire effect" "blood sparks"
+		"inaccuracy" .3
+		"turret turn" 180
+		"velocity" 320
+		"lifetime" 1
+		"reload" 1
+		"shield damage" 8.7
+		"hull damage" 11.1
+
+
+
+effect "blood sparks"
+	sprite "effect/blood spark"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 9
+	"random angle" 360
+	"random spin" 10
+	"random velocity" 1
+
+
+effect "blood lightning impact"
+	sprite "effect/blood spark"
+		"no repeat"
+		"frame rate" 30
+	sound "ion impact"
+	"lifetime" 9
+	"random angle" 360
+	"random spin" 30
+	"random velocity" 2
+	"velocity scale" .05
+
+
+
+fleet "Blight Horror"
+	government "Invasive Predator"
+	cargo 0
+	personality disables unconstrained mute
+	variant
+		"Blight Horror"
+		"Blight Mutation" 2
+		"Blight Shadow" 4
+	variant
+		"Blight Horror"
+		"Blight Mutation" 4
+	variant
+		"Blight Horror"
+		"Blight Shadow" 8
+	variant
+		"Blight Horror" 2
+

@@ -151,7 +151,7 @@ mission "Scrapyard Pirate Eggs Hatch"
 	npc kill
 		government "Invasive Predator"
 		personality fleeing disables unconstrained mute
-		fleet "Small Blight Shadow" 3
+		fleet "Small Blight Hatchling" 3
 
 
 
@@ -358,7 +358,7 @@ mission "Scrapyard Remnant Eggs Hatch"
 	npc kill
 		government "Invasive Predator"
 		personality fleeing disables unconstrained mute
-		fleet "Small Blight Shadow" 3
+		fleet "Small Blight Hatchling" 3
 
 
 
@@ -601,7 +601,7 @@ mission "Scrapyard Random Station Eggs"
 	npc kill
 		government "Invasive Predator"
 		personality entering disables unconstrained mute
-		fleet "Large Blight Shadow"
+		fleet "Large Blight Hatchling"
 
 mission "Scrapyard Random Station Eggs cleanup"
 	landing
@@ -622,6 +622,7 @@ mission "Scrapyard Blight Mutation"
 	invisible
 	to offer
 		has "event: Infected with Shadowblight"
+		has "event: Blight Shadows Nest In Persitar"
 		"Scrapyard Threat Level" >= 25
 	on offer
 		event "scrapyard blight mutation"
@@ -639,3 +640,91 @@ event "scrapyard blight mutation"
 	system Sobarati
 		remove fleet "Small Blight Shadow" 800
 		add fleet "Small Blight Mutation" 800
+	system Persitar
+		add fleet "Small Blight Mutation" 1000
+
+
+
+mission "Scrapyard Blight Horror"
+	landing
+	invisible
+	to offer
+		has "event: Infected with Shadowblight"
+		has "event: Blight Shadows Nest In Persitar"
+		has "event: scrapyard blight mutation"
+		"Scrapyard Threat Level" >= 30
+	on offer
+		event "scrapyard blight horrors"
+		fail
+		
+event "scrapyard blight horrors"
+	system Celeborim
+		add fleet "Small Blight Horror" 1200
+	system Makferuti
+		add fleet "Small Blight Horror" 1200
+	system Asikafarnut
+		remove fleet "Small Blight Shadow" 800
+		add fleet "Small Blight Horror" 1200
+	system Sobarati
+		add fleet "Small Blight Horror" 1200
+	system Persitar
+		add fleet "Small Blight Mutation" 1000
+		add fleet "Small Blight Horror" 1200
+	system Silikatakfar
+		add fleet "Small Blight Mutation" 5000
+		add fleet "Small Blight Horror" 8000
+	system Ferukistek
+		add fleet "Small Blight Mutation" 5000
+		add fleet "Small Blight Horror" 8000
+	system Eneremprukt
+		add fleet "Small Blight Mutation" 5000
+		add fleet "Small Blight Horror" 8000
+	system Mesuket
+		add fleet "Small Blight Mutation" 5000
+		add fleet "Small Blight Horror" 8000
+	system Similisti
+		add fleet "Small Blight Mutation" 5000
+		add fleet "Small Blight Horror" 8000
+	system Faronektu
+		add fleet "Small Blight Mutation" 5000
+		add fleet "Small Blight Horror" 8000
+
+
+
+mission "Scrapyard Blight Shadow Defense"
+	repeat
+	name "Defend <planet>!"
+	description "A large swarm of Blight Shadows has entered <system>. Eliminate them, then report to <destination>."
+	source
+		government "Wanderer"
+		attributes "korath"
+		not attributes "uninhabited"
+	destination
+		government "Wanderer"
+		attributes "korath"
+		not attributes "uninhabited"
+	to offer
+		has "event: Blight Shadows vs Mereti"
+		random < 10
+	on offer
+		conversation
+			scene "scene/scene-blightshadowswarm"
+			`There's a lot panicked yelling as several pilots are rushing to get their ships ready for take off. When you ask what's going on, you are told that <destination> is under attack by "shadows [lurking, hiding] in the darkness." Join the defense fleet?
+			choice
+				`	(Join the defense fleet.)`
+					accept
+				`	(Do not join the defense fleet.)`
+					decline
+	npc
+		government "Wanderer"
+		personality heroic
+		fleet "Wanderer Defense" 2
+	npc kill
+		government "Invasive Predator"
+		system destination
+		personality target waiting staying disables unconstrained mute
+		fleet "Large Blight Shadow" 2
+	on complete
+		payment 1000000
+		"reputation: Wanderer" ++
+		dialog `The Wanderers thank for your assistance in repelling the shadows [lurking, hiding] in the darkness. A reward of <payment> is given to you.`

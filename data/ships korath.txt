@@ -965,6 +965,7 @@ ship "Tercheldar 150"
 ship "Stakoshtar 187"
 	sprite "ship/stakoshtar 187/stakoshtar"
 		"frame rate" 8
+		"rewind"
 	attributes
 		category "Heavy Warship"
 		"cost" 51260000
@@ -1329,6 +1330,64 @@ ship "Korath Explorer"  "Korath Explorer (Grab-Strike)"
 		"Steering (Lunar Class)"
 		"Thruster (Planetary Class)"
 		"Jump Drive"
+
+
+
+ship "Mereti Efret"
+	sprite "ship/mereti efret"
+	attributes
+		category "Heavy Warship"
+		"cost" 34920000
+		"shields" 57000
+		"hull" 28700
+		"required crew" 1
+		"bunks" 8
+		"mass" 780
+		"drag" 13.2
+		"heat dissipation" 1.0
+		"fuel capacity" 400
+		"cargo space" 78
+		"outfit space" 752
+		"weapon capacity" 303
+		"engine capacity" 130
+		"self destruct" .15
+		"ramscoop" 3
+		weapon
+			"blast radius" 320
+			"shield damage" 4600
+			"hull damage" 2300
+			"hit force" 6900
+	outfits
+		"Korath Disruptor"
+		"Korath Slicer Turret"
+		"Korath Banisher" 2
+		"Korath Warder" 2
+		
+		"Triple Plasma Core"
+		"Systems Core (Large)"
+		"Large Heat Shunt"
+		
+		"Thruster (Planetary Class)"
+		"Steering (Planetary Class)"
+		Hyperdrive
+
+	engine -39.5 190.5
+	engine 40 190.5
+	gun -5 -165
+	gun 18 -165
+	turret 34.5 -111.5 "Korath Disruptor"
+	turret -19 -84.5 "Korath Slicer Turret"
+	turret -31.5 12.5 "Korath Warder"
+	turret 53 24 "Korath Warder"
+	turret -23.5 98 "Korath Banisher"
+	turret 47 97 "Korath Banisher"
+	explode "tiny explosion" 120
+	explode "small explosion" 85
+	explode "medium explosion" 60
+	explode "large explosion" 25
+	"final explode" "final explosion large"
+	description `Translated to "Mereti Friend", this is the first functional Korath spacecraft made entirely from salvaged Mereti parts. While not fully autonomous, it is very nearly so.`
+
 
 ################################
 # Korath Devourer
