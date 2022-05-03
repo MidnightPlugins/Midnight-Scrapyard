@@ -52,7 +52,7 @@ outfit "Energy Absorber?"
 	"gun ports" -1
 	"unplunderable" 1
 	weapon
-		sprite "projectile/2x laser"
+		sprite "projectile/laser"
 			"frame rate" 1
 		sound "electron beam"
 		"hit effect" "beam laser impact"
@@ -906,7 +906,7 @@ effect "blood lightning impact"
 
 
 
-fleet "Blight Horror"
+fleet "Small Blight Horror"
 	government "Invasive Predator"
 	cargo 0
 	personality disables unconstrained mute
