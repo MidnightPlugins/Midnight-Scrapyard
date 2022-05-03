@@ -396,7 +396,7 @@ mission "Scrapyard Mereti Efret Test Flight"
 					decline
 			`He makes several gestures while talking, particularly one involving pushing out to the sky then pulling back towards himself. Perhaps...`
 			choice
-				`	(He wants his old World-Ship back.)'
+				`	(He wants his old World-Ship back.)`
 				`	(He wants you to fetch him something from space.)`
 				`	(He wants you to take him somewhere then bring him back.)`
 					goto correct
@@ -490,7 +490,7 @@ mission "Scrapyard: Escort to Wanderer Colony (Big)"
 				"Korath World-Ship C"
 	on complete
 		payment 300000
-		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.
+		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
 
 
 mission "Scrapyard: Escort to Wanderer Colony (Small)"
@@ -520,7 +520,7 @@ mission "Scrapyard: Escort to Wanderer Colony (Small)"
 				"Korath Transport C"
 	on complete
 		payment 200000
-		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.
+		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
 
 
 mission "Scrapyard: Escort to Wanderer Worlds A"
@@ -546,7 +546,7 @@ mission "Scrapyard: Escort to Wanderer Worlds A"
 				"Korath Explorer"
 	on complete
 		payment 400000
-		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.
+		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
 
 				
 mission "Scrapyard: Escort to Wanderer Worlds B"
@@ -572,7 +572,7 @@ mission "Scrapyard: Escort to Wanderer Worlds B"
 				"Korath Explorer"
 	on complete
 		payment 200000
-		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.
+		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
 
 
 mission "Scrapyard: Kor Efret Salvage"
@@ -599,7 +599,7 @@ mission "Scrapyard: Kor Efret Salvage"
 				"Korath Explorer"
 	on complete
 		payment 400000
-		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.
+		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.`
 
 
 mission "Scrapyard: Wanderer Planetary Survey"
@@ -628,7 +628,7 @@ mission "Scrapyard: Wanderer Planetary Survey"
 				"Strong Wind"
 	on complete
 		payment 300000
-		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.
+		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.`
 
 
 

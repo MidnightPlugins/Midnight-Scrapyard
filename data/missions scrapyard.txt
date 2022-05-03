@@ -583,7 +583,7 @@ mission "Scrapyard Random Station Scrap Mereti"
 	invisible
 	repeat
 	source
-		planet "Metwar Skaretar" "MakwaroPratarati"
+		planet "Metwar Skaretar" "Makwar Pratarati"
 	to offer
 		has "event: Scrapyard Develops"
 		random < 40

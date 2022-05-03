@@ -709,7 +709,7 @@ mission "Scrapyard Blight Shadow Defense"
 	on offer
 		conversation
 			scene "scene/scene-blightshadowswarm"
-			`There's a lot panicked yelling as several pilots are rushing to get their ships ready for take off. When you ask what's going on, you are told that <destination> is under attack by "shadows [lurking, hiding] in the darkness." Join the defense fleet?
+			`There's a lot panicked yelling as several pilots are rushing to get their ships ready for take off. When you ask what's going on, you are told that <destination> is under attack by "shadows [lurking, hiding] in the darkness." Join the defense fleet?`
 			choice
 				`	(Join the defense fleet.)`
 					accept
