@@ -19,6 +19,7 @@
 
 fleet "Kor Efret Miners"
 	government "Kor Efret"
+	names "korath"
 	personality mining harvests coward
 		confusion 20
 	cargo 0
@@ -78,25 +79,25 @@ mission "Midnight Scrapyard: Kor Efret Miners"
 
 event "kor efret miners scrapyard"
 	system Sumprast
-		add fleet "Kor Efret Miners" 4000
+		add fleet "Kor Efret Miners" 8000
 	system Sevrelect
-		add fleet "Kor Efret Miners" 4000
+		add fleet "Kor Efret Miners" 8000
 	system Kashikt
-		add fleet "Kor Efret Miners" 4000
+		add fleet "Kor Efret Miners" 8000
 	system Furmeliki
-		add fleet "Kor Efret Miners" 6000
+		add fleet "Kor Efret Miners" 12000
 	system Dokdobaru
-		add fleet "Kor Efret Miners" 6000
+		add fleet "Kor Efret Miners" 12000
 	system Chikatip
-		add fleet "Kor Efret Miners" 8000
+		add fleet "Kor Efret Miners" 16000
 	system Skeruto
-		add fleet "Kor Efret Miners" 8000
+		add fleet "Kor Efret Miners" 16000
 	system Meftarkata
-		add fleet "Kor Efret Miners" 8000
+		add fleet "Kor Efret Miners" 16000
 	system Chornifath
-		add fleet "Kor Efret Miners" 8000
+		add fleet "Kor Efret Miners" 16000
 	system Hesselpost
-		add fleet "Kor Efret Miners" 8000
+		add fleet "Kor Efret Miners" 16000
 
 
 
@@ -267,7 +268,7 @@ mission "Scrapyard: Efret Salvage License 1"
 		not attributes "uninhabited"
 	destination "Desi Seledrak"
 	to offer
-		has "Warmonger Construction Completed"
+		has "event: Warmonger Construction Completed"
 		random < 40
 	on offer
 		conversation
