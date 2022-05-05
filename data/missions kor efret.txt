@@ -25,7 +25,7 @@ fleet "Kor Efret Miners"
 	cargo 0
 	variant 3
 		"Korath Explorer"
-		"Korath Chaser"
+		"Korath Chaser" 2
 
 
 
@@ -85,19 +85,19 @@ event "kor efret miners scrapyard"
 	system Kashikt
 		add fleet "Kor Efret Miners" 8000
 	system Furmeliki
-		add fleet "Kor Efret Miners" 12000
+		add fleet "Kor Efret Miners" 10000
 	system Dokdobaru
-		add fleet "Kor Efret Miners" 12000
+		add fleet "Kor Efret Miners" 10000
 	system Chikatip
-		add fleet "Kor Efret Miners" 16000
+		add fleet "Kor Efret Miners" 10000
 	system Skeruto
-		add fleet "Kor Efret Miners" 16000
+		add fleet "Kor Efret Miners" 10000
 	system Meftarkata
-		add fleet "Kor Efret Miners" 16000
+		add fleet "Kor Efret Miners" 12000
 	system Chornifath
-		add fleet "Kor Efret Miners" 16000
+		add fleet "Kor Efret Miners" 12000
 	system Hesselpost
-		add fleet "Kor Efret Miners" 16000
+		add fleet "Kor Efret Miners" 12000
 
 
 
