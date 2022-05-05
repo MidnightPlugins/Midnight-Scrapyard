@@ -309,7 +309,7 @@ fleet "Infested Sestor Expedition"
 
 
 
-ship "Korath Scrapper" "Scrapper Shields (Infested)"
+ship "Korath Raider" "Scrapper Shields (Infested)"
 	sprite "ship/kor scrapper s"
 	"never disabled"
 	attributes
@@ -344,7 +344,7 @@ ship "Korath Scrapper" "Scrapper Shields (Infested)"
 	explode "black blood" 120
 	explode "black blood" 100
 
-ship "Korath Scrapper" "Scrapper Weapons (Infested)"
+ship "Korath Raider" "Scrapper Weapons (Infested)"
 	sprite "ship/kor scrapper w"
 	"never disabled"
 	attributes
@@ -379,7 +379,7 @@ ship "Korath Scrapper" "Scrapper Weapons (Infested)"
 	explode "black blood" 120
 	explode "black blood" 100
 
-ship "Korath Scrapper" "Scrapper Engines (Infested)"
+ship "Korath Raider" "Scrapper Engines (Infested)"
 	sprite "ship/kor scrapper e"
 	"never disabled"
 	attributes
@@ -414,7 +414,7 @@ ship "Korath Scrapper" "Scrapper Engines (Infested)"
 	explode "black blood" 120
 	explode "black blood" 100
 
-ship "Korath Scrapper" "Scrapper Carrier (Infested)"
+ship "Korath Raider" "Scrapper Carrier (Infested)"
 	sprite "ship/kor scrapper c"
 	"never disabled"
 	attributes
