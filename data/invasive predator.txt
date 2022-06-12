@@ -60,6 +60,7 @@ outfit "Energy Absorber?"
 		"velocity" 300
 		"lifetime" 1
 		"reload" 1
+		"firing energy" -.1
 		"energy damage" 6
 		"heat damage" -6
 		"fuel damage" 6
@@ -97,8 +98,7 @@ ship "Blight Shadow"
 		"hull repair rate" 2
 		"hull protection" 1
 		"piercing protection" 1
-		"heat protection" 1
-		"energy protection" 2
+		"heat protection" 2
 		"energy capacity" 1000
 		"fuel capacity" 600
 		"cloak" .01
@@ -113,6 +113,8 @@ ship "Blight Shadow"
 		"jump out sound" "jump out red"
 		"ramscoop" 1
 		"solar collection" 2
+		"active cooling" 0.12
+		"cooling energy" -1
 		weapon
 			"blast radius" 15
 			"shield damage" 150
@@ -684,8 +686,7 @@ ship "Blight Mutation"
 		"hull repair rate" 3
 		"hull protection" 1
 		"piercing protection" 1
-		"heat protection" 1
-		"energy protection" 2
+		"heat protection" 2
 		"energy capacity" 1400
 		"fuel capacity" 800
 		"cloak" .01
@@ -700,18 +701,20 @@ ship "Blight Mutation"
 		"jump out sound" "jump out red"
 		"ramscoop" 2
 		"solar collection" 4
+		"active cooling" 0.24
+		"cooling energy" -2
 		weapon
-			"blast radius" 15
-			"shield damage" 150
-			"hull damage" 150
-			"hit force" -100
+			"blast radius" 30
+			"shield damage" 300
+			"hull damage" 300
+			"hit force" -200
 	outfits
 		"Energy Drainer?"
 		"Blight Defense?"
 	gun 0 -42 "Energy Drainer?"
 	turret 0 39 "Blight Defense?"
-	leak "green blood" 25 35
-	explode "green blood" 45
+	leak "green blood" 30 50
+	explode "green blood" 50
 	"final explode" "green blood"
 	description "An invasive species from beyond our galaxy. They primarily survive by absorbing various forms of energy."
 	description "These Blight Shadows have mutated into a stronger form."
@@ -730,6 +733,7 @@ outfit "Energy Drainer?"
 		"velocity" 590
 		"lifetime" 1
 		"reload" 1
+		"firing energy" -.2
 		"energy damage" 36
 		"heat damage" -36
 		"fuel damage" 36
@@ -820,8 +824,7 @@ ship "Blight Horror"
 		"hull repair rate" 4
 		"hull protection" 1
 		"piercing protection" 1
-		"heat protection" 1
-		"energy protection" 2
+		"heat protection" 2
 		"energy capacity" 1800
 		"fuel capacity" 1000
 		"cloak" .01
@@ -836,11 +839,13 @@ ship "Blight Horror"
 		"jump out sound" "jump out red"
 		"ramscoop" 3
 		"solar collection" 6
+		"active cooling" 0.48
+		"cooling energy" -4
 		weapon
-			"blast radius" 15
-			"shield damage" 150
-			"hull damage" 150
-			"hit force" -100
+			"blast radius" 60
+			"shield damage" 600
+			"hull damage" 600
+			"hit force" -400
 	outfits
 		"Energy Absorber?" 2
 		"Energy Drainer?"
@@ -852,8 +857,8 @@ ship "Blight Horror"
 	turret 0 9.5 "Blight Defense?"
 	turret -0.5 82 "Blight Defense?"
 	turret 0 193 "Blood Lightning?"
-	leak "green blood" 35 45
-	explode "green blood" 55
+	leak "green blood" 60 100
+	explode "green blood" 100
 	"final explode" "green blood"
 	description "An invasive species from beyond our galaxy. They primarily survive by absorbing various forms of energy."
 	description "The Blight Horror has developed a special organ which allows the creature to generate bolts of red lightning."
@@ -871,6 +876,7 @@ outfit "Blood Lightning?"
 			"random start frame"
 			"delay" 6
 		sound "zapper"
+		icon "icon/blightning"
 		"hit effect" "blood lightning impact"
 		"fire effect" "blood sparks"
 		"inaccuracy" .3
@@ -878,6 +884,7 @@ outfit "Blood Lightning?"
 		"velocity" 320
 		"lifetime" 1
 		"reload" 1
+		"firing energy" 4
 		"shield damage" 8.7
 		"hull damage" 11.1
 
