@@ -642,18 +642,18 @@ fleet "Exiled Explorers"
 	personality plunders harvests surveillance
 	names "korath"
 	cargo 0
-	variant
+	variant 4
 		"Korath Explorer (Exile)"
 		"Korath Chaser" 2
-	variant
+	variant 3
 		"Korath Explorer (Sestor)"
 		"Korath Chaser" 2
-	variant
+	variant 2
 		"Korath Explorer (Banisher)"
 		"Korath Explorer (Grab-Strike)"
 		"Korath Chaser" 4
-	variant
-		"Korath Explorer (Exile)" 1
+	variant 1
+		"Korath Explorer (Exile)"
 		"Korath Explorer (Banisher)"
 		"Korath Explorer (Grab-Strike)"
 		"Korath Chaser" 6
