@@ -210,7 +210,7 @@ mission "Scrapyard Eggs Remnant 1"
 		conversation
 			scene "outfit/blight egg"
 			`You take the eggs to Plume's lab and tell him everything you know about the Blight Shadows.`
-			`"Amazing..." He trills, "And they're not native to our galaxy?" You sign an affirmative. His hands move in gestures indicating that he and the other researchers will gladly accept the eggs for research and share their findings with you.`
+			`"Amazing..." He trills, "And they are not native to our galaxy?" You sign an affirmative. His hands move in gestures indicating that he and the other researchers will gladly accept the eggs for research and share their findings with you.`
 
 event "Remnant Egg timer"
 
@@ -299,14 +299,14 @@ mission "Scrapyard Blight Rifle 2"
 		has "Scrapyard Blight Rifle 1: done"
 	on offer
 		conversation
+			scene "outfit/blight rifle"
 			`You find Prefect Chilia at the weapons research lab and report what happened with the Blight Rifle.`
 			`"That is very unfortunate," he sings. "However we have another test model for you to try out, if you are interested. The new casing should be sturdier than before."`
 			choice
-				`	"Sure, I'm willing to try it out."`
-				`	"Sorry, I don't want to be slimed again."`
+				`	"Sure, I am willing to try it out."`
+				`	"Sorry, I do not want to be slimed again."`
 					decline
 
-			scene "outfit/blight rifle"
 			`	He hands the rifle to you. "May the Embers burn bright for you, Captain."`
 				accept
 	on accept
@@ -333,9 +333,9 @@ mission "Scrapyard Blight Rifle 3"
 				accept
 	on accept
 		outfit "Blight Rifle" -1
-		"Scrapyard Blight Rifle 2: offered" --
+		clear "Scrapyard Blight Rifle 2: offered"
 	on complete
-		"Scrapyard Blight Rifle 3: offered" --
+		clear "Scrapyard Blight Rifle 3: offered"
 		dialog `Head to the spaceport to report your Blight Rifle field test results to Prefect Chilia.`
 		
 
@@ -349,8 +349,8 @@ mission "Scrapyard Remnant Eggs Hatch"
 	on offer
 		require "Blight Shadow Eggs"
 		fail "Scrapyard Eggs Remnant 1"
-		"Scrapyard Eggs Remnant 1: offered" --
-	on enter	
+		clear "Scrapyard Eggs Remnant 1: offered"
+	on enter
 		outfit "Blight Shadow Eggs" -1
 		conversation
 			`You hear a loud crunching sound coming from your cargo hold. When you check the security cameras, you see that the Blight Shadow eggs have hatched! The newborn Blight Shadows are tearing open the cargo hatch...`
