@@ -468,8 +468,9 @@ mission "Scrapyard Mereti Efret Sales"
 mission "Scrapyard: Escort to Wanderer Colony (Big)"
 	job
 	repeat
+	deadline
 	name "Escort Kor Efret"
-	description "Escort the <npc> to <destination>. Payment is <payment>."
+	description "Escort the <npc> to <destination> by <date>. Payment is <payment>."
 	source
 		government "Kor Efret"
 	destination 
@@ -497,8 +498,9 @@ mission "Scrapyard: Escort to Wanderer Colony (Big)"
 mission "Scrapyard: Escort to Wanderer Colony (Small)"
 	job
 	repeat
+	deadline
 	name "Escort Kor Efret"
-	description "Escort the <npc> to <destination>. Payment is <payment>."
+	description "Escort the <npc> to <destination> by <date>. Payment is <payment>."
 	source
 		government "Kor Efret"
 	destination 
@@ -527,8 +529,9 @@ mission "Scrapyard: Escort to Wanderer Colony (Small)"
 mission "Scrapyard: Escort to Wanderer Worlds A"
 	job
 	repeat
+	deadline
 	name "Escort Kor Efret"
-	description "Escort the <npc> to <destination>. Payment is <payment>."
+	description "Escort the <npc> to <destination> by <date>. Payment is <payment>."
 	source
 		government "Kor Efret"
 	destination 
@@ -553,8 +556,9 @@ mission "Scrapyard: Escort to Wanderer Worlds A"
 mission "Scrapyard: Escort to Wanderer Worlds B"
 	job
 	repeat
+	deadline
 	name "Escort Kor Efret"
-	description "Escort the <npc> to <destination>. Payment is <payment>."
+	description "Escort the <npc> to <destination> by <date>. Payment is <payment>."
 	source
 		government "Kor Efret"
 	destination
@@ -579,8 +583,9 @@ mission "Scrapyard: Escort to Wanderer Worlds B"
 mission "Scrapyard: Kor Efret Salvage"
 	job
 	repeat
+	deadline
 	name "Escort Kor Efret"
-	description "Escort the <npc> on a salvage expedition to <stopovers>. Then escort them back to <destination>. Payment is <payment>."
+	description "Escort the <npc> on a salvage expedition to <stopovers>. Then escort them back to <destination> by <date>. Payment is <payment>."
 	source
 		government "Kor Efret"
 	stopover
@@ -606,8 +611,9 @@ mission "Scrapyard: Kor Efret Salvage"
 mission "Scrapyard: Wanderer Planetary Survey"
 	job
 	repeat
+	deadline
 	name "Wanderer Planetary Survey"
-	description "Escort the <npc> on a survey expedition to <stopovers>. Then escort them back to <destination>. Payment is <payment>."
+	description "Escort the <npc> on a survey expedition to <stopovers>. Then escort them back to <destination> by <date>. Payment is <payment>."
 	source
 		government "Wanderer"
 		attributes "korath"

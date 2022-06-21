@@ -209,10 +209,12 @@ mission "Scrapyard Boarding A"
 	landing
 	invisible
 	repeat 6
-	destination "Desi Seledrak"
+	source
+		attributes "korath"
+	destination "Laki Nemparu"
 	to offer
 		has "event: Scrapyard Develops"
-		random < 25
+		random < 20
 	npc board
 		government "Derelict (Killable)"
 		system
@@ -222,7 +224,7 @@ mission "Scrapyard Boarding A"
 	on fail
 		"Scrapyard Boarding A: offered" --
 	on complete
-		"Scrapyard Boarding A: offered" --	
+		"Scrapyard Boarding A: offered" --
 
 mission "Scrapyard Boarding B"
 	landing
@@ -230,10 +232,10 @@ mission "Scrapyard Boarding B"
 	repeat 4
 	source
 		attributes "korath"
-	destination "Desi Seledrak"
+	destination "Laki Nemparu"
 	to offer
 		has "event: Blight Shadow Infestation"
-		random < 25
+		random < 30
 	npc board
 		government "Derelict (Killable)"
 		system
@@ -241,11 +243,36 @@ mission "Scrapyard Boarding B"
 		personality waiting derelict mute
 		fleet "Error Scrap"
 	on fail
-		"Scrapyard Threat Level" ++	
 		"Scrapyard Boarding B: offered" --
-	on complete
 		"Scrapyard Threat Level" ++	
-		"Scrapyard Boarding B: offered" --	
+	on complete
+		"Scrapyard Boarding B: offered" --
+		"Scrapyard Threat Level" ++	
+
+mission "Scrapyard Boarding A Clear"
+	landing
+	invisible
+	repeat
+	to offer
+		or
+			"Scrapyard Boarding A: offered" > 6
+			"Scrapyard Boarding A: offered" < 0
+	on offer
+		clear "Scrapyard Boarding A: offered"
+		fail
+
+mission "Scrapyard Boarding B Clear"
+	landing
+	invisible
+	repeat
+	to offer
+		or
+			"Scrapyard Boarding B: offered" > 4
+			"Scrapyard Boarding B: offered" < 0
+	on offer
+		clear "Scrapyard Boarding B: offered"
+		fail
+
 
 
 

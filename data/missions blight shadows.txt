@@ -649,8 +649,6 @@ mission "Scrapyard Blight Horror"
 	landing
 	invisible
 	to offer
-		has "event: Infected with Shadowblight"
-		has "event: Blight Shadows Nest In Persitar"
 		has "event: scrapyard blight mutation"
 		"Scrapyard Threat Level" >= 30
 	on offer
@@ -697,9 +695,9 @@ mission "Scrapyard Blight Shadow Defense"
 	description "A large swarm of Blight Shadows has entered <system>. Eliminate them, then report to <destination>."
 	source
 		government "Wanderer"
-		attributes "korath"
 		not attributes "uninhabited"
 	destination
+		distance 1 2
 		government "Wanderer"
 		attributes "korath"
 		not attributes "uninhabited"
@@ -728,3 +726,92 @@ mission "Scrapyard Blight Shadow Defense"
 		payment 1000000
 		"reputation: Wanderer" ++
 		dialog `The Wanderers thank for your assistance in repelling the shadows [lurking, hiding] in the darkness. A reward of <payment> is given to you.`
+
+
+
+mission "Scrapyard: Quarg Hunter"
+	name "Escort <npc>"
+	description "Escort the <npc> on a hunting trip through the systems marked on your map. Then return to <destination> by <date>."
+	source "Kuwaru Efreti"
+	waypoint "Asikafarnut"
+	waypoint "Celeborim"
+	waypoint "Makferuti"
+	waypoint "Sobarati"
+	to offer
+		"Scrapyard Threat Level" >= 5
+	on offer
+		conversation
+			scene "thumbnail/blightshadow-thumb"
+			branch "repeat"
+				has "Scrapyard: Quarg Hunter: done"
+			
+			branch "blood paint"
+				has "event: joined the free worlds"
+			
+			`A Quarg approaches you and asks "You are human who hunt Blight Shadows?"`
+			choice
+				`	"Yes, I've killed more than a few."`
+				`	"No, I don't intend to seek them out."`
+					decline
+			`	"Good!" The Quarg straightens to its full height, "Me am Quaelar-Enkaras Foksarardelaos! But human may call me Quaelar-En. You lead my ship into Sestor region. We hunt Blight Shadows. Stain our hulls green with their blood! Is more fun than staying on ringworld, no?"
+				goto decision
+
+			label "blood paint"
+			
+			`A Quarg approaches you and asks "You are human who hunt Blight Shadows?"`
+			choice
+				`	"Yes, I've killed more than a few."`
+				`	"No, I don't intend to seek them out."`
+					decline
+			`	"Good!" The Quarg straightens to its full height, "Me am Quaelar-Enkaras Foksarardelaos! But human may call me Quaelar-En. You lead my ship into Sestor region. We hunt Blight Shadows. Stain our hull green with their blood as you have! Return by <date>. Is more fun than staying on ringworld, no?" The Quarg in this region of space might not follow the details of human political affairs and are probably unaware of the Free Worlds...`
+				goto decision
+			
+			label "repeat"
+
+			`A familiar Quarg yells out to you. "Human who hunts Blight Shadows! Is good to see again! You join me on hunt, yes? We be back by <date>." Quaelar-En seems eager to go on another hunting trip.`
+				goto decision
+			
+			label decision
+			choice
+				`	"Alright, let's go!"
+					goto end
+				`	"... No, I'd rather not."
+					decline
+
+			label end
+				scene "scene/scene-blue wardragon"
+			`	Quaelar-En said something about staining his hull with blood. As you board your ships, you note Quaelar-En's ship is blue...`
+			
+	npc kill
+		to despawn
+			has "event: scrapyard blight horrors"
+		government "Invasive Predator"
+		system "Asikafarnut"
+		personality waiting staying disables unconstrained mute
+		fleet "Small Blight Shadow"
+	npc kill
+		to spawn
+			has "event: scrapyard blight mutation"
+		government "Invasive Predator"
+		system "Asikafarnut"
+		personality waiting staying disables unconstrained mute
+		fleet "Small Blight Mutation"
+	npc kill
+		to spawn
+			has "event: scrapyard blight horrors"
+		government "Invasive Predator"
+		system "Asikafarnut"
+		personality waiting staying disables unconstrained mute
+		fleet "Small Blight Mutation"
+		fleet "Small Blight Horror"
+	npc accompany save
+		government "Quarg"
+		personality target escort launching heroic vindictive unconstrained
+		ship "Blue Wardragon" "Dar-Quelar"
+	on complete
+		"reputation: Quarg" ++
+		clear "Scrapyard: Quarg Hunter: offered"
+		dialog `Quaelar-En is pleased with the results of the hunt and hopes you'll have another one soon.`
+
+ship "Quarg Wardragon" "Blue Wardragon"
+	swizzle 5

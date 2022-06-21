@@ -45,11 +45,11 @@ mission "Scrapyard Scrapper Siege (Faronektu)"
 			and
 				has "Randomize Scrapyard Scrapper Siege (Faronektu)"
 				not "Scrapyard Damnation Epilogue: done"
-				Random < 10
+				random < 10
 			and
 				has "Randomize Scrapyard Scrapper Siege (Faronektu)"
 				has "Scrapyard Damnation Epilogue: done"
-				Random < 2
+				random < 2
 	on offer
 		conversation
 			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Fara Skaeruti in the Faronektu system. Can you assist in [defending, protecting] the Mereti?`
@@ -89,11 +89,11 @@ mission "Scrapyard Scrapper Siege (Mekislepti)"
 			and
 				has "Randomize Scrapyard Scrapper Siege (Mekislepti)"
 				not "Scrapyard Damnation Epilogue: done"
-				Random < 10
+				random < 10
 			and
 				has "Randomize Scrapyard Scrapper Siege (Mekislepti)"
 				has "Scrapyard Damnation Epilogue: done"
-				Random < 2
+				random < 2
 	on offer
 		conversation
 			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Aresepru Nat in the Mekislepti system. Can you assist in [defending, protecting] the Mereti?`
@@ -134,11 +134,11 @@ mission "Scrapyard Scrapper Siege (Similisti)"
 			and
 				has "Randomize Scrapyard Scrapper Siege (Similisti)"
 				not "Scrapyard Damnation Epilogue: done"
-				Random < 10
+				random < 10
 			and
 				has "Randomize Scrapyard Scrapper Siege (Similisti)"
 				has "Scrapyard Damnation Epilogue: done"
-				Random < 2
+				random < 2
 	on offer
 		conversation
 			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Mereti Station in the Similisti system. Can you assist in [defending, protecting] the Mereti?`
@@ -186,7 +186,7 @@ mission "Scrapyard Damnation 1"
 			not "Randomize Scrapyard Damnation 1"
 			and
 				has "Randomize Scrapyard Damnation 1"
-				Random < 25
+				random < 25
 	on offer
 		conversation
 			`You receive a message from Meto Pa'aret: "A large fleet of Kor Scrappers have [attacked, occupied] Rekat Moraski in the Chimitarp system. Can you assist in [defending, protecting] the Mereti?`
