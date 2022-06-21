@@ -208,7 +208,7 @@ event "Blight Shadow Infestation"
 mission "Scrapyard Boarding A"
 	landing
 	invisible
-	repeat 6
+	repeat 2
 	source
 		attributes "korath"
 	destination "Laki Nemparu"
@@ -255,7 +255,7 @@ mission "Scrapyard Boarding A Clear"
 	repeat
 	to offer
 		or
-			"Scrapyard Boarding A: offered" > 6
+			"Scrapyard Boarding A: offered" > 2
 			"Scrapyard Boarding A: offered" < 0
 	on offer
 		clear "Scrapyard Boarding A: offered"

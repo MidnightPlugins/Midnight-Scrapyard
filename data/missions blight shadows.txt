@@ -143,6 +143,7 @@ mission "Scrapyard Pirate Eggs Hatch"
 		require "Blight Shadow Eggs"
 		fail "Scrapyard Eggs Pirate 1"
 		"Scrapyard Eggs Pirate 1: offered" --
+		clear "event: Pirate Egg timer"
 	on enter	
 		outfit "Blight Shadow Eggs" -1
 		conversation
@@ -153,6 +154,16 @@ mission "Scrapyard Pirate Eggs Hatch"
 		personality fleeing disables unconstrained mute
 		fleet "Small Blight Hatchling" 3
 
+mission "Scrapyard Pirate Eggs Hatch Patch"
+	landing
+	invisible
+	to offer
+		has "Scrapyard Pirate Eggs Hatch: offered"
+		has "event: Pirate Egg timer"
+		not "Scrapyard Eggs Pirate 2: offered"
+	on offer
+		clear "event: Pirate Egg timer"
+		fail
 
 
 mission "Scrapyard Devru Kaska TL15"
@@ -368,9 +379,21 @@ mission "Scrapyard Remnant Eggs Hatch Patch"
 	to offer
 		has "Scrapyard Remnant Eggs Hatch: offered"
 		has "event: Remnant Egg timer"
+		not "Scrapyard Eggs Remnant 1: done"
 	on offer
 		clear "event: Remnant Egg timer"
 		fail
+
+mission "Scrapyard Remnant Eggs Hatch Patch Patch"
+	landing
+	invisible
+	to offer
+		has "Scrapyard Eggs Remnant 1: done"
+		has "Scrapyard Remnant Eggs Hatch Patch: failed"
+	on offer
+		event "Remnant Egg timer"
+		fail
+
 
 mission "Scrapyard Shadowblight Hai"
 	landing
