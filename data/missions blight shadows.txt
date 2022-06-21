@@ -763,7 +763,7 @@ mission "Scrapyard: Quarg Hunter"
 				`	"Yes, I've killed more than a few."`
 				`	"No, I don't intend to seek them out."`
 					decline
-			`	"Good!" The Quarg straightens to its full height, "Me am Quaelar-Enkaras Foksarardelaos! But human may call me Quaelar-En. You lead my ship into Sestor region. We hunt Blight Shadows. Stain our hulls green with their blood! Is more fun than staying on ringworld, no?"
+			`	"Good!" The Quarg straightens to its full height, "Me am Quaelar-Enkaras Foksarardelaos! But human may call me Quaelar-En. You lead my ship into Sestor region. We hunt Blight Shadows. Stain our hulls green with their blood! Is more fun than staying on ringworld, no?"`
 				goto decision
 
 			label "blood paint"
@@ -783,9 +783,9 @@ mission "Scrapyard: Quarg Hunter"
 			
 			label decision
 			choice
-				`	"Alright, let's go!"
+				`	"Alright, let's go!"`
 					goto end
-				`	"... No, I'd rather not."
+				`	"... No, I'd rather not."`
 					decline
 
 			label end
