@@ -343,6 +343,7 @@ mission "Scrapyard Blight Rifle 3"
 mission "Scrapyard Remnant Eggs Hatch"
 	landing
 	invisible
+	repeat
 	to offer
 		has "event: Remnant Egg timer"
 		not "Scrapyard Eggs Remnant 1: done"
@@ -350,6 +351,7 @@ mission "Scrapyard Remnant Eggs Hatch"
 		require "Blight Shadow Eggs"
 		fail "Scrapyard Eggs Remnant 1"
 		clear "Scrapyard Eggs Remnant 1: offered"
+		clear "event: Remnant Egg timer"
 	on enter
 		outfit "Blight Shadow Eggs" -1
 		conversation
@@ -360,7 +362,15 @@ mission "Scrapyard Remnant Eggs Hatch"
 		personality fleeing disables unconstrained mute
 		fleet "Small Blight Hatchling" 3
 
-
+mission "Scrapyard Remnant Eggs Hatch Patch"
+	landing
+	invisible
+	to offer
+		has "Scrapyard Remnant Eggs Hatch: offered"
+		has "event: Remnant Egg timer"
+	on offer
+		clear "event: Remnant Egg timer"
+		fail
 
 mission "Scrapyard Shadowblight Hai"
 	landing
