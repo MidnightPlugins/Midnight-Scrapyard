@@ -810,11 +810,10 @@ mission "Scrapyard: Quarg Hunter"
 					goto end
 				`	"... No, I'd rather not."`
 					decline
-
 			label end
-				scene "scene/scene-blue wardragon"
+			scene "scene/scene-blue wardragon"
 			`	Quaelar-En said something about staining his hull with blood. As you board your ships, you note Quaelar-En's ship is blue...`
-			
+				accept
 	npc kill
 		to despawn
 			has "event: scrapyard blight horrors"
@@ -848,3 +847,14 @@ mission "Scrapyard: Quarg Hunter"
 
 ship "Quarg Wardragon" "Blue Wardragon"
 	swizzle 5
+
+mission "Scrapyard: Quarg Hunter Patch"
+	landing
+	invisible
+	to offer
+		has "Scrapyard: Quarg Hunter: offered"
+		has "Scrapyard: Quarg Hunter: declined"
+	on offer
+		clear "Scrapyard: Quarg Hunter: offered"
+		clear "Scrapyard: Quarg Hunter: declined"
+		fail
