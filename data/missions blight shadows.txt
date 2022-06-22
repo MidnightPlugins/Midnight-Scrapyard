@@ -774,6 +774,13 @@ mission "Scrapyard: Quarg Hunter"
 	waypoint "Sobarati"
 	to offer
 		"Scrapyard Threat Level" >= 5
+		or
+			and
+				not "Scrapyard: Quarg Hunter: done"
+				random < 50
+			and
+				has "Scrapyard: Quarg Hunter: done"
+				random < 5
 	on offer
 		conversation
 			scene "thumbnail/blightshadow-thumb"
