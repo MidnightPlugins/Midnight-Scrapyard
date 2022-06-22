@@ -763,6 +763,8 @@ mission "Scrapyard Blight Shadow Defense"
 
 
 mission "Scrapyard: Quarg Hunter"
+	deadline
+	deadline 2
 	name "Escort <npc>"
 	description "Escort the <npc> on a hunting trip through the systems marked on your map. Then return to <destination> by <date>."
 	source "Kuwaru Efreti"
