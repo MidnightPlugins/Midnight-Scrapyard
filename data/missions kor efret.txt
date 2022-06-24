@@ -108,6 +108,7 @@ mission "Scrapyard Derelict World Ship"
 	to offer
 		"Scrapyard Threat Level" >= 25
 	on enter "Celeborim"
+		"Scrapyard Threat Level" ++
 		conversation
 			scene "scene/scene-derelictworldship"
 			`You stumble upon tragic scene. A derelict Kor Efret world ship is surrounded by blight shadows. The ship hails you, and though you don't speak their language, it's obviously a distress call. The ship is heavily damaged and it will be a miracle if you can escort it back to Laki Nemparu in the Kashikt system.`

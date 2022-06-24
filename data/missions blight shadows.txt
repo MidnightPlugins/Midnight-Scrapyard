@@ -658,6 +658,7 @@ mission "Scrapyard Blight Mutation"
 		has "event: Blight Shadows Nest In Persitar"
 		"Scrapyard Threat Level" >= 25
 	on offer
+		"Scrapyard Threat Level" ++
 		event "scrapyard blight mutation"
 		fail
 		
@@ -685,6 +686,7 @@ mission "Scrapyard Blight Horror"
 		has "event: scrapyard blight mutation"
 		"Scrapyard Threat Level" >= 30
 	on offer
+		"Scrapyard Threat Level" ++
 		event "scrapyard blight horrors"
 		fail
 		
@@ -736,7 +738,7 @@ mission "Scrapyard Blight Shadow Defense"
 		not attributes "uninhabited"
 	to offer
 		has "event: Blight Shadows vs Mereti"
-		random < 10
+		random < 5
 	on offer
 		conversation
 			scene "scene/scene-blightshadowswarm"
@@ -746,18 +748,29 @@ mission "Scrapyard Blight Shadow Defense"
 					accept
 				`	(Do not join the defense fleet.)`
 					decline
+	on decline
+		set "wanderer colony weak against blight"
 	npc
 		government "Wanderer"
 		personality heroic
 		fleet "Wanderer Defense" 2
 	npc kill
+		to spawn
+			has "wanderer colony weak against blight"
 		government "Invasive Predator"
 		system destination
 		personality target waiting staying disables unconstrained mute
-		fleet "Large Blight Shadow" 2
+		fleet "Large Blight Shadow"
+	npc kill
+		government "Invasive Predator"
+		system destination
+		personality target waiting staying disables unconstrained mute
+		fleet "Large Blight Shadow"
+		fleet "Small Blight Shadow"
 	on complete
 		payment 1000000
 		"reputation: Wanderer" ++
+		clear "wanderer colony weak against blight"
 		dialog `The Wanderers thank for your assistance in repelling the shadows [lurking, hiding] in the darkness. A reward of <payment> is given to you.`
 
 

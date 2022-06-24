@@ -204,7 +204,7 @@ mission "Scrapyard Damnation 1"
 		event "node 8 processor Activated"
 		conversation
 			scene "scene/scene-damnation1"
-			`You notice something wrong when you enter Chimitarp: There isn't any fighting. The Mereti are standing by, as if waiting for orders. Suddenly, the Korath Devourer hails you! You raise an eyebrow when you learn the ship's name: Damnation. You're fairly certain that isn't a Korath name.`
+			`You notice something wrong when you enter Chimitarp: There isn't any fighting. The Mereti are standing by, as if waiting for orders. Suddenly, a Korath Devourer hails you! You raise an eyebrow when you learn the ship's name: Damnation. You're fairly certain that isn't a Korath name.`
 			`	"Greetings <ship>. Captain <last>, was it? I've heard about you. While the Scrappers are content to collect scraps, I've taken posession of a far greater prize. Welcome to hell.`
 			choice
 				`	"What have you done?"`
@@ -699,7 +699,7 @@ mission "Scrapyard Node 8 Hacking"
 				`	(Plug the Node 8 Jammer into the port.)`
 				`	(Do not plug the Node 8 Jammer into the port.)`
 					defer
-			`	The device blocks all communications from the ATM to the rest of the network. You attempt to withdraw 1000000000 credits, but the machine warns that it only contains 497635128 credits. You pocket the money and prepare to leave.`
+			`	The device blocks all communications from the ATM to the rest of the network. You attempt to withdraw 1,000,000,000 credits, but the machine warns that it only contains 497,635,128 credits. You pocket the money and prepare to leave.`
 			choice
 				`	(Remove the Node 8 Jammer and take it with you.)`
 					goto end

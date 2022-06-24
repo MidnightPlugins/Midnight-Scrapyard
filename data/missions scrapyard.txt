@@ -244,10 +244,10 @@ mission "Scrapyard Boarding B"
 		fleet "Error Scrap"
 	on fail
 		"Scrapyard Boarding B: offered" --
-		"Scrapyard Threat Level" ++	
+		"Scrapyard Threat Level" ++
 	on complete
 		"Scrapyard Boarding B: offered" --
-		"Scrapyard Threat Level" ++	
+		"Scrapyard Threat Level" ++
 
 mission "Scrapyard Boarding A Clear"
 	landing
