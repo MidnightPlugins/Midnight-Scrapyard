@@ -80,6 +80,35 @@ outfit "Korath Eliminator"
 
 
 
+outfit "Korath Tormentor"
+	category "Guns"
+	cost 306000
+	thumbnail "outfit/kor tormentor"
+	"mass" 11
+	"outfit space" -11
+	"weapon capacity" -11
+	"energy capacity" 100
+	"gun ports" -1
+	weapon
+		sprite "projectile/repeater"
+			"frame rate" 5
+		sound "repeater"
+		"hit effect" "repeater impact"
+		"inaccuracy" 4
+		"velocity" 13
+		"lifetime" 40
+		"reload" 10
+		"burst reload" 4
+		"burst count" 3
+		"firing energy" 24
+		"firing heat" 108
+		"shield damage" 26
+		"hull damage" 22
+		"heat damage" 33
+	description "An ancient Korath design, the Tormentor lacks the firing synchronization features which were later impemented in the Repeater."
+
+
+
 outfit "Korath Grappler"
 	category "Guns"
 	cost 410000
@@ -111,6 +140,7 @@ outfit "Korath Grappler"
 		"hull damage" 16
 		"hit force" -160
 	description "Korath Grappler projectiles are designed to pull a target closer to the Korath ship, to keep it from escaping."
+
 
 
 # The Korath Incinerator is back!

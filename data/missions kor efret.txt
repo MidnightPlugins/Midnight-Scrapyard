@@ -364,6 +364,109 @@ event "access efret salvage"
 
 
 
+mission "Scrapyard: Efret Salvage Tormentor 1"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "event: access efret salvage"
+		or
+			not "Randomize Scrapyard: Efret Salvage Tormentor"
+			and
+				has "Randomize Scrapyard: Efret Salvage Tormentor"
+				random < 5
+	on offer
+		require "Korath Tormentor"
+		conversation
+			scene "outfit/kor tormentor"
+			`Thanks to the local factories, the outfitter on Laki Nemparu is a bit more advanced than the other Kor Efret outfitters. Perhaps you can convince them to start manufacturing Korath Tormentors.`
+			choice
+				`	(Show the Korath Tormentor to the outfitter.)`
+				`	(Not now.)`
+					defer
+			`	The outfitter studies your Tormentor. It seems they want to buy it for 612,000 credits. Will you sell it?`
+			choice
+				`	(Sell the Korath Tormentor to the outfitter.)`
+				`	(Do not sell the Korath Tormentor.)`
+					defer
+			`	The outfitter gladly pays you 612,000 credits and some technicians cart the weapon away. Hopefully they'll use it as a prototype to manufacture more, but with the language barrier, you can't be certain what their plans for it are.`
+				decline
+	on defer
+		set "Randomize Scrapyard: Efret Salvage Tormentor"
+	on decline
+		payment 612000
+		outfit "Korath Tormentor" -1
+		event "efret salvage tormentor" 14
+
+event "efret salvage tormentor"
+	outfitter "Efret Salvage Advanced"
+		add "Korath Tormentor"
+
+mission "Scrapyard: Efret Salvage Tormentor 2"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "event: efret salvage tormentor"
+	on offer
+		conversation
+			scene "outfit/kor tormentor"
+			`You notice a demonstration of the Tormentor taking place at the outfitter. It appears they are available for purchase.`
+				decline
+
+mission "Scrapyard: Efret Salvage Grappler 1"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "event: access efret salvage"
+		or
+			not "Randomize Scrapyard: Efret Salvage Grappler"
+			and
+				has "Randomize Scrapyard: Efret Salvage Grappler"
+				random < 5
+	on offer
+		require "Korath Grappler"
+		conversation
+			scene "outfit/kor grappler"
+			`Thanks to the local factories, the outfitter on Laki Nemparu is a bit more advanced than the other Kor Efret outfitters. Perhaps you can convince them to start manufacturing Korath Grapplers.`
+			choice
+				`	(Show the Korath Grappler to the outfitter.)`
+				`	(Not now.)`
+					defer
+			`	The outfitter studies your Grappler. It seems they want to buy it for 820,000 credits. Will you sell it?`
+			choice
+				`	(Sell the Korath Grappler to the outfitter.)`
+				`	(Do not sell the Korath Grappler.)`
+					defer
+			`	The outfitter gladly pays you 820,000 credits and some technicians cart the weapon away. Hopefully they'll use it as a prototype to manufacture more, but with the language barrier, you can't be certain what their plans for it are.`
+				decline
+	on defer
+		set "Randomize Scrapyard: Efret Salvage Grappler"
+	on decline
+		payment 820000
+		outfit "Korath Grappler" -1
+		event "efret salvage grappler" 14
+
+event "efret salvage grappler"
+	outfitter "Efret Salvage Advanced"
+		add "Korath Grappler"
+
+mission "Scrapyard: Efret Salvage Grappler 2"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "event: efret salvage grappler"
+	on offer
+		conversation
+			scene "outfit/kor grappler"
+			`You notice a demonstration of the Grappler taking place at the outfitter. It appears they are available for purchase.`
+				decline
+
+
+
+
 mission "Scrapyard Mereti Efret Test Flight"
 	name "Mereti Efret Escort"
 	description "Escort the Mereti Efret to <waypoints>. Then return to <destination>."
