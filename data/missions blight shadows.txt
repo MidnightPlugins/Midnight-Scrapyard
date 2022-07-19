@@ -173,6 +173,7 @@ mission "Scrapyard Devru Kaska TL15"
 		has "event: remnant: return the samples timer"
 		"Scrapyard Threat Level" >= 15
 		or
+			has "Infected with Shadowblight"
 			has "Scrapyard Eggs Pirate 3: offered"
 			has "Scrapyard Pirate Eggs Hatch: offered"
 	on enter "Sobarati"
@@ -190,6 +191,7 @@ mission "Scrapyard Eggs Remnant 1"
 		has "event: remnant: return the samples timer"
 		"Scrapyard Threat Level" >= 15
 		or
+			has "Infected with Shadowblight"
 			has "Scrapyard Eggs Pirate 3: offered"
 			has "Scrapyard Pirate Eggs Hatch: offered"
 	on offer
