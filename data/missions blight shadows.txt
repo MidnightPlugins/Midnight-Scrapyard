@@ -31,7 +31,8 @@ mission "Scrapyard Sebra Skira TL5"
 
 mission "Scrapyard Eggs Pirate 1"
 	landing
-	invisible
+	name "Blight Shadow Eggs"
+	description "Take these eggs to a place known for dealing with exotic animals."
 	source "Sebra Skira"
 	destination "Greenrock"
 	to offer
@@ -142,9 +143,9 @@ mission "Scrapyard Pirate Eggs Hatch"
 	on offer
 		require "Blight Shadow Eggs"
 		fail "Scrapyard Eggs Pirate 1"
-		"Scrapyard Eggs Pirate 1: offered" --
+		clear "Scrapyard Eggs Pirate 1: offered"
 		clear "event: Pirate Egg timer"
-	on enter	
+	on enter
 		outfit "Blight Shadow Eggs" -1
 		conversation
 			`You hear a loud crunching sound coming from your cargo hold. When you check the security cameras, you see that the Blight Shadow eggs have hatched! The newborn Blight Shadows are tearing open the cargo hatch...`
@@ -207,10 +208,19 @@ mission "Scrapyard Eggs Remnant 1"
 
 			`	You decide to leave the eggs alone and get out of here before whatever laid them comes back.`
 				depart
+
 			label omelette
 			`	You violently smash the eggs and are splattered with black slime. It might be a good idea to decontaminate your environmental suit later...`
 				decline
+
 			label keep
+			branch pirates
+				has "Scrapyard Eggs Pirate 3: offered"
+
+			`	You carefully load the eggs into a crate and store them in your cargo hold. Maybe the Remnant might be interested in them...`
+				accept
+
+			label pirates
 			`	You carefully load the eggs into a crate and store them in your cargo hold. After your experience with the pirates, you wonder if taking them to the Remnant might yield better results...`
 				accept
 	on decline
