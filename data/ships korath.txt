@@ -275,8 +275,8 @@ ship "Met Par Tek 53" "Met Par Tek 53 (scrap) C"
 
 ship "Tek Far 109" "Tek Far 109 (scrapper)"
 	outfits
+		"Korath Slicer" 2
 		"Korath Disruptor" 2
-		"Korath Slicer Turret" 2
 		
 		"Double Plasma Core"
 		"Systems Core (Medium)"
@@ -287,10 +287,6 @@ ship "Tek Far 109" "Tek Far 109 (scrapper)"
 		"Steering (Planetary Class)"
 		Hyperdrive
 
-	turret "Korath Disruptor"
-	turret "Korath Slicer Turret"
-	turret "Korath Disruptor"
-	turret "Korath Slicer Turret"
 
 ship "Tek Far 109" "Tek Far 109 (scrap) A"
 	outfits
@@ -1465,7 +1461,7 @@ ship "Korath Devourer"
 	explode "large explosion" 70
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Some Korath scrappers are more intested in harvesting raw materials rather than technology. The Devourer is their attempt to streamline the collection process. The Korath Incinerator is integrated into the ship and cannot be removed."
+	description "Some Korath scrappers are more interested in harvesting raw materials rather than technology. The Devourer is their attempt to streamline the collection process. The Korath Incinerator is integrated into the ship and cannot be removed."
 	
 
 

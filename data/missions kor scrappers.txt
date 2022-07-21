@@ -68,8 +68,9 @@ mission "Scrapyard Scrapper Siege (Faronektu)"
 		fleet "Large Korath Scrappers" 6
 		dialog `You've defeated the Kor Scrapper fleet. Return to <origin> and report the results to Meto Pa'aret.`
 	on complete
-		payment 500000
-		dialog `You update Meto Pa'aret on the result of the battle. The Wanderers offer you <payment> for your efforts.`
+		"reputation: Wanderer" ++
+		"reputation: Kor Mereti" += 8
+		dialog `You update Meto Pa'aret on the result of the battle. Your reputation with the Wanderers and Mereti has improved.`
 
 
 mission "Scrapyard Scrapper Siege (Mekislepti)"
@@ -113,8 +114,9 @@ mission "Scrapyard Scrapper Siege (Mekislepti)"
 		dialog `You've defeated the Kor Scrapper fleet. Return to <origin> and report the results to Meto Pa'aret.`
 
 	on complete
-		payment 500000
-		dialog `You update Meto Pa'aret on the result of the battle. The Wanderers offer you <payment> for your efforts.`
+		"reputation: Wanderer" ++
+		"reputation: Kor Mereti" += 8
+		dialog `You update Meto Pa'aret on the result of the battle. Your reputation with the Wanderers and Mereti has improved.`
 		
 
 mission "Scrapyard Scrapper Siege (Similisti)"
@@ -158,8 +160,9 @@ mission "Scrapyard Scrapper Siege (Similisti)"
 		dialog `You've defeated the Kor Scrapper fleet. Return to <origin> and report the results to Meto Pa'aret.`
 
 	on complete
-		payment 500000
-		dialog `You update Meto Pa'aret on the result of the battle. The Wanderers offer you <payment> for your efforts.`
+		"reputation: Wanderer" ++
+		"reputation: Kor Mereti" += 8
+		dialog `You update Meto Pa'aret on the result of the battle. Your reputation with the Wanderers and Mereti has improved.`
 
 
 
@@ -437,7 +440,7 @@ mission "Scrapyard Damnation 3"
 	npc
 		government Alpha
 		system Feroteri
-		personality target waiting staying vindictive
+		personality waiting staying vindictive
 		ship "Far Osk 27" "Gehenna"
 		ship "Far Osk 27" "Purgatory "
 		ship "Far Osk 27" "Hades"
@@ -629,6 +632,7 @@ mission "Scrapyard Damnation Epilogue"
 	to offer
 		has "Scrapyard Damnation 3: done"
 	on enter
+		"reputation: Kor Mereti" >?= 0
 		dialog `The Mereti send a message of gratitude for [restoring, fixing] The Mind.`
 	npc
 		government "Invasive Predator"

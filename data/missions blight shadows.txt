@@ -301,7 +301,7 @@ mission "Scrapyard Blight Rifle 1"
 		not attributes "automaton"
 	destination "Caelian"
 	to offer
-		"Blight Rifle Testing" > 10
+		"Blight Rifle Testing" >= 10
 		random < 50
 	on offer
 		require "Blight Rifle" 1
@@ -334,7 +334,7 @@ mission "Scrapyard Blight Rifle 2"
 				accept
 	on accept
 		outfit "Blight Rifle" 1
-		"Blight Rifle Testing" <?= 0
+		"Blight Rifle Testing" <?= 1
 		fail
 
 mission "Scrapyard Blight Rifle 3"
@@ -352,7 +352,7 @@ mission "Scrapyard Blight Rifle 3"
 		require "Blight Rifle" 1
 		conversation
 			scene "outfit/blight rifle"
-			`The test model blight rifle starts shaking wildly. Then part of the casing shatters, splattering you with black slime! Unfortunately, the rifle is a complete wreck. You'll have to rely on some other weapon for now.`
+			`The test model Blight Rifle starts shaking wildly. Then part of the casing shatters, splattering you with black slime! Unfortunately, the rifle is a complete wreck. You'll have to rely on some other weapon for now.`
 				accept
 	on accept
 		outfit "Blight Rifle" -1
@@ -360,8 +360,16 @@ mission "Scrapyard Blight Rifle 3"
 	on complete
 		clear "Scrapyard Blight Rifle 3: offered"
 		dialog `Head to the spaceport to report your Blight Rifle field test results to Prefect Chilia.`
-		
 
+mission "Scrapyard Blight Rifle testing patch"
+	landing
+	invisible
+	to offer
+		has "Scrapyard Blight Rifle 2: failed"
+		"Blight Rifle Testing" < 1
+	on offer
+		set "Blight Rifle Testing"
+		fail
 
 mission "Scrapyard Remnant Eggs Hatch"
 	landing
@@ -633,6 +641,7 @@ mission "Scrapyard Random Station Eggs"
 	landing
 	invisible
 	repeat
+	deadline 3
 	source
 		planet "Sebra Skira" "Devru Kaska" "Metwar Skaretar" "Makwar Pratarati"
 	to offer
