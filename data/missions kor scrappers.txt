@@ -632,7 +632,7 @@ mission "Scrapyard Damnation Epilogue"
 	to offer
 		has "Scrapyard Damnation 3: done"
 	on enter
-		"reputation: Kor Mereti" >?= 0
+		"reputation: Kor Mereti" >?= 1
 		dialog `The Mereti send a message of gratitude for [restoring, fixing] The Mind.`
 	npc
 		government "Invasive Predator"
