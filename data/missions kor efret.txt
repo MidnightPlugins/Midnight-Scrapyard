@@ -172,7 +172,7 @@ mission "Scrapyard Derelict World Ship"
 		government "Kor Efret"
 		system "Celeborim"
 		personality escort target waiting derelict pacifist
-		ship "Korath World-Ship D (Crippled)" "Lekfarosk"
+		ship "Scrapyard World-Ship (Crippled)" "Lekfarosk"
 
 	on enter "Kaliptari"
 		dialog `Take the crippled world ship to the outfitter on Laki Nemparu in the Kashikt system.`
@@ -181,14 +181,14 @@ mission "Scrapyard Derelict World Ship"
 		dialog `You've finally reached Kashikt. Escort the world ship to Laki Nemparu.` 
 
 	on complete
-		give ship "Korath World-Ship D (Crippled)" "Lekfarosk"
+		give ship "Scrapyard World-Ship (Crippled)" "Lekfarosk"
 		conversation
-			scene "thumbnail/world-ship d"
+			scene "thumbnail/scrapyard world-ship"
 			`The Kor Efret are grateful to you for saving them from certain death. They seem to want to give you a tour of their ship, but as the tour progresses, it becomes apparent that they are offering the ship to you as a gesture of thanks. While you appreciate the reward, you can't help but notice that damage to the ship's key systems hasn't been repaired...`
 			
-ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
-	sprite "ship/world-ship d"
-	thumbnail "thumbnail/world-ship d"
+ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"
+	sprite "ship/world-ship scrapyard"
+	thumbnail "thumbnail/world-ship scrapyard-thumb"
 	add attributes
 		"fused circuits" -5
 	outfits		
@@ -210,6 +210,29 @@ ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
 	turret -89 293
 	turret 87.5 292.5
 
+ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
+	sprite "ship/world-ship scrapyard"
+	thumbnail "thumbnail/world-ship scrapyard-thumb"
+	add attributes
+		"fused circuits" -5
+	outfits		
+		"Triple Plasma Core (Damaged)"
+		"Systems Core (Damaged)"
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
+		
+		"Thruster (Planetary Class)(Damaged)"
+		"Steering (Planetary Class)(Damaged)"
+		"Hyperdrive (Damaged)"
+
+	turret -74 -156
+	turret 74 -155.5
+	turret -42 -50.5
+	turret 44 -50.5
+	turret -27.5 134.5
+	turret 27 134.5
+	turret -89 293
+	turret 87.5 292.5
 
 
 mission "Scrapyard: Warmonger Construction"
