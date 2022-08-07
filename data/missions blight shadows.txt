@@ -432,7 +432,7 @@ mission "Scrapyard Plume's Research"
 				`	(Not now.)`
 					defer
 			scene "thumbnail/blightshadow-thumb"
-			`	You find Plume alone, hunched over an operating platform. A Blight Shadow lies sedated on it, it's body sliced open for dissection. Judging from its relatively small size, this is probably a hatchling. As you step into the room Plume looks up in surprise. "Ah, <first>! You startled me," Plume chants quickly. "These creatures are incredibly dangerous! The first ones to hatch immediately attacked." He sets down his tools and starts cleaning his hands.
+			`	You find Plume alone, hunched over an operating platform. A Blight Shadow lies sedated on it, its body sliced open for dissection. Judging from its relatively small size, this is probably a hatchling. As you step into the room Plume looks up in surprise. "Ah, <first>! You startled me," Plume chants quickly. "These creatures are incredibly dangerous! The first ones to hatch immediately attacked." He sets down his tools and starts cleaning his hands.`
 			choice
 				`	"Was anyone hurt?"`
 				`	"What have you learned?"`
