@@ -183,7 +183,7 @@ mission "Scrapyard Derelict World Ship"
 	on complete
 		give ship "Scrapyard World-Ship (Crippled)" "Lekfarosk"
 		conversation
-			scene "thumbnail/scrapyard world-ship"
+			scene "thumbnail/world-ship scrapyard-thumb"
 			`The Kor Efret are grateful to you for saving them from certain death. They seem to want to give you a tour of their ship, but as the tour progresses, it becomes apparent that they are offering the ship to you as a gesture of thanks. While you appreciate the reward, you can't help but notice that damage to the ship's key systems hasn't been repaired...`
 			
 ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"

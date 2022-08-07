@@ -415,6 +415,59 @@ mission "Scrapyard Remnant Eggs Hatch Patch Patch"
 		fail
 
 
+
+mission "Scrapyard Plume's Research"
+	landing
+	invisible
+	source "Aventine"
+	to offer
+		has "event: Blight Rifle Testing"
+		random < 25
+	on offer
+		conversation
+			scene "outfit/blight egg"
+			`It's been a while since you delivered Blight Shadow eggs to Plume. Do want to see what he's learned?`
+			choice
+				`	(Visit Plume's lab.)`
+				`	(Not now.)`
+					defer
+			scene "thumbnail/blightshadow-thumb"
+			`	You find Plume alone, hunched over an operating platform. A Blight Shadow lies sedated on it, it's body sliced open for dissection. Judging from its relatively small size, this is probably a hatchling. As you step into the room Plume looks up in surprise. "Ah, <first>! You startled me," Plume chants quickly. "These creatures are incredibly dangerous! The first ones to hatch immediately attacked." He sets down his tools and starts cleaning his hands.
+			choice
+				`	"Was anyone hurt?"`
+				`	"What have you learned?"`
+					goto research
+			apply
+				"reputation: Remnant" ++
+			`	"No, but the creatures escaped before we could study them." His notes trail off on a mournful tone. "We've put more vigorous safety protocols into practice with the remaining test subjects.`
+			choice
+				`	"What have you learned?"`
+			label research
+			`	"The creature absorbs energy. Both light and heat are absorbed through its skin. It can also absorb fuel, energy, and heat from ships through a beam emitted by a special organ hidden amongst its tentacles. As I said, it is very dangerous. However it does seem to have a weakness." He takes a breath then continues, "While hunting down the escaped specimens, an Ion storm swept through the system. Apparently, the Ionic energy was somewhat disruptive to several of their internal organs."`
+			`	That information could be useful. You thank Plume for his research and head out.`
+				accept
+	on enter
+		dialog `Plume mentioned that some of the Blight Shadows escaped. He never indicated if they were all caught...`
+	npc kill
+		government "Invasive Predator"
+		personality waiting disables unconstrained mute
+		fleet "Small Blight Hatchling" 3
+	npc kill
+		government "Invasive Predator"
+		system
+			distance 1 2
+		personality waiting disables unconstrained mute
+		fleet "Small Blight Hatchling" 2
+	npc kill
+		government "Invasive Predator"
+		system
+			distance 2 3
+		personality waiting disables unconstrained mute
+		fleet "Small Blight Hatchling"
+		dialog `These Blight Shadows are weaker than the ones you've encountered in Sestor space. They could just be hatchlings. Or maybe the Ember Waste is somehow inhospitable to them.`
+
+
+
 mission "Scrapyard Shadowblight Hai"
 	landing
 	invisible

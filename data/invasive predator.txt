@@ -54,7 +54,7 @@ outfit "Energy Absorber?"
 	weapon
 		sprite "projectile/laser"
 			"frame rate" 1
-		sound "electron beam"
+		sound "energy absorber"
 		"hit effect" "beam laser impact"
 		"inaccuracy" .4
 		"velocity" 300
@@ -90,7 +90,9 @@ ship "Blight Shadow"
 		"heat dissipation" 1.3
 		"cargo space" 0
 		"thrust" 24
+		"thrusting energy" .1
 		"reverse thrust" 36
+		"reverse thrusting energy" .1
 		"turn" 800
 		"shield generation" 1
 		"shield energy" 1
@@ -137,6 +139,7 @@ ship "Blight Shadow" "Blight Hatchling"
 		"shield generation" -1
 		"shield energy" -1
 		"depleted shield delay" -200
+		"hull energy" .5
 
 	
 fleet "Small Blight Shadow"
@@ -678,7 +681,9 @@ ship "Blight Mutation"
 		"heat dissipation" 2.6
 		"cargo space" 0
 		"thrust" 24
+		"thrusting energy" .1
 		"reverse thrust" 36
+		"reverse thrusting energy" .1
 		"turn" 800
 		"shield generation" 2
 		"shield energy" 2
@@ -727,7 +732,7 @@ outfit "Energy Drainer?"
 	weapon
 		sprite "projectile/banisher"
 			"frame rate" 60
-		sound "electron beam"
+		sound "energy absorber"
 		"hit effect" "energy drainer impact"
 		"inaccuracy" .4
 		"velocity" 590
@@ -769,7 +774,7 @@ effect "blight defense"
 	sprite "effect/warder"
 		"no repeat"
 		"frame rate" 6
-	sound "proton"
+	sound "blight defense"
 	"lifetime" 11
 	"velocity scale" 1
 
@@ -816,7 +821,9 @@ ship "Blight Horror"
 		"heat dissipation" 3.9
 		"cargo space" 0
 		"thrust" 24
+		"thrusting energy" .1
 		"reverse thrust" 36
+		"reverse thrusting energy" .1
 		"turn" 800
 		"shield generation" 4
 		"shield energy" 4
