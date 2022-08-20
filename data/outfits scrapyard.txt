@@ -128,7 +128,7 @@ outfit "Korath Grappler"
 		"inaccuracy" 1
 		"velocity" 10
 		"lifetime" 100
-		"reload" 20
+		"reload" 40
 		"firing energy" 60
 		"firing heat" 150
 		"acceleration" 1
@@ -136,8 +136,8 @@ outfit "Korath Grappler"
 		"turn" .2
 		"homing" 4
 		"tracking" .7
-		"shield damage" 54
-		"hull damage" 16
+		"shield damage" 108
+		"hull damage" 32
 		"hit force" -160
 	description "Korath Grappler projectiles are designed to pull a target closer to the Korath ship, to keep it from escaping."
 
@@ -227,6 +227,40 @@ outfit "Korath Scanner"
 
 
 
+outfit "Korath Scattermine"
+	category "Secondary Weapons"
+	cost 536500
+	thumbnail "outfit/korath scattermine"
+	"mass" 18
+	"outfit space" -24
+	"weapon capacity" -24
+	"energy capacity" 25
+	"gun ports" -1
+	"minelayer capacity" 8
+	weapon
+		sprite "projectile/korath minelayer"
+			"frame rate" .6
+			"no repeat"
+		sound "minelayer"
+		ammo "Korath Mine"
+		icon "icon/minelayer"
+		"fire effect" "minelayer fire"
+		"hit effect" "huge explosion"
+		"die effect" "minelayer split" 5
+		"submunition" "Korath Mine Submunition" 11
+		"inaccuracy" 10
+		"velocity" 0
+		"lifetime" 1
+		"reload" 180
+		"firing energy" 9
+		"firing heat" 9
+		"drag" .04
+		"missile strength" 35
+		"blast radius" 25
+	description "A crude alternative to the Korath Minelayer, the Scattermine simply sets the mines loose along the ship's wake. While this covers a smaller area than the Minelayer, the resulting minefield is more dense."
+	description "One drawback of using the mines in this manner is that premature detonation can damage the ship dropping the mines."
+
+
 outfit "Node 8 Jammer"
 	category "Special"
 	thumbnail "outfit/node 8 jammer"
@@ -282,6 +316,7 @@ outfit "Systems Core (Damaged)"
 	"energy consumption" 0.8
 	"heat generation" 1.2
 	"fused circuits" 1
+	"unplunderable" 1
 	description `While unable to repair damage to complex systems such as itself, the machines controlled by this systems core can patch holes in the hull.`
 
 outfit "Triple Plasma Core (Damaged)"
@@ -293,6 +328,7 @@ outfit "Triple Plasma Core (Damaged)"
 	"energy generation" 22.0
 	"heat generation" 154.0
 	"fused circuits" 1
+	"unplunderable" 1
 	description "While there is no visible damage, you are certain this unit is malfunctioning. The power output is no better than a Double Plasma Core."
 
 outfit "Hyperdrive (Damaged)"
@@ -305,6 +341,7 @@ outfit "Hyperdrive (Damaged)"
 	"jump fuel" 300
 	"hyperdrive" 1
 	"fused circuits" 1
+	"unplunderable" 1
 	description "A malfunction is causing this hyperdrive to consume triple the amount of fuel that a normal hyperdrive would."
 	
 outfit "Thruster (Planetary Class)(Damaged)"
@@ -322,6 +359,7 @@ outfit "Thruster (Planetary Class)(Damaged)"
 	"flare sprite" "effect/korath flare/medium"
 		"frame rate" 7
 	"flare sound" "plasma medium"
+	"unplunderable" 1
 	description "Damage to the thrusters has reduced output by half."
 
 outfit "Steering (Planetary Class)(Damaged)"
@@ -339,6 +377,7 @@ outfit "Steering (Planetary Class)(Damaged)"
 	"steering flare sprite" "effect/korath flare/medium"
 		"frame rate" 7
 	"steering flare sound" "plasma medium"
+	"unplunderable" 1
 	description "A malfunction in the steering system has reduced its effectiveness significantly."
 
 

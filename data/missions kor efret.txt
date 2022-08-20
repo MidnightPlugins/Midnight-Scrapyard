@@ -487,6 +487,56 @@ mission "Scrapyard: Efret Salvage Grappler 2"
 			`You notice a demonstration of the Grappler taking place at the outfitter. It appears they are available for purchase.`
 				decline
 
+mission "Scrapyard: Efret Salvage Scattermine 1"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "event: access efret salvage"
+		or
+			not "Randomize Scrapyard: Efret Salvage Scattermine"
+			and
+				has "Randomize Scrapyard: Efret Salvage Scattermine"
+				random < 5
+	on offer
+		require "Korath Scattermine"
+		conversation
+			scene "outfit/korath scattermine"
+			`Thanks to the local factories, the outfitter on Laki Nemparu is a bit more advanced than the other Kor Efret outfitters. Perhaps you can convince them to start manufacturing Korath Scattermine.`
+			choice
+				`	(Show the Korath Scattermine to the outfitter.)`
+				`	(Not now.)`
+					defer
+			`	The outfitter studies your Scattermine. It seems they want to buy it for 1,073,000 credits. Will you sell it?`
+			choice
+				`	(Sell the Korath Scattermine to the outfitter.)`
+				`	(Do not sell the Korath Scattermine.)`
+					defer
+			`	The outfitter gladly pays you 1,073,000 credits and some technicians cart the weapon away. Hopefully they'll use it as a prototype to manufacture more, but with the language barrier, you can't be certain what their plans for it are.`
+				decline
+	on defer
+		set "Randomize Scrapyard: Efret Salvage Scattermine"
+	on decline
+		payment 1073000
+		outfit "Korath Scattermine" -1
+		event "efret salvage scattermine" 14
+
+event "efret salvage scattermine"
+	outfitter "Efret Salvage Advanced"
+		add "Korath Scattermine"
+
+mission "Scrapyard: Efret Salvage Scattermine 2"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "event: efret salvage scattermine"
+	on offer
+		conversation
+			scene "outfit/kor scattermine"
+			`You notice a demonstration of the Scattermine taking place at the outfitter. It appears they are available for purchase.`
+				decline
+
 
 
 
