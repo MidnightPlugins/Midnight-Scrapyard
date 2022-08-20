@@ -37,34 +37,36 @@ ship "Korath Raider" "Korath Scrapper (shields)"
 			"hull damage" 1800
 			"hit force" 5400
 	outfits
-		"Korath Banisher" 5
+		"Fuel Processor"
+		"Jump Drive"
+		"Korath Banisher" 3
+		"Korath Mine" 16
+		"Korath Repeater Rifle" 196
+		"Korath Repeater Turret" 2
+		"Korath Scattermine" 2
 		"Korath Warder"
-		"Triple Plasma Core"
+		"Large Heat Shunt" 2
+		"Outfits Expansion"
+		"Small Heat Shunt"
+		"Steering (Planetary Class)"
 		"Systems Core (Large)"
 		"Systems Core (Medium)"
-		"Systems Core (Small)"
-		"Outfits Expansion"
-		"Large Heat Shunt" 2
-		"Small Heat Shunt"
-		"Fuel Processor"
-		"Korath Repeater Rifle" 196
-		"Steering (Planetary Class)"
 		"Thruster (Planetary Class)"
-		"Jump Drive"
+		"Triple Plasma Core"
 	engine -20 127
 	engine 20 127
 	"reverse engine" -9 -154
 		zoom 0.7
 	"reverse engine" 9 -154
 		zoom 0.7
-	gun 32.5 -1 "Korath Minelayer"
+	gun 32.5 -1 "Korath Scattermine"
 		angle 60
-	gun -32.5 -1 "Korath Minelayer"
+	gun -32.5 -1 "Korath Scattermine"
 		angle 300
 	turret -10 -143 "Korath Banisher"
 	turret 10 -143 "Korath Banisher"
-	turret -36 -141 "Korath Banisher"
-	turret 36 -141 "Korath Banisher"
+	turret -36 -141 "Korath Repeater Turret"
+	turret 36 -141 "Korath Repeater Turret"
 	turret 0 41 "Korath Warder"
 	turret 0 94 "Korath Banisher"
 	bay "Fighter" -80 151 back
@@ -102,21 +104,24 @@ ship "Korath Raider" "Korath Scrapper (weapons)"
 			"hull damage" 1800
 			"hit force" 5400
 	outfits
-		"Korath Repeater Turret" 5
+		"Fuel Processor"
+		"Jump Drive"
+		"Korath Disruptor"
 		"Korath Mine" 16
 		"Korath Piercer" 62
 		"Korath Piercer Launcher" 2
-		"Korath Scattermine" 2
-		"Korath Warder"
-		"Triple Plasma Core"
-		"Systems Core (Large)"
-		"Large Heat Shunt" 2
-		"Small Heat Shunt"
-		"Fuel Processor"
 		"Korath Repeater Rifle" 196
+		"Korath Repeater Turret" 3
+		"Korath Scattermine" 2
+		"Korath Slicer Turret"
+		"Korath Warder"
+		"Large Heat Shunt" 2
+		"Outfits Expansion"
+		"Small Heat Shunt"
 		"Steering (Planetary Class)"
+		"Systems Core (Large)"
 		"Thruster (Planetary Class)"
-		"Jump Drive"
+		"Triple Plasma Core"
 	engine -20 127
 	engine 20 127
 	"reverse engine" -9 -143
@@ -131,8 +136,8 @@ ship "Korath Raider" "Korath Scrapper (weapons)"
 		angle 300
 	turret -10 -143 "Korath Repeater Turret"
 	turret 10 -143 "Korath Repeater Turret"
-	turret -36 -141 "Korath Repeater Turret"
-	turret 36 -141 "Korath Repeater Turret"
+	turret -36 -141 "Korath Disruptor"
+	turret 36 -141 "Korath Slicer Turret"
 	turret 0 41 "Korath Repeater Turret"
 	turret 0 94 "Korath Warder"
 	bay "Fighter" -80 151 back
@@ -170,22 +175,25 @@ ship "Korath Raider" "Korath Scrapper (engines)"
 			"hull damage" 1800
 			"hit force" 5400
 	outfits
-		"Korath Disruptor" 2
-		"Korath Slicer Turret" 2
-		"Korath Warder" 2
-		"Korath Mine" 52
-		"Korath Mine Rack" 4
-		"Korath Scattermine" 2
-		"Triple Plasma Core"
-		"Systems Core (Medium)"
-		"Large Heat Shunt" 2
-		"Small Heat Shunt"
 		"Fuel Processor"
+		"Jump Drive"
+		"Korath Disruptor"
+		"Korath Grab-Strike"
+		"Korath Mine" 34
+		"Korath Mine Rack" 2
 		"Korath Repeater Rifle" 196
+		"Korath Repeater Turret" 2
+		"Korath Scattermine" 2
+		"Korath Slicer Turret"
+		"Korath Warder"
+		"Large Heat Shunt" 2
+		"Outfits Expansion"
+		"Small Heat Shunt"
 		"Steering (Planetary Class)"
+		"Systems Core (Large)"
 		"Thruster (Asteroid Class)"
 		"Thruster (Planetary Class)"
-		"Jump Drive"
+		"Triple Plasma Core"
 	engine -26 156
 	engine 26 156
 	"reverse engine" -9 -154
@@ -196,11 +204,11 @@ ship "Korath Raider" "Korath Scrapper (engines)"
 		angle 60
 	gun -32.5 -1 "Korath Scattermine"
 		angle 300
-	turret -10 -143 "Korath Slicer Turret"
-	turret 10 -143 "Korath Slicer Turret"
-	turret -36 -141 "Korath Disruptor"
+	turret -10 -143 "Korath Repeater Turret"
+	turret 10 -143 "Korath Repeater Turret"
+	turret -36 -141 "Korath Slicer Turret"
 	turret 36 -141 "Korath Disruptor"
-	turret 0 41 "Korath Warder"
+	turret 0 41 "Korath Grab-Strike"
 	turret 0 94 "Korath Warder"
 	bay "Fighter" -80 151 back
 	bay "Fighter" 80 151 back
@@ -237,22 +245,22 @@ ship "Korath Raider" "Korath Scrapper (carrier)"
 			"hull damage" 1800
 			"hit force" 5400
 	outfits
-		"Korath Disruptor" 2
-		"Korath Slicer Turret" 2
-		"Korath Grab-Strike"
-		"Korath Warder"
-		"Korath Mine" 43
-		"Korath Mine Rack" 3
-		"Korath Scattermine" 2
-		"Triple Plasma Core"
-		"Systems Core (Medium)"
-		"Large Heat Shunt" 2
-		"Small Heat Shunt"
 		"Fuel Processor"
-		"Korath Repeater Rifle" 196
-		"Steering (Planetary Class)"
-		"Thruster (Planetary Class)"
 		"Jump Drive"
+		"Korath Disruptor" 2
+		"Korath Grab-Strike"
+		"Korath Mine" 16
+		"Korath Repeater Rifle" 196
+		"Korath Scattermine" 2
+		"Korath Slicer Turret" 2
+		"Korath Warder"
+		"Large Heat Shunt" 2
+		"Outfits Expansion"
+		"Small Heat Shunt"
+		"Steering (Planetary Class)"
+		"Systems Core (Large)"
+		"Thruster (Planetary Class)"
+		"Triple Plasma Core"
 	engine -20 127
 	engine 20 127
 	"reverse engine" -9 -154
