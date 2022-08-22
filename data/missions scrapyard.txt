@@ -215,15 +215,17 @@ mission "Scrapyard Boarding A"
 	to offer
 		has "event: Scrapyard Develops"
 		random < 20
-	npc board
+	npc kill
 		government "Derelict (Killable)"
 		system
 			attributes "Scrapyard"
 		personality waiting derelict mute
 		fleet "Error Scrap"
+		conversation
+			apply
+				"Scrapyard Boarding A: offered" --
+			`You've eliminated some of the derelicts, but more are out there waiting to be exploited by Scrappers and Blight Shadows.`
 	on fail
-		"Scrapyard Boarding A: offered" --
-	on complete
 		"Scrapyard Boarding A: offered" --
 
 mission "Scrapyard Boarding B"
@@ -236,18 +238,19 @@ mission "Scrapyard Boarding B"
 	to offer
 		has "event: Blight Shadow Infestation"
 		random < 30
-	npc board
+	npc kill
 		government "Derelict (Killable)"
 		system
 			attributes "Scrapyard"
 		personality waiting derelict mute
 		fleet "Error Scrap"
+		conversation
+			apply
+				"Scrapyard Threat Level" ++
+				"Scrapyard Boarding B: offered" --
+			`You've eliminated some of the derelicts, but more are out there waiting to be exploited by Scrappers and Blight Shadows.`
 	on fail
 		"Scrapyard Boarding B: offered" --
-		"Scrapyard Threat Level" ++
-	on complete
-		"Scrapyard Boarding B: offered" --
-		"Scrapyard Threat Level" ++
 
 mission "Scrapyard Boarding A Clear"
 	landing
@@ -274,12 +277,61 @@ mission "Scrapyard Boarding B Clear"
 		fail
 
 
+mission "Mereti Automines Deployed"
+	landing
+	invisible
+	destination "Laki Nemparu"
+	to offer
+		"Scrapyard Threat Level" >= 1
+	on offer
+		event "Mereti Automines Deployed"
+		fail
+
+event "Mereti Automines Deployed"
+	fleet "Large Kor Mereti"
+		add variant 1
+			"Model 512 (Carrier)"
+			"Mechanized Mine"
+		add variant 1
+			"Model 512 (Carrier)" 2
+			"Mechanized Mine" 2
+		add variant 1
+			"Model 512 (Carrier)" 3
+			"Mechanized Mine" 3
+
+mission "Mereti Automines Set"
+	landing
+	invisible
+	destination "Laki Nemparu"
+	to offer
+		"Scrapyard Threat Level" >= 5
+	on offer
+		event "Mereti Automines Set"
+		fail
+
+event "Mereti Automines Set"
+	system Celeborim
+		add fleet "Mereti Automine" 2000
+	system Makferuti
+		add fleet "Mereti Automine" 2000
+	system Asikafarnut
+		add fleet "Mereti Automine" 1500
+	system Sobarati
+		add fleet "Mereti Automine" 2000
+	system Silikatakfar
+		add fleet "Mereti Automine" 2500
+	system Ferukistek
+		add fleet "Mereti Automine" 3000
+	system Eneremprukt
+		add fleet "Mereti Automine" 3000
+	system Mesuket
+		add fleet "Mereti Automine" 3500
 
 
 mission "Infested Scrap"
 	landing
 	invisible
-	destination "Spera Anatrusk"
+	destination "Laki Nemparu"
 	to offer
 		"Scrapyard Threat Level" >= 5
 	on offer

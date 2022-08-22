@@ -375,3 +375,20 @@ event "stakoshtar in prakacha'a"
 				sprite planet/dust3-b
 				distance 723
 				period 49.6561
+
+mission "Scrapyard Stakoshstar Expeditions"
+	landing
+	invisible
+	to offer
+		has "event: stakoshtar in prakacha'a"
+	on offer
+		event "Stakoshstar Expeditions"
+		fail
+
+event "Stakoshstar Expeditions"
+	fleet "Kor Sestor Expedition"
+		add variant 1
+			"Grakerat 572"
+			"Tercheldar 150" 2
+			"Skoretak 13" 8
+			"Stakoshtar 187(SD)"

@@ -20,102 +20,98 @@ fleet "Small Korath Scrappers"
 	fighters "korath"
 	outfitters "Korath Basics"
 	variant 6
-		"Korath Scrapper (shields)"
+		"Korath Raider"
 		"Korath Chaser" 2
 		"Met Par Tek 53 (scrap) C"
 	variant 6
-		"Korath Scrapper (weapons)"
+		"Korath Raider"
 		"Korath Chaser" 2
 		"Met Par Tek 53 (scrap) C"
 	variant 6
-		"Korath Scrapper (engines)"
+		"Korath Raider"
 		"Korath Chaser" 2
 		"Met Par Tek 53 (scrap) C"
 	variant 6
-		"Korath Scrapper (carrier)"
-		"Far Osk 27" 3
-		"Far Lek 14" 1
+		"Korath Raider"
+		"Far Osk 27" 2
 		"Met Par Tek 53 (scrap) C"
 	variant 5
-		"Korath Scrapper (shields)"
+		"Korath Raider"
 		"Korath Chaser" 1
 		"Far Osk 27" 1
 		"Met Par Tek 53 (scrapper)"
 		"Model 16 (scrap) C"
 	variant 5
-		"Korath Scrapper (weapons)"
+		"Korath Raider"
 		"Korath Chaser" 1
 		"Far Osk 27" 1
 		"Met Par Tek 53 (scrapper)"
 		"Model 16 (scrap) C"
 	variant 5
-		"Korath Scrapper (engines)"
+		"Korath Raider"
 		"Korath Chaser" 1
 		"Far Osk 27" 1
 		"Met Par Tek 53 (scrapper)"
 		"Model 16 (scrap) C"
 	variant 4
-		"Korath Scrapper (carrier)"
-		"Far Osk 27" 3
-		"Far Lek 14" 1
+		"Korath Raider"
+		"Far Osk 27" 2
 		"Met Par Tek 53 (scrapper)"
 		"Model 32 (scrap) C"
 	variant 4
-		"Korath Scrapper (carrier)"
-		"Far Osk 27" 4
+		"Korath Raider"
+		"Far Osk 27" 2
 		"Far Lek 14" 2
 		"Model 8 (scrapper)" 8
 		"Tek Far 109 (scrap) B"
 	variant 3
-		"Korath Scrapper (shields)"
+		"Korath Raider"
 		"Far Osk 27" 3
 		"Far Lek 14" 2
 		"Model 16 (scrapper)"
 		"Met Par Tek 53 (scrapper)"
 		"Tek Far 109 (scrap) B"
 	variant 3
-		"Korath Scrapper (weapons)"
-		"Far Osk 27" 3
+		"Korath Raider"
+		"Far Osk 27" 2
 		"Far Lek 14" 2
 		"Model 16 (scrapper)"
 		"Met Par Tek 53 (scrapper)"
 		"Tek Far 109 (scrap) B"
 	variant 3
-		"Korath Scrapper (engines)"
-		"Far Osk 27" 3
+		"Korath Raider"
+		"Far Osk 27" 2
 		"Far Lek 14" 2
 		"Model 16 (scrapper)"
 		"Met Par Tek 53 (scrapper)"
 		"Tek Far 109 (scrap) B"
 	variant 3
-		"Korath Scrapper (carrier)"
-		"Far Osk 27" 3
-		"Far Lek 14" 1
+		"Korath Raider"
+		"Far Osk 27" 2
 		"Model 16 (scrapper)"
 		"Met Par Tek 53 (scrapper)"
 		"Model 32 (scrap) C"
 	variant 1
-		"Korath Scrapper (shields)"
+		"Korath Raider"
 		"Far Osk 27" 2
 		"Model 16 (scrapper)"
 		"Met Par Tek 53 (scrapper)" 2
 		"Kar Ik Vot 349 (scrap) C"
 	variant 1
-		"Korath Scrapper (weapons)"
+		"Korath Raider"
 		"Far Osk 27" 2
 		"Model 16 (scrapper)"
 		"Met Par Tek 53 (scrapper)" 2
 		"Kar Ik Vot 349 (scrap) C"
 	variant 1
-		"Korath Scrapper (engines)"
+		"Korath Raider"
 		"Far Osk 27" 2
 		"Model 16 (scrapper)"
 		"Met Par Tek 53 (scrapper)" 2
 		"Kar Ik Vot 349 (scrap) C"
 	variant 2
-		"Korath Scrapper (carrier)"
-		"Far Osk 27" 3
-		"Far Lek 14" 1
+		"Korath Raider"
+		"Far Osk 27" 2
 		"Model 16 (scrapper)"
 		"Met Par Tek 53 (scrapper)" 2
 		"Kar Ik Vot 349 (scrap) C"
@@ -469,8 +465,8 @@ fleet "Shadow Hunters"
 		"Korath Scrapper (weapons)"
 		"Korath Scrapper (engines)"
 		"Korath Scrapper (carrier)"
-		"Korath Chaser" 6
-		"Far Osk 27" 3
+		"Korath Chaser" 3
+		"Far Osk 27" 6
 		"Far Lek 14" 1
 
 
@@ -578,11 +574,19 @@ fleet "Kor Sestor Expedition"
 	names "kor sestor"
 	personality timid uninterested
 	commodities Equipment Electronics Construction
-	variant
+	variant 2
 		"Grakerat 572"
 		"Tercheldar 150" 2
 		"Skoretak 13" 8
 		
+fleet "Mereti Automine"
+	government "Kor Mereti"
+	personality
+		heroic
+	variant 1
+		"Mechanized Mine"
+		"Phantom Mine Launcher"
+
 
 
 

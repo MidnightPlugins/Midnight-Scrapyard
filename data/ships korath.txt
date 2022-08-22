@@ -42,6 +42,7 @@ ship "Korath Raider" "Korath Scrapper (shields)"
 		"Korath Banisher" 3
 		"Korath Mine" 16
 		"Korath Repeater Rifle" 196
+		"Korath Sentinel" 6
 		"Korath Repeater Turret" 2
 		"Korath Scattermine" 2
 		"Korath Warder"
@@ -111,6 +112,7 @@ ship "Korath Raider" "Korath Scrapper (weapons)"
 		"Korath Piercer" 62
 		"Korath Piercer Launcher" 2
 		"Korath Repeater Rifle" 196
+		"Korath Sentinel" 5
 		"Korath Repeater Turret" 3
 		"Korath Scattermine" 2
 		"Korath Slicer Turret"
@@ -182,6 +184,7 @@ ship "Korath Raider" "Korath Scrapper (engines)"
 		"Korath Mine" 34
 		"Korath Mine Rack" 2
 		"Korath Repeater Rifle" 196
+		"Korath Sentinel" 5
 		"Korath Repeater Turret" 2
 		"Korath Scattermine" 2
 		"Korath Slicer Turret"
@@ -251,6 +254,7 @@ ship "Korath Raider" "Korath Scrapper (carrier)"
 		"Korath Grab-Strike"
 		"Korath Mine" 16
 		"Korath Repeater Rifle" 196
+		"Korath Sentinel" 3
 		"Korath Scattermine" 2
 		"Korath Slicer Turret" 2
 		"Korath Warder"
@@ -325,6 +329,7 @@ ship "Korath Dredger" "Korath Dredger (Scrapper)"
 		"Large Heat Shunt" 3
 		"Fuel Processor"
 		"Korath Repeater Rifle" 201
+		"Korath Sentinel" 12
 		
 		"Steering (Planetary Class)"
 		"Steering (Asteroid Class)"
@@ -362,6 +367,98 @@ ship "Korath Dredger" "Korath Dredger (Scrapper)"
 
 
 
+ship "Model 512" "Model 512 (Carrier)"
+	sprite "ship/model 512"
+	thumbnail "thumbnail/model 512"
+	outfits 
+		"Korath Disruptor" 3
+		"Korath Slicer Turret" 4
+		
+		"Triple Plasma Core"
+		"Plasma Core"
+		"Systems Core (Large)"
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
+		"Reasoning Node" 3
+		
+		"Thruster (Planetary Class)"
+		"Steering (Stellar Class)"
+		Hyperdrive
+
+	turret "Korath Slicer Turret"
+	turret "Korath Disruptor"
+	turret "Korath Slicer Turret"
+	turret "Korath Disruptor"
+	turret "Korath Slicer Turret"
+	turret "Korath Slicer Turret"
+	turret "Korath Disruptor"
+	bay "Fighter" 0 0
+		under
+	explode "tiny explosion" 160
+	explode "small explosion" 115
+	explode "medium explosion" 80
+	explode "large explosion" 35
+	"final explode" "final explosion large"
+	description "This specialized version of the Model 512 has been modified to deploy Mechanized Mines in distant systems."
+
+ship "Mechanized Mine"
+	sprite "ship/mechanized mine"
+	thumbnail "outfit/korath mine"
+	"never disabled"
+	"swizzle" 0
+	attributes
+		category "Fighter"
+		"cost" 837000
+		"shields" 2400
+		"hull" 3000
+		"automaton" 1
+		"mass" 80
+		"drag" 2.1
+		"heat dissipation" 1.0
+		"outfit space" 134
+		"weapon capacity" 57
+		"engine capacity" 24
+		"integrated systems" -1		
+		weapon
+			"blast radius" 350
+			"shield damage" 3500
+			"hull damage" 2800
+			"hit force" 2000
+	outfits
+		"Automine Deployer"
+		
+		"Generator (Furnace Class)"
+		"Small Heat Shunt" 2
+		
+		"Thruster (Asteroid Class)"
+		"Steering (Asteroid Class)"
+		
+	engine 0 30
+	gun 0 0
+	explode "small explosion" 25
+	explode "medium explosion" 15
+	"final explode" "final explosion large"
+	description "An automated mine designed to create more mines. The Mereti developed this for deployment in distant systems controlled by hostile forces."
+
+# A tool to spawn fighters in a system without giving the drone a hyperdrive
+ship "Phantom Mine Launcher"
+	attributes
+		"heat dissipation" 1
+		"hull" 1
+		"mass" 100
+		"drag" 5
+		"automaton" 1
+		"thrust" 10
+		"turn" 600
+		"fuel capacity" 100
+		"hyperdrive" 1
+		"jump speed" .2		
+	outfits
+		"Timer Weapon"
+	gun 0 0
+	bay "Fighter" 0 0
+
+
 
 ship "Far Lek 14" "Far Lek 14 (scrap)"
 	outfits
@@ -394,10 +491,14 @@ ship "Met Par Tek 53" "Met Par Tek 53 (scrapper)"
 	turret "Korath Slicer Turret"
 
 ship "Met Par Tek 53" "Met Par Tek 53 (scrap) A"
+	add attributes
+		"self destruct" -.65
 	outfits
 		"Control Transceiver"
 		
 ship "Met Par Tek 53" "Met Par Tek 53 (scrap) B"
+	add attributes
+		"self destruct" -.65
 	outfits
 		"Korath Repeater" 1
 		"Korath Repeater Turret" 1
@@ -411,6 +512,8 @@ ship "Met Par Tek 53" "Met Par Tek 53 (scrap) B"
 		"Steering (Planetary Class)"
 		
 ship "Met Par Tek 53" "Met Par Tek 53 (scrap) C"
+	add attributes
+		"self destruct" -.65
 	outfits		
 		"Generator (Inferno Class)"
 		"Systems Core (Medium)"
@@ -437,10 +540,14 @@ ship "Tek Far 109" "Tek Far 109 (scrapper)"
 
 
 ship "Tek Far 109" "Tek Far 109 (scrap) A"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Control Transceiver"		
 
 ship "Tek Far 109" "Tek Far 109 (scrap) B"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Korath Piercer Launcher"
 		"Korath Piercer" 31
@@ -474,10 +581,14 @@ ship "Tek Far 78 - Osk" "Tek Far 78 - Osk (scrapper)"
 
 
 ship "Tek Far 78 - Osk" "Tek Far 78 - Osk (scrap) A"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Control Transceiver"
 
 ship "Tek Far 78 - Osk" "Tek Far 78 - Osk (scrap) B"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Korath Piercer Launcher"
 		"Korath Piercer" 31
@@ -514,10 +625,14 @@ ship "Tek Far 71 - Lek" "Tek Far 71 - Lek (scrapper)"
 
 
 ship "Tek Far 71 - Lek" "Tek Far 71 - Lek (scrap) A"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Control Transceiver"
 
 ship "Tek Far 71 - Lek" "Tek Far 71 - Lek (scrap) B"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Korath Piercer Launcher"
 		"Korath Piercer" 31
@@ -556,6 +671,8 @@ ship "Kar Ik Vot 349" "Kar Ik Vot 349 (scrapper)"
 
 
 ship "Kar Ik Vot 349" "Kar Ik Vot 349 (scrap) A"
+	add attributes
+		"self destruct" -.8
 	outfits
 		"Korath Piercer Launcher" 2
 		"Korath Piercer" 32
@@ -563,6 +680,8 @@ ship "Kar Ik Vot 349" "Kar Ik Vot 349 (scrap) A"
 		"Control Transceiver"
 		
 ship "Kar Ik Vot 349" "Kar Ik Vot 349 (scrap) B"
+	add attributes
+		"self destruct" -.8
 	outfits
 		"Korath Piercer Launcher" 1
 		"Korath Piercer" 31
@@ -575,6 +694,8 @@ ship "Kar Ik Vot 349" "Kar Ik Vot 349 (scrap) B"
 		"Steering (Planetary Class)"
 
 ship "Kar Ik Vot 349" "Kar Ik Vot 349 (scrap) C"
+	add attributes
+		"self destruct" -.8
 	outfits
 		"Korath Piercer Launcher" 1
 		"Korath Piercer" 31
@@ -603,10 +724,14 @@ ship "Model 8" "Model 8 (scrapper)"
 		Hyperdrive
 
 ship "Model 8" "Model 8 (scrap) A"
+	add attributes
+		"self destruct" -.6
 	outfits
 		"Reasoning Node"
 
 ship "Model 8" "Model 8 (scrap) B"
+	add attributes
+		"self destruct" -.6
 	outfits
 		"Korath Slicer"
 		
@@ -618,6 +743,8 @@ ship "Model 8" "Model 8 (scrap) B"
 		"Steering (Lunar Class)"
 
 ship "Model 8" "Model 8 (scrap) C"
+	add attributes
+		"self destruct" -.6
 	outfits
 		"Generator (Candle Class)"
 		"Systems Core (Small)"
@@ -643,6 +770,8 @@ ship "Model 16" "Model 16 (scrapper)"
 		Hyperdrive
 
 ship "Model 16" "Model 16 (scrap) A"
+	add attributes
+		"self destruct" -.65
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 17
@@ -650,6 +779,8 @@ ship "Model 16" "Model 16 (scrap) A"
 		
 		
 ship "Model 16" "Model 16 (scrap) B"
+	add attributes
+		"self destruct" -.65
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 17
@@ -662,6 +793,8 @@ ship "Model 16" "Model 16 (scrap) B"
 		"Steering (Lunar Class)"
 		
 ship "Model 16" "Model 16 (scrap) C"
+	add attributes
+		"self destruct" -.65
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 17
@@ -690,12 +823,16 @@ ship "Model 32" "Model 32 (scrapper)"
 		Hyperdrive
 		
 ship "Model 32" "Model 32 (scrap) A"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 17
 		"Reasoning Node"
 		
 ship "Model 32" "Model 32 (scrap) B"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 17
@@ -708,6 +845,8 @@ ship "Model 32" "Model 32 (scrap) B"
 		"Steering (Lunar Class)"
 
 ship "Model 32" "Model 32 (scrap) C"
+	add attributes
+		"self destruct" -.7
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 17
@@ -736,6 +875,8 @@ ship "Model 64" "Model 64 (scrapper)"
 		Hyperdrive
 
 ship "Model 64" "Model 64 (scrap) A"
+	add attributes
+		"self destruct" -.74
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 27
@@ -743,6 +884,8 @@ ship "Model 64" "Model 64 (scrap) A"
 		"Reasoning Node" 2
 		
 ship "Model 64" "Model 64 (scrap) B"
+	add attributes
+		"self destruct" -.74
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 17
@@ -755,6 +898,8 @@ ship "Model 64" "Model 64 (scrap) B"
 		"Steering (Planetary Class)"
 
 ship "Model 64" "Model 64 (scrap) C"
+	add attributes
+		"self destruct" -.74
 	outfits
 		"Korath Minelayer"
 		"Korath Mine" 17
@@ -790,12 +935,16 @@ ship "Model 128" "Model 128 (scrapper)"
 
 
 ship "Model 128" "Model 128 (scrap) A"
+	add attributes
+		"self destruct" -.77
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 17
 		"Reasoning Node" 2
 
 ship "Model 128" "Model 128 (scrap) B"
+	add attributes
+		"self destruct" -.77
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 17
@@ -808,6 +957,8 @@ ship "Model 128" "Model 128 (scrap) B"
 		"Steering (Asteroid Class)"
 
 ship "Model 128" "Model 128 (scrap) C"
+	add attributes
+		"self destruct" -.77
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 17
@@ -845,6 +996,8 @@ ship "Model 256" "Model 256 (scrapper)"
 	turret "Korath Warder"
 
 ship "Model 256" "Model 256 (scrap) A"
+	add attributes
+		"self destruct" -.79
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 27
@@ -852,6 +1005,8 @@ ship "Model 256" "Model 256 (scrap) A"
 		"Reasoning Node" 3
 
 ship "Model 256" "Model 256 (scrap) B"
+	add attributes
+		"self destruct" -.79
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 34
@@ -866,6 +1021,8 @@ ship "Model 256" "Model 256 (scrap) B"
 		"Steering (Comet Class)"
 
 ship "Model 256" "Model 256 (scrap) C"
+	add attributes
+		"self destruct" -.79
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 34
@@ -906,6 +1063,8 @@ ship "Model 512" "Model 512 (scrapper)"
 
 
 ship "Model 512" "Model 512 (scrap) A"
+	add attributes
+		"self destruct" -.80
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 34
@@ -913,6 +1072,8 @@ ship "Model 512" "Model 512 (scrap) A"
 		"Reasoning Node" 3
 
 ship "Model 512" "Model 512 (scrap) B"
+	add attributes
+		"self destruct" -.80
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 34
@@ -926,6 +1087,8 @@ ship "Model 512" "Model 512 (scrap) B"
 		"Steering (Stellar Class)"
 
 ship "Model 512" "Model 512 (scrap) C"
+	add attributes
+		"self destruct" -.80
 	outfits
 		"Korath Minelayer" 2
 		"Korath Mine" 34
@@ -1124,7 +1287,6 @@ ship "Stakoshtar 187"
 		"outfit space" 1222
 		"weapon capacity" 544
 		"engine capacity" 234
-		"self destruct" .35
 		"ramscoop" 3
 		"spinal mount" 1
 		weapon
@@ -1172,6 +1334,9 @@ ship "Stakoshtar 187"
 	"final explode" "nuke residue fast" 50
 	description "During their civil war, the Korath used this weapon against planetary targets. Scars from such battles still cover the surface of many of their worlds."
 
+ship "Stakoshtar 187" "Stakoshtar 187(SD)"
+	add attributes
+		"self destruct" 1
 
 
 #####################

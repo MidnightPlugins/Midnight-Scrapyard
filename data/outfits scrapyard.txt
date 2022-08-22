@@ -10,6 +10,40 @@
 
 
 
+outfit "Automine Deployer"
+	category "Secondary Weapons"
+	cost 584150
+	thumbnail "outfit/automine deployer"
+	"mass" 38.7
+	"outfit space" -57
+	"weapon capacity" -57
+	"energy capacity" 50
+	"gun ports" -1
+	"integrated systems" 1
+	"reinstall" -1
+	"unplunderable" 1
+	weapon
+		sprite "projectile/korath minelayer"
+			"frame rate" .6
+			"no repeat"
+		sound "minelayer"
+		icon "icon/minelayer"
+		"fire effect" "minelayer fire"
+		"hit effect" "huge explosion"
+		"die effect" "minelayer split" 5
+		"submunition" "Korath Mine Submunition" 11
+		"inaccuracy" 10
+		"velocity" 1.5
+		"lifetime" 1
+		"reload" 180
+		"firing energy" 18
+		"firing heat" 18
+		"drag" .04
+		"missile strength" 35
+	description "A newly developed Mereti weapon, the Automine Deployer forgoes the need to carry ammunition. Instead, the mines are constructed using Korath nanomachine technology. These weapons were developed exclusively for use by the Mechanized Mine automata."
+
+
+
 outfit "Blight Rifle"
 	category "Special"
 	licenses
@@ -258,7 +292,20 @@ outfit "Korath Scattermine"
 		"missile strength" 35
 		"blast radius" 25
 	description "A crude alternative to the Korath Minelayer, the Scattermine simply sets the mines loose along the ship's wake. While this covers a smaller area than the Minelayer, the resulting minefield is more dense."
-	description "One drawback of using the mines in this manner is that premature detonation can damage the ship dropping the mines."
+	description "One drawback of deploying the mines in this manner is that premature detonation can damage the ship dropping the mines."
+
+
+
+outfit "Korath Sentinel"
+	category "Hand to Hand"
+	cost 212000
+	thumbnail "outfit/korath sentinel"
+	"mass" 2
+	"outfit space" -2
+	"capture defense" 9.6
+	"unplunderable" 1
+	description "A semi autonomous robot made with Sestor technology, these defense droids patrol high security areas on the ships of experienced Kor scrapper crews."
+
 
 
 outfit "Node 8 Jammer"

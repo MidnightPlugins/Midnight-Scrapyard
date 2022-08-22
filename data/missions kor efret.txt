@@ -533,7 +533,7 @@ mission "Scrapyard: Efret Salvage Scattermine 2"
 		has "event: efret salvage scattermine"
 	on offer
 		conversation
-			scene "outfit/kor scattermine"
+			scene "outfit/korath scattermine"
 			`You notice a demonstration of the Scattermine taking place at the outfitter. It appears they are available for purchase.`
 				decline
 

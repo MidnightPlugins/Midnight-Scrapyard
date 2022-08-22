@@ -159,19 +159,19 @@ fleet "Large Blight Shadow"
 	cargo 0
 	personality entering disables unconstrained mute
 	variant 20
-		"Blight Shadow" 8
+		"Blight Shadow" 6
 	variant 18
-		"Blight Shadow" 10
+		"Blight Shadow" 7
 	variant 15
-		"Blight Shadow" 12
+		"Blight Shadow" 8
 	variant 13
-		"Blight Shadow" 14
+		"Blight Shadow" 9
 	variant 10
-		"Blight Shadow" 16
+		"Blight Shadow" 10
 	variant 8
-		"Blight Shadow" 18
+		"Blight Shadow" 11
 	variant 5
-		"Blight Shadow" 20
+		"Blight Shadow" 12
 
 
 
@@ -785,20 +785,20 @@ fleet "Small Blight Mutation"
 	government "Invasive Predator"
 	cargo 0
 	personality disables unconstrained mute
-	variant 6
-		"Blight Mutation"
-		"Blight Shadow" 5
-	variant 3
+	variant 1
 		"Blight Mutation"
 		"Blight Shadow" 4
-	variant 1
+	variant 3
 		"Blight Mutation"
 		"Blight Shadow" 3
-	variant 1
+	variant 6
 		"Blight Mutation"
 		"Blight Shadow" 2
+	variant 3
+		"Blight Mutation"
+		"Blight Shadow"
 	variant 1
-		"Blight Mutation" 2
+		"Blight Mutation"
 
 
 
@@ -924,16 +924,16 @@ fleet "Small Blight Horror"
 	government "Invasive Predator"
 	cargo 0
 	personality disables unconstrained mute
-	variant
+	variant 1
 		"Blight Horror"
 		"Blight Mutation" 2
-		"Blight Shadow" 4
-	variant
+		"Blight Shadow" 2
+	variant 1
 		"Blight Horror"
-		"Blight Mutation" 4
-	variant
+		"Blight Mutation" 2
+	variant 1
 		"Blight Horror"
-		"Blight Shadow" 8
-	variant
-		"Blight Horror" 2
+		"Blight Shadow" 2
+	variant 1
+		"Blight Horror"
 
