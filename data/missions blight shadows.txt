@@ -508,11 +508,6 @@ mission "Scrapyard Shadowblight Wanderer"
 event "Shadowblight Wanderer"
 	system "Prakacha'a"
 		add fleet "Large Blight Shadow" 50000
-	system Eshkoshtar
-		add fleet "Large Blight Shadow" 50000
-	system Salipastart
-		add fleet "Large Blight Shadow" 50000
-
 
 mission "Scrapyard Adjust Shadowblight Wanderer"
 	landing
@@ -525,9 +520,9 @@ mission "Scrapyard Adjust Shadowblight Wanderer"
 		
 event "Adjust Shadowblight Wanderer"
 	system Eshkoshtar
-		remove fleet "Large Blight Shadow" 50000
+		remove fleet "Large Blight Shadow"
 	system Salipastart
-		remove fleet "Large Blight Shadow" 50000
+		remove fleet "Large Blight Shadow"
 
 
 mission "Scrapyard Shadowblight Coalition"
@@ -738,15 +733,15 @@ mission "Scrapyard Blight Mutation"
 		
 event "scrapyard blight mutation"
 	system Celeborim
-		remove fleet "Small Blight Shadow" 800
+		remove fleet "Small Blight Shadow"
 		add fleet "Small Blight Mutation" 800
 	system Makferuti
-		remove fleet "Small Blight Shadow" 800
+		remove fleet "Small Blight Shadow"
 		add fleet "Small Blight Mutation" 800
 	system Asikafarnut
 		add fleet "Small Blight Mutation" 800
 	system Sobarati
-		remove fleet "Small Blight Shadow" 800
+		remove fleet "Small Blight Shadow"
 		add fleet "Small Blight Mutation" 800
 	system Persitar
 		add fleet "Small Blight Mutation" 1000
@@ -770,7 +765,7 @@ event "scrapyard blight horrors"
 	system Makferuti
 		add fleet "Small Blight Horror" 1200
 	system Asikafarnut
-		remove fleet "Small Blight Shadow" 800
+		remove fleet "Small Blight Shadow" 
 		add fleet "Small Blight Horror" 1200
 	system Sobarati
 		add fleet "Small Blight Horror" 1200
@@ -871,28 +866,25 @@ mission "Scrapyard: Quarg Hunter"
 	on offer
 		conversation
 			scene "thumbnail/blightshadow-thumb"
+
 			branch "repeat"
 				has "Scrapyard: Quarg Hunter: done"
 			
-			branch "blood paint"
-				has "event: joined the free worlds"
-			
 			`A Quarg approaches you and asks "You are human who hunt Blight Shadows?"`
 			choice
 				`	"Yes, I've killed more than a few."`
 				`	"No, I don't intend to seek them out."`
 					decline
-			`	"Good!" The Quarg straightens to its full height, "Me am Quaelar-Enkaras Foksarardelaos! But human may call me Quaelar-En. You lead my ship into Sestor region. We hunt Blight Shadows. Stain our hulls green with their blood! Is more fun than staying on ringworld, no?"`
+
+			branch "blood paint"
+				has "event: joined the free worlds"
+
+			`	"Good!" The Quarg straightens to its full height, "Me am Quaelar-Enkaras Foksarardelaos Maharim! But human may call me Quaelar-En. You lead my ship into Sestor region. We hunt Blight Shadows. Stain our hulls green with their blood! Return by <date>. Is more fun than staying on ringworld, no?"`
 				goto decision
 
 			label "blood paint"
-			
-			`A Quarg approaches you and asks "You are human who hunt Blight Shadows?"`
-			choice
-				`	"Yes, I've killed more than a few."`
-				`	"No, I don't intend to seek them out."`
-					decline
-			`	"Good!" The Quarg straightens to its full height, "Me am Quaelar-Enkaras Foksarardelaos! But human may call me Quaelar-En. You lead my ship into Sestor region. We hunt Blight Shadows. Stain our hull green with their blood as you have! Return by <date>. Is more fun than staying on ringworld, no?" The Quarg in this region of space might not follow the details of human political affairs and are probably unaware of the Free Worlds...`
+
+			`	"Good!" The Quarg straightens to its full height, "Me am Quaelar-Enkaras Foksarardelaos Maharim! But human may call me Quaelar-En. You lead my ship into Sestor region. We hunt Blight Shadows. Stain our hull green with their blood as you have! Return by <date>. Is more fun than staying on ringworld, no?" The Quarg in this region of space might not follow the details of human political affairs and are probably unaware of the Free Worlds...`
 				goto decision
 			
 			label "repeat"
@@ -908,8 +900,12 @@ mission "Scrapyard: Quarg Hunter"
 					decline
 			label end
 			scene "scene/scene-blue wardragon"
+			branch "again"
+				has "Scrapyard: Quarg Hunter: done"
 			`	Quaelar-En said something about staining his hull with blood. As you board your ships, you note Quaelar-En's ship is blue...`
 				accept
+			label "again"
+			`	As you board your ships, you note Quaelar-En's ship is still blue...`
 	npc kill
 		to despawn
 			has "event: scrapyard blight horrors"
@@ -930,7 +926,6 @@ mission "Scrapyard: Quarg Hunter"
 		government "Invasive Predator"
 		system "Asikafarnut"
 		personality waiting staying disables unconstrained mute
-		fleet "Small Blight Mutation"
 		fleet "Small Blight Horror"
 	npc accompany save
 		government "Quarg"
@@ -954,3 +949,4 @@ mission "Scrapyard: Quarg Hunter Patch"
 		clear "Scrapyard: Quarg Hunter: offered"
 		clear "Scrapyard: Quarg Hunter: declined"
 		fail
+		

@@ -241,6 +241,7 @@ mission "Scrapyard Persitar Wreck Hint"
 mission "Scrapyard Exploring the Persitar Wreck"
 	landing
 	invisible
+	deadline 3
 	source "Persitar Wreck"
 	on offer
 		"Scrapyard Threat Level" ++
