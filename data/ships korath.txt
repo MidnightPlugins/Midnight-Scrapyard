@@ -302,7 +302,7 @@ ship "Korath Raider" "Korath Scrapper (carrier)"
 
 ship "Korath Dredger" "Korath Dredger (Scrapper)"
 	sprite "ship/dredger scrapper"
-	thumbnail "ship/dredger scrapper-thumb"
+	thumbnail "thumbnail/dredger scrapper-thumb"
 	attributes
 		category "Heavy Freighter"
 		"cost" 32307000
