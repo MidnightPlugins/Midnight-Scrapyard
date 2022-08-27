@@ -1852,6 +1852,22 @@ ship "Korath Devourer"
 	engine -31 286
 	engine 31 286
 	engine 0 298
+	"reverse engine" -91 -85
+	"reverse engine" 91 -85
+	"reverse engine" -91 69
+	"reverse engine" 91 69
+	"reverse engine" -80 215
+		over
+	"reverse engine" 80 215
+		over
+	"steering engine" -58.5 -143.5
+		zoom .2
+		angle 60
+		right
+	"steering engine" 58.5 -143.5
+		zoom .2
+		angle 300
+		left
 	gun 0 -198 "Korath Incinerator"
 	turret 0 -181 "Korath Grab-Strike"
 	turret -40 -179 "Korath Disruptor"
