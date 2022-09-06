@@ -62,6 +62,7 @@ mission "Scrapyard: Meeting on Desi Seledrak"
 	description "Meto Pa'aret has asked you to meet him on <planet> in the <system> system."
 	source
 		government "Wanderer"
+		not planet "Desi Seledrak"
 	destination "Desi Seledrak"
 	to offer
 		has "event: Scrapyard Develops"
