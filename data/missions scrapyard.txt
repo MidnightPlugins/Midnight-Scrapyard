@@ -813,3 +813,25 @@ mission "Scrapyard Random Station Scrap Mereti"
 
 
 
+mission "Scrapyard: Factory Sestor"
+	landing
+	invisible
+	source "Sestor Ikfar"
+	to offer
+		has "event: Scrapyard Develops"
+		random < 5
+	on offer
+		conversation
+			`While exploring the abandoned factories, you find some intact Sestor automata.`
+			choice
+				`	(Try activating them.)`
+				`	(Do not activate them.)`
+					defer
+			`	The automata hum with activity as their systems come to life. Unfortunately, you have no control over them and they fly off...`
+				accept
+	npc kill
+		government "Kor Sestor"
+		personality waiting uninterested
+		fleet "Large Kor Sestor"
+	on complete
+		clear "Scrapyard: Factory Sestor: offered"
