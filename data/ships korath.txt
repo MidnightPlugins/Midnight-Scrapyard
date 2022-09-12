@@ -15,6 +15,77 @@
 
 
 
+ship "Korath Raider" "Korath Raider (Scrapyard)"
+	sprite "ship/raider"
+	thumbnail "thumbnail/raider"
+	attributes
+		category "Heavy Warship"
+		"cost" 16570000
+		"shields" 27000
+		"hull" 9000
+		"required crew" 145
+		"bunks" 250
+		"mass" 720
+		"drag" 12
+		"heat dissipation" .5
+		"fuel capacity" 600
+		"cargo space" 175
+		"outfit space" 777
+		"weapon capacity" 339
+		"engine capacity" 159
+		weapon
+			"blast radius" 250
+			"shield damage" 3600
+			"hull damage" 1800
+			"hit force" 5400
+	outfits
+		"Korath Grab-Strike" 4
+		"Korath Banisher"
+		"Korath Warder"
+		"Korath Piercer Launcher" 2
+		"Korath Piercer" 62
+		
+		"Double Plasma Core"
+		"Generator (Inferno Class)"
+		"Systems Core (Medium)"
+		"Large Heat Shunt"
+		"Small Heat Shunt" 3
+		"Fuel Processor"
+		"Korath Repeater Rifle" 196
+		
+		"Thruster (Planetary Class)"
+		"Steering (Planetary Class)"
+		"Hyperdrive"
+		"Jump Drive"
+	
+	engine -20 127
+	engine 20 127
+	"reverse engine" -9 -154
+		zoom 0.7
+	"reverse engine" 9 -154
+		zoom 0.7
+	gun 32.5 -1 "Korath Piercer Launcher"
+		angle 60
+	gun -32.5 -1 "Korath Piercer Launcher"
+		angle 300
+	turret -10 -143 "Korath Grab-Strike"
+	turret 10 -143 "Korath Grab-Strike"
+	turret -36 -141 "Korath Grab-Strike"
+	turret 36 -141 "Korath Grab-Strike"
+	turret 0 41 "Korath Banisher"
+	turret 0 94 "Korath Warder"
+	bay "Fighter" -80 151 back
+	bay "Fighter" 80 151 back
+	explode "tiny explosion" 20
+	explode "small explosion" 45
+	explode "medium explosion" 50
+	explode "large explosion" 40
+	explode "huge explosion" 10
+	"final explode" "final explosion large"
+
+
+
+
 ship "Korath Raider" "Korath Scrapper (shields)"
 	sprite "ship/kor scrapper s"
 	thumbnail "thumbnail/kor scrapper s-thumb"
@@ -82,7 +153,7 @@ ship "Korath Raider" "Korath Scrapper (shields)"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description "Similar to human Marauders with their modified ships, Korath Raiders who scavange in the Scrapyard are using the technology they find to make their own alterations."
+	description `Korath Scrappers who scavange in the Scrapyard are using the technology they find to customize their ships.`
 	description `The additional hull sections scavenged from a Sestor derelict give this scrapper a boost to shields.`
 
 ship "Korath Raider" "Korath Scrapper (weapons)"
@@ -154,7 +225,7 @@ ship "Korath Raider" "Korath Scrapper (weapons)"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description "Similar to human Marauders with their modified ships, Korath Raiders who scavange in the Scrapyard are using the technology they find to make their own alterations."
+	description `Korath Scrappers who scavange in the Scrapyard are using the technology they find to customize their ships.`
 	description `Additional gun ports give this scrapper a boost to its direct assault firepower.`
 
 ship "Korath Raider" "Korath Scrapper (engines)"
@@ -225,7 +296,7 @@ ship "Korath Raider" "Korath Scrapper (engines)"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description "Similar to human Marauders with their modified ships, Korath Raiders who scavange in the Scrapyard are using the technology they find to make their own alterations."
+	description `Korath Scrappers who scavange in the Scrapyard are using the technology they find to customize their ships.`
 	description `The additional engines on this scrapper give it an edge in outracing the others to their target.`
 	
 ship "Korath Raider" "Korath Scrapper (carrier)"
@@ -295,7 +366,7 @@ ship "Korath Raider" "Korath Scrapper (carrier)"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description "Similar to human Marauders with their modified ships, Korath Scrappers who scavange in the Scrapyard are using the technology they find to make their own alterations."
+	description `Korath Scrappers who scavange in the Scrapyard are using the technology they find to customize their ships.`
 	description `The additional fighter and drone bays on this ship were scavenged from Sestor carriers.`
 
 
@@ -368,7 +439,8 @@ ship "Korath Dredger" "Korath Dredger (Scrapper)"
 	explode "large explosion" 50
 	explode "huge explosion" 15
 	"final explode" "final explosion large"
-	description "Similar to human Marauders with their modified ships, Korath Scrappers who scavange in the Scrapyard are using the technology they find to make their own alterations."
+	description `Korath Scrappers who scavange in the Scrapyard are using the technology they find to customize their ships.`
+
 
 
 ######################

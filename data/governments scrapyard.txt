@@ -29,6 +29,7 @@ government "Invasive Predator"
 		"Navy (Oathkeeper)" -.01
 		"Navy Intelligence" -.01
 		"Drak" -.01
+		"Parrot" -.01
 		"Quarg" -.01
 		"Ember Waste" -.01
 		"Hai" -.01
