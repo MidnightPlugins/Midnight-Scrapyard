@@ -18,6 +18,27 @@
 
 
 
+mission "Scrapyard Random Station Scrappers"
+	landing
+	invisible
+	repeat
+	deadline 3
+	source
+		planet "Sebra Skira" "Devru Kaska" "Metwar Skaretar" "Makwar Pratarati"
+	to offer
+		has "event: Blight Shadow Infestation"
+		random < 5
+	on offer
+		conversation
+			`A large fleet of Scrappers has entered the system and is heading for the station. You're vulnerable while docked here!`
+				accept
+	npc kill
+		government "Kor Scrappers (Hostile)"
+		personality waiting staying mining harvests plunders
+		fleet "Large Korath Scrappers"
+
+
+
 mission "Scrapyard: Factory Scrapper"
 	landing
 	invisible

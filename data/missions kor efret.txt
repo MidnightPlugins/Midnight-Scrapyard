@@ -309,12 +309,14 @@ mission "Scrapyard: Efret Salvage License 1"
 		dialog `Visit the spaceport to look for Rek.`
 
 mission "Scrapyard: Efret Salvage License 2"
+	minor
 	name "Efret License"
 	description "Ask Rek to help you convince the Kor Efret to sell you weapons and other outfits installed on their ships."
 	source "Desi Seledrak"
 	destination "Setar Fort"
 	to offer
 		has "Scrapyard: Efret Salvage License 1: done"
+		random < 70
 	on offer
 		conversation
 			`When you ask to meet Rek, you are told that she as returned to Setar Fort.`
@@ -622,6 +624,7 @@ mission "Scrapyard: Efret Salvage Tractor 2"
 
 
 mission "Scrapyard Mereti Efret Test Flight"
+	minor
 	name "Mereti Efret Escort"
 	description "Escort the Mereti Efret to <waypoints>. Then return to <destination>."
 	source "Laki Nemparu"
@@ -641,7 +644,9 @@ mission "Scrapyard Mereti Efret Test Flight"
 			not "Scrapyard Scrapper Siege (Similisti): done"
 			has "event: Node 8 Processor Returned"
 		or
-			not "Randomize Scrapyard Mereti Efret Test Flight"
+			and
+				not "Randomize Scrapyard Mereti Efret Test Flight"
+				random < 70
 			and
 				has "Randomize Scrapyard Mereti Efret Test Flight"
 				random < 20
@@ -670,6 +675,8 @@ mission "Scrapyard Mereti Efret Test Flight"
 					accept
 				`	(Decline.)`
 					decline
+	on defer
+		set "Randomize Scrapyard Mereti Efret Test Flight"
 	on enter Sumprast
 		dialog `You receive several hails from Kor Efret ships. You don't understand the words, but they sound happy.`
 	on enter Sevrelect
