@@ -214,29 +214,29 @@ ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"
 	bay "Fighter" 34 -70
 	bay "Fighter" 0 -70
 
-#ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
-#	sprite "ship/world-ship scrapyard"
-#	thumbnail "thumbnail/world-ship scrapyard-thumb"
-#	add attributes
-#		"fused circuits" -5
-#	outfits		
-#		"Triple Plasma Core (Damaged)"
-#		"Systems Core (Damaged)"
-#		"Large Heat Shunt"
-#		"Small Heat Shunt" 2
-#		
-#		"Thruster (Planetary Class)(Damaged)"
-#		"Steering (Planetary Class)(Damaged)"
-#		"Hyperdrive (Damaged)"
-#
-#	turret -74 -156
-#	turret 74 -155.5
-#	turret -42 -50.5
-#	turret 44 -50.5
-#	turret -27.5 134.5
-#	turret 27 134.5
-#	turret -89 293
-#	turret 87.5 292.5
+ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
+	sprite "ship/world-ship scrapyard"
+	thumbnail "thumbnail/world-ship scrapyard-thumb"
+	add attributes
+		"fused circuits" -5
+	outfits		
+		"Triple Plasma Core (Damaged)"
+		"Systems Core (Damaged)"
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
+		
+		"Thruster (Planetary Class)(Damaged)"
+		"Steering (Planetary Class)(Damaged)"
+		"Hyperdrive (Damaged)"
+
+	turret -74 -156
+	turret 74 -155.5
+	turret -42 -50.5
+	turret 44 -50.5
+	turret -27.5 134.5
+	turret 27 134.5
+	turret -89 293
+	turret 87.5 292.5
 
 mission "Scrapyard: Warmonger Construction"
 	landing
@@ -740,7 +740,7 @@ mission "Scrapyard: Escort to Wanderer Colony (Big)"
 		government "Kor Efret"
 	destination 
 		government "Wanderer"
-		attributes "korath"
+		neighbor near "Kaliptari"
 	to offer
 		has "event: wanderers taking jobs from kor efreti"
 		random < 15
@@ -770,8 +770,7 @@ mission "Scrapyard: Escort to Wanderer Colony (Small)"
 		government "Kor Efret"
 	destination 
 		government "Wanderer"
-		attributes "korath"
-		not attributes "uninhabited"
+		neighbor near "Kaliptari"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
 		random < 25
@@ -794,15 +793,14 @@ mission "Scrapyard: Escort to Wanderer Colony (Small)"
 mission "Scrapyard: Escort to Wanderer Worlds A"
 	job
 	repeat
-	deadline
+	deadline 15
 	name "Escort Kor Efret"
 	description "Escort the <npc> to <destination> by <date>. Payment is <payment>."
 	source
 		government "Kor Efret"
 	destination 
 		government "Wanderer"
-		not attributes "korath"
-		not attributes "uninhabited"
+		not near "Kaliptari"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
 		random < 25
@@ -821,15 +819,14 @@ mission "Scrapyard: Escort to Wanderer Worlds A"
 mission "Scrapyard: Escort to Wanderer Worlds B"
 	job
 	repeat
-	deadline
+	deadline 15
 	name "Escort Kor Efret"
 	description "Escort the <npc> to <destination> by <date>. Payment is <payment>."
 	source
 		government "Kor Efret"
 	destination
 		government "Wanderer"
-		not attributes "korath"
-		not attributes "uninhabited"
+		not near "Kaliptari"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
 		random < 25
@@ -881,7 +878,7 @@ mission "Scrapyard: Wanderer Planetary Survey"
 	description "Escort the <npc> on a survey expedition to <stopovers>. Then escort them back to <destination> by <date>. Payment is <payment>."
 	source
 		government "Wanderer"
-		attributes "korath"
+		neighbor near "Kaliptari"
 	stopover
 		attributes "korath"
 		attributes "uninhabited"
