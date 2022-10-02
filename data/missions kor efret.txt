@@ -214,29 +214,29 @@ ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"
 	bay "Fighter" 34 -70
 	bay "Fighter" 0 -70
 
-ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
-	sprite "ship/world-ship scrapyard"
-	thumbnail "thumbnail/world-ship scrapyard-thumb"
-	add attributes
-		"fused circuits" -5
-	outfits		
-		"Triple Plasma Core (Damaged)"
-		"Systems Core (Damaged)"
-		"Large Heat Shunt"
-		"Small Heat Shunt" 2
-		
-		"Thruster (Planetary Class)(Damaged)"
-		"Steering (Planetary Class)(Damaged)"
-		"Hyperdrive (Damaged)"
-
-	turret -74 -156
-	turret 74 -155.5
-	turret -42 -50.5
-	turret 44 -50.5
-	turret -27.5 134.5
-	turret 27 134.5
-	turret -89 293
-	turret 87.5 292.5
+#ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
+#	sprite "ship/world-ship scrapyard"
+#	thumbnail "thumbnail/world-ship scrapyard-thumb"
+#	add attributes
+#		"fused circuits" -5
+#	outfits		
+#		"Triple Plasma Core (Damaged)"
+#		"Systems Core (Damaged)"
+#		"Large Heat Shunt"
+#		"Small Heat Shunt" 2
+#		
+#		"Thruster (Planetary Class)(Damaged)"
+#		"Steering (Planetary Class)(Damaged)"
+#		"Hyperdrive (Damaged)"
+#
+#	turret -74 -156
+#	turret 74 -155.5
+#	turret -42 -50.5
+#	turret 44 -50.5
+#	turret -27.5 134.5
+#	turret 27 134.5
+#	turret -89 293
+#	turret 87.5 292.5
 
 mission "Scrapyard: Warmonger Construction"
 	landing
