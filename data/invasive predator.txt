@@ -157,7 +157,7 @@ fleet "Small Blight Shadow"
 fleet "Large Blight Shadow"
 	government "Invasive Predator"
 	cargo 0
-	personality entering disables unconstrained mute
+	personality disables unconstrained mute
 	variant 20
 		"Blight Shadow" 6
 	variant 18
@@ -190,7 +190,7 @@ fleet "Small Blight Hatchling"
 fleet "Large Blight Hatchling"
 	government "Invasive Predator"
 	cargo 0
-	personality entering disables unconstrained mute
+	personality disables unconstrained mute
 	variant 20
 		"Blight Hatchling" 8
 	variant 18
