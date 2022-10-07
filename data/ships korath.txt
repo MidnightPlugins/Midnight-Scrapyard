@@ -444,8 +444,8 @@ ship "Korath Dredger" "Korath Dredger (Scrapper)"
 
 
 ship "Korath Dredger" "Korath Dredger (Scrapyard)"
-	sprite "ship/dredger"
-	thumbnail "thumbnail/dredger"
+	sprite "ship/dredger scrapyard"
+	thumbnail "thumbnail/dredger scrapyard-thumb"
 	attributes
 		category "Heavy Freighter"
 		"cost" 29370000
