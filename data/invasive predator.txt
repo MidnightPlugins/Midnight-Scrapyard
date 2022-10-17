@@ -99,6 +99,7 @@ ship "Blight Shadow"
 		"depleted shield delay" 200
 		"hull repair rate" 2
 		"hull protection" 1
+		"corrosion protection" 1
 		"piercing protection" 1
 		"heat protection" 2
 		"energy capacity" 1000
@@ -119,8 +120,7 @@ ship "Blight Shadow"
 		"cooling energy" -1
 		weapon
 			"blast radius" 15
-			"shield damage" 150
-			"hull damage" 150
+			"corrosion damage" 1.5
 			"hit force" -100
 	outfits
 		"Energy Absorber?" 1
@@ -139,7 +139,9 @@ ship "Blight Shadow" "Blight Hatchling"
 		"shield generation" -1
 		"shield energy" -1
 		"depleted shield delay" -200
+		"hull repair rate" 1
 		"hull energy" .5
+		"corrosion protection" -1
 
 	
 fleet "Small Blight Shadow"
@@ -686,6 +688,7 @@ ship "Blight Mutation"
 		"depleted shield delay" 200
 		"hull repair rate" 3
 		"hull protection" 1
+		"corrosion protection" 2
 		"piercing protection" 1
 		"heat protection" 2
 		"energy capacity" 1400
@@ -706,8 +709,7 @@ ship "Blight Mutation"
 		"cooling energy" -2
 		weapon
 			"blast radius" 30
-			"shield damage" 300
-			"hull damage" 300
+			"corrosion damage" 3
 			"hit force" -200
 	outfits
 		"Energy Drainer?"
@@ -826,6 +828,7 @@ ship "Blight Horror"
 		"depleted shield delay" 200
 		"hull repair rate" 4
 		"hull protection" 1
+		"corrosion protection" 3
 		"piercing protection" 1
 		"heat protection" 2
 		"energy capacity" 1800
@@ -846,8 +849,7 @@ ship "Blight Horror"
 		"cooling energy" -4
 		weapon
 			"blast radius" 60
-			"shield damage" 600
-			"hull damage" 600
+			"corrosion damage" 6
 			"hit force" -400
 	outfits
 		"Energy Absorber?" 2

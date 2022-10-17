@@ -661,7 +661,7 @@ mission "Scrapyard Boarding (Thermal Repeater Rifle)"
 		system
 			attributes "Scrapyard"
 		personality waiting disables unconstrained mute
-		fleet "Large Blight Shadow"
+		fleet "Large Blight Hatchling"
 
 mission "Scrapyard Boarding (Infected with Shadowblight)"
 	boarding
@@ -683,7 +683,7 @@ mission "Scrapyard Boarding (Infected with Shadowblight)"
 	npc
 		government "Invasive Predator"
 		personality entering disables unconstrained mute
-		fleet "Small Blight Shadow"
+		fleet "Small Blight Hatchling"
 
 mission "Scrapyard Boarding (Control Transceiver)"
 	boarding
@@ -797,7 +797,8 @@ mission "Scrapyard Boarding (Shadow Hunters)"
 	npc kill
 		government "Invasive Predator"
 		personality entering disables unconstrained mute
-		fleet "Large Blight Shadow" 3
+		fleet "Large Blight Shadow"
+		fleet "Large Blight Hatchling" 2
 	npc
 		government "Kor Scrappers"
 		personality entering vindictive
