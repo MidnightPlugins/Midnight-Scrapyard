@@ -53,8 +53,9 @@ outfit "Scrap Metal"
 	thumbnail "outfit/scrap metal"
 	"mass" 1
 	installable -1
-	description "Twisted wreckage from a destroyed spacecraft."
-	
+	description "Twisted wreckage from a destroyed spacecraft or other artificial object."
+
+
 
 mission "Scrapyard Add Scrap"
 	landing

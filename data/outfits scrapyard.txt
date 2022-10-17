@@ -34,20 +34,25 @@ outfit "Automine Deployer"
 		"submunition" "Korath Mine Submunition" 11
 		"inaccuracy" 10
 		"velocity" 1.5
-		"lifetime" 1
+		"lifetime" 50
 		"reload" 360
 		"burst reload" 90
 		"burst count" 2
 		"firing energy" 18
 		"firing heat" 18
+		"acceleration" .8
 		"drag" .04
+		"turn" 2
+		"homing" 4
+		"infrared tracking" .9
 		"missile strength" 35
+		"stream"
 	description "A newly developed Mereti weapon, the Automine Deployer forgoes the need to carry ammunition. Instead, the mines are constructed using Korath nanomachine technology. These weapons were developed exclusively for use by the Mechanized Mine automata."
 
 
 
 outfit "Blight Rifle"
-	category "Special"
+	category "Unique"
 	licenses
 		Remnant
 	cost 422000
@@ -113,6 +118,94 @@ outfit "Korath Eliminator"
 		"piercing" 0.2
 		"blast radius" 5
 	description "The Korath Eliminator is an orbital strike weapon that can carve deep into a planet's crust. Many worlds were destroyed in the Korath civil war by these tools of destruction."
+
+
+
+outfit "Korath Fireswarm Nest"
+	category "Ammunition"
+	cost 27400
+	thumbnail "outfit/korath fireswarm nest"
+	"mass" 3
+	"outfit space" -6
+	"fireswarm capacity" 10
+	ammo "Korath Fireswarm"
+	description "These storage shells hold additional Korath Fireswarms for the Korath Firewarm Launcher."
+
+outfit "Korath Fireswarm"
+	category "Ammunition"
+	cost 7600
+	thumbnail "outfit/korath fireswarm"
+	"mass" 0.3
+	"fireswarm capacity" -1
+	"energy capacity" 35
+	description `Each Korath Fireswarm carries ten smaller missiles. When not being fired as weapons, the energy stored within can be used to power your ship.`
+
+outfit "Korath Fireswarm Launcher"
+	category "Secondary Weapons"
+	cost 1937000
+	thumbnail "outfit/korath fireswarm launcher"
+	"mass" 22
+	"outfit space" -28
+	"weapon capacity" -28
+	"gun ports" -1
+	"fireswarm capacity" 20
+	weapon
+		sprite "projectile/fireswarm"
+			"frame rate" 4
+			"random start frame"
+		sound "nuke"
+		ammo "Korath Fireswarm"
+		icon "icon/fireswarm"
+		"hit effect" "large explosion" 10
+		"hit effect" "huge explosion"
+		"die effect" "piercer fire"
+		"velocity" 4
+		"velocity override" 16
+		"lifetime" 10
+		"reload" 120
+		"burst reload" 30
+		"burst count" 3
+		"firing energy" 151
+		"firing heat" 211
+		"acceleration" 0.6
+		"drag" .1
+		"infrared tracking" .7
+		"optical tracking" .9
+		"homing" 4
+		"turn" 4.6
+		"hit force" 100
+		"split range" 60
+		"missile strength" 60
+		submunition "Fireswarm Submunition" 10
+		"cluster"
+	description "The Korath Fireswarm is a cluster munition that carries a swarm of smaller missiles which can overwhelm slow defense systems."
+	description "	If multiple Korath Fireswarms are installed, they will all fire simultaneously."
+
+outfit "Fireswarm Submunition"
+	weapon
+		sprite "projectile/fireswarm submunition"
+			"frame rate" 2
+			"random start frame"
+		sound "javelin"
+		"hit effect" "medium explosion" 10
+		"hit effect" "large explosion"
+		"die effect" "small explosion"
+		"velocity" 3
+		"lifetime" 160
+		"acceleration" 1.6
+		"drag" .1
+		"turn" 2
+		"inaccuracy" 5
+		"homing" 4
+		"infrared tracking" .5
+		"optical tracking" .7
+		"shield damage" 95
+		"hull damage" 95
+		"heat damage" 180
+		"burn damage" 1
+		"corrosion damage" 0.2
+		"hit force" 40
+		"missile strength" 6
 
 
 
@@ -203,11 +296,10 @@ outfit "Korath Incinerator"
 		"velocity" 1
 		"lifetime" 9
 		"reload" 1
-		"burst reload" 35
-		"burst count" 3
 		"shield damage" 900
 		"hull damage" 900
 		"heat damage" 600
+		"burn damage" 6
 	description "A giant smelter. Ships go in. Melted metal comes out."
 
 
@@ -259,7 +351,7 @@ outfit "Korath Scanner"
 	"atmosphere scan" 100
 	"tactical scan power" 9
 	"radar jamming" 5
-	description "Korath ships rarely rely on scanning technologies, preferring to shoot first and plunder later. The rare ship that does need it likely has one of these bulky systems installed. While not particularly powerful or sophisticated, the Korath's unorthodox approach to scanning does have the unintended side effect of jamming radar based missile guidance systems."
+	description "While not particularly powerful or sophisticated, the Korath's unorthodox approach to scanning does have the unintended side effect of jamming radar based missile guidance systems."
 
 
 
@@ -278,7 +370,7 @@ outfit "Korath Scattermine"
 			"frame rate" .6
 			"no repeat"
 		sound "minelayer"
-		ammo "Korath Mine"
+		ammo "Cluster Mine"
 		icon "icon/minelayer"
 		"fire effect" "minelayer fire"
 		"hit effect" "huge explosion"
@@ -292,7 +384,7 @@ outfit "Korath Scattermine"
 		"firing heat" 9
 		"drag" .04
 		"missile strength" 35
-		"blast radius" 25
+		"blast radius" 32
 	description "A crude alternative to the Korath Minelayer, the Scattermine simply sets the mines loose along the ship's wake. While this covers a smaller area than the Minelayer, the resulting minefield is more dense."
 	description "One drawback of deploying the mines in this manner is that premature detonation can damage the ship dropping the mines."
 
@@ -339,7 +431,7 @@ outfit "Korath Tractor"
 
 
 outfit "Node 8 Jammer"
-	category "Special"
+	category "Unique"
 	thumbnail "outfit/node 8 jammer"
 	"mass" 9
 	"illegal" 1000000 
@@ -348,7 +440,7 @@ outfit "Node 8 Jammer"
 
 
 outfit "Node 8 Processor"
-	category "Special"
+	category "Unique"
 	thumbnail "outfit/node 8 processor"
 	"mass" 9
 	description "This resembles a clump of Kor Mereti Reasoning Nodes. It must be related to the Mereti communications network somehow."
@@ -367,7 +459,7 @@ outfit "Obsolete Transceiver"
 
 
 outfit "Slicer Torch"
-	category "Special"
+	category "Unique"
 	cost 1000000
 	thumbnail "outfit/slicer torch"
 	"capture attack" 9.6
@@ -460,6 +552,6 @@ outfit "Steering (Planetary Class)(Damaged)"
 
 
 outfit "Efret Salvage License"
-	category "Special"
+	category "Licenses"
 	thumbnail "outfit/efret salvage license"
 	description "Gives you access to salvaged outfits from the Kor Efret. You're not sure if this is a formal license or simply a means to communicate to the outfitter that you're looking for used parts..."

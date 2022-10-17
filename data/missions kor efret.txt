@@ -17,20 +17,76 @@
 
 
 
-fleet "Kor Efret Miners"
-	government "Kor Efret"
-	names "korath"
-	personality mining harvests coward
-		confusion 20
-	cargo 0
-	variant 3
-		"Korath Explorer"
-		"Korath Chaser (Miner)" 2
-
 outfitter "Korath Basics"
-	"Korath Afterburner"
 	"Korath Scanner"
 
+mission "Add Fireswarm World-Ships"
+	landing
+	invisible
+	on offer
+		event "add fireswarm world-ships"
+		fail
+
+event "add fireswarm world-ships"
+	fleet "Kor Efret Home"
+		add variant 4
+			"Echo-Galleon"
+		add variant 6
+			"Arch-Carrack"
+		add variant 2
+			"Charm-Shallop"
+		add variant 1
+			"Korath World-Ship (Fireswarm)"
+			"Eave-Skiff" 3
+		add variant 1
+			"Korath World-Ship B (Fireswarm)"
+			"Eave-Skiff" 3
+		add variant 1
+			"Korath World-Ship C (Fireswarm)"
+			"Eave-Skiff" 3
+
+outfitter "Korath Fireswarm"
+	"Korath Fireswarm"
+	"Korath Fireswarm Nest"
+	"Korath Fireswarm Launcher"
+
+
+
+mission "Scrapyard: Escort Kor Efret Visitors"
+	landing
+	name "Escort to <system>"
+	description "Escort these Kor Efret visitors back to <destination>."
+	source
+		government "Wanderer"
+		attributes "spaceport"
+		not attributes "uninhabited"
+	to offer
+		has "event: wanderers taking jobs from kor efreti"
+		not "event: Laki Nemparu opens Shipyard"
+	on offer
+		conversation
+			scene "thumbnail/arch-carrack"
+			`A Wanderer spaceport officer walks up to you. "Captain <last>, I need some [help, assistance]." He gestures towards a group of Kor Efret.`
+			`	One of them steps forward, palms extended. It points at the sky, towards <system>. Then it points towards their own ship. Finally, it points to you before clasping its hands together. It seems they would like an escort.`
+			choice
+				`	(Escort the Kor Efret.)`
+				`	(Don't get involved.)`
+					decline
+			`	You extend your own palms outward then clasp your hands together and gesture at the sky. The Efret seems pleased.`
+				accept
+	on enter
+	on enter
+		dialog `Maybe it's just your imagination, but it looked like some shadows were moving in the darkness...`
+	npc accompany save
+		government "Kor Efret"
+		personality target escort timid
+		fleet
+			names "korath"
+			variant
+				"Arch-Carrack"
+	on complete
+		payment 150000
+		dialog `The captain of the <npc> is grateful for your assistance and pays you <payment>.`
 
 mission "Scrapyard: Laki Nemparu Shipyard"
 	landing
@@ -50,23 +106,24 @@ mission "Scrapyard: Laki Nemparu Shipyard"
 		dialog `The shipyard appears to be open. A fleet of new ships is on display.`
 		
 shipyard "Kor Efret Scrapyard"
-	"Korath Chaser"
-	"Korath Explorer"
-	"Korath Transport"
-	"Korath Transport B"
-	"Korath Transport C"
-		
+	"Arch-Carrack"
+	"Charm-Shallop"
+	"Eave-Skiff"
+	"Vault-Barge"
+	"Bravo-Monitor"
+	"Delta-Ferry"
+
 event "Laki Nemparu opens Shipyard"
 	planet "Laki Nemparu"
 		add shipyard "Kor Efret Scrapyard"
 	fleet "Kor Efret Home"
-		add variant
-			"Korath Transport"
-		add variant
-			"Korath Transport B"
-		add variant
-			"Korath Transport C"
-			"Korath Chaser" 2
+		add variant 1
+			"Vault-Barge"
+		add variant 1
+			"Bravo-Monitor"
+		add variant 1
+			"Delta-Ferry"
+			"Eave-Skiff" 3
 
 mission "Midnight Scrapyard: Kor Efret Miners"
 	landing
@@ -78,26 +135,14 @@ mission "Midnight Scrapyard: Kor Efret Miners"
 		fail
 
 event "kor efret miners scrapyard"
-	system Sumprast
-		add fleet "Kor Efret Miners" 8000
-	system Sevrelect
-		add fleet "Kor Efret Miners" 8000
-	system Kashikt
-		add fleet "Kor Efret Miners" 8000
 	system Furmeliki
-		add fleet "Kor Efret Miners" 10000
+		add fleet "Kor Efret Miners" 10800
 	system Dokdobaru
-		add fleet "Kor Efret Miners" 10000
-	system Chikatip
-		add fleet "Kor Efret Miners" 10000
+		add fleet "Kor Efret Miners" 10800
 	system Skeruto
-		add fleet "Kor Efret Miners" 10000
-	system Meftarkata
-		add fleet "Kor Efret Miners" 12000
+		add fleet "Kor Efret Miners" 10800
 	system Chornifath
-		add fleet "Kor Efret Miners" 12000
-	system Hesselpost
-		add fleet "Kor Efret Miners" 12000
+		add fleet "Kor Efret Miners" 7200
 
 
 
@@ -112,7 +157,7 @@ mission "Scrapyard Derelict World Ship"
 		"Scrapyard Threat Level" ++
 		conversation
 			scene "scene/scene-derelictworldship"
-			`You stumble upon tragic scene. A derelict Kor Efret world ship is surrounded by blight shadows. The ship hails you, and though you don't speak their language, it's obviously a distress call. The ship is heavily damaged and it will be a miracle if you can escort it back to Laki Nemparu in the Kashikt system.`
+			`You stumble upon tragic scene. An old Kor Efret World-Ship named the <npc> is surrounded by blight shadows. The disabled ship hails you, and though you don't speak their language, it's obviously a distress call. Damage to the <npc> is severe and it will be a miracle if you can safely escort it back to <destination>.`
 				accept
 
 	npc
@@ -185,23 +230,29 @@ mission "Scrapyard Derelict World Ship"
 		give ship "Scrapyard World-Ship (Crippled)" "Lekfarosk"
 		conversation
 			scene "thumbnail/world-ship scrapyard-thumb"
-			`The Kor Efret are grateful to you for saving them from certain death. They seem to want to give you a tour of their ship, but as the tour progresses, it becomes apparent that they are offering the ship to you as a gesture of thanks. While you appreciate the reward, you can't help but notice that damage to the ship's key systems hasn't been repaired...`
-			
+			`The Kor Efret are grateful to you for saving them from certain death. They seem to want to give you a tour of their ship. It's an old antique, a genuine World-Ship. As the tour progresses, it becomes apparent that they are offering the ship to you as a gesture of thanks. While you appreciate the reward, you can't help but notice that damage to the ships key systems hasn't been repaired...`
+
 ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"
 	sprite "ship/world-ship scrapyard"
 	thumbnail "thumbnail/world-ship scrapyard-thumb"
 	add attributes
 		"fused circuits" -5
-	outfits		
+	outfits
 		"Triple Plasma Core (Damaged)"
 		"Systems Core (Damaged)"
 		"Large Heat Shunt"
 		"Small Heat Shunt" 2
-		
+		"Thermal Repeater Rifle" 150
+		"Microbot Defense Station" 19
 		"Thruster (Planetary Class)(Damaged)"
 		"Steering (Planetary Class)(Damaged)"
 		"Hyperdrive (Damaged)"
-
+		"Scrap Metal" 200
+	engine -37 343 .8
+	engine 0 343 .9
+	engine 37 343 .8
+	gun -22 -275
+	gun 22 -275
 	turret -74 -156
 	turret 74 -155.5
 	turret -42 -50.5
@@ -214,29 +265,6 @@ ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"
 	bay "Fighter" 34 -70
 	bay "Fighter" 0 -70
 
-ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
-	sprite "ship/world-ship scrapyard"
-	thumbnail "thumbnail/world-ship scrapyard-thumb"
-	add attributes
-		"fused circuits" -5
-	outfits		
-		"Triple Plasma Core (Damaged)"
-		"Systems Core (Damaged)"
-		"Large Heat Shunt"
-		"Small Heat Shunt" 2
-		
-		"Thruster (Planetary Class)(Damaged)"
-		"Steering (Planetary Class)(Damaged)"
-		"Hyperdrive (Damaged)"
-
-	turret -74 -156
-	turret 74 -155.5
-	turret -42 -50.5
-	turret 44 -50.5
-	turret -27.5 134.5
-	turret 27 134.5
-	turret -89 293
-	turret 87.5 292.5
 
 mission "Scrapyard: Warmonger Construction"
 	landing
@@ -259,28 +287,54 @@ event "Warmonger Construction Completed"
 	shipyard "Kor Efret Scrapyard"
 		add "Korath Warmonger"
 	fleet "Kor Efret Home"
-		add variant 10
+		add variant 5
 			"Korath Warmonger"
-			"Korath Chaser" 2
-		add variant 5
-			"Korath World-Ship"
+			"Eave-Skiff" 2
+		add variant 3
+			"Echo-Galleon"
 			"Korath Warmonger" 2
-			"Korath Chaser" 4
+			"Eave-Skiff" 4
 		add variant 5
-			"Korath World-Ship B"
-			"Korath Warmonger" 2
-			"Korath Chaser" 4
-		add variant 5
-			"Korath World-Ship C"
-			"Korath Warmonger" 2
-			"Korath Chaser" 4
-		add variant 15
-			"Korath Transport"
-		add variant 15
-			"Korath Transport B"
-		add variant 15
-			"Korath Transport C"
-			"Korath Chaser" 3
+			"Arch-Carrack"
+			"Korath Warmonger"
+			"Eave-Skiff" 2
+		add variant 1
+			"Charm-Shallop"
+			"Korath Warmonger"
+			"Eave-Skiff" 2
+		add variant 1
+			"Vault-Barge"
+			"Korath Warmonger"
+			"Eave-Skiff" 2
+		add variant 1
+			"Bravo-Monitor"
+			"Korath Warmonger"
+			"Eave-Skiff" 2
+		add variant 1
+			"Delta-Ferry"
+			"Korath Warmonger"
+			"Eave-Skiff" 5
+		remove variant 1
+			"Korath World-Ship (Fireswarm)"
+			"Eave-Skiff" 3
+		remove variant 1
+			"Korath World-Ship B (Fireswarm)"
+			"Eave-Skiff" 3
+		remove variant 1
+			"Korath World-Ship C (Fireswarm)"
+			"Eave-Skiff" 3
+		add variant 1
+			"Korath World-Ship (Fireswarm)"
+			"Korath Warmonger"
+			"Eave-Skiff" 5
+		add variant 1
+			"Korath World-Ship B (Fireswarm)"
+			"Korath Warmonger"
+			"Eave-Skiff" 5
+		add variant 1
+			"Korath World-Ship C (Fireswarm)"
+			"Korath Warmonger"
+			"Eave-Skiff" 5
 
 
 
@@ -338,40 +392,45 @@ mission "Scrapyard: Efret Salvage License 2"
 
 
 outfitter "Efret Salvage"
-	"Korath Detainer"
-	"Korath Repeater"
-	"Korath Slicer"
-	"Korath Banisher"
-	"Korath Disruptor"
-	"Korath Grab-Strike"
-	"Korath Warder"
-	"Korath Repeater Turret"
-	"Korath Slicer Turret"
-	"Korath Minelayer"
-	"Korath Piercer Launcher"
-	"Korath Mine"
-	"Korath Mine Rack"
-	"Korath Piercer"
-	"Korath Piercer Rack"
+	"Banisher Grav-Turret"
+	"Cluster Mine"
+	"Cluster Mine Layer"
+	"Control Transceiver"
+	"Digger Mining Beam"
 	"Double Plasma Core"
-	"Plasma Core"
+	"Expeller Grav-Ray"
 	"Generator (Furnace Class)"
 	"Generator (Candle Class)"
-	"Systems Core (Medium)"
-	"Systems Core (Small)"
-	"Small Heat Shunt"
-	"Control Transceiver"
+	"Grab-Strike Turret"
+	"Husk-Slice"
+	"Husk-Slice Turret"
+	"Korath Detainer"
+	"Piercer Missile Launcher"
+	"Piercer Missile"
+	"Plasma Core"
 	"Reasoning Node"
-	"Thruster (Planetary Class)"
-	"Thruster (Lunar Class)"
-	"Thruster (Comet Class)"
-	"Thruster (Asteroid Class)"
+	"Shield Disruptor Turret"
+	"Small Heat Shunt"
 	"Steering (Planetary Class)"
 	"Steering (Lunar Class)"
 	"Steering (Comet Class)"
 	"Steering (Asteroid Class)"
-	"Outfits Expansion"
-	Hyperdrive
+	"Systems Core (Medium)"
+	"Systems Core (Small)"
+	"Systems Core (Tiny)"
+	"Thermal Repeater"
+	"Thermal Repeater Turret"
+	"Thruster (Planetary Class)"
+	"Thruster (Lunar Class)"
+	"Thruster (Comet Class)"
+	"Thruster (Asteroid Class)"
+	"Warder Anti-Missile"
+	"Arkrof GP Hybrid Thruster"
+	"Farves GP Hybrid Thruster"
+	"Gaktem GP Hybrid Thruster"
+	"Arkrof GP Hybrid Steering"
+	"Farves GP Hybrid Steering"
+	"Gaktem GP Hybrid Steering"
 
 outfitter "Efret Salvage Advanced"
 	"Triple Plasma Core"
@@ -380,6 +439,9 @@ outfitter "Efret Salvage Advanced"
 	"Large Heat Shunt"
 	"Thruster (Stellar Class)"
 	"Steering (Stellar Class)"
+	"Nelmeb GP Hybrid Thruster"
+	"Nelmeb GP Hybrid Steering"
+	"Scram Drive"
 
 event "access efret salvage"
 	planet "Laki Nemparu"
@@ -387,6 +449,21 @@ event "access efret salvage"
 		add outfitter "Efret Salvage Advanced"
 	planet "Setar Fort"
 		add outfitter "Efret Salvage"
+
+mission "Add Kor Efret Fireswarms"
+	landing
+	invisible
+	to offer
+		has "Scrapyard: Efret Salvage License 2: done"
+	on offer
+		event "add kor efret fireswarms"
+		fail
+
+event "add kor efret fireswarms"
+	planet "Laki Nemparu"
+		add outfitter "Korath Fireswarm"
+	planet "Setar Fort"
+		add outfitter "Korath Fireswarm"
 
 
 
@@ -490,21 +567,49 @@ mission "Scrapyard: Efret Grappler Warmongers"
 
 event "Efret Grappler Warmongers"
 	fleet "Kor Efret Home"
-		add variant 10
+		add variant 1
 			"Korath Warmonger (Grappler)"
-			"Korath Chaser" 2
-		add variant 5
-			"Korath World-Ship"
+			"Eave-Skiff" 2
+	fleet "Kor Efret Home"
+		add variant 1
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Echo-Galleon"
 			"Korath Warmonger (Grappler)" 2
-			"Korath Chaser" 4
-		add variant 5
-			"Korath World-Ship B"
-			"Korath Warmonger (Grappler)" 2
-			"Korath Chaser" 4
-		add variant 5
-			"Korath World-Ship C"
-			"Korath Warmonger (Grappler)" 2
-			"Korath Chaser" 4
+			"Eave-Skiff" 4
+		add variant 1
+			"Arch-Carrack"
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Charm-Shallop"
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Vault-Barge"
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Bravo-Monitor"
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Delta-Ferry"
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 5
+		add variant 1
+			"Korath World-Ship (Fireswarm)"
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 5
+		add variant 1
+			"Korath World-Ship B (Fireswarm)"
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 5
+		add variant 1
+			"Korath World-Ship C (Fireswarm)"
+			"Korath Warmonger (Grappler)"
+			"Eave-Skiff" 5
 
 
 mission "Scrapyard: Efret Salvage Grappler 2"
@@ -744,17 +849,30 @@ mission "Scrapyard: Escort to Wanderer Colony (Big)"
 	to offer
 		has "event: wanderers taking jobs from kor efreti"
 		random < 15
+	npc
+		government "Invasive Predator"
+		system
+			distance 3 4
+		personality waiting disables unconstrained mute
+		fleet "Large Blight Shadow"
 	npc accompany save
 		government "Kor Efret"
 		personality target escort timid
 		fleet
 			names "korath"
-			variant
-				"Korath World-Ship"
-			variant
-				"Korath World-Ship B"
-			variant
-				"Korath World-Ship C"
+			variant 3
+				"Echo-Galleon"
+			variant 5
+				"Arch-Carrack"
+			variant 1
+				"Korath World-Ship (Fireswarm)"
+				"Eave-Skiff" 3
+			variant 1
+				"Korath World-Ship B (Fireswarm)"
+				"Eave-Skiff" 3
+			variant 1
+				"Korath World-Ship C (Fireswarm)"
+				"Eave-Skiff" 3
 	on complete
 		payment 300000
 		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
@@ -774,17 +892,21 @@ mission "Scrapyard: Escort to Wanderer Colony (Small)"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
 		random < 25
+	npc
+		government "Invasive Predator"
+		system
+			distance 3 4
+		personality waiting disables unconstrained mute
+		fleet "Small Blight Shadow"
 	npc accompany save
 		government "Kor Efret"
 		personality target escort timid
 		fleet
 			names "korath"
 			variant
-				"Korath Transport"
+				"Vault-Barge"
 			variant
-				"Korath Transport B"
-			variant
-				"Korath Transport C"
+				"Delta-Ferry"
 	on complete
 		payment 200000
 		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
@@ -804,13 +926,19 @@ mission "Scrapyard: Escort to Wanderer Worlds A"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
 		random < 25
+	npc
+		government "Invasive Predator"
+		system
+			distance 3 4
+		personality waiting disables unconstrained mute
+		fleet "Small Blight Shadow"
 	npc accompany save
 		government "Kor Efret"
 		personality target escort timid
 		fleet
 			names "korath"
 			variant
-				"Korath Explorer"
+				"Charm-Shallop"
 	on complete
 		payment 400000
 		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
@@ -830,13 +958,19 @@ mission "Scrapyard: Escort to Wanderer Worlds B"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
 		random < 25
+	npc
+		government "Invasive Predator"
+		system
+			distance 3 4
+		personality waiting disables unconstrained mute
+		fleet "Small Blight Shadow"
 	npc accompany save
 		government "Kor Efret"
 		personality target escort timid
 		fleet
 			names "korath"
 			variant
-				"Korath Explorer"
+				"Charm-Shallop"
 	on complete
 		payment 200000
 		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
@@ -854,17 +988,23 @@ mission "Scrapyard: Kor Efret Salvage"
 		attributes "korath"
 		attributes "uninhabited"
 	on stopover
-		dialog `The Kor Efret crew work quickly to scavange as much as they can. After loading their ship, the captain signals it's time to return to <destination>.`
+		dialog `The Kor Efret crew work quickly to scavenge as much as they can. After loading their ship, the captain signals it's time to return to <destination>.`
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
 		random < 25
+	npc
+		government "Invasive Predator"
+		system
+			distance 3 4
+		personality waiting disables unconstrained mute
+		fleet "Small Blight Shadow"
 	npc accompany save
 		government "Kor Efret"
 		personality target escort timid
 		fleet
 			names "korath"
 			variant
-				"Korath Explorer"
+				"Charm-Shallop"
 	on complete
 		payment 400000
 		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.`
@@ -888,6 +1028,12 @@ mission "Scrapyard: Wanderer Planetary Survey"
 	to offer
 		has "event: wanderers: sestor planets unrestricted"
 		random < 25
+	npc
+		government "Invasive Predator"
+		system
+			distance 3 4
+		personality waiting disables unconstrained mute
+		fleet "Small Blight Shadow"
 	npc accompany save
 		government "Wanderer"
 		personality target escort
@@ -901,56 +1047,14 @@ mission "Scrapyard: Wanderer Planetary Survey"
 
 
 
-##################
-# Bonus Mission
-##################
-
-fleet "Exiled Explorers"
-	government "Korath"
-	personality plunders harvests surveillance
-	names "korath"
-	cargo 0
-	variant 4
-		"Korath Explorer (Exile)"
-		"Korath Chaser" 2
-	variant 3
-		"Korath Explorer (Sestor)"
-		"Korath Chaser" 2
-	variant 2
-		"Korath Explorer (Banisher)"
-		"Korath Explorer (Grab-Strike)"
-		"Korath Chaser" 4
-	variant 1
-		"Korath Explorer (Exile)"
-		"Korath Explorer (Banisher)"
-		"Korath Explorer (Grab-Strike)"
-		"Korath Chaser" 6
-
+# content moved to Lost in Midnight
+# placeholder to prevent missing mission error
 mission "Scrapyard: Exiled Explorers"
 	landing
 	invisible
 	source Fossil
+	to offer
+		never
 	on offer
-		event "exiled explorers"
-		dialog `You've only barely disembarked from your ship when a shadow passes overhead. It isn't one of those strange crystalline structures floating in this system. It might be another ship.`
-	npc kill
-		government "Korath"
-		personality waiting staying plunders harvests surveillance
-		fleet
-			names "korath"
-			cargo 0
-			variant
-				"Korath Explorer (Exile)"
-				"Korath Chaser" 2
-		
+		fail
 event "exiled explorers"
-	system "Kor Ak'Mari"
-		add fleet "Exiled Explorers" 40000
-	system "Sagittarius A*"
-		add fleet "Exiled Explorers" 40000
-	system Tekochtli
-		add fleet "Exiled Explorers" 30000
-	system Kalsolli
-		add fleet "Exiled Explorers" 30000
-	system Temeh
-		add fleet "Exiled Explorers" 30000

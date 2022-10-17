@@ -106,12 +106,14 @@ mission "Scrapyard: Investigating Shadows"
 mission "First Contact: Blight Shadows"
 	landing
 	invisible
+	destination "Desi Seledrak"
 	to offer
 		has "Scrapyard: Meeting on Desi Seledrak: done"	
 	on enter "Silikatakfar"
 		dialog `For a moment, you could have sworn you saw something moving in the darkness...`
 	on enter "Celeborim"
 		dialog `For a moment, you could have sworn you saw something moving in the darkness...`
+	waypoint "Asikafarnut"
 	on enter "Asikafarnut"
 		conversation
 			scene "scene/scene-shadowhunters"
@@ -148,7 +150,8 @@ mission "First Contact: Blight Shadows"
 				accept
 	on accept
 		event "Blight Shadow Infestation"
-	npc
+		event "Scrapyard Derelicts"
+	npc kill
 		system Asikafarnut
 		government "Invasive Predator"
 		personality waiting staying disables unconstrained mute
@@ -166,14 +169,28 @@ mission "First Contact: Blight Shadows"
 				"Korath Scrapper (weapons)"
 				"Korath Scrapper (engines)"
 				"Korath Scrapper (carrier)"
-				"Korath Chaser" 3
+				"'olofez" 3
 				"Far Osk 27" 6
 				"Far Lek 14" 1
+	npc
+		system Asikafarnut
+		government Drak
+		personality waiting staying heroic vindictive
+		ship "Archon" "Hunter of Shadows"
+
+mission "Scrapyard: Drak Patrolling Asikafarnut"
+	landing
+	invisible
+	destination "Laki Nemparu"
+	to offer
+		has "First Contact: Blight Shadows: done"
 	npc kill
 		system Asikafarnut
 		government Drak
 		personality waiting staying heroic vindictive
 		ship "Archon" "Hunter of Shadows"
+	on complete
+		clear "Scrapyard: Drak Patrolling Asikafarnut: offered"
 
 
 
@@ -214,44 +231,45 @@ event "Blight Shadow Infestation"
 		add fleet "Large Korath Scrappers" 7200
 		add fleet "Small Blight Shadow" 2500
 
+event "Scrapyard Derelicts"
+	system Celeborim
+		add fleet "Error Scrap" 500
+	system Makferuti
+		add fleet "Error Scrap" 500
+	system Asikafarnut
+		add fleet "Error Scrap" 500
+	system Sobarati
+		add fleet "Error Scrap" 500
+	system Silikatakfar
+		add fleet "Error Scrap" 500
+	system Ferukistek
+		add fleet "Error Scrap" 500
+	system Eneremprukt
+		add fleet "Error Scrap" 500
+	system Mesuket
+		add fleet "Error Scrap" 500
 
-
+mission "Patch Event Scrapyard Derelicts"
+	landing
+	invisible
+	to offer
+		has "event: Blight Shadow Infestation"
+		not "event: Scrapyard Derelicts"
+	on offer
+		event "Scrapyard Derelicts"
+		fail
 
 mission "Scrapyard Boarding A"
 	landing
 	invisible
-	repeat 2
 	source
 		attributes "korath"
 	destination "Laki Nemparu"
 	to offer
 		has "event: Scrapyard Develops"
-		random < 20
+		random < 10
 	npc kill
-		government "Derelict (Killable)"
-		system
-			attributes "Scrapyard"
-		personality waiting derelict mute
-		fleet "Error Scrap"
-		conversation
-			apply
-				"Scrapyard Boarding A: offered" --
-			`You've eliminated some of the derelicts, but more are out there waiting to be exploited by Scrappers and Blight Shadows.`
-	on fail
-		"Scrapyard Boarding A: offered" --
-
-mission "Scrapyard Boarding B"
-	landing
-	invisible
-	repeat 4
-	source
-		attributes "korath"
-	destination "Laki Nemparu"
-	to offer
-		has "event: Blight Shadow Infestation"
-		random < 30
-	npc kill
-		government "Derelict (Killable)"
+		government "Scrapyard Derelict"
 		system
 			attributes "Scrapyard"
 		personality waiting derelict mute
@@ -259,10 +277,35 @@ mission "Scrapyard Boarding B"
 		conversation
 			apply
 				"Scrapyard Threat Level" ++
-				"Scrapyard Boarding B: offered" --
+				clear "Scrapyard Boarding A: offered"
 			`You've eliminated some of the derelicts, but more are out there waiting to be exploited by Scrappers and Blight Shadows.`
 	on fail
-		"Scrapyard Boarding B: offered" --
+		clear "Scrapyard Boarding A: offered"
+
+
+mission "Scrapyard Boarding B"
+	landing
+	invisible
+	source
+		attributes "korath"
+	destination "Laki Nemparu"
+	to offer
+		never
+#		has "event: Blight Shadow Infestation"
+#		random < 15
+#	npc kill
+#		government "Scrapyard Derelict"
+#		system
+#			attributes "Scrapyard"
+#		personality waiting derelict mute
+#		fleet "Error Scrap"
+#		conversation
+#			apply
+#				"Scrapyard Threat Level" ++
+#				"Scrapyard Boarding B: offered" --
+#			`You've eliminated some of the derelicts, but more are out there waiting to be exploited by Scrappers and Blight Shadows.`
+#	on fail
+#		"Scrapyard Boarding B: offered" --
 
 mission "Scrapyard Boarding A Clear"
 	landing
@@ -270,7 +313,7 @@ mission "Scrapyard Boarding A Clear"
 	repeat
 	to offer
 		or
-			"Scrapyard Boarding A: offered" > 2
+			"Scrapyard Boarding A: offered" > 0
 			"Scrapyard Boarding A: offered" < 0
 	on offer
 		clear "Scrapyard Boarding A: offered"
@@ -282,11 +325,12 @@ mission "Scrapyard Boarding B Clear"
 	repeat
 	to offer
 		or
-			"Scrapyard Boarding B: offered" > 4
+			"Scrapyard Boarding B: offered" > 0
 			"Scrapyard Boarding B: offered" < 0
 	on offer
 		clear "Scrapyard Boarding B: offered"
 		fail
+
 
 
 mission "Mereti Automines Deployed"
@@ -544,11 +588,11 @@ event "Scrapyard Mesuket Stations"
 				period 66.1613
 	planet "Metwar Skaretar"
 		attributes korath station
-		landscape land/station0
+		landscape land/space2ver8a
 		description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
 	planet "Makwar Pratarati"
 		attributes korath station
-		landscape land/loc3
+		landscape land/space2ver8b
 		description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
 
 ######################
@@ -577,7 +621,7 @@ mission "Scrapyard Subsidurial"
 	npc accompany save
 		government "Indigenous Lifeform"
 		system Mesuket
-		personality waiting timid mining harvests mute unconstrained marked
+		personality target waiting timid mute unconstrained
 		ship "Subsidurial"
 	on complete
 		conversation
@@ -592,7 +636,7 @@ mission "Scrapyard Subsidurial 2"
 	npc kill
 		system Kaliptari
 		government "Indigenous Lifeform"
-		personality waiting staying timid mining harvests mute unconstrained
+		personality waiting timid mining harvests mute unconstrained
 		ship "Subsidurial"
 
 
@@ -702,7 +746,7 @@ mission "Scrapyard Hermit"
 	on decline
 		outfit "Control Transceiver" 10
 		outfit "Reasoning Node" 10
-		outfit "Korath Repeater Rifle" 30
+		outfit "Thermal Repeater Rifle" 30
 			
 	npc board
 		government "Kor Scrappers (Hostile)"
@@ -733,8 +777,8 @@ ship "Osk Lek Chaser"
 			"hit force" 480
 		
 	outfits
-		"Korath Fire-Lance"
-		"Korath Repeater"
+		"Fire-Lance"
+		"Thermal Repeater"
 		"Generator (Furnace Class)"
 		"Small Heat Shunt" 2
 		"Slicer Torch"
@@ -743,8 +787,8 @@ ship "Osk Lek Chaser"
 
 	engine -13 40.5
 	engine 13 40.5
-	gun 7.5 -26.5 "Korath Repeater"
-	gun 0 -10 "Korath Fire-Lance"
+	gun 7.5 -26.5 "Thermal Repeater"
+	gun 0 -10 "Fire-Lance"
 	explode "tiny explosion" 20
 	description "A heavily modified Korath Chaser used as an escape vehicle by the Scrapyard Hermit."
 

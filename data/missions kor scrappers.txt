@@ -59,16 +59,16 @@ mission "Scrapyard: Factory Scrapper"
 			cargo 0
 			variant
 				"Korath Scrapper (shields)"
-				"Korath Chaser" 2
+				"'olofez" 2
 			variant
 				"Korath Scrapper (weapons)"
-				"Korath Chaser" 2
+				"'olofez" 2
 			variant
 				"Korath Scrapper (engines)"
-				"Korath Chaser" 2
+				"'olofez" 2
 			variant
 				"Korath Scrapper (carrier)"
-				"Korath Chaser" 2
+				"'olofez" 2
 				"Far Lek 14"
 				"Far Osk 27"
 

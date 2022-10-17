@@ -17,6 +17,14 @@
 
 event "Infected with Shadowblight"
 
+mission "Infected with Shadowblight Fix"
+	landing
+	invisible
+	to offer
+		has "event: Infected with Shadowblight"
+	on offer
+		set "Infected with Shadowblight"
+		fail
 
 
 mission "Scrapyard Sebra Skira TL5"
@@ -57,7 +65,7 @@ mission "Scrapyard Eggs Pirate 1"
 			`	You carefully load the eggs into a crate and store them in your cargo hold. Perhaps they will be worth something to the right buyer. Perhaps a place that deals with exotic animals would be interested...`
 				accept
 	on decline
-		event "Infected with Shadowblight"
+		set "Infected with Shadowblight"
 		log `Destroyed some Blight Shadow eggs. The black slime that splattered me was disgusting. Washing it off wasn't easy.`
 	on accept
 		event "Pirate Egg timer" 180
@@ -231,7 +239,7 @@ mission "Scrapyard Eggs Remnant 1"
 			`	You carefully load the eggs into a crate and store them in your cargo hold. After your experience with the pirates, you wonder if taking them to the Remnant might yield better results...`
 				accept
 	on decline
-		event "Infected with Shadowblight" 
+		set "Infected with Shadowblight" 
 		log `Destroyed some Blight Shadow eggs. The black slime that splattered me was disgusting. Washing it off wasn't easy.`
 	on accept
 		event "Remnant Egg timer" 30
@@ -322,7 +330,7 @@ mission "Scrapyard Blight Rifle 1"
 	on accept
 		log `The prototype Blight Rifle exploded during a boarding battle, splattering me with black slime. I wasn't injured, but the rifle was ruined.`
 		outfit "Blight Rifle" -1
-		event "Infected with Shadowblight" 
+		set "Infected with Shadowblight" 
 	on complete
 		dialog `Head to the spaceport to report your Blight Rifle field test results to Prefect Chilia.`
 
@@ -490,7 +498,7 @@ mission "Scrapyard Shadowblight Hai"
 	source
 		government "Hai"
 	to offer
-		has "event: Infected with Shadowblight"
+		has "Infected with Shadowblight"
 	on offer
 		event "Shadowblight Hai"
 	on enter
@@ -511,7 +519,7 @@ mission "Scrapyard Shadowblight Wanderer"
 	source
 		government "Wanderer"
 	to offer
-		has "event: Infected with Shadowblight"
+		has "Infected with Shadowblight"
 	on offer
 		event "Shadowblight Wanderer"
 	on enter
@@ -547,7 +555,7 @@ mission "Scrapyard Shadowblight Coalition"
 	source
 		government "Coalition"
 	to offer
-		has "event: Infected with Shadowblight"
+		has "Infected with Shadowblight"
 	on enter
 		dialog `The Blight Shadows have reached Coalition space. Could they be following you?`
 	npc kill
@@ -563,7 +571,7 @@ mission "Scrapyard Shadowblight Remnant"
 	source
 		government "Remnant"
 	to offer
-		has "event: Infected with Shadowblight"
+		has "Infected with Shadowblight"
 	on enter
 		dialog `The Blight Shadows have reached Remnant space. Could they be following you?`
 	npc kill
@@ -579,7 +587,7 @@ mission "Scrapyard Shadowblight Human"
 	source
 		government "Republic" "Syndicate" "Free Worlds" "Pirate"
 	to offer
-		has "event: Infected with Shadowblight"
+		has "Infected with Shadowblight"
 	on offer
 		event "Shadowblight Human"
 	on enter
@@ -709,7 +717,7 @@ mission "Scrapyard Random Station Eggs"
 	source
 		planet "Sebra Skira" "Devru Kaska" "Metwar Skaretar" "Makwar Pratarati"
 	to offer
-		has "event: Infected with Shadowblight"
+		has "Infected with Shadowblight"
 		random < 20
 	on offer
 		conversation
@@ -739,7 +747,7 @@ mission "Scrapyard Blight Mutation"
 	landing
 	invisible
 	to offer
-		has "event: Infected with Shadowblight"
+		has "Infected with Shadowblight"
 		has "event: Blight Shadows Nest In Persitar"
 		"Scrapyard Threat Level" >= 25
 	on offer
