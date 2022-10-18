@@ -227,6 +227,7 @@ mission "Scrapyard Persitar Fleet Wreck"
 planet "Persitar Wreck"
 	attributes uninhabited midnight
 	landscape "land/nasa-ksc20170322"
+	music ambient/derelictB
 	description "These ruined derelicts appear to be part of a Kor Sestor expeditionary fleet. With no jump drives, it must have taken this fleet centuries to arrive here. The largest ship is loaded with construction equipment. If these ships had managed to find a suitable planet to set up a base of operations, it could have lead to the return of the Kor Sestor. You wonder how many more of these fleets are out there."
 
 event "Scrapyard Persitar Fleet Wreck"
@@ -339,51 +340,14 @@ mission "Scrapyard Stakoshstar 1"
 
 event "stakoshtar in prakacha'a"
 	system "Prakacha'a"
-		object
-			sprite star/g0
-			distance 32.5255
-			period 12.7118
-			offset 180
-		object
-			sprite star/k5-old
-			distance 82.4745
-			period 12.7118
-		object
+		remove object
+			sprite planet/rock18
+			distance 270
+			period 39.3874
+		add object
 			sprite planet/lava4-b
-			distance 247.965
-			period 40.2479
-		object
-			sprite planet/desert5-b
-			distance 458.205
-			period 101.099
-		object
-			sprite planet/rock19-b
-			distance 692.455
-			period 187.822
-		object
-			sprite planet/tethys
-			distance 846.065
-			period 253.667
-		object
-			sprite planet/gas6-b
-			distance 4036.31
-			period 2643.24
-			object
-				sprite planet/callisto-b
-				distance 294
-				period 12.8761
-			object
-				sprite planet/rock3-b
-				distance 437
-				period 23.3339
-			object
-				sprite planet/io-b
-				distance 540
-				period 32.052
-			object
-				sprite planet/dust3-b
-				distance 723
-				period 49.6561
+			distance 270
+			period 39.3874
 
 mission "Scrapyard Stakoshstar Expeditions"
 	landing

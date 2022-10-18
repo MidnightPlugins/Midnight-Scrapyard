@@ -543,57 +543,44 @@ mission "Scrapyard Mesuket Stations"
 
 event "Scrapyard Mesuket Stations"
 	system Mesuket
-		object
-			sprite star/k5-old
-			period 10
-		object
-			sprite planet/mercury-b
-			distance 125.36
-			period 27.2041
-		object
+		remove object
 			sprite planet/rock13
-			distance 569.491
-			period 263.406
+			distance 595
+			period 188.353
+		remove object
+			sprite planet/gas17-b
+			distance 1400
+			period 679.814
+		add object
+			sprite planet/rock13
+			distance 595
+			period 188.353
 			object "Metwar Skaretar"
 				sprite planet/station1kd
+					scale 0.5
 				distance 159.426
 				period 25.3047
-		object
+		add object
 			sprite planet/gas17-b
-			distance 1378.34
-			period 991.812
+			distance 1400
+			period 679.814
 			object "Makwar Pratarati"
 				sprite planet/station3kd
+					scale 0.5
 				distance 341.722
 				period 26.9888
-		object
-			sprite planet/gas4
-			distance 3615.31
-			period 4213.22
-			object
-				sprite planet/ice7-b
-				distance 264
-				period 15.1288
-			object
-				sprite planet/dust1-b
-				distance 416
-				period 29.9252
-			object
-				sprite planet/dust4-b
-				distance 550
-				period 45.4927
-			object
-				sprite planet/io-b
-				distance 706
-				period 66.1613
-	planet "Metwar Skaretar"
-		attributes korath station
-		landscape land/space2ver8a
-		description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
-	planet "Makwar Pratarati"
-		attributes korath station
-		landscape land/space2ver8b
-		description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
+
+planet "Metwar Skaretar"
+	attributes korath station
+	landscape land/space2ver8a
+	music ambient/derelictB
+	description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
+
+planet "Makwar Pratarati"
+	attributes korath station
+	landscape land/space2ver8b
+	music ambient/derelictB
+	description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
 
 ######################
 # Misc. Missions
