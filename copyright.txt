@@ -77,11 +77,13 @@ License: public-domain
 
 
 
-Files: sounds/*
-Copyright: Michael Arsollon
+Files:
+ sounds/ambient/*
+ sounds/blight defense
+ sounds/energy absorber
+Copyright: various
 License: public-domain
- Derived from public domain sounds taken from freesound.org.
- (Note that this only covers the few sounds not otherwise mentioned below...)
+ Based on public domain sounds taken from freesound.org.
  
 Files:
  sounds/jump?in?red.wav
@@ -93,3 +95,4 @@ Comment: Derived from:
  https://freesound.org/people/SoundFX.studio/sounds/456272/
  https://freesound.org/people/Setuniman/sounds/155860/
  https://freesound.org/people/Tuben/sounds/161392/
+
