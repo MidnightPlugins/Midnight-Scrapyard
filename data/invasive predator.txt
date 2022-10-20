@@ -52,7 +52,7 @@ outfit "Energy Absorber?"
 	"gun ports" -1
 	"unplunderable" 1
 	weapon
-		sprite "projectile/laser"
+		sprite "projectile/energyabsorber"
 			"frame rate" 1
 		sound "energy absorber"
 		"hit effect" "beam laser impact"
@@ -129,7 +129,6 @@ ship "Blight Shadow"
 	explode "green blood" 25
 	"final explode" "green blood"
 	description "An invasive species from beyond our galaxy. They primarily survive by absorbing various forms of energy."
-	
 
 
 ship "Blight Shadow" "Blight Hatchling"
@@ -141,7 +140,12 @@ ship "Blight Shadow" "Blight Hatchling"
 		"depleted shield delay" -200
 		"hull repair rate" 1
 		"hull energy" .5
+		"hull protection" -0.5
 		"corrosion protection" -1
+		"piercing protection" -1
+		"heat protection" -1
+		"active cooling" -0.06
+		"cooling energy" 0.5
 
 	
 fleet "Small Blight Shadow"
@@ -728,7 +732,7 @@ outfit "Energy Drainer?"
 	"gun ports" -1
 	"unplunderable" 1
 	weapon
-		sprite "projectile/banisher"
+		sprite "projectile/energydrainer"
 			"frame rate" 60
 		sound "energy absorber"
 		"hit effect" "energy drainer impact"

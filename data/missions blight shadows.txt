@@ -443,7 +443,7 @@ mission "Scrapyard Plume's Research"
 	invisible
 	source "Aventine"
 	to offer
-		has "event: Blight Rifle Testing"
+		has "event: Remnant Egg timer"
 		random < 25
 	on offer
 		conversation
@@ -474,21 +474,21 @@ mission "Scrapyard Plume's Research"
 		dialog `Plume mentioned that some of the Blight Shadows escaped. He never indicated if they were all caught...`
 	npc kill
 		government "Invasive Predator"
-		personality waiting disables unconstrained mute
-		fleet "Small Blight Hatchling" 3
+		personality waiting staying disables unconstrained mute
+		fleet "Large Blight Hatchling"
+		dialog `These Blight Shadows are weaker than the ones you've encountered in Sestor space. They could just be hatchlings. Or maybe the Ember Waste is somehow inhospitable to them.`
 	npc kill
 		government "Invasive Predator"
 		system
 			distance 1 2
-		personality waiting disables unconstrained mute
-		fleet "Small Blight Hatchling" 2
+		personality entering disables unconstrained mute
+		fleet "Small Blight Hatchling"
 	npc kill
 		government "Invasive Predator"
 		system
 			distance 2 3
-		personality waiting disables unconstrained mute
+		personality entering disables unconstrained mute
 		fleet "Small Blight Hatchling"
-		dialog `These Blight Shadows are weaker than the ones you've encountered in Sestor space. They could just be hatchlings. Or maybe the Ember Waste is somehow inhospitable to them.`
 
 
 
