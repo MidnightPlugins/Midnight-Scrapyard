@@ -234,7 +234,7 @@ event "Scrapyard Persitar Fleet Wreck"
 	system Persitar
 		add object "Persitar Wreck"
 			sprite "planet/wrecked sestor fleet"
-			distance 240
+			distance 500
 			period 95
 
 mission "Scrapyard Persitar Wreck Hint"
