@@ -1398,7 +1398,7 @@ ship "Skoretak 13"
 			"hit force" 1800
 	outfits
 		"Korath Grappler"
-		"Thermal Repeater" 2
+		"Korath Tormentor" 2
 		
 		"Generator (Furnace Class)"
 		"Generator (Candle Class)"
@@ -1413,8 +1413,8 @@ ship "Skoretak 13"
 
 	engine -5.5 41.5
 	engine 6 40.5
-	gun -12 -33.5 "Thermal Repeater"
-	gun 12.5 -33.5 "Thermal Repeater"
+	gun -12 -33.5 "Korath Tormentor"
+	gun 12.5 -33.5 "Korath Tormentor"
 	gun 1.5 -33 "Korath Grappler"
 	explode "tiny explosion" 30
 	explode "small explosion" 10
@@ -1450,7 +1450,7 @@ ship "Tercheldar 150"
 	outfits
 		"Korath Detainer"
 		"Korath Grappler" 2
-		"Warder Anti-Missile" 2
+		"Korath Warder" 2
 		
 		"Double Plasma Core"
 		"Generator (Furnace Class)"
@@ -1547,6 +1547,7 @@ ship "Stakoshtar 187"
 ship "Stakoshtar 187" "Stakoshtar 187(SD)"
 	add attributes
 		"self destruct" 1
+
 
 
 #####################
