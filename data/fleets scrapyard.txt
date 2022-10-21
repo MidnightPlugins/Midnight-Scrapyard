@@ -600,16 +600,18 @@ fleet "Kor Sestor Expedition"
 	government "Kor Sestor"
 	names "kor sestor"
 	personality timid uninterested
-	commodities Equipment Electronics Construction
-	variant 2
+	commodities Equipment Electronics Industrial
+	variant 9
 		"Grakerat 572"
 		"Tercheldar 150" 2
 		"Skoretak 13" 8
-		
+
+
+
 fleet "Mereti Automine"
 	government "Kor Mereti"
 	personality
-		heroic
+		heroic mute
 	variant 2
 		"Mechanized Mine"
 		"Phantom Mine Launcher"

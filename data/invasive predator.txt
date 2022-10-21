@@ -394,7 +394,6 @@ ship "Palavret" "Korath Raider (Infested)"
 		"self destruct" 1
 		"fuel capacity" 200
 		"jump drive" 1
-		"hyperdrive" 1
 		"jump speed" .2
 		"jump fuel" 200
 		"cargo space" 90
@@ -430,7 +429,6 @@ ship "Rano'erek" "Korath Dredger (Infested)"
 		"self destruct" 1
 		"fuel capacity" 200
 		"jump drive" 1
-		"hyperdrive" 1
 		"jump speed" .2
 		"jump fuel" 200
 		"cargo space" 300
@@ -469,6 +467,9 @@ ship "Model 512" "Model 512 (Infested)"
 		"drag" 17.4
 		"heat dissipation" .8
 		"self destruct" 1
+		"turn" 1
+		"turning energy" 1
+		"energy capacity" 180
 		"fuel capacity" 100
 		"hyperdrive" 1
 		"jump speed" .2
@@ -505,6 +506,9 @@ ship "Model 256" "Model 256 (Infested)"
 		"heat dissipation" .9
 		"fuel capacity" 400
 		"self destruct" 1
+		"turn" 1
+		"turning energy" 1
+		"energy capacity" 180
 		"fuel capacity" 100
 		"hyperdrive" 1
 		"jump speed" .2
@@ -540,6 +544,9 @@ ship "Kar Ik Vot 349" "Kar Ik Vot 349 (Infested)"
 		"drag" 16.8
 		"heat dissipation" .5
 		"self destruct" 1
+		"turn" 1
+		"turning energy" 1
+		"energy capacity" 180
 		"fuel capacity" 100
 		"hyperdrive" 1
 		"jump speed" .2
@@ -579,6 +586,9 @@ ship "Tek Far 71 - Lek" "Tek Far 71 - Lek (Infested)"
 		"drag" 9.6
 		"heat dissipation" .6
 		"self destruct" 1
+		"turn" 1
+		"turning energy" 1
+		"energy capacity" 180
 		"fuel capacity" 100
 		"hyperdrive" 1
 		"jump speed" .2
@@ -612,6 +622,9 @@ ship "Tek Far 78 - Osk" "Tek Far 78 - Osk (Infested)"
 		"drag" 10.2
 		"heat dissipation" .55
 		"self destruct" 1
+		"turn" 1
+		"turning energy" 1
+		"energy capacity" 180
 		"fuel capacity" 100
 		"hyperdrive" 1
 		"jump speed" .2
