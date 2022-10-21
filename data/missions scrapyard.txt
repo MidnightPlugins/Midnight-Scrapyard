@@ -338,7 +338,7 @@ mission "Mereti Automines Deployed"
 	invisible
 	destination "Laki Nemparu"
 	to offer
-		"Scrapyard Threat Level" >= 1
+		"Scrapyard Threat Level" >= 35
 	on offer
 		event "Mereti Automines Deployed"
 		fail
@@ -478,7 +478,7 @@ mission "Mereti Automines Set"
 	invisible
 	destination "Laki Nemparu"
 	to offer
-		"Scrapyard Threat Level" >= 5
+		"Scrapyard Threat Level" >= 40
 	on offer
 		event "Mereti Automines Set"
 		fail

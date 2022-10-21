@@ -53,7 +53,7 @@ outfit "Energy Absorber?"
 	"unplunderable" 1
 	weapon
 		sprite "projectile/energyabsorber"
-			"frame rate" 1
+			"frame rate" 60
 		sound "energy absorber"
 		"hit effect" "beam laser impact"
 		"inaccuracy" .4
@@ -85,6 +85,7 @@ ship "Blight Shadow"
 		category "Fighter"
 		"shields" 1800
 		"hull" 3600
+		"crew equivalent" 6
 		"mass" 230
 		"drag" 4.3
 		"heat dissipation" 1.3
@@ -393,6 +394,7 @@ ship "Palavret" "Korath Raider (Infested)"
 		"self destruct" 1
 		"fuel capacity" 200
 		"jump drive" 1
+		"hyperdrive" 1
 		"jump speed" .2
 		"jump fuel" 200
 		"cargo space" 90
@@ -428,6 +430,7 @@ ship "Rano'erek" "Korath Dredger (Infested)"
 		"self destruct" 1
 		"fuel capacity" 200
 		"jump drive" 1
+		"hyperdrive" 1
 		"jump speed" .2
 		"jump fuel" 200
 		"cargo space" 300
@@ -678,6 +681,7 @@ ship "Blight Mutation"
 		category "Light Warship"
 		"shields" 3600
 		"hull" 7200
+		"crew equivalent" 12
 		"mass" 460
 		"drag" 8.6
 		"heat dissipation" 2.6
@@ -818,6 +822,7 @@ ship "Blight Horror"
 		category "Heavy Warship"
 		"shields" 7200
 		"hull" 14400
+		"crew equivalent" 24
 		"mass" 920
 		"drag" 12.9
 		"heat dissipation" 3.9
