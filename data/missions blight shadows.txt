@@ -512,6 +512,22 @@ event "Shadowblight Hai"
 	system "Bote Asu"
 		add fleet "Large Blight Shadow" 50000
 
+mission "Scrapyard Adjust Shadowblight Hai"
+	landing
+	invisible
+	to offer
+		has "event: Shadowblight Hai"
+	on offer
+		event "Adjust Shadowblight Hai"
+		fail
+
+event "Adjust Shadowblight Hai"
+	system "Bote Asu"
+		remove fleet "Large Blight Shadow"
+	system "Lom Tahr"
+		add fleet "Large Blight Shadow" 50000
+	system "Fah Root"
+		add fleet "Large Blight Shadow" 50000
 
 mission "Scrapyard Shadowblight Wanderer"
 	landing
