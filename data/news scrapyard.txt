@@ -256,6 +256,7 @@ phrase "blightshadow pirate core"
 		"Durax"
 		"Kugel"
 		"Gamma Cassiopeiae"
+		"Atik"
 		
 news "Shadowblight Pirate Core"
 	to show

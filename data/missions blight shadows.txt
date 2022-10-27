@@ -723,6 +723,18 @@ event "Shadowblight Human"
 	system Umbral
 		add fleet "Large Blight Shadow" 50000
 
+mission "Scrapyard Shadowblight Human Addon"
+	landing
+	invisible
+	to offer
+		has "Infected with Shadowblight"
+	on offer
+		event "Shadowblight Human Addon"
+		fail
+
+event "Shadowblight Human Addon"
+	system Atik
+		add fleet "Large Blight Shadow" 50000
 
 
 mission "Scrapyard Random Station Eggs"
