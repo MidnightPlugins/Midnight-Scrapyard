@@ -60,6 +60,7 @@ mission "Scrapyard: Escort Kor Efret Visitors"
 		government "Wanderer"
 		attributes "spaceport"
 		not attributes "uninhabited"
+	destination "Laki Nemparu"
 	to offer
 		has "event: wanderers taking jobs from kor efreti"
 		not "event: Laki Nemparu opens Shipyard"
