@@ -1727,6 +1727,15 @@ ship "Echo-Galleon" "Echo-Galleon (Fireswarm)"
 		"Systems Core (Large)"
 		"Thermal Repeater Rifle" 246
 		"Warder Anti-Missile" 2
+	turret "Grab-Strike Turret"
+	turret "Grab-Strike Turret"
+	turret "Warder Anti-Missile"
+	turret "Warder Anti-Missile"
+	turret "Banisher Grav-Turret"
+	gun "Korath Fireswarm Launcher"
+	gun "Korath Fireswarm Launcher"
+	gun "Digger Mining Beam"
+	gun "Digger Mining Beam"
 
 ship "Arch-Carrack" "Arch-Carrack (Fireswarm)"
 	outfits
@@ -1745,6 +1754,11 @@ ship "Arch-Carrack" "Arch-Carrack (Fireswarm)"
 		"Systems Core (Large)"
 		"Thermal Repeater Rifle" 55
 		"Warder Anti-Missile" 2
+	turret "Warder Anti-Missile"
+	turret "Banisher Grav-Turret"
+	turret "Warder Anti-Missile"
+	gun "Korath Fireswarm Launcher"
+	gun "Korath Fireswarm Launcher"
 
 ship "Charm-Shallop" "Charm-Shallop (Fireswarm)"
 	outfits
@@ -1764,6 +1778,11 @@ ship "Charm-Shallop" "Charm-Shallop (Fireswarm)"
 		"Systems Core (Medium)"
 		"Thermal Repeater Rifle" 66
 		"Warder Anti-Missile"
+	turret "Warder Anti-Missile"
+	turret "Banisher Grav-Turret"
+	gun "Digger Mining Beam"
+	gun "Korath Fireswarm Launcher"
+	gun "Korath Fireswarm Launcher"
 
 ship "Charm-Shallop" "Charm-Shallop (Scanner)"
 	outfits
@@ -1780,6 +1799,11 @@ ship "Charm-Shallop" "Charm-Shallop (Scanner)"
 		"Gaktem GP Hybrid Thruster"
 		"Gaktem GP Hybrid Steering"
 		"Scram Drive"
+	turret "Warder Anti-Missile"
+	turret "Banisher Grav-Turret"
+	gun "Digger Mining Beam"
+	gun "Digger Mining Beam"
+	gun "Digger Mining Beam"
 
 ship "Charm-Shallop" "Charm-Shallop (Fireswarm Scanner)"
 	outfits
@@ -1799,6 +1823,11 @@ ship "Charm-Shallop" "Charm-Shallop (Fireswarm Scanner)"
 		"Systems Core (Medium)"
 		"Thermal Repeater Rifle" 66
 		"Warder Anti-Missile"
+	turret "Warder Anti-Missile"
+	turret "Banisher Grav-Turret"
+	gun "Korath Fireswarm Launcher"
+	gun "Digger Mining Beam"
+	gun "Digger Mining Beam"
 
 
 ship "Vault-Barge" "Korath Transport"
