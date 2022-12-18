@@ -605,6 +605,14 @@ fleet "Kor Sestor Expedition"
 		"Grakerat 572"
 		"Tercheldar 150" 2
 		"Skoretak 13" 8
+	variant 8
+		"Grakerat 572"
+		"Tercheldar 150" 3
+		"Skoretak 13" 8
+	variant 7
+		"Grakerat 572"
+		"Tercheldar 150" 4
+		"Skoretak 13" 8
 
 
 

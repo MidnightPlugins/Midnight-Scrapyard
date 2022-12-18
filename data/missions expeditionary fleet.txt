@@ -162,7 +162,12 @@ mission "Scrapyard Uwa Fahn Attack"
 		system "Uwa Fahn"
 		government "Kor Sestor"
 		personality target waiting staying
-		fleet "Kor Sestor Expedition"
+		fleet
+			names "kor sestor"
+			variant
+				"Grakerat 572"
+				"Tercheldar 150" 4
+				"Skoretak 13" 8
 		dialog `The alien fleet has been defeated. Check if the authorities on <planet> will reward you for your efforts.`
 	
 	on complete
@@ -203,14 +208,14 @@ mission "Scrapyard Bore Fah Attack"
 		personality heroic
 		fleet "Small Hai"
 		fleet "Hai Surveillance"
-	
+
 	npc kill
 		system "Bore Fah"
 		government "Invasive Predator"
 		personality target waiting disables unconstrained mute staying
 		fleet "Infested Sestor Expedition"
 		dialog `The alien threat has been defeated. Check if the authorities on <planet> will reward you for your efforts.`
-	
+
 	on complete
 		payment 500000
 		dialog `The authorities of <planet> reward you with <payment> for helping to defend against the alien threat.`
@@ -330,8 +335,8 @@ mission "Scrapyard Stakoshstar 1"
 			commodities Equipment Electronics Construction
 			variant
 				"Grakerat 572"
-				"Tercheldar 150" 2
-				"Skoretak 13" 4
+				"Tercheldar 150" 4
+				"Skoretak 13" 8
 				"Stakoshtar 187"
 		conversation
 			scene "ship/stakoshtar 187/stakoshtar"
@@ -366,6 +371,11 @@ event "Stakoshstar Expeditions"
 	fleet "Kor Sestor Expedition"
 		add variant 1
 			"Grakerat 572"
-			"Tercheldar 150" 2
+			"Tercheldar 150" 4
 			"Skoretak 13" 8
 			"Stakoshtar 187(SD)"
+		add variant 1
+			"Grakerat 572"
+			"Tercheldar 150" 4
+			"Skoretak 13" 8
+			"Stakoshtar 187(SD)" 2
