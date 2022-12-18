@@ -99,7 +99,7 @@ mission "Scrapyard Korath Tractor 1"
 	npc board
 		government "Kor Scrappers (Hostile)"
 		system "Sobarati"
-		personality waiting staying heroic mute
+		personality waiting staying opportunistic mute
 			confusion 60
 		fleet
 			names "korath"
@@ -188,10 +188,17 @@ mission "Scrapyard Devourer (Infested) 1"
 	invisible
 	to offer
 		"Scrapyard Threat Level" >= 16
+	npc
+		government "Invasive Predator"
+		system "Makferuti"
+		personality waiting staying heroic mute
+		fleet
+			variant
+				"Blight Hatchling" 12
 	npc kill
 		government "Kor Scrappers (Hostile)"
 		system "Makferuti"
-		personality waiting staying opportunistic uninterested
+		personality waiting staying opportunistic mute
 			confusion 60
 		fleet
 			names "korath"
@@ -200,7 +207,6 @@ mission "Scrapyard Devourer (Infested) 1"
 			outfitters "Korath Basics"
 			variant
 				"Korath Devourer (Infested)"
-				"Blight Hatchling" 12
 
 mission "Scrapyard Devourer (Neutral) 1"
 	landing
@@ -302,7 +308,6 @@ mission "Scrapyard Scrapper Siege (Mekislepti)"
 		"reputation: Wanderer" ++
 		"reputation: Kor Mereti" += 8
 		dialog `You update Meto Pa'aret on the result of the battle. Your reputation with the Wanderers and Mereti has improved.`
-		
 
 mission "Scrapyard Scrapper Siege (Similisti)"
 	landing
@@ -899,6 +904,124 @@ mission "Scrapyard Devourer (Neutral) 2"
 		personality waiting staying mining harvests plunders uninterested
 		fleet "Korath Devourer (Neutral)"
 
+
+
+mission "Scrapyard Scrapper Base Sebra Skira"
+	landing
+	invisible
+	source
+		attributes korath
+		not planet "Sebra Skira"
+	destination "Sebra Skira"
+	to offer
+		"Scrapyard Threat Level" >= 1
+		random < 10
+	on enter "Silikatakfar"
+		conversation
+			scene "thumbnail/world-ship b"
+			`A Korath Scrapper Ra'gru Ik 618 and its fleet of salvaged automatons launches from Sebra Skira station and targets you!`
+	npc disable
+		government "Kor Scrappers (Hostile)"
+		system "Silikatakfar"
+		personality waiting staying mining harvests plunders
+		fleet
+			names "korath"
+			cargo 10
+			commodities "Metal" "Heavy Metals"
+			outfitters "Korath Basics"
+			variant
+				"Ra'gru Ik 618 (Sestor)"
+				"Model 512 (scrapper)"
+				"Kar Ik Vot 349 (Defense)"
+				"Met Par Tek 53" 2
+				"Model 16 (scrapper)"
+				"Model 32 (scrapper)"
+	on complete
+		outfit "Piercer Missile Rack" 8
+		outfit "Piercer Missile" 128
+		conversation
+			scene "outfit/korath piercer storage"
+			`A search of the abandoned station uncovers a hidden cache of Sestor ammunition.`
+
+mission "Scrapyard Scrapper Base Esperaktu"
+	landing
+	invisible
+	source
+		attributes korath
+		not planet "Esperaktu Station"
+	destination "Esperaktu Station"
+	to offer
+		has "Scrapyard Damnation Epilogue: done"
+		random < 10
+	on enter "Faronektu"
+		conversation
+			scene "thumbnail/world-ship b"
+			`A Korath Scrapper Ra'gru Ik 618 and its fleet of salvaged automatons launches from Esperaktu station and targets you!`
+	npc disable
+		government "Kor Scrappers (Hostile)"
+		system "Faronektu"
+		personality waiting staying mining harvests plunders
+		fleet
+			names "korath"
+			cargo 10
+			commodities "Metal" "Heavy Metals"
+			outfitters "Korath Basics"
+			variant
+				"Ra'gru Ik 618 (Mereti)"
+				"Model 512"
+				"Kar Ik Vot 349 (scrapper)"
+				"Model 128" 2
+				"Met Par Tek 53 (scrapper)"
+				"Model 8" 8
+	on complete
+		outfit "Cluster Mine Rack" 8
+		outfit "Cluster Mine" 72
+		conversation
+			scene "outfit/korath mine storage"
+			`A search of the abandoned station uncovers a hidden cache of Mereti ammunition.`
+
+mission "Scrapyard Scrapper Base Makwar Pratarati"
+	landing
+	invisible
+	source
+		attributes korath
+		not planet "Makwar Pratarati" "Metwar Skaretar"
+	destination "Makwar Pratarati"
+	to offer
+		has "Scrapyard Scrapper Base Sebra Skira: done"
+		has "Scrapyard Scrapper Base Esperaktu: done"
+		random < 15
+	on enter "Mesuket"
+		conversation
+			scene "thumbnail/world-ship e"
+			`A Korath Scrapper Ra'at Ik 621 and its fleet of salvaged automatons launches from Makwar Pratarati station and targets you!`
+	npc disable
+		government "Kor Scrappers (Hostile)"
+		system "Mesuket"
+		personality waiting staying mining harvests plunders
+		fleet
+			names "korath"
+			cargo 10
+			commodities "Metal" "Heavy Metals"
+			outfitters "Korath Basics"
+			variant
+				"Ra'at Ik 621 (Automata)"
+				"Model 512"
+				"Model 16" 4
+				"Model 8" 8
+				"Kar Ik Vot 349 (Defense)"
+				"Met Par Tek 53 (Sniper)" 2
+				"Far Osk 27" 9
+				"Far Lek 14" 6
+	on complete
+		outfit "Piercer Missile Rack" 8
+		outfit "Piercer Missile" 128
+		outfit "Cluster Mine Rack" 8
+		outfit "Cluster Mine" 72
+		conversation
+			scene "outfit/korath piercer storage"
+			scene "outfit/korath mine storage"
+			`A search of the abandoned station uncovers a hidden cache of Korath ammunition.`
 
 
 

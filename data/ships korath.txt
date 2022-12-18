@@ -1708,6 +1708,97 @@ ship "Korath World-Ship" "Korath World-Ship C (Fireswarm)"
 	bay "Fighter"  45 -100
 	bay "Fighter" 0 -100
 
+ship "Echo-Galleon" "Echo-Galleon (Fireswarm)"
+	outfits
+		"Banisher Grav-Turret"
+		"Digger Mining Beam" 2
+		"Double Plasma Core"
+		"Fuel Processor"
+		"Generator (Inferno Class)"
+		"Grab-Strike Turret" 2
+		"Korath Fireswarm" 60
+		"Korath Fireswarm Launcher" 2
+		"Korath Fireswarm Nest" 2
+		"Large Heat Shunt"
+		"Nelmeb GP Hybrid Steering"
+		"Nelmeb GP Hybrid Thruster"
+		"Outfits Expansion" 3
+		"Scram Drive"
+		"Systems Core (Large)"
+		"Thermal Repeater Rifle" 246
+		"Warder Anti-Missile" 2
+
+ship "Arch-Carrack" "Arch-Carrack (Fireswarm)"
+	outfits
+		"Banisher Grav-Turret"
+		"Double Plasma Core"
+		"Farves GP Hybrid Thruster"
+		"Fuel Processor"
+		"Gaktem GP Hybrid Steering"
+		"Gaktem GP Hybrid Thruster"
+		"Generator (Furnace Class)"
+		"Korath Fireswarm" 50
+		"Korath Fireswarm Launcher" 2
+		"Korath Fireswarm Nest"
+		"Large Heat Shunt"
+		"Scram Drive"
+		"Systems Core (Large)"
+		"Thermal Repeater Rifle" 55
+		"Warder Anti-Missile" 2
+
+ship "Charm-Shallop" "Charm-Shallop (Fireswarm)"
+	outfits
+		"Banisher Grav-Turret"
+		"Digger Mining Beam"
+		"Double Plasma Core"
+		"Fuel Processor"
+		"Gaktem GP Hybrid Steering"
+		"Gaktem GP Hybrid Thruster"
+		"Generator (Candle Class)"
+		"Korath Fireswarm" 60
+		"Korath Fireswarm Launcher" 2
+		"Korath Fireswarm Nest" 2
+		"Large Heat Shunt"
+		"Outfits Expansion"
+		"Scram Drive"
+		"Systems Core (Medium)"
+		"Thermal Repeater Rifle" 66
+		"Warder Anti-Missile"
+
+ship "Charm-Shallop" "Charm-Shallop (Scanner)"
+	outfits
+		"Digger Mining Beam" 3
+		"Warder Anti-Missile"
+		"Banisher Grav-Turret"
+		"Double Plasma Core"
+		"Generator (Candle Class)"
+		"Systems Core (Medium)"
+		"Large Heat Shunt"
+		"Fuel Processor"
+		"Thermal Repeater Rifle" 66
+		"Korath Scanner" 2
+		"Gaktem GP Hybrid Thruster"
+		"Gaktem GP Hybrid Steering"
+		"Scram Drive"
+
+ship "Charm-Shallop" "Charm-Shallop (Fireswarm Scanner)"
+	outfits
+		"Banisher Grav-Turret"
+		"Digger Mining Beam" 2
+		"Double Plasma Core"
+		"Fuel Processor"
+		"Gaktem GP Hybrid Steering"
+		"Gaktem GP Hybrid Thruster"
+		"Generator (Candle Class)"
+		"Korath Fireswarm" 30
+		"Korath Fireswarm Launcher"
+		"Korath Fireswarm Nest"
+		"Korath Scanner"
+		"Large Heat Shunt"
+		"Scram Drive"
+		"Systems Core (Medium)"
+		"Thermal Repeater Rifle" 66
+		"Warder Anti-Missile"
 
 
 ship "Vault-Barge" "Korath Transport"
@@ -1852,7 +1943,6 @@ ship "Delta-Ferry"
 			"hit force" 6000
 	outfits
 		"Warder Anti-Missile" 2
-		
 		"Double Plasma Core"
 		"Systems Core (Large)"
 		"Large Heat Shunt" 1

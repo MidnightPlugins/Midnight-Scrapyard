@@ -20,14 +20,16 @@
 outfitter "Korath Basics"
 	"Korath Scanner"
 
-mission "Add Fireswarm World-Ships"
+
+
+mission "Scrapyard: Add Fireswarm Kor Efret"
 	landing
 	invisible
 	on offer
-		event "add fireswarm world-ships"
+		event "add fireswarm kor efret"
 		fail
 
-event "add fireswarm world-ships"
+event "add fireswarm kor efret"
 	fleet "Kor Efret Home"
 		add variant 4
 			"Echo-Galleon"
@@ -35,6 +37,12 @@ event "add fireswarm world-ships"
 			"Arch-Carrack"
 		add variant 2
 			"Charm-Shallop"
+		add variant 2
+			"Echo-Galleon (Fireswarm)"
+		add variant 3
+			"Arch-Carrack (Fireswarm)"
+		add variant 1
+			"Charm-Shallop (Fireswarm)"
 		add variant 1
 			"Korath World-Ship (Fireswarm)"
 			"Eave-Skiff" 3
@@ -44,6 +52,11 @@ event "add fireswarm world-ships"
 		add variant 1
 			"Korath World-Ship C (Fireswarm)"
 			"Eave-Skiff" 3
+	fleet "Kor Efret Miners"
+		add variant 2
+			"Charm-Shallop"
+		add variant 1
+			"Charm-Shallop (Fireswarm)"
 
 outfitter "Korath Fireswarm"
 	"Korath Fireswarm"
@@ -107,6 +120,7 @@ mission "Scrapyard: Laki Nemparu Shipyard"
 		dialog `The shipyard appears to be open. A fleet of new ships is on display.`
 		
 shipyard "Kor Efret Scrapyard"
+	"Echo-Galleon"
 	"Arch-Carrack"
 	"Charm-Shallop"
 	"Eave-Skiff"
@@ -244,7 +258,6 @@ ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"
 		"Large Heat Shunt"
 		"Small Heat Shunt" 2
 		"Thermal Repeater Rifle" 150
-		"Microbot Defense Station" 19
 		"Thruster (Planetary Class)(Damaged)"
 		"Steering (Planetary Class)(Damaged)"
 		"Hyperdrive (Damaged)"
@@ -265,6 +278,24 @@ ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"
 	bay "Fighter" -34 -70
 	bay "Fighter" 34 -70
 	bay "Fighter" 0 -70
+
+
+
+mission "Scrapyard: Add Kor Efret Scanners"
+	landing
+	invisible
+	to offer
+		has "Scrapyard Derelict World Ship: done"
+	on offer
+		event "add kor efret scanners"
+		fail
+
+event "add kor efret scanners"
+	fleet "Kor Efret Miners"
+		add variant 1
+			"Charm-Shallop (Scanner)"
+		add variant 1
+			"Charm-Shallop (Fireswarm Scanner)"
 
 
 mission "Scrapyard: Warmonger Construction"
@@ -849,6 +880,7 @@ mission "Scrapyard: Escort to Wanderer Colony (Big)"
 		neighbor near "Kaliptari"
 	to offer
 		has "event: wanderers taking jobs from kor efreti"
+		has "event: Blight Shadow Infestation"
 		random < 15
 	npc
 		government "Invasive Predator"
@@ -861,10 +893,14 @@ mission "Scrapyard: Escort to Wanderer Colony (Big)"
 		personality target escort timid
 		fleet
 			names "korath"
-			variant 3
+			variant 2
 				"Echo-Galleon"
-			variant 5
+			variant 4
 				"Arch-Carrack"
+			variant 1
+				"Echo-Galleon (Fireswarm)"
+			variant 2
+				"Arch-Carrack (Fireswarm)"
 			variant 1
 				"Korath World-Ship (Fireswarm)"
 				"Eave-Skiff" 3
@@ -892,6 +928,7 @@ mission "Scrapyard: Escort to Wanderer Colony (Small)"
 		neighbor near "Kaliptari"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
+		has "event: Blight Shadow Infestation"
 		random < 25
 	npc
 		government "Invasive Predator"
@@ -926,6 +963,7 @@ mission "Scrapyard: Escort to Wanderer Worlds A"
 		not near "Kaliptari"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
+		has "event: Blight Shadow Infestation"
 		random < 25
 	npc
 		government "Invasive Predator"
@@ -938,8 +976,10 @@ mission "Scrapyard: Escort to Wanderer Worlds A"
 		personality target escort timid
 		fleet
 			names "korath"
-			variant
+			variant 2
 				"Charm-Shallop"
+			variant 1
+				"Charm-Shallop (Scanner)"
 	on complete
 		payment 400000
 		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
@@ -958,6 +998,7 @@ mission "Scrapyard: Escort to Wanderer Worlds B"
 		not near "Kaliptari"
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
+		has "event: Blight Shadow Infestation"
 		random < 25
 	npc
 		government "Invasive Predator"
@@ -970,8 +1011,10 @@ mission "Scrapyard: Escort to Wanderer Worlds B"
 		personality target escort timid
 		fleet
 			names "korath"
-			variant
+			variant 2
 				"Charm-Shallop"
+			variant 1
+				"Charm-Shallop (Scanner)"
 	on complete
 		payment 200000
 		dialog `The captain of the <npc> thanks you for escorting them to <planet> and pays you <payment>.`
@@ -992,6 +1035,7 @@ mission "Scrapyard: Kor Efret Salvage"
 		dialog `The Kor Efret crew work quickly to scavenge as much as they can. After loading their ship, the captain signals it's time to return to <destination>.`
 	to offer
 		has "event: Laki Nemparu opens Shipyard"
+		has "event: Blight Shadow Infestation"
 		random < 25
 	npc
 		government "Invasive Predator"
@@ -1005,7 +1049,9 @@ mission "Scrapyard: Kor Efret Salvage"
 		fleet
 			names "korath"
 			variant
-				"Charm-Shallop"
+				"Charm-Shallop (Scanner)"
+			variant
+				"Charm-Shallop (Fireswarm Scanner)"
 	on complete
 		payment 400000
 		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.`
@@ -1028,6 +1074,7 @@ mission "Scrapyard: Wanderer Planetary Survey"
 		dialog `The Wanderer scientists work quickly to gather samples and specimens. After completing their mission objectives, the captain signals it's time to return to <destination>.`
 	to offer
 		has "event: wanderers: sestor planets unrestricted"
+		has "event: Blight Shadow Infestation"
 		random < 25
 	npc
 		government "Invasive Predator"
@@ -1047,6 +1094,19 @@ mission "Scrapyard: Wanderer Planetary Survey"
 		dialog `The captain of the <npc> thanks you for safely escorting them back to <planet> and pays you <payment>.`
 
 
+
+#######################
+# Deprecated
+#######################
+
+mission "Add Fireswarm World-Ships"
+	landing
+	invisible
+	to offer
+		never
+	on offer
+		fail
+event "add fireswarm world-ships"
 
 # content moved to Lost in Midnight
 # placeholder to prevent missing mission error
