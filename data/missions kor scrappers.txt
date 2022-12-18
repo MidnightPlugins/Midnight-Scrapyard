@@ -936,6 +936,7 @@ mission "Scrapyard Scrapper Base Sebra Skira"
 				"Met Par Tek 53" 2
 				"Model 16 (scrapper)"
 				"Model 32 (scrapper)"
+		dialog `The scrapper fleet came from Sebra Skira station. They could have left something there.`
 	on complete
 		outfit "Piercer Missile Rack" 8
 		outfit "Piercer Missile" 128
@@ -952,7 +953,7 @@ mission "Scrapyard Scrapper Base Esperaktu"
 	destination "Esperaktu Station"
 	to offer
 		has "Scrapyard Damnation Epilogue: done"
-		random < 10
+		random < 15
 	on enter "Faronektu"
 		conversation
 			scene "thumbnail/world-ship b"
@@ -973,6 +974,7 @@ mission "Scrapyard Scrapper Base Esperaktu"
 				"Model 128" 2
 				"Met Par Tek 53 (scrapper)"
 				"Model 8" 8
+		dialog `The scrapper fleet came from Esperaktu station. They could have left something there.`
 	on complete
 		outfit "Cluster Mine Rack" 8
 		outfit "Cluster Mine" 72
@@ -990,7 +992,7 @@ mission "Scrapyard Scrapper Base Makwar Pratarati"
 	to offer
 		has "Scrapyard Scrapper Base Sebra Skira: done"
 		has "Scrapyard Scrapper Base Esperaktu: done"
-		random < 15
+		random < 20
 	on enter "Mesuket"
 		conversation
 			scene "thumbnail/world-ship e"
@@ -1013,6 +1015,7 @@ mission "Scrapyard Scrapper Base Makwar Pratarati"
 				"Met Par Tek 53 (Sniper)" 2
 				"Far Osk 27" 9
 				"Far Lek 14" 6
+		dialog `The scrapper fleet came from Makwar Pratarati station. They could have left something there.`
 	on complete
 		outfit "Piercer Missile Rack" 8
 		outfit "Piercer Missile" 128
@@ -1021,7 +1024,7 @@ mission "Scrapyard Scrapper Base Makwar Pratarati"
 		conversation
 			scene "outfit/korath piercer storage"
 			scene "outfit/korath mine storage"
-			`A search of the abandoned station uncovers a hidden cache of Korath ammunition.`
+			`A search of the abandoned station uncovers a hidden cache of Korath automata ammunition.`
 
 
 
