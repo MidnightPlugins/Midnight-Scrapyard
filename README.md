@@ -12,8 +12,9 @@ Highlights
 - a pet that accompanies your fleet into battle
 - two unique boarding weapons
 - Korath equivalent of "Marauder" Raiders
-- new ships
+- new ships and ship variants
+- new outfits
 - a shipyard opens for the Kor Efret
 - an infestation that threatens to expand beyond the Scrapyard
 
-Note: Most of this content requires that the player completed the Wanderer storyline content (Endless Sky ver.0.9.14)
+Note: Most of this content requires that the player completed the Wanderer storyline content (Endless Sky ver.0.9.16)
