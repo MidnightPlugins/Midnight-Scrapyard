@@ -2031,7 +2031,7 @@ ship "Korath Warmonger"
 		
 		"Double Plasma Core"
 		"Systems Core (Medium)"
-		"Large Heat Shunt" 2
+		"Large Heat Shunt" 3
 		"Fuel Processor"
 		"Thermal Repeater Rifle" 70
 		
@@ -2060,6 +2060,30 @@ ship "Korath Warmonger"
 
 
 
+ship "Korath Warmonger" "Korath Warmonger (Fireswarm)"
+	outfits
+		"Afterburner (Asteroid Class)" 2
+		"Double Plasma Core"
+		"Fuel Processor"
+		Hyperdrive
+		"Korath Fireswarm" 60
+		"Korath Fireswarm Launcher" 2
+		"Korath Fireswarm Nest" 2
+		"Large Heat Shunt" 2
+		"Outfits Expansion"
+		"Small Heat Shunt"
+		"Steering (Lunar Class)"
+		"Systems Core (Medium)"
+		"Systems Core (Small)"
+		"Thermal Repeater Rifle" 70
+		"Thermal Repeater Turret" 2
+		"Thruster (Lunar Class)"
+		"Warder Anti-Missile" 2
+	turret "Thermal Repeater Turret"
+	turret "Thermal Repeater Turret"
+	turret "Warder Anti-Missile"
+	turret "Warder Anti-Missile"
+	
 ship "Korath Warmonger" "Korath Warmonger (Grappler)"
 	outfits
 		"Korath Grappler" 2

@@ -368,6 +368,46 @@ event "Warmonger Construction Completed"
 			"Korath Warmonger"
 			"Eave-Skiff" 5
 
+mission "Scrapyard: Warmonger Fireswarm Update"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "event: Warmonger Construction Completed"
+	on offer
+		event "Warmonger Fireswarm Update"
+		fail
+
+event "Warmonger Fireswarm Update"
+	fleet "Kor Efret Home"
+		add variant 5
+			"Korath Warmonger (Fireswarm)"
+			"Eave-Skiff" 2
+		add variant 2
+			"Echo-Galleon (Fireswarm)"
+			"Korath Warmonger (Fireswarm)" 2
+			"Eave-Skiff" 4
+		add variant 3
+			"Arch-Carrack (Fireswarm)"
+			"Korath Warmonger (Fireswarm)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Charm-Shallop (Fireswarm)"
+			"Korath Warmonger (Fireswarm)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Vault-Barge"
+			"Korath Warmonger (Fireswarm)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Bravo-Monitor"
+			"Korath Warmonger (Fireswarm)"
+			"Eave-Skiff" 2
+		add variant 1
+			"Delta-Ferry"
+			"Korath Warmonger (Fireswarm)"
+			"Eave-Skiff" 5
+
 
 
 mission "Scrapyard: Efret Salvage License 1"
