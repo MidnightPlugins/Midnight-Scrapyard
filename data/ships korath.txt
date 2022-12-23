@@ -1506,8 +1506,8 @@ ship "Stakoshtar 187"
 			"hit force" 18510
 	outfits
 		"Korath Eliminator"
-		"Banisher Grav-Turret" 4
-		"Warder Anti-Missile" 4
+		"Korath Banisher" 4
+		"Korath Warder" 4
 
 		"Triple Plasma Core"
 		"Plasma Core"
@@ -1526,14 +1526,14 @@ ship "Stakoshtar 187"
 	engine -37 224
 	engine 37 224
 	gun 0 -219 "Korath Eliminator"
-	turret -34.5 -121 "Banisher Grav-Turret"
-	turret 39.5 -121 "Warder Anti-Missile"
-	turret -36 -98 "Warder Anti-Missile"
-	turret 41 -98 "Banisher Grav-Turret"
-	turret -37.5 -74 "Banisher Grav-Turret"
-	turret 43 -74 "Warder Anti-Missile"
-	turret -39 -51 "Warder Anti-Missile"
-	turret 44.5 -51 "Banisher Grav-Turret"
+	turret -34.5 -121 "Korath Banisher"
+	turret 39.5 -121 "Korath Warder"
+	turret -36 -98 "Korath Warder"
+	turret 41 -98 "Korath Banisher"
+	turret -37.5 -74 "Korath Banisher"
+	turret 43 -74 "Korath Warder"
+	turret -39 -51 "Korath Warder"
+	turret 44.5 -51 "Korath Banisher"
 	explode "tiny explosion" 60
 	explode "small explosion" 26
 	explode "medium explosion" 47

@@ -635,8 +635,6 @@ mission "Scrapyard Sebra Skira TL20"
 		"Scrapyard Threat Level" >= 20
 	on enter "Silikatakfar"
 		dialog `There's an old space station here. It might be worth checking out.`
-	on accept
-		fail
 
 mission "Scrapyard Hermit"
 	landing

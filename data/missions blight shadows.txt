@@ -34,8 +34,6 @@ mission "Scrapyard Sebra Skira TL5"
 		"Scrapyard Threat Level" >= 5
 	on enter "Silikatakfar"
 		dialog `There's an old space station here. It might be worth checking out.`
-	on accept
-		fail
 
 mission "Scrapyard Eggs Pirate 1"
 	landing
@@ -194,8 +192,6 @@ mission "Scrapyard Devru Kaska TL15"
 			has "Scrapyard Pirate Eggs Hatch: offered"
 	on enter "Sobarati"
 		dialog `There's an old space station here. It might be worth checking out.`
-	on accept
-		fail
 
 mission "Scrapyard Eggs Remnant 1"
 	landing
