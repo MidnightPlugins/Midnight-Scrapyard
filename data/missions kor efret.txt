@@ -901,6 +901,99 @@ mission "Scrapyard Mereti Efret Sales"
 			`You can see that the Mereti Efret has been added to the inventory at the shipyard. But no one is lining up to buy. The reason why isn't difficult to figure out once you see the price. There is a huge disparity between the cost of a Mereti Efret and those of the other ships available for sale.`
 				decline
 
+
+
+mission "Laki Nemparu Bullies 1"
+	landing
+	invisible
+	source
+		attributes "korath"
+		not planet "Laki Nemparu"
+	destination "Laki Nemparu"
+	to offer
+		has "event: access efret salvage"
+	on enter "Kashikt"
+		dialog `A Model 512 automata is lurking near Laki Nemparu. Hailing it gets a response reminiscent of the Korath near the galactic core.`
+	npc save
+		government "Korath (Civilian)"
+		system "Kashikt"
+		personality waiting staying
+		ship "Model 512 (Jump)" "Ber Ertakari"
+	on fail
+		event "laki nemparu bullies"
+	on complete
+		event "laki nemparu bullies"
+
+event "laki nemparu bullies"
+	planet "Laki Nemparu"
+		remove shipyard "Kor Efret Scrapyard"
+		remove outfitter "Korath Basics"
+		remove outfitter "Korath Fireswarm"
+		remove outfitter "Efret Salvage"
+		remove outfitter "Efret Salvage Advanced"
+
+mission "Laki Nemparu Bullies 2 [Ongoing]"
+	repeat
+	invisible
+	source "Laki Nemparu"
+	to offer
+		has "Laki Nemparu Bullies 2: active"
+	on offer
+		dialog `The spaceport, outfitters, and shipyard are in disarray. The crew of the Grakeratus must have been tormenting the locals again.`
+	on accept
+		fail
+
+
+mission "Laki Nemparu Bullies 2"
+	landing
+	invisible
+	source "Laki Nemparu"
+	to offer
+		or
+			has "Laki Nemparu Bullies 1: done"
+			has "Laki Nemparu Bullies 1: failed"
+	on offer
+		conversation
+			scene "thumbnail/world-ship f"
+			`A Kasichara A'awoj, the Grakeratus, was parked in the spaceport along with more automata. Non-Efreti Korath have invaded the spaceport, outfitters, and shipyard. One flips a street vendor's table, scattering merchandise onto the ground while another has a group of Efreti cowering in fear while he yells at them. Although you don't understand their language, it's clear that they are bullying the locals. The one yelling notices you and sneers before leaving. The other non-Efreti Korath notice his departure and follow.`
+			`	The Kor Efret relax and begin cleaning up the mess. Some seem grateful to you. But it's doubtful that you've seen the last of those troublemakers. And you might have trouble buying supplies while that crew of Korath Exiles is around.`
+				accept
+	on enter "Kashikt"
+		dialog `The Grakeratus is in no rush to leave the system. If left alone they will likely continue to torment the inhabitants of Laki Nemparu.`
+	npc
+		to spawn
+			has "Laki Nemparu Bullies 1: done"
+		government "Korath"
+		system "Kashikt"
+		personality waiting staying heroic
+		ship "Model 512 (Jump)" "Ber Ertakari"
+	npc
+		government "Korath"
+		system "Kashikt"
+		personality waiting staying heroic
+		ship "Model 512 (Jump)" "Ber Ertaketar"
+		ship "Kar Ik Vot 349 (Jump)" "Urkotore"
+		ship "Kar Ik Vot 349 (Jump)" "Eskotore"
+	npc kill
+		government "Korath"
+		system "Kashikt"
+		personality waiting staying timid uninterested
+		ship "Kasichara A'awoj (Jump)" "Grakeratus"
+		dialog `You've defeated the Grakeratus. The inhabitants of <origin> won't be bothered by them again.`
+	on complete
+		event "laki nemparu bullies defeated"
+		dialog `Shipyard and outfitters operations should soon return to normal with the crew of the Grakeratus gone.`
+
+event "laki nemparu bullies defeated"
+	planet "Laki Nemparu"
+		add shipyard "Kor Efret Scrapyard"
+		add outfitter "Korath Basics"
+		add outfitter "Korath Fireswarm"
+		add outfitter "Efret Salvage"
+		add outfitter "Efret Salvage Advanced"
+
+
+
 ######################
 # Jobs
 ######################
