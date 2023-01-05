@@ -2211,6 +2211,7 @@ ship "Korath Devourer"
 		"Grab-Strike Turret" 3
 		"Shield Disruptor Turret"
 		"Husk-Slice Turret"
+		"Digger Mining Turret" 2
 		"Warder Anti-Missile" 3
 		
 		"Triple Plasma Core"
@@ -2250,10 +2251,10 @@ ship "Korath Devourer"
 	turret 40 -179 "Husk-Slice Turret"
 	turret -61 -175 "Grab-Strike Turret"
 	turret 61 -175 "Grab-Strike Turret"
-	turret -42 -55
+	turret -42 -55 "Digger Mining Turret"
 	turret 42 -55 "Warder Anti-Missile"
 	turret -42 100 "Warder Anti-Missile"
-	turret 42 100
+	turret 42 100 "Digger Mining Turret"
 	turret 0 247 "Warder Anti-Missile"
 	bay "Fighter" -88 -45
 	bay "Fighter" 88 -45
