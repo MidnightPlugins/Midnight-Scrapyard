@@ -10,6 +10,25 @@
 
 
 
+outfit "Afterburner (Meteor Class)"
+	plural "Afterburners (Meteor Class)"
+	category "Engines"
+	"cost" 340000
+	thumbnail "outfit/korath afterburner"
+	"mass" 22
+	"outfit space" -22
+	"engine capacity" -12
+	"fuel capacity" 250
+	"ramscoop" 0.63
+	"afterburner thrust" 48
+	"afterburner energy" 1.5
+	"afterburner heat" 15.63
+	"afterburner fuel" 0.08
+	"afterburner effect" "korath afterburner small"
+	description "Korath Scrappers recovered this small afterburner from the ruins of their ancestral space."
+	description "	Korath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that nearly melts the thruster."
+
+
 outfit "Automine Deployer"
 	category "Secondary Weapons"
 	cost 584150
@@ -57,8 +76,8 @@ outfit "Blight Rifle"
 		Remnant
 	cost 422000
 	thumbnail "outfit/blight rifle"
-	"capture attack" 7.2
-	"capture defense" 10.8
+	"capture attack" 11.1
+	"capture defense" 8.9
 	"unplunderable" 1
 	description "A prototype the Remnant created using Blight Shadow eggs. This weapon drains energy from whatever it is used on. This can disrupt electronic door locks and reduces living creatures into withered husks. This effect also replenishes its own energy, making it an ideal weapon for long sieges. Death from this weapon appears to be cruel and painful. If the governments back home knew of its existence, it would probably be banned."
 
@@ -70,21 +89,6 @@ outfit "Blight Shadow Eggs"
 	thumbnail "outfit/blight egg"
 	description "Alien eggs found in a derelict space station. Might be worth something to the right person."
 	"unplunderable" 1
-
-
-
-outfit "Korath Afterburner"
-	category "Engines"
-	"cost" 140000
-	thumbnail "outfit/korath afterburner"
-	"mass" 22
-	"outfit space" -22
-	"engine capacity" -22
-	"afterburner thrust" 37.5
-	"afterburner fuel" .5
-	"afterburner heat" 20.0
-	"afterburner effect" "afterburner"
-	description "The Korath afterburner consumes hyperspace fuel to produce a large amount of thrust. Like all Korath engines, it generates an alarming amount of heat."
 
 
 
@@ -272,7 +276,6 @@ outfit "Korath Grappler"
 
 
 
-# The Korath Incinerator is back!
 outfit "Korath Incinerator"
 	category "Guns"
 	cost 190000
@@ -301,40 +304,6 @@ outfit "Korath Incinerator"
 		"heat damage" 600
 		"burn damage" 6
 	description "A giant smelter. Ships go in. Melted metal comes out."
-
-
-# Replaced with Korath Incinerator. Keeping this here for legacy pilots.
-outfit "Korath Smelter"
-	category "Guns"
-	cost 190000
-	thumbnail "outfit/korath incinerator"
-	"mass" 1009
-	"outfit space" -1009
-	"weapon capacity" -1009
-	"gun ports" -1
-	"energy consumption" 3.1
-	"heat generation" 13.0
-	"integrated systems" 1
-	"reinstall" -1
-	"unplunderable" 1
-	weapon
-		sound "flamethrower"
-		sprite "projectile/flamethrower"
-			"frame rate" 17
-			"random start frame"
-		"hit effect" "flamethrower hit"
-		"inaccuracy" 180
-		"velocity" 10
-		"lifetime" 1
-		"reload" 1
-		"burst reload" 35
-		"burst count" 3
-		"cluster"
-		"shield damage" 300
-		"hull damage" 300
-		"heat damage" 200
-	description "A giant smelter. Ships go in. Melted metal comes out."
-
 
 
 
@@ -428,6 +397,7 @@ outfit "Korath Tractor"
 		"hit force" -20
 	description "The Korath Tractor is more salvaging device than weapon, used to tow derelict ships away from dangerous battlefields."
 	description "This device is activated through the secondary weapons systems."
+
 
 
 outfit "Node 8 Jammer"
@@ -555,3 +525,59 @@ outfit "Efret Salvage License"
 	category "Licenses"
 	thumbnail "outfit/efret salvage license"
 	description "Gives you access to salvaged outfits from the Kor Efret. You're not sure if this is a formal license or simply a means to communicate to the outfitter that you're looking for used parts..."
+
+
+
+######################################
+#
+# deprecated
+#
+######################################
+
+outfit "Korath Afterburner"
+	category "Engines"
+	"cost" 340000
+	thumbnail "outfit/korath afterburner"
+	"mass" 22
+	"outfit space" -22
+	"engine capacity" -12
+	"fuel capacity" 250
+	"ramscoop" 0.63
+	"afterburner thrust" 48
+	"afterburner energy" 1.5
+	"afterburner heat" 15.63
+	"afterburner fuel" 0.08
+	"afterburner effect" "korath afterburner small"
+	description "Korath Scrappers recovered his small afterburner from the ruins of their ancestral space."
+	description "	Korath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that nearly melts the thruster."
+
+outfit "Korath Smelter"
+	category "Guns"
+	cost 190000
+	thumbnail "outfit/korath incinerator"
+	"mass" 1009
+	"outfit space" -1009
+	"weapon capacity" -1009
+	"gun ports" -1
+	"energy consumption" 3.1
+	"heat generation" 13.0
+	"integrated systems" 1
+	"reinstall" -1
+	"unplunderable" 1
+	weapon
+		sound "flamethrower"
+		sprite "projectile/flamethrower"
+			"frame rate" 17
+			"random start frame"
+		"hit effect" "flamethrower hit"
+		"inaccuracy" 180
+		"velocity" 10
+		"lifetime" 1
+		"reload" 1
+		"burst reload" 35
+		"burst count" 3
+		"cluster"
+		"shield damage" 300
+		"hull damage" 300
+		"heat damage" 200
+	description "A giant smelter. Ships go in. Melted metal comes out."

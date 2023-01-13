@@ -2221,7 +2221,7 @@ ship "Korath Devourer"
 		"Fuel Processor"
 		"Thermal Repeater Rifle" 273
 		
-		"Afterburner (Asteroid Class)" 2
+		"Afterburner (Meteor Class)"
 		"Steering (Planetary Class)"
 		"Thruster (Planetary Class)"
 		"Jump Drive"
