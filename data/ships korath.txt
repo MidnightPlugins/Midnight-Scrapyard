@@ -252,26 +252,28 @@ ship "Palavret" "Korath Scrapper (engines)"
 			"hull damage" 1800
 			"hit force" 5400
 	outfits
-		"Fuel Processor"
-		"Jump Drive"
-		"Shield Disruptor Turret"
 		"Grab-Strike Turret"
+		"Husk-Slice Turret"
+		"Shield Disruptor Turret"
+		"Thermal Repeater Turret" 2
+		"Warder Anti-Missile"
+		"Korath Scattermine" 2
 		"Cluster Mine" 34
 		"Cluster Mine Rack" 2
-		"Thermal Repeater Rifle" 196
-		"Korath Sentinel" 5
-		"Thermal Repeater Turret" 2
-		"Korath Scattermine" 2
-		"Husk-Slice Turret"
-		"Warder Anti-Missile"
-		"Large Heat Shunt" 2
-		"Outfits Expansion"
-		"Small Heat Shunt"
-		"Steering (Planetary Class)"
-		"Systems Core (Large)"
-		"Thruster (Asteroid Class)"
-		"Thruster (Planetary Class)"
+
 		"Triple Plasma Core"
+		"Systems Core (Large)"
+		"Fuel Processor"
+		"Outfits Expansion"
+		"Liquid Sodium Cooler"
+		"Small Heat Shunt" 2
+		"Korath Sentinel" 5
+		"Thermal Repeater Rifle" 196
+
+		"Afterburner (Meteor Class)"
+		"Thruster (Planetary Class)"
+		"Steering (Planetary Class)"
+		"Jump Drive"
 	engine -26 156
 	engine 26 156
 	"reverse engine" -9 -154
@@ -402,15 +404,15 @@ ship "Rano'erek" "Korath Dredger (Scrapper)"
 		
 		"Systems Core (Large)"
 		"Triple Plasma Core"
-		"Large Heat Shunt" 2
+		"Liquid Sodium Cooler"
+		"Small Heat Shunt" 2
 		"Fuel Processor"
 		"Thermal Repeater Rifle" 201
 		"Korath Sentinel" 12
 		
-		"Steering (Planetary Class)"
-		"Steering (Asteroid Class)"
+		"Afterburner (Meteor Class)"
 		"Thruster (Planetary Class)"
-		"Thruster (Asteroid Class)"
+		"Steering (Planetary Class)"
 		"Hyperdrive"
 		"Jump Drive"
 	turret -37.5 -152.5 "Husk-Slice Turret"
@@ -2000,122 +2002,122 @@ ship "Delta-Ferry"
 
 
 
-ship "Korath Warmonger"
-	sprite "ship/korath warmonger"
-	thumbnail "thumbnail/korath warmonger-thumb"
+ship "Korath Ranger"
+	sprite "ship/korath ranger"
+	thumbnail "thumbnail/korath ranger-thumb"
 	attributes
 		category "Medium Warship"
-		"cost" 8285000
-		"shields" 13500
-		"hull" 4500
-		"required crew" 73
+		"cost" 8570000
+		"shields" 16500
+		"hull" 8500
+		"required crew" 75
 		"bunks" 125
-		"mass" 360
-		"drag" 6
-		"heat dissipation" .6
+		"mass" 750
+		"drag" 9
+		"heat dissipation" .55
 		"fuel capacity" 500
-		"cargo space" 90
-		"outfit space" 524
-		"weapon capacity" 172
-		"engine capacity" 93
+		"cargo space" 60
+		"outfit space" 490
+		"weapon capacity" 165
+		"engine capacity" 85
 		weapon
-			"blast radius" 250
-			"shield damage" 3600
-			"hull damage" 1800
-			"hit force" 5400
+			"blast radius" 300
+			"shield damage" 4600
+			"hull damage" 2300
+			"hit force" 5900
 	outfits
-		"Thermal Repeater Turret" 4
+		"Thermal Repeater" 2
+		"Thermal Repeater Turret" 2
+		"Warder Anti-Missile"
+		"Piercer Missile" 94
 		"Piercer Missile Launcher" 2
-		"Piercer Missile" 94		
 		"Piercer Missile Rack" 2
-		
+
 		"Double Plasma Core"
 		"Systems Core (Medium)"
-		"Large Heat Shunt" 3
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
 		"Fuel Processor"
 		"Thermal Repeater Rifle" 70
-		
-		"Afterburner (Asteroid Class)" 2
-		"Thruster (Lunar Class)"
+
+		"Afterburner (Meteor Class)"
 		"Steering (Lunar Class)"
-		"Hyperdrive"
-	
-	engine -33.5 77.5
-	engine 29.5 77.5
-	engine -2 89.5
-	gun -9 -89
-	gun 10 -89
-	turret -39 -77
-	turret 34.5 -77
-	turret -43.5 24
-	turret 40.5 24
-	bay "Fighter" -90 32
-	bay "Fighter" 86 32
-	explode "tiny explosion" 20
-	explode "small explosion" 45
-	explode "medium explosion" 50
-	explode "large explosion" 40
+		"Thruster (Lunar Class)"
+		Hyperdrive
+		
+	engine -31.5 103.5
+	engine 31.5 103.5
+	engine 0 114
+	gun -118 -116 "Piercer Missile Launcher"
+	gun 118 -116 "Piercer Missile Launcher"
+	gun -79 24 "Thermal Repeater"
+	gun 79 24 "Thermal Repeater"
+	turret 0 -49 "Warder Anti-Missile"
+	turret -40 -48.5 "Thermal Repeater Turret"
+	turret 40 -48.5 "Thermal Repeater Turret"
+	bay "Fighter" -94.5 -75
+	bay "Fighter" 94.5 -75
+	bay "Fighter"  0 -49
+	explode "tiny explosion" 60
+	explode "small explosion" 30
+	explode "medium explosion" 35
+	explode "large explosion" 30
 	"final explode" "final explosion large"
-	description "The Korath Warmoger was the first warship deployed at the start of the Korath civil war that eventually brought the downfall of their civilization. With the recent Blight Shadow attack on one of their World-ships, the Kor Efret are starting to reproduce these warships as escorts."
+	description "The Korath Ranger was the first warship deployed at the start of the Korath civil war that eventually brought the downfall of their civilization. With the recent Blight Shadow attack on one of their World-ships, the Kor Efret are starting to reproduce these warships as escorts."
 
 
 
-ship "Korath Warmonger" "Korath Warmonger (Fireswarm)"
+ship "Korath Ranger" "Korath Ranger (Fireswarm)"
 	outfits
-		"Afterburner (Asteroid Class)" 2
+		"Afterburner (Meteor Class)"
 		"Double Plasma Core"
 		"Fuel Processor"
 		Hyperdrive
 		"Korath Fireswarm" 60
 		"Korath Fireswarm Launcher" 2
 		"Korath Fireswarm Nest" 2
-		"Large Heat Shunt" 2
-		"Outfits Expansion"
-		"Small Heat Shunt"
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
 		"Steering (Lunar Class)"
 		"Systems Core (Medium)"
-		"Systems Core (Small)"
+		"Thermal Repeater" 2
 		"Thermal Repeater Rifle" 70
 		"Thermal Repeater Turret" 2
 		"Thruster (Lunar Class)"
-		"Warder Anti-Missile" 2
+		"Warder Anti-Missile"
+	gun "Korath Fireswarm Launcher"
+	gun "Korath Fireswarm Launcher"
+	gun "Thermal Repeater"
+	gun "Thermal Repeater"
+	turret "Warder Anti-Missile"
 	turret "Thermal Repeater Turret"
 	turret "Thermal Repeater Turret"
-	turret "Warder Anti-Missile"
-	turret "Warder Anti-Missile"
-	
-ship "Korath Warmonger" "Korath Warmonger (Grappler)"
+
+ship "Korath Ranger" "Korath Ranger (Grappler)"
 	outfits
-		"Korath Grappler" 2
-		"Thermal Repeater Turret" 2
-		"Warder Anti-Missile" 2
-		
+		"Afterburner (Meteor Class)"
 		"Double Plasma Core"
-		"Generator (Furnace Class)"
-		"Systems Core (Medium)"
-		"Large Heat Shunt" 2
-		"Small Heat Shunt" 3
 		"Fuel Processor"
-		"Thermal Repeater Rifle" 70
-		
-		"Thruster (Lunar Class)"
+		Hyperdrive
+		"Korath Grappler" 2
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
 		"Steering (Lunar Class)"
-		"Hyperdrive"
+		"Systems Core (Medium)"
+		"Thermal Repeater" 2
+		"Thermal Repeater Rifle" 70
+		"Thermal Repeater Turret" 2
+		"Thruster (Lunar Class)"
+		"Warder Anti-Missile"
+	gun "Korath Grappler"
+	gun "Korath Grappler"
+	gun "Thermal Repeater"
+	gun "Thermal Repeater"
+	turret "Warder Anti-Missile"
 	turret "Thermal Repeater Turret"
 	turret "Thermal Repeater Turret"
-	turret "Warder Anti-Missile"
-	turret "Warder Anti-Missile"
 
 
-
-ship "'olofez" "Korath Chaser (Miner)"
-	outfits
-		"Thermal Repeater"
-		"Cargo Expansion"
-		"Small Heat Shunt"
-		"Generator (Candle Class)"
-		"Steering (Asteroid Class)"
-		"Thermal Repeater Rifle"
 
 
 
@@ -2505,6 +2507,16 @@ ship "Korath Explorer" "Korath Explorer (Grab-Strike)"
 		"Thruster (Planetary Class)"
 		"Jump Drive"
 
+ship "'olofez" "Korath Chaser (Miner)"
+	outfits
+		"Thermal Repeater"
+		"Cargo Expansion"
+		"Small Heat Shunt"
+		"Generator (Candle Class)"
+		"Steering (Asteroid Class)"
+		"Thermal Repeater Rifle"
+
+
 
 #deprecated version of crippled worldship from a Kor Efret mission
 ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
@@ -2530,3 +2542,58 @@ ship "Korath World-Ship" "Korath World-Ship D (Crippled)"
 	turret 27 134.5
 	turret -89 293
 	turret 87.5 292.5
+
+
+# The Korath Warmonger was replaced with the Korath Ranger
+
+ship "Korath Ranger" "Korath Warmonger"
+
+ship "Korath Ranger" "Korath Warmonger (Fireswarm)"
+	outfits
+		"Afterburner (Meteor Class)"
+		"Double Plasma Core"
+		"Fuel Processor"
+		Hyperdrive
+		"Korath Fireswarm" 60
+		"Korath Fireswarm Launcher" 2
+		"Korath Fireswarm Nest" 2
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
+		"Steering (Lunar Class)"
+		"Systems Core (Medium)"
+		"Thermal Repeater" 2
+		"Thermal Repeater Rifle" 70
+		"Thermal Repeater Turret" 2
+		"Thruster (Lunar Class)"
+		"Warder Anti-Missile"
+	gun "Thermal Repeater"
+	gun "Thermal Repeater"
+	gun "Korath Fireswarm Launcher"
+	gun "Korath Fireswarm Launcher"
+	turret "Warder Anti-Missile"
+	turret "Thermal Repeater Turret"
+	turret "Thermal Repeater Turret"
+	
+ship "Korath Ranger" "Korath Warmonger (Grappler)"
+	outfits
+		"Afterburner (Meteor Class)"
+		"Double Plasma Core"
+		"Fuel Processor"
+		Hyperdrive
+		"Korath Grappler" 2
+		"Large Heat Shunt"
+		"Small Heat Shunt" 2
+		"Steering (Lunar Class)"
+		"Systems Core (Medium)"
+		"Thermal Repeater" 2
+		"Thermal Repeater Rifle" 70
+		"Thermal Repeater Turret" 2
+		"Thruster (Lunar Class)"
+		"Warder Anti-Missile"
+	gun "Thermal Repeater"
+	gun "Thermal Repeater"
+	gun "Korath Grappler"
+	gun "Korath Grappler"
+	turret "Warder Anti-Missile"
+	turret "Thermal Repeater Turret"
+	turret "Thermal Repeater Turret"
