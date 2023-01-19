@@ -537,7 +537,7 @@ ship "Mechanized Mine"
 		"mass" 80
 		"drag" 2.1
 		"heat dissipation" 1.0
-		"outfit space" 134
+		"outfit space" 135
 		"weapon capacity" 57
 		"engine capacity" 24
 		"integrated systems" -1
@@ -551,6 +551,7 @@ ship "Mechanized Mine"
 		
 		"Generator (Furnace Class)"
 		"Small Heat Shunt" 2
+		"Reasoning Node"
 		
 		"Thruster (Asteroid Class)"
 		"Steering (Asteroid Class)"
@@ -1002,7 +1003,7 @@ ship "Model 16" "Model 16 (scrapper)"
 		"Generator (Inferno Class)"
 		"Systems Core (Small)"
 		"Small Heat Shunt"
-		"Control Transceiver"		
+		"Control Transceiver"
 		
 		"Thruster (Planetary Class)"
 		"Steering (Lunar Class)"

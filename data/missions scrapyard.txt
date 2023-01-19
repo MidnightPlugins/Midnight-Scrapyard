@@ -28,6 +28,7 @@ mission "Scrapyard: Scrapyard Develops"
 		has "event: wanderers: sestor eliminated"
 	on offer
 		event "Scrapyard Develops" 3
+		fail
 
 event "Scrapyard Develops"
 	system "Celeborim"
@@ -151,7 +152,7 @@ mission "First Contact: Blight Shadows"
 	on accept
 		event "Blight Shadow Infestation"
 		event "Scrapyard Derelicts"
-	npc kill
+	npc
 		system Asikafarnut
 		government "Invasive Predator"
 		personality waiting staying disables unconstrained mute
@@ -184,11 +185,13 @@ mission "Scrapyard: Drak Patrolling Asikafarnut"
 	destination "Laki Nemparu"
 	to offer
 		has "First Contact: Blight Shadows: done"
-	npc kill
+	npc save
 		system Asikafarnut
 		government Drak
 		personality waiting staying heroic vindictive
 		ship "Archon" "Hunter of Shadows"
+	on fail
+		clear "Scrapyard: Drak Patrolling Asikafarnut: offered"
 	on complete
 		clear "Scrapyard: Drak Patrolling Asikafarnut: offered"
 
@@ -262,12 +265,13 @@ mission "Patch Event Scrapyard Derelicts"
 mission "Scrapyard Boarding A"
 	landing
 	invisible
+	deadline 30
 	source
 		attributes "korath"
 	destination "Laki Nemparu"
 	to offer
 		has "event: Scrapyard Develops"
-		random < 10
+		random < 50
 	npc kill
 		government "Scrapyard Derelict"
 		system
@@ -280,6 +284,8 @@ mission "Scrapyard Boarding A"
 				clear "Scrapyard Boarding A: offered"
 			`You've eliminated some of the derelicts, but more are out there waiting to be exploited by Scrappers and Blight Shadows.`
 	on fail
+		clear "Scrapyard Boarding A: offered"
+	on complete
 		clear "Scrapyard Boarding A: offered"
 
 
@@ -313,8 +319,11 @@ mission "Scrapyard Boarding A Clear"
 	repeat
 	to offer
 		or
-			"Scrapyard Boarding A: offered" > 0
+			"Scrapyard Boarding A: offered" > 1
 			"Scrapyard Boarding A: offered" < 0
+			and
+				"Scrapyard Boarding A: offered" > 0
+				has "Scrapyard Boarding A: done"
 	on offer
 		clear "Scrapyard Boarding A: offered"
 		fail
@@ -325,7 +334,7 @@ mission "Scrapyard Boarding B Clear"
 	repeat
 	to offer
 		or
-			"Scrapyard Boarding B: offered" > 0
+			"Scrapyard Boarding B: offered" > 1
 			"Scrapyard Boarding B: offered" < 0
 	on offer
 		clear "Scrapyard Boarding B: offered"
@@ -574,13 +583,13 @@ planet "Metwar Skaretar"
 	attributes korath station
 	landscape land/space2ver8a
 	music ambient/derelictB
-	description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
+	description `This station is heavily damaged and completely abandoned, its structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
 
 planet "Makwar Pratarati"
 	attributes korath station
 	landscape land/space2ver8b
 	music ambient/derelictB
-	description `This station is heavily damaged and completely abandoned, it's structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
+	description `This station is heavily damaged and completely abandoned, its structure slowly deteriorating with time. Huge gaping holes in the hull have released whatever atmosphere it once contained.`
 
 ######################
 # Misc. Missions
@@ -846,6 +855,7 @@ mission "Scrapyard Random Station Scrap Mereti"
 mission "Scrapyard: Factory Sestor"
 	landing
 	invisible
+	deadline 7
 	source "Sestor Ikfar"
 	to offer
 		has "event: Scrapyard Develops"
@@ -863,5 +873,9 @@ mission "Scrapyard: Factory Sestor"
 		government "Kor Sestor"
 		personality waiting uninterested
 		fleet "Large Kor Sestor"
+	on fail
+		clear "Scrapyard: Factory Sestor: offered"
+	on abort
+		clear "Scrapyard: Factory Sestor: offered"
 	on complete
 		clear "Scrapyard: Factory Sestor: offered"

@@ -226,7 +226,7 @@ fleet "Large Korath Scrappers"
 		"Model 16 (scrapper)"
 		"Tek Far 71 - Lek (scrapper)"
 		"Model 128"
-	variant 333
+	variant 3
 		"Korath Scrapper (carrier)"
 		"Far Osk 27" 7
 		"Far Lek 14" 1

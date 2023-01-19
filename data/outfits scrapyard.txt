@@ -79,7 +79,7 @@ outfit "Blight Rifle"
 	"capture attack" 11.1
 	"capture defense" 8.9
 	"unplunderable" 1
-	description "A prototype the Remnant created using Blight Shadow eggs. This weapon drains energy from whatever it is used on. This can disrupt electronic door locks and reduces living creatures into withered husks. This effect also replenishes its own energy, making it an ideal weapon for long sieges. Death from this weapon appears to be cruel and painful. If the governments back home knew of its existence, it would probably be banned."
+	description "A prototype the Remnant created using Blight Shadow eggs. This weapon drains energy from whatever it is used on. This can disrupt electronic door locks and reduces living creatures into withered husks. This effect also replenishes its own energy, making it an exceptional weapon for long sieges. Death from this weapon appears to be cruel and painful. If the governments back home knew of its existence, it would probably be banned."
 
 
 
@@ -436,7 +436,7 @@ outfit "Slicer Torch"
 	"capture defense" 6.4
 	"energy consumption" 0.034
 	"unplunderable" 1
-	description "An improvised weapon made by a Scrapyard hermit. It easily and quickly cuts through ship bulkheads, making it an ideal tool for raiding ships. It can also be used to make emergency escape routes when one is seemingly trapped in a dead end."
+	description "An improvised weapon made by a Scrapyard hermit. It easily and quickly cuts through ship bulkheads, making it an ideal tool for raiding ships. It can also be used to make emergency escape routes when one is seemingly trapped in a dead end. This weapon can get incredibly hot after prolonged use, so it may be unwise to use it for defending against extended sieges."
 
 
 

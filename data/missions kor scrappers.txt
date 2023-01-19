@@ -42,6 +42,7 @@ mission "Scrapyard Random Station Scrappers"
 mission "Scrapyard: Factory Scrapper"
 	landing
 	invisible
+	deadline 7
 	source "Sestor Ikfar"
 	to offer
 		has "event: Blight Shadow Infestation"
@@ -76,6 +77,8 @@ mission "Scrapyard: Factory Scrapper"
 		government "Kor Sestor"
 		personality waiting uninterested
 		fleet "Large Kor Sestor"
+	on fail
+		clear "Scrapyard: Factory Scrapper: offered"
 	on complete
 		clear "Scrapyard: Factory Scrapper: offered"
 
@@ -186,8 +189,15 @@ mission "Scrapyard Korath Tractor 2"
 mission "Scrapyard Devourer (Infested) 1"
 	landing
 	invisible
+	source
+		attributes "korath"
+	destination "Laki Nemparu"
 	to offer
 		"Scrapyard Threat Level" >= 16
+		random < 10
+	on enter "Makferuti"
+		set "found infested devourer"
+		dialog `That Korath Devourer is behaving strangely...`
 	npc
 		government "Invasive Predator"
 		system "Makferuti"
@@ -207,6 +217,18 @@ mission "Scrapyard Devourer (Infested) 1"
 			outfitters "Korath Basics"
 			variant
 				"Korath Devourer (Infested)"
+
+mission "Scrapyard Devourer (Infested) 1 cleanup"
+	landing
+	invisible
+	to offer
+		has "Scrapyard Devourer (Infested) 1: active"
+		has "found infested devourer"
+	on offer
+		clear "found infested devourer"
+		fail "Scrapyard Devourer (Infested) 1"
+		fail
+
 
 mission "Scrapyard Devourer (Neutral) 1"
 	landing

@@ -151,6 +151,8 @@ mission "Scrapyard Eggs Pirate 3"
 mission "Scrapyard Pirate Eggs Hatch"
 	landing
 	invisible
+	repeat
+	deadline 3
 	to offer
 		has "event: Pirate Egg timer"
 		not "Scrapyard Eggs Pirate 2: offered"
@@ -395,6 +397,7 @@ mission "Scrapyard Remnant Eggs Hatch"
 	landing
 	invisible
 	repeat
+	deadline 3
 	to offer
 		has "event: Remnant Egg timer"
 		not "Scrapyard Eggs Remnant 1: done"
@@ -440,6 +443,7 @@ mission "Scrapyard Plume's Research"
 	landing
 	invisible
 	source "Aventine"
+	deadline 7
 	to offer
 		has "event: Remnant Egg timer"
 		random < 25
@@ -493,6 +497,7 @@ mission "Scrapyard Plume's Research"
 mission "Scrapyard Shadowblight Hai"
 	landing
 	invisible
+	deadline 7
 	source
 		government "Hai"
 	to offer
@@ -530,6 +535,7 @@ event "Adjust Shadowblight Hai"
 mission "Scrapyard Shadowblight Wanderer"
 	landing
 	invisible
+	deadline 7
 	source
 		government "Wanderer"
 	to offer
@@ -566,6 +572,7 @@ event "Adjust Shadowblight Wanderer"
 mission "Scrapyard Shadowblight Coalition"
 	landing
 	invisible
+	deadline 7
 	source
 		government "Coalition"
 	to offer
@@ -582,6 +589,7 @@ mission "Scrapyard Shadowblight Coalition"
 mission "Scrapyard Shadowblight Remnant"
 	landing
 	invisible
+	deadline 7
 	source
 		government "Remnant"
 	to offer
@@ -598,6 +606,7 @@ mission "Scrapyard Shadowblight Remnant"
 mission "Scrapyard Shadowblight Human"
 	landing
 	invisible
+	deadline 7
 	source
 		government "Republic" "Syndicate" "Free Worlds" "Pirate"
 	to offer
