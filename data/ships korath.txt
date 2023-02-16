@@ -579,7 +579,7 @@ ship "Phantom Mine Launcher"
 		"turn" 600
 		"fuel capacity" 100
 		"hyperdrive" 1
-		"jump speed" .2		
+		"jump speed" .2
 	outfits
 		"Timer Weapon"
 	gun 0 0
@@ -593,7 +593,7 @@ ship "Model 512" "Model 512 (Carrier)"
 		"Husk-Slice Turret" 4
 		"Triple Plasma Core"
 		"Plasma Core"
-		"Systems Core (Large)"
+		"Systems Core (Large)" 2
 		"Large Heat Shunt"
 		"Small Heat Shunt" 2
 		"Reasoning Node" 3
@@ -619,9 +619,9 @@ ship "Model 256" "Model 256 (Carrier)"
 		"Shield Disruptor Turret" 3
 		"Husk-Slice Turret" 3
 		"Triple Plasma Core"
-		"Systems Core (Large)"
+		"Systems Core (Large)" 2
 		"Large Heat Shunt"
-		"Reasoning Node" 3		
+		"Reasoning Node" 3
 		"Thruster (Planetary Class)"
 		"Steering (Planetary Class)"
 		"Steering (Comet Class)"
@@ -645,6 +645,7 @@ ship "Model 128" "Model 128 (Carrier)"
 		
 		"Double Plasma Core"
 		"Generator (Inferno Class)"
+		"Systems Core (Large)"
 		"Systems Core (Medium)"
 		"Reasoning Node" 2
 		
@@ -2013,7 +2014,7 @@ ship "Korath Ranger"
 		"hull" 8500
 		"required crew" 75
 		"bunks" 125
-		"mass" 750
+		"mass" 360
 		"drag" 9
 		"heat dissipation" .55
 		"fuel capacity" 500
@@ -2189,7 +2190,7 @@ ship "Korath Devourer"
 	thumbnail "thumbnail/korath devourer-thumb"
 	"swizzle" 0
 	attributes
-		category "Heavy Freighter"
+		category "Utility"
 		"cost" 39062100
 		"shields" 52000
 		"hull" 22000
