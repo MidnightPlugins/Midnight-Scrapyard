@@ -133,7 +133,7 @@ outfit "Korath Fireswarm Nest"
 	"outfit space" -6
 	"fireswarm capacity" 10
 	ammo "Korath Fireswarm"
-	description "These storage shells hold additional Korath Fireswarms for the Korath Firewarm Launcher."
+	description "These storage shells hold additional Korath Fireswarms for the Korath Fireswarm Launcher."
 
 outfit "Korath Fireswarm"
 	category "Ammunition"
