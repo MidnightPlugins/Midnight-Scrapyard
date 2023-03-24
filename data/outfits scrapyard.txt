@@ -133,7 +133,10 @@ outfit "Korath Fireswarm Nest"
 	"outfit space" -6
 	"fireswarm capacity" 10
 	ammo "Korath Fireswarm"
+	"energy generation" 0.2
+	"heat generation" 1
 	description "These storage shells hold additional Korath Fireswarms for the Korath Fireswarm Launcher."
+	description "	Each Fireswarm Nest includes a power charger to keep stored Fireswarms ready for launch. They also plug into your ships power systems, allowing surplus energy to be used elsewhere."
 
 outfit "Korath Fireswarm"
 	category "Ammunition"
@@ -142,7 +145,7 @@ outfit "Korath Fireswarm"
 	"mass" 0.3
 	"fireswarm capacity" -1
 	"energy capacity" 35
-	description `Each Korath Fireswarm carries ten smaller missiles. When not being fired as weapons, the energy stored within can be used to power your ship.`
+	description `Each Korath Fireswarm carries ten smaller missiles. When not being fired as weapons, they add to the energy storage capacity of your ship.`
 
 outfit "Korath Fireswarm Launcher"
 	category "Secondary Weapons"
@@ -157,7 +160,7 @@ outfit "Korath Fireswarm Launcher"
 		sprite "projectile/fireswarm"
 			"frame rate" 4
 			"random start frame"
-		sound "nuke"
+		sound "rocket-ver8"
 		ammo "Korath Fireswarm"
 		icon "icon/fireswarm"
 		"hit effect" "large explosion" 10
@@ -183,7 +186,7 @@ outfit "Korath Fireswarm Launcher"
 		submunition "Fireswarm Submunition" 10
 		"cluster"
 	description "The Korath Fireswarm is a cluster munition that carries a swarm of smaller missiles which can overwhelm slow defense systems."
-	description "	If multiple Korath Fireswarms are installed, they will all fire simultaneously."
+	description "	If multiple Korath Fireswarm Launchers are installed, they will all fire simultaneously."
 
 outfit "Fireswarm Submunition"
 	weapon
