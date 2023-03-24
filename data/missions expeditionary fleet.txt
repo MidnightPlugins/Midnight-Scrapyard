@@ -24,7 +24,7 @@ mission "Scrapyard Avalon TL 0"
 	to offer
 		or
 			has "Wanderers: Sestor: Final: done"
-			has "Wanderers: Sestor: Final: Patched"
+			has "event: wanderers: sestor eliminated"
 	on enter "Host"
 		dialog `This is where you fought the Alpha ship 'Giftbringer'. It might be a good idea to check the planet below for any renewed Alpha activity.`
 		fail
@@ -37,7 +37,7 @@ mission "Scrapyard Sestor Expedtionary Fleet"
 	to offer
 		or
 			has "Wanderers: Sestor: Final: done"
-			has "Wanderers: Sestor: Final: Patched"
+			has "event: wanderers: sestor eliminated"
 	on offer
 		"Scrapyard Threat Level" ++
 		event "Sestor Expeditionary Fleets"
