@@ -84,7 +84,13 @@ Files:
 Copyright: various
 License: public-domain
  Based on public domain sounds taken from freesound.org.
- 
+
+Files:
+ sounds/rocket-ver8.wav
+Copyright: HorrorPen (opengameart.org/users/horrorpen)
+License: CC-BY-3.0
+ (creativecommons.org/licenses/by/3.0)
+
 Files:
  sounds/jump?in?red.wav
  sounds/jump?out?red.wav
