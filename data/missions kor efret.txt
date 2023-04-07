@@ -805,9 +805,10 @@ mission "Scrapyard Mereti Efret Test Flight"
 			has "event: Warmonger Construction Completed"
 		has "event: access efret salvage"
 		or
-			not "Scrapyard Scrapper Siege (Faronektu): done"
-			not "Scrapyard Scrapper Siege (Mekislepti): done"
-			not "Scrapyard Scrapper Siege (Similisti): done"
+			and
+				not "Scrapyard Scrapper Siege (Faronektu): done"
+				not "Scrapyard Scrapper Siege (Mekislepti): done"
+				not "Scrapyard Scrapper Siege (Similisti): done"
 			has "event: Node 8 Processor Returned"
 		or
 			and
