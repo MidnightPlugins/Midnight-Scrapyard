@@ -427,14 +427,13 @@ mission "Scrapyard: Efret Salvage License 1"
 		dialog `Visit the spaceport to look for Rek.`
 
 mission "Scrapyard: Efret Salvage License 2"
-	minor
+	landing
 	name "Efret License"
 	description "Ask Rek to help you convince the Kor Efret to sell you weapons and other outfits installed on their ships."
 	source "Desi Seledrak"
 	destination "Setar Fort"
 	to offer
 		has "Scrapyard: Efret Salvage License 1: done"
-		random < 70
 	on offer
 		conversation
 			`When you ask to meet Rek, you are told that she as returned to Setar Fort.`
