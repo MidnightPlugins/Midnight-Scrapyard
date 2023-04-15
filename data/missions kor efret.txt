@@ -423,8 +423,6 @@ mission "Scrapyard: Efret Salvage License 1"
 		system Solifar
 		personality waiting disables unconstrained mute
 		fleet "Small Blight Shadow"
-	on complete
-		dialog `Visit the spaceport to look for Rek.`
 
 mission "Scrapyard: Efret Salvage License 2"
 	landing
@@ -436,6 +434,7 @@ mission "Scrapyard: Efret Salvage License 2"
 		has "Scrapyard: Efret Salvage License 1: done"
 	on offer
 		conversation
+			scene "planet/forest4-b"
 			`When you ask to meet Rek, you are told that she as returned to Setar Fort.`
 				accept
 	npc evade
