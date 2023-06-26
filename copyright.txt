@@ -79,11 +79,20 @@ License: public-domain
 
 Files:
  sounds/ambient/*
- sounds/blight defense
+ sounds/eliminator
  sounds/energy absorber
+ sounds/energy drainer
+ sounds/tractor
 Copyright: various
 License: public-domain
  Based on public domain sounds taken from freesound.org.
+
+Files:
+ sounds/tiny_explosion-ver8.wav
+Copyright: Stephen M. Cameron
+License: CC-BY-SA-3.0
+ (creativecommons.org/licenses/by-sa/3.0)
+
 
 Files:
  sounds/rocket-ver8.wav
