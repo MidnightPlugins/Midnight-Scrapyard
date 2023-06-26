@@ -279,7 +279,7 @@ mission "Scrapyard Boarding A"
 		personality waiting derelict mute
 		fleet "Error Scrap"
 		conversation
-			apply
+			action
 				"Scrapyard Threat Level" ++
 				clear "Scrapyard Boarding A: offered"
 			`You've eliminated some of the derelicts, but more are out there waiting to be exploited by Scrappers and Blight Shadows.`
@@ -306,7 +306,7 @@ mission "Scrapyard Boarding B"
 #		personality waiting derelict mute
 #		fleet "Error Scrap"
 #		conversation
-#			apply
+#			action
 #				"Scrapyard Threat Level" ++
 #				"Scrapyard Boarding B: offered" --
 #			`You've eliminated some of the derelicts, but more are out there waiting to be exploited by Scrappers and Blight Shadows.`
@@ -879,3 +879,68 @@ mission "Scrapyard: Factory Sestor"
 		clear "Scrapyard: Factory Sestor: offered"
 	on complete
 		clear "Scrapyard: Factory Sestor: offered"
+
+
+
+
+mission "Scrapyard Quarg Gegno Buffer"
+	landing
+	invisible
+	to offer
+		has "Infected with Shadowblight"
+	on offer
+		event "scrapyard quarg gegno buffer"
+	npc kill
+		government "Invasive Predator"
+		system "Aik Kamgatake"
+		personality waiting staying timid disables unconstrained mute
+		fleet
+			cargo 0
+			variant
+				"Blight Shadow" 5
+
+event "scrapyard quarg gegno buffer"
+	system Aksek
+		add fleet "Quarg Gegno Surveillance" 3000 
+	system "Aik Kamgatake"
+		add fleet "Quarg Gegno Surveillance" 3000
+	system Iise
+		add fleet "Quarg Gegno Surveillance" 3000
+	system Nnatai
+		add fleet "Quarg Gegno Surveillance" 3000
+	system "Uwo Seija"
+		add fleet "Quarg Gegno Surveillance" 3000
+
+ship "Quarg Skylark" "Quarg Skylark (Surveillance)"
+	add attributes
+		"mass" 10
+		"outfit space" -10
+		"outfit scan power" 41
+		"outfit scan efficiency" 35
+		"cargo scan power" 13
+		"cargo scan efficiency" 15
+		"atmosphere scan" 100
+		"tactical scan power" 41
+
+ship "Quarg Wardragon" "Quarg Wardragon (Surveillance)"
+	add attributes
+		"mass" 10
+		"outfit space" -10
+		"outfit scan power" 41
+		"outfit scan efficiency" 35
+		"cargo scan power" 13
+		"cargo scan efficiency" 15
+		"atmosphere scan" 100
+		"tactical scan power" 41
+
+fleet "Quarg Gegno Surveillance"
+	government "Quarg (Gegno)"
+	names "quarg"
+	cargo 2
+	commodities "Food" "Medical"
+	personality
+		forbearing opportunistic surveillance lingering
+	variant 3
+		"Quarg Skylark (Surveillance)"
+	variant 1
+		"Quarg Wardragon (Surveillance)"

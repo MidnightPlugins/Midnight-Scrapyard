@@ -1497,8 +1497,8 @@ ship "Stakoshtar 187"
 		"drag" 20.4
 		"heat dissipation" .55
 		"fuel capacity" 800
-		"cargo space" 86
-		"outfit space" 1222
+		"cargo space" 0
+		"outfit space" 1200
 		"weapon capacity" 544
 		"engine capacity" 234
 		"ramscoop" 3
@@ -1515,12 +1515,12 @@ ship "Stakoshtar 187"
 
 		"Triple Plasma Core"
 		"Plasma Core"
-		"Systems Core (Large)" 2
-		"Systems Core (Medium)"
+		"Systems Core (Large)"
+		"Systems Core (Medium)" 2
+		"Systems Core (Small)" 2
 		"Large Heat Shunt" 3
 		"Fuel Processor"
-		"Outfits Expansion"
-		"Obsolete Transceiver"		
+		"Obsolete Transceiver"
 
 		"Thruster (Stellar Class)"
 		"Steering (Planetary Class)"

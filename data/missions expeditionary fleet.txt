@@ -349,7 +349,7 @@ mission "Scrapyard Stakoshstar 1"
 				"Stakoshtar 187"
 		conversation
 			scene "ship/stakoshtar 187/stakoshtar"
-			apply
+			action
 				set "defeatedd stakoshtar 187 in prakacha'a"
 			`You've stopped the Stakoshtar 187 from damaging any more worlds. A telepathic presence addresses you. It says, "During their civil war, the Korath used this weapon against planetary targets. Scars from such battles still cover the surface of many of their worlds. You've done well to stop this one."`
 				accept

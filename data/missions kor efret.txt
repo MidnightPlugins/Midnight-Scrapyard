@@ -118,9 +118,8 @@ mission "Scrapyard: Laki Nemparu Shipyard"
 		has "event: Laki Nemparu opens Shipyard"
 	on complete
 		dialog `The shipyard appears to be open. A fleet of new ships is on display.`
-		
+
 shipyard "Kor Efret Scrapyard"
-	"Echo-Galleon"
 	"Arch-Carrack"
 	"Charm-Shallop"
 	"Eave-Skiff"
@@ -140,6 +139,8 @@ event "Laki Nemparu opens Shipyard"
 			"Delta-Ferry"
 			"Eave-Skiff" 3
 
+
+
 mission "Midnight Scrapyard: Kor Efret Miners"
 	landing
 	invisible
@@ -158,6 +159,381 @@ event "kor efret miners scrapyard"
 		add fleet "Kor Efret Miners" 10800
 	system Chornifath
 		add fleet "Kor Efret Miners" 7200
+
+
+
+mission "Echo Galleon Construction Shortage 1 - Scan"
+	shipyard
+	minor
+	name "Echo-Galleon Scan"
+	description "Find an Echo-Galleon that isn't moving around too much and scan its outfits. Deliver the scanner image to the shipyard on <destination>."
+	source "Laki Nemparu"
+	to offer
+		has "event: Laki Nemparu opens Shipyard"
+		random < 70
+	on offer
+		conversation
+			scene "thumbnail/echo-galleon"
+			`	Looking about the shipyard, you notice no Echo-Galleons available for sale. While shopping here shouldn't be much more difficult than simply pointing at the ship you want, trying to place an order for something that isn't in stock requires a bit more effort.`
+			choice
+				`	(I'm not interested in an Echo-Galleon.)`
+				`	(Try to get a scan of an Echo-Galleon.)`
+					goto scan
+			scene "outfit/attention"
+			`	The Echo-Galleon seems like a formidable ship. Are you sure that you aren't interested in ever buying one?`
+			choice
+				`	(I'm definitely not interested in buying an Echo-Galleon.)`
+				decline
+				`	(I'll try to get a scan of an Echo-Galleon.)`
+			label scan
+			scene "outfit/outfit scanner"
+			`	Scanning an Echo-Galleon and bringing the image back to the shipyard might be the easiest way to show your interest in acquiring one. Cargo scanning is irrelevant but make sure you install an Outfit Scanner or something similar on your flagship.`
+				accept
+	on enter
+		dialog "The <npc> appears to be in no rush to leave the system. That Echo-Galleon would be an ideal target for a scan."
+	npc "scan outfits"
+		government "Kor Efret"
+		personality target waiting staying
+		ship "Echo-Galleon" "Sesk Gratakfar"
+		dialog "You've successfully scanned an Echo-Galleon. Return to <origin> with the data file."
+	on fail
+		dialog "[MISSION FAILED]: Wow, Echo-Galleons aren't so tough afterall. If this were a game you could try reloading a save file to try again."
+	on complete
+		conversation
+			scene "thumbnail/echo-galleon"
+			`	After presenting the Kor Efret at the shipyard with an image of an Echo-Galleon, they respond by showing you images of various metals and minerals. Perhaps they simply don't have the resources to devote to building Echo-Galleons now.`
+
+mission "Echo Galleon Construction Shortage 2 - Silicon"
+	landing
+	name "Echo-Galleon: Silicon"
+	description "Find and deliver 130 tons of Silicon to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 1 - Scan: done"
+	on offer
+		conversation
+			scene "outfit/harvested silicon"
+			`	A notice appears to be posted regarding Silicon. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 130 tons of Silicon. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Silicon" -130
+		payment 57200
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 130 tons of Silicon. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 3 - Lead"
+	landing
+	name "Echo-Galleon: Lead"
+	description "Find and deliver 120 tons of Lead to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 2 - Silicon: done"
+	on offer
+		conversation
+			scene "outfit/harvested lead"
+			`	A notice appears to be posted regarding Lead. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 120 tons of Lead. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Lead" -120
+		payment 118800
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 120 tons of Lead. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 4 - Iron"
+	landing
+	name "Echo-Galleon: Iron"
+	description "Find and deliver 110 tons of Iron to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 3 - Lead: done"
+	on offer
+		conversation
+			scene "outfit/harvested iron"
+			`	A notice appears to be posted regarding Iron. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 110 tons of Iron. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Iron" -110
+		payment 145200
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 110 tons of Iron. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 5 - Aluminum"
+	landing
+	name "Echo-Galleon: Aluminum"
+	description "Find and deliver 100 tons of Aluminum to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 4 - Iron: done"
+	on offer
+		conversation
+			scene "outfit/harvested aluminum"
+			`	A notice appears to be posted regarding Aluminum. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 100 tons of Aluminum. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Aluminum" -100
+		payment 198000
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 100 tons of Aluminum. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 6 - Titanium"
+	landing
+	name "Echo-Galleon: Titanium"
+	description "Find and deliver 90 tons of Titanium to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 5 - Aluminum: done"
+	on offer
+		conversation
+			scene "outfit/harvested titanium"
+			`	A notice appears to be posted regarding Titanium. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 90 tons of Titanium. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Titanium" -90
+		payment 247500
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 90 tons of Titanium. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 7 - Copper"
+	landing
+	name "Echo-Galleon: Copper"
+	description "Find and deliver 80 tons of Copper to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 6 - Titanium: done"
+	on offer
+		conversation
+			scene "outfit/harvested copper"
+			`	A notice appears to be posted regarding Copper. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 80 tons of Copper. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Copper" -80
+		payment 264000
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 80 tons of Copper. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 8 - Neodymium"
+	landing
+	name "Echo-Galleon: Neodymium"
+	description "Find and deliver 70 tons of Neodymium to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 7 - Copper: done"
+	on offer
+		conversation
+			scene "outfit/harvested neodymium"
+			`	A notice appears to be posted regarding Neodymium. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 70 tons of Neodymium. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Neodymium" -70
+		payment 292600
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 70 tons of Neodymium. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 9 - Tungsten"
+	landing
+	name "Echo-Galleon: Tungsten"
+	description "Find and deliver 60 tons of Tungsten to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 8 - Neodymium: done"
+	on offer
+		conversation
+			scene "outfit/harvested tungsten"
+			`	A notice appears to be posted regarding Tungsten. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 60 tons of Tungsten. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Tungsten" -60
+		payment 297000
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 60 tons of Tungsten. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 10 - Uranium"
+	landing
+	name "Echo-Galleon: Uranium"
+	description "Find and deliver 50 tons of Uranium to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 9 - Tungsten: done"
+	on offer
+		conversation
+			scene "outfit/harvested uranium"
+			`	A notice appears to be posted regarding Uranium. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 50 tons of Uranium. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Uranium" -50
+		payment 275000
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 50 tons of Uranium. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 11 - Silver"
+	landing
+	name "Echo-Galleon: Silver"
+	description "Find and deliver 40 tons of Silver to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 10 - Uranium: done"
+	on offer
+		conversation
+			scene "outfit/harvested silver"
+			`	A notice appears to be posted regarding Silver. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 40 tons of Silver. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Silver" -40
+		payment 264000
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 40 tons of Silver. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 12 - Gold"
+	landing
+	name "Echo-Galleon: Gold"
+	description "Find and deliver 30 tons of Gold to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 11 - Uranium: done"
+	on offer
+		conversation
+			scene "outfit/harvested gold"
+			`	A notice appears to be posted regarding Gold. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 30 tons of Gold. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Gold" -30
+		payment 264000
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 30 tons of Gold. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+
+mission "Echo Galleon Construction Shortage 13 - Platinum"
+	landing
+	name "Echo-Galleon: Platinum"
+	description "Find and deliver 20 tons of Platinum to the shipyard on <destination>. This can help provide the materials necessary to restart construction of Echo-Galleons."
+	source "Laki Nemparu"
+	to offer
+		has "Echo Galleon Construction Shortage 12 - Gold: done"
+	on offer
+		conversation
+			scene "outfit/harvested platinum"
+			`	A notice appears to be posted regarding Platinum. After checking with the Kor Efret, it seems the shipyard will pay a premium for delivery of 20 tons of Platinum. Helping them increase their supply of building materials could help restart construction of Echo-Galleons.`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+			scene "outfit/attention"
+			`	Are you giving up on restarting construction of Echo-Galleons?`
+			choice
+				`	(Add this task to your mission log.)`
+					accept
+				`	(Ignore this opportunity.)`
+					decline
+	on complete
+		outfit "Platinum" -20
+		payment 220000
+		event "add echo-galleon to kor efret scrapyard"
+		dialog `The <planet> shipyard rewards you with <payment> for your delivery of 20 tons of Platinum. Hopefully, this will help provide the necessary materials to restart construction of Echo-Galleons.`
+		conversation
+			scene "thumbnail/echo-galleon"
+			`You notice an Echo-Galleon under construction in the shipyard. It seems your efforts have paid off. Hopefully they'll be back in stock soon.`
+
+event "add echo-galleon to kor efret scrapyard"
+	shipyard "Kor Efret Scrapyard"
+		add "Echo-Galleon"
 
 
 

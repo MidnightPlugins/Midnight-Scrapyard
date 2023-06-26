@@ -20,10 +20,10 @@ outfit "Afterburner (Meteor Class)"
 	"engine capacity" -12
 	"fuel capacity" 250
 	"ramscoop" 0.63
-	"afterburner thrust" 48
+	"afterburner thrust" 38.5
 	"afterburner energy" 1.5
 	"afterburner heat" 15.63
-	"afterburner fuel" 0.08
+	"afterburner fuel" 0.0938
 	"afterburner effect" "korath afterburner small"
 	description "Korath Scrappers recovered this small afterburner from the ruins of their ancestral space."
 	description "	Korath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that nearly melts the thruster."
@@ -84,6 +84,7 @@ outfit "Blight Rifle"
 
 
 outfit "Blight Shadow Eggs"
+	plural "Blight Shadow Eggs"
 	category "Special"
 	cost 0
 	thumbnail "outfit/blight egg"
@@ -105,7 +106,7 @@ outfit "Korath Eliminator"
 		sprite "projectile/korath eliminator"
 			"frame rate" 6
 		icon "icon/k-eliminator"
-		sound "slicer"
+		sound "eliminator"
 		"hit effect" "dragonflame plasma" 1
 		"hit effect" "dragonflame debris" 3
 		"inaccuracy" 0
@@ -317,9 +318,9 @@ outfit "Korath Scanner"
 	"mass" 14
 	"outfit space" -14
 	"outfit scan power" 16
-	"outfit scan speed" 2
+	"outfit scan efficiency" 20
 	"cargo scan power" 4
-	"cargo scan speed" 2
+	"cargo scan efficiency" 10
 	"atmosphere scan" 100
 	"tactical scan power" 9
 	"radar jamming" 5
@@ -388,7 +389,7 @@ outfit "Korath Tractor"
 			"frame rate" 6
 		"hardpoint sprite" "hardpoint/korath tractor"
 		"hardpoint offset" 5.
-		sound "banisher"
+		sound "tractor"
 		icon "icon/korath tractor"
 		"inaccuracy" .4
 		"turret turn" 2.4
@@ -546,10 +547,10 @@ outfit "Korath Afterburner"
 	"engine capacity" -12
 	"fuel capacity" 250
 	"ramscoop" 0.63
-	"afterburner thrust" 48
+	"afterburner thrust" 38.5
 	"afterburner energy" 1.5
 	"afterburner heat" 15.63
-	"afterburner fuel" 0.08
+	"afterburner fuel" 0.0938
 	"afterburner effect" "korath afterburner small"
 	description "Korath Scrappers recovered his small afterburner from the ruins of their ancestral space."
 	description "	Korath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that nearly melts the thruster."
