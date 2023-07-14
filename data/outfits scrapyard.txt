@@ -434,7 +434,7 @@ outfit "Obsolete Transceiver"
 
 outfit "Slicer Torch"
 	category "Unique"
-	cost 1000000
+	cost 999999
 	thumbnail "outfit/slicer torch"
 	"capture attack" 9.6
 	"capture defense" 6.4
