@@ -1498,6 +1498,23 @@ ship "Tercheldar 150"
 	"final explode" "final explosion large"
 	description "The Tercheldar 150 was a warship designed to fight in Mereti mine fields. It was eventually replaced by the more powerful Kar Ik Vot 349."
 
+ship "Tercheldar 150" "Tercheldar 150 (Tormentor)"
+	outfits
+		"Korath Detainer"
+		"Korath Grappler" 2
+		"Tormentor Turret" 2
+		"Double Plasma Core"
+		"Generator (Furnace Class)"
+		"Systems Core (Medium)"
+		"Large Heat Shunt"
+		"Obsolete Transceiver"
+		"Thruster (Comet Class)"
+		"Thruster (Planetary Class)"
+		"Steering (Planetary Class)"
+		"Hyperdrive"
+	gun "Korath Detainer"
+	gun "Korath Grappler"
+	gun "Korath Grappler"
 
 
 ship "Stakoshtar 187"
