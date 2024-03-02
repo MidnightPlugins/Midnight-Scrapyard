@@ -745,7 +745,7 @@ ship "Blight Mutation"
 	"never disabled"
 	attributes
 		"automaton" 1
-		category "Light Warship"
+		category "Medium Warship"
 		"shields" 3600
 		"hull" 7200
 		"crew equivalent" 12
