@@ -199,7 +199,7 @@ mission "Echo Galleon Construction Shortage 1 - Scan"
 		ship "Echo-Galleon" "Sesk Gratakfar"
 		dialog "You've successfully scanned an Echo-Galleon. Return to <origin> with the data file."
 	on fail
-		dialog "[MISSION FAILED]: Wow, Echo-Galleons aren't so tough afterall. If this were a game you could try reloading a save file to try again."
+		dialog "[MISSION FAILED]: Wow, Echo-Galleons aren't so tough after all. If this were a game you could try reloading a save file to try again."
 	on complete
 		conversation
 			scene "thumbnail/echo-galleon"
