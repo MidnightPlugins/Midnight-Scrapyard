@@ -552,6 +552,7 @@ outfit "Systems Core (Damaged)"
 	"energy consumption" 0.8
 	"heat generation" 1.2
 	"fused circuits" 1
+	"reinstall" -1
 	"unplunderable" 1
 	description `While unable to repair damage to complex systems such as itself, the machines controlled by this systems core can patch holes in the hull.`
 
@@ -564,6 +565,7 @@ outfit "Triple Plasma Core (Damaged)"
 	"energy generation" 22.0
 	"heat generation" 154.0
 	"fused circuits" 1
+	"reinstall" -1
 	"unplunderable" 1
 	description "While there is no visible damage, you are certain this unit is malfunctioning. The power output is no better than a Double Plasma Core."
 
@@ -577,6 +579,7 @@ outfit "Hyperdrive (Damaged)"
 	"jump fuel" 300
 	"hyperdrive" 1
 	"fused circuits" 1
+	"reinstall" -1
 	"unplunderable" 1
 	description "A malfunction is causing this hyperdrive to consume triple the amount of fuel that a normal hyperdrive would."
 	
@@ -589,6 +592,7 @@ outfit "Thruster (Planetary Class)(Damaged)"
 	"outfit space" -69
 	"engine capacity" -69
 	"fused circuits" 1
+	"reinstall" -1
 	"thrust" 66.195
 	"thrusting energy" 4.9
 	"thrusting heat" 11.9
@@ -607,6 +611,7 @@ outfit "Steering (Planetary Class)(Damaged)"
 	"outfit space" -52
 	"engine capacity" -52
 	"fused circuits" 1
+	"reinstall" -1
 	"turn" 1584.0
 	"turning energy" 2.5
 	"turning heat" 7.4
