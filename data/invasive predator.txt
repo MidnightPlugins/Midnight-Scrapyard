@@ -1268,8 +1268,8 @@ ship "Aberrant Triplet" "Aberrant Triplet (Infested)"
 	explode "black blood" 100
 	"final explode" "final explosion large"
 
-outfitter "Anomalous Waste"
-	"Anomalous Waste"
+outfitter "Anomalous Husk"
+	"Anomalous Husk"
 
 outfit "Anomalous Husk"
 	plural "Anomalous Husk"
