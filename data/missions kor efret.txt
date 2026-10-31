@@ -694,6 +694,7 @@ mission "Scrapyard Derelict World Ship"
 ship "Korath World-Ship" "Scrapyard World-Ship (Crippled)"
 	sprite "ship/world-ship scrapyard"
 	thumbnail "thumbnail/world-ship scrapyard-thumb"
+	"administrative cost" 10
 	add attributes
 		"fused circuits" -5
 	outfits
