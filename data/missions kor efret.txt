@@ -80,7 +80,7 @@ outfitter "Midnight Korath Fireswarm Restock"
 	stock
 		"Korath Fireswarm"
 
-mission "Midnight Tech: Korath Fireswarm Access Permanent"
+mission "Midnight Tech: Korath Fireswarm Access Permanent License"
 	entering
 	invisible
 	destination Earth
